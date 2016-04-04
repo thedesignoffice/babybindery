@@ -32,3 +32,12 @@ Bindery will allow you to select which pages to include in the book, filtering b
 
 v 2.0 … ?
 Greater flexibility & extensibility
+
+—
+
+File Structure of the app:
+- Jekyll Documents
+- Raw Content Files (demo: image set, blog, art show)
+- Web Layouts
+- “PRINT” prep page where content & print format selected
+	- This transforms into print-ready document when ⌘P pressed. 
