@@ -41,3 +41,29 @@ File Structure of the app:
 - Web Layouts
 - “PRINT” prep page where content & print format selected
 	- This transforms into print-ready document when ⌘P pressed. 
+
+TODO
+
+- Get dummy content
+- Make basic templates
+- TOC filtering by category
+- book.html page
+	- Title
+	- Half-title
+	- TOC
+	- book content, by content type
+- book_layout.html (as in Jekyll layout for book.html)
+- figuring out what is needed from
+	- bindery.js
+	- book.js
+- investigating if these can revert to original 
+	- cssregions.js
+	- bindery-cssregions-polyfill.js
+
+Next up:
+- folio
+- links
+- page layout details
+- footnotes
+
+** C
