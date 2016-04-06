@@ -1,6 +1,6 @@
 ---
 layout: interview
-title: Hannah Subtonic
+title: Hannah Subtonik
 interviewer_initials: LTWP
 interviewee_initials: HS
 date: 2015-04-06

@@ -1,15 +1,30 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<html>
+  <body>
+    {% include jquery.html %}
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
-  </div>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+        <span class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</span>
+      </header>
 
-</article>
+      <div class="post-content" itemprop="articleBody">
+        <h1 id="interviewer_initials" style="display: none">
+          {{ page.interviewer_initials }}
+        </h1>
+        <h1 id="interviewee_initials" style="display: none">
+          {{ page.interviewee_initials }}
+        </h1>
+        {{ content }}
+      </div>
+
+      <script type="text/javascript" src="{{ site.baseurl }}/js/label_interview_paragraphs.js"></script>
+
+    </article>
+  </body>
+</html>
+
