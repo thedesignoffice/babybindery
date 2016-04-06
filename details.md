@@ -42,7 +42,7 @@ File Structure of the app:
 - “PRINT” prep page where content & print format selected
 	- This transforms into print-ready document when ⌘P pressed. 
 
-TODO
+TO-DO
 
 - Get dummy content
 - Make basic templates
@@ -66,4 +66,4 @@ Next up:
 - page layout details
 - footnotes
 
-** C
+
