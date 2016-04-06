@@ -8,5 +8,5 @@ for(var i=0; i<n_paragraphs; i++){
   }else{
     $("p").eq(i).prepend("<span class='interviewee initials'>"+interviewee_initials+": </span>");
   }
-
+// This just alternates paragraph labeling, assuming the interviewer goes first... probably need a way to toggle this. And make it smarter, if there are <p>s elsewhere in the page.
 }

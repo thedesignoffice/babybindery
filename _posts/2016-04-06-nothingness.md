@@ -2,7 +2,7 @@
 layout: post
 title: Nothingness
 date: 2015-04-06
-author: Your Mam
+author: Your Mom
 
 content-type: blogpost
 
