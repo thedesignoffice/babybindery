@@ -44,7 +44,7 @@ File Structure of the app:
 
 TO-DO
 
-- Get dummy content
+- ~~Get dummy content~~
 - Make basic templates
 - TOC filtering by category
 - book.html page

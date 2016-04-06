@@ -1,0 +1,27 @@
+/*CSS in addition to Meyer's reset, which is an Include.*/
+
+*{}
+
+body{
+  font-family: 'Helvetica',sans-serif;
+  line-height: 120%;
+}
+
+a{
+  color: #0000ff;
+}
+a:hover{
+  text-decoration: none;
+}
+
+h1{
+  font-weight: bold;
+}
+
+h2{
+  text-decoration: underline;
+}
+
+p{
+  margin: 2em 0;
+}
