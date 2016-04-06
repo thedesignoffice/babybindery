@@ -4,7 +4,7 @@ Content areas in print template that should appear onscreen as well:
 - Halftitle
 - Title page
 - TOC
-- Multiple templates for content types (interview, image only)
+- template for each content type (interview, image only)
 - Basic basic CSS (one size helvetica)
 - Print size letter, but should ideally use relative units if changed (ideally one size needs to change and columns adjust (90w)
 - Cover not needed now… can use TOC/Title, etc.
