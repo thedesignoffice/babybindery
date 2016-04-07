@@ -33,6 +33,8 @@ Bindery will allow you to select which pages to include in the book, filtering b
 v 2.0 … ?
 Greater flexibility & extensibility
 
+WE GOT SOME STUFF HERE:
+https://www.are.na/catherine-leigh-schmidt/web-to-print
 —
 
 File Structure of the app:
