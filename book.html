@@ -1,0 +1,146 @@
+---
+layout: blank
+---
+
+
+
+<!--
+____________________________________________________
+
+This is the generated global stylesheet for the book.
+Any dynamic content that is part of a stylesheet should end up here.
+namespaced. If you aren't sure what namespacing is
+just ask Evan!
+Do not include stylesheets within a post that aren't correctly
+
+-->
+
+<!--
+____________________________________________________
+
+Blank Page
+-->
+<div class="_page-break"></div>
+
+
+<!--
+____________________________________________________
+
+Blank Page
+-->
+<div class="_page-break"></div>
+
+
+<!--
+____________________________________________________
+
+Half Title Page
+-->
+<div class="halftitle-page">
+  <h1>{{ site.title }}</h1>
+  <p>Half Title Page</p>
+</div>
+<div class="_page-break"></div>
+
+
+<!--
+____________________________________________________
+
+Blank Page
+-->
+<div class="_page-break"></div>
+
+
+<!--
+____________________________________________________
+
+Title Page
+-->
+<div class="title-page">
+  <h2>{{ site.title }}</h2>
+  <p>Title Page<p>
+
+</div>
+<div class="_page-break"></div>
+
+
+<!--
+____________________________________________________
+
+Front Matter, maybe?
+-->
+<div class="title-page copyright">
+<p>{% for page in site.pages %}{% if page.category == 'credits' %}
+               {{page.content}}
+                {% endif %}{% endfor %}</p>
+</div>
+<div class="_page-break"></div>
+<p><em>{{ page.subtitle }}</em></p>
+<div class="_page-break"></div>
+
+
+<!--
+____________________________________________________
+
+Table of Contents
+-->
+
+
+
+<h1>Table of Contents</h1>
+<ul>
+  {% for post in site.posts %}
+  <li>
+    <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
+      {{ post.content-type }}: {{ post.title }}
+  </li>
+  {% endfor %}
+</ul>
+
+
+<div class="_page-break"></div>
+
+
+
+
+
+
+
+
+
+<!--
+____________________________________________________
+
+All Content
+-->
+
+
+<!-- Basic spewing of content, doesn't work for images
+  {% for post in site.posts %}
+  <div style="margin: 20px; background-color: lightsalmon;">
+   <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
+      {{ post.content-type }}: {{ post.title }}
+  
+      {{ post.content }}
+    <div class="_page-break"></div>
+  </div>
+  {% endfor %}
+-->
+
+<!-- Blog Posts -->
+<!--{% for category in site.types %} -->
+  {% for post in site.posts %}
+   <!-- {% if post.content-type == content-type %} -->
+        {% if post.content-type == 'blogpost' %}
+          <div style="margin: 20px; background-color: lightsalmon;">
+            <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
+            {{ post.content-type }}: {{ post.title }}
+        
+            {{ post.content }}
+
+          </div>
+          <div class="_page-break"></div>
+        {% endif %}
+    <!--  {% endif %} -->
+    {% endfor %}
+  <!--{% endfor %}-->

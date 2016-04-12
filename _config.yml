@@ -17,3 +17,5 @@ github_username:
 
 # Build settings
 markdown: kramdown
+
+types: [interview, image, post]
