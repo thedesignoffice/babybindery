@@ -4,7 +4,7 @@ title: fresco
 date: 2015-04-05
 content-type: image
 image-date: CE 30-79
-img-url: http://i.imgur.com/CSZTN1l.jpg
+imgurl: http://i.imgur.com/CSZTN1l.jpg
 byline: Unknown artist, Roman
 ---
 

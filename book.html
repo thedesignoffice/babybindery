@@ -1,17 +1,11 @@
 ---
-layout: blank
+layout: print
 ---
 
 
 
 <!--
-____________________________________________________
-
-This is the generated global stylesheet for the book.
-Any dynamic content that is part of a stylesheet should end up here.
-namespaced. If you aren't sure what namespacing is
-just ask Evan!
-Do not include stylesheets within a post that aren't correctly
+This is a display of content in preparation for print. The contents of this page are loaded into the print.html layout.
 
 -->
 
@@ -122,7 +116,7 @@ All Content
       <p style="border: 1px solid blue; margin: 10px;">
       <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
       {{ post.content-type }}: {{ post.title }}
-      <img src="{{ post.img-url }}" />
+      <img src="{{ post.imgurl }}" />
       {{post.content}}
       </p>
   {% endif %}
@@ -143,7 +137,7 @@ All Content
 
 <h1>blog posts</h1>
 
-<!-- Image -->
+<!-- Blogpost -->
 {% for post in site.posts %}
     {% if post.content-type == 'blogpost' %}
       <p style="border: 1px solid blue; margin: 10px;">
