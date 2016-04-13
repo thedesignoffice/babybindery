@@ -114,37 +114,42 @@ ____________________________________________________
 All Content
 -->
 
+<h1>images</h1>
 
-<!-- Basic spewing of content, doesn't work for images
-  {% for post in site.posts %}
-  <div style="margin: 20px; background-color: lightsalmon;">
-   <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
+<!-- Image -->
+{% for post in site.posts %}
+    {% if post.content-type == 'image' %}
+      <p style="border: 1px solid blue; margin: 10px;">
+      <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
       {{ post.content-type }}: {{ post.title }}
+      <img src="{{ post.img-url }}" />
+      {{post.content}}
+      </p>
+  {% endif %}
+{% endfor %}
 
-      {% if page.img-url == img-url %}
-      <img src="{{ page.img-url }}" /><br />
-      {% endif %}
+<h1>interviews</h1>
 
-      {{ post.content }}
-    <div class="_page-break"></div>
-  </div>
-  {% endfor %}
+<!-- Interview -->
+{% for post in site.posts %}
+    {% if post.content-type == 'interview' %}
+      <p style="border: 1px solid blue; margin: 10px;">
+      <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
+      {{ post.content-type }}: {{ post.title }}
+        {{post.content}}
+      </p>
+  {% endif %}
+{% endfor %}
 
--->
+<h1>blog posts</h1>
 
-<!-- spewing by content, doesn't work -->
-  {% for categories in site.types %}
-    {% for post in site.posts %}
-      {% if post.content-type and post.content-type == 'image' %}
-          <p style="border: 1px solid blue; margin: 10px;">
-          {{ post.title }}
-          <img src="{{ page.img-url }}" />
-          YASS</p>
-      {% else %}
-          <p style="border: 1px solid blue; margin: 10px;">
-          {{ post.title }}
-          no :(</p>
-
-      {% endif %}
-    {% endfor %}
-  {% endfor %}
+<!-- Image -->
+{% for post in site.posts %}
+    {% if post.content-type == 'blogpost' %}
+      <p style="border: 1px solid blue; margin: 10px;">
+      <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
+      {{ post.content-type }}: {{ post.title }}
+      {{post.content}}
+      </p>
+  {% endif %}
+{% endfor %}
