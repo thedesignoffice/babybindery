@@ -120,27 +120,31 @@ All Content
   <div style="margin: 20px; background-color: lightsalmon;">
    <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
       {{ post.content-type }}: {{ post.title }}
-  
+
+      {% if page.img-url == img-url %}
+      <img src="{{ page.img-url }}" /><br />
+      {% endif %}
+
       {{ post.content }}
     <div class="_page-break"></div>
   </div>
   {% endfor %}
+
 -->
 
-<!-- Blog Posts -->
-<!--{% for category in site.types %} -->
-  {% for post in site.posts %}
-   <!-- {% if post.content-type == content-type %} -->
-        {% if post.content-type == 'blogpost' %}
-          <div style="margin: 20px; background-color: lightsalmon;">
-            <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
-            {{ post.content-type }}: {{ post.title }}
-        
-            {{ post.content }}
+<!-- spewing by content, doesn't work -->
+  {% for categories in site.types %}
+    {% for post in site.posts %}
+      {% if post.content-type and post.content-type == 'image' %}
+          <p style="border: 1px solid blue; margin: 10px;">
+          {{ post.title }}
+          <img src="{{ page.img-url }}" />
+          YASS</p>
+      {% else %}
+          <p style="border: 1px solid blue; margin: 10px;">
+          {{ post.title }}
+          no :(</p>
 
-          </div>
-          <div class="_page-break"></div>
-        {% endif %}
-    <!--  {% endif %} -->
+      {% endif %}
     {% endfor %}
-  <!--{% endfor %}-->
+  {% endfor %}
