@@ -1,14 +1,15 @@
 ## TO-DO
 
-X Get dummy content
-X Make basic templates
+~~Get dummy content~~
+~~Make basic templates~~
 - TOC filtering by category
 - book.html page
+~~pulls content~~
 	- Title
 	- Half-title
 	- TOC
 	- book content, by content type
-- book_layout.html (as in Jekyll layout for book.html)
+- print.html (as in Jekyll layout for book.html)
 - figuring out what is needed from
 	- bindery.js
 	- book.js
@@ -19,9 +20,9 @@ X Make basic templates
 ## ISSUES
 
 - quotes don't display correctly
+- images breaking in web version
 
 ## LATER
 - folio
-- links
+- links / footnotes
 - page layout details
-- footnotes
