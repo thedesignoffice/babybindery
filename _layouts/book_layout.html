@@ -1,0 +1,77 @@
+<html>
+  <head>
+  	{% include metadata.html %}
+
+  	<link rel="stylesheet" href="/css/book.css" type="text/css">
+    <link rel="stylesheet" href="/css/bindery.css" type="text/css">
+
+  	<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+  </head>
+  <body>
+
+  	  <nav class="print-nav">
+		    <span style="display:inline; letter-spacing: 1px; text-transform: uppercase; margin-right: 1em;">bindery.js</span>
+
+		    <progress id="progbar" value="0" max="1"></progress>
+
+
+		    <span id="postProcessControls">
+
+		        <label><input id="toggleguides" type="checkbox" checked />Show bleed</label>
+		        <label><input id="togglecrop" type="checkbox" /> Bleed marks</label>
+
+		    </span>
+
+
+		    <button class="toggle-btn" id="regionize" disabled>Make book</button>
+
+		    <span id="bindStatus" style="display:inline; margin-left: 1em; color: black;">
+		        Loading...
+		    </span>
+
+
+	  </nav>
+
+        <div class="_book-content content-source">
+            {{ content }}
+        </div>
+
+        <div class="_book-pages">
+            {% for num in (1...500) %}
+
+            <!-- THIS LOOKS IMPORTANT -->
+                <div class="page-outer {% cycle 'page-side': '_recto', '_verso' %}" data-page="{{ num }}">
+                    <div class="content-region page-inner">
+                        <!-- all content will be in this div for each page -->
+                    </div>
+
+                    <header class="_running-head">
+                        <div class="_book-name">
+                            for / with / in /
+                        </div>
+                        <div class="_section">
+
+                        </div>
+                        <div class="_pagenum">
+                            {{ num }}
+                        </div>
+                        <div class="_footer">
+
+                        </div>
+                    </header>
+
+
+                </div>
+            {% endfor %}
+        </div>
+
+    <!-- polyfill -->
+    <script src="/js/imagesloaded.pkgd.js"></script>
+  	<script src="/js/bindery-cssregions-polyfill.js"></script>
+  	<script src="/js/bindery.js"></script>
+  	<script src="/js/book.js"></script> 
+
+ 
+  </body>
+<html>
