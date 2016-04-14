@@ -7,24 +7,24 @@
     {% include jquery.html %}
   </head>
   <body>
+    <div class="wrapper">
+      <header>
+        <h1>{{ page.title }}</h1>
+        <span>{{ page.date | date: "%m %d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}</span>
+      </header>
 
-    <header>
-      <h1>{{ page.title }}</h1>
-      <span>{{ page.date | date: "%m %d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}</span>
-    </header>
+      <div class="post-content" itemprop="articleBody">
+        <h1 id="interviewer_initials" style="display: none">
+          {{ page.interviewer_initials }}
+        </h1>
+        <h1 id="interviewee_initials" style="display: none">
+          {{ page.interviewee_initials }}
+        </h1>
+        {{ content }}
+      </div>
 
-    <div class="post-content" itemprop="articleBody">
-      <h1 id="interviewer_initials" style="display: none">
-        {{ page.interviewer_initials }}
-      </h1>
-      <h1 id="interviewee_initials" style="display: none">
-        {{ page.interviewee_initials }}
-      </h1>
-      {{ content }}
+      {% include label_interview_paragraphs.html %}
     </div>
-
-    {% include label_interview_paragraphs.html %}
-
   </body>
 </html>
 

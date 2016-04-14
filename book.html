@@ -14,7 +14,7 @@ ____________________________________________________
 
 Blank Page
 -->
-<div class="_page-break"></div>
+<div class="page-break"></div>
 
 
 <!--
@@ -22,7 +22,7 @@ ____________________________________________________
 
 Blank Page
 -->
-<div class="_page-break"></div>
+<div class="page-break"></div>
 
 
 <!--
@@ -34,7 +34,7 @@ Half Title Page
   <h1>{{ site.title }}</h1>
   <p>Half Title Page</p>
 </div>
-<div class="_page-break"></div>
+<div class="page-break"></div>
 
 
 <!--
@@ -42,7 +42,7 @@ ____________________________________________________
 
 Blank Page
 -->
-<div class="_page-break"></div>
+<div class="page-break"></div>
 
 
 <!--
@@ -55,7 +55,7 @@ Title Page
   <p>Title Page<p>
 
 </div>
-<div class="_page-break"></div>
+<div class="page-break"></div>
 
 
 <!--
@@ -68,9 +68,9 @@ Front Matter, maybe?
                {{page.content}}
                 {% endif %}{% endfor %}</p>
 </div>
-<div class="_page-break"></div>
+<div class="page-break"></div>
 <p><em>{{ page.subtitle }}</em></p>
-<div class="_page-break"></div>
+<div class="page-break"></div>
 
 
 <!--
@@ -92,7 +92,7 @@ Table of Contents
 </ul>
 
 
-<div class="_page-break"></div>
+<div class="page-break"></div>
 
 
 
@@ -119,6 +119,7 @@ All Content
       <img src="{{ post.imgurl }}" />
       {{post.content}}
       </p>
+      <div class="page-break"></div>
   {% endif %}
 {% endfor %}
 
@@ -132,6 +133,7 @@ All Content
       {{ post.content-type }}: {{ post.title }}
         {{post.content}}
       </p>
+      <div class="page-break"></div>
   {% endif %}
 {% endfor %}
 
@@ -145,5 +147,6 @@ All Content
       {{ post.content-type }}: {{ post.title }}
       {{post.content}}
       </p>
+      <div class="page-break"></div>
   {% endif %}
 {% endfor %}

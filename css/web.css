@@ -5,6 +5,7 @@
 body{
   font-family: 'Helvetica',sans-serif;
   line-height: 120%;
+  width: 100%;
 }
 
 a{
@@ -16,6 +17,7 @@ a:hover{
 
 h1{
   font-weight: bold;
+  margin: 2em 0;
 }
 
 h2{
@@ -24,4 +26,14 @@ h2{
 
 p{
   margin: 1em 0;
+}
+
+.wrapper{
+  /* Goes just within the body, around all Page or Post Content. */
+  width: 70%;
+  margin: 0 auto;
+}
+
+.wrapper img{
+  width: 100%;
 }
