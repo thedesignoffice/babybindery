@@ -4,9 +4,9 @@
     {% include meyer_reset.html %}
     {% include web_css.html %}
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/interview.css" />
+    {% include jquery.html %}
   </head>
   <body>
-    {% include jquery.html %}
 
     <header>
       <h1>{{ page.title }}</h1>
@@ -23,7 +23,7 @@
       {{ content }}
     </div>
 
-    <script type="text/javascript" src="{{ site.baseurl }}/js/label_interview_paragraphs.js"></script>
+    {% include label_interview_paragraphs.html %}
 
   </body>
 </html>

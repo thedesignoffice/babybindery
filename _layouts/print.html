@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-  	{% include metadata.html %}
+    {% include metadata.html %}
     {% include meyer_reset.html %}
+    {% include jquery.html %}
+
     {% include print_css.html %}
+    {% include regions_js.html %}
+
   </head>
 
   <body>
 
-    {{ content }}
+    <div id="content-source">
+      <!-- ostensibly just pulling in book.html -->
+      {{ content }}
+    </div>
+
+    <!-- should make one of these for each page, probably -->
+    <div class="page-content"></div>
+    <div class='page-content'></div>
+    <div class='page-content'></div>
+    <div class='page-content'></div>
+    <div class='page-content'></div>
 
   </body>
 

@@ -1,3 +1,12 @@
 body{
   background: white;
 }
+
+#content-source {
+  flow-into: toprint;
+}
+
+.page-content {
+  flow-from: toprint;
+  height: 500px;
+}
