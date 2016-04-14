@@ -1,9 +1,14 @@
 /* Styling for book.html content in print.html layout - the html "print preview" */
+
 #content-source { /* Wrapper for all book content, pre-flow */
   /* might need to separated from a staging ground post-filtering. */
   flow-into: toprint;
   width: 80%;
   margin: 0 auto;
+}
+
+.content{ /* Contains one post. */
+
 }
 
 #pages{ /* Contains all pages as .page-content divs, once content flowed in. */

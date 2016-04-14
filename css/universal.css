@@ -21,3 +21,7 @@ h2{
 p{
   margin: 1em 0;
 }
+
+.initials{
+  font-family: monospace;
+}

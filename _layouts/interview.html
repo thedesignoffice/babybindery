@@ -4,9 +4,9 @@
     {% include meyer_reset.html %}
     {% include universal_css.html %}
     {% include web_css.html %}
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/interview.css" />
 
     {% include jquery.html %}
+    {% include label_interview_paragraphs.html %}
   </head>
   <body>
     <div class="wrapper">
@@ -15,17 +15,11 @@
         <span>{{ page.date | date: "%m %d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}</span>
       </header>
 
-      <div class="post-content" itemprop="articleBody">
-        <h1 id="interviewer_initials" style="display: none">
-          {{ page.interviewer_initials }}
-        </h1>
-        <h1 id="interviewee_initials" style="display: none">
-          {{ page.interviewee_initials }}
-        </h1>
+      <div class="post-content interview" interviewee_initials="{{ page.interviewee_initials }}" interviewer_initials="{{ page.interviewer_initials }}" itemprop="articleBody">
+
         {{ content }}
       </div>
 
-      {% include label_interview_paragraphs.html %}
     </div>
   </body>
 </html>

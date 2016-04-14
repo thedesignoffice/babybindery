@@ -101,25 +101,28 @@ ____________________________________________________
 All Content
 -->
 
-  <!--If we want, do a loop through types here...? -->
+<!--If we want, do a loop through types here...? -->
 
-  <h1>images</h1>
-  <div class="page-break"></div>
+<h1>images</h1>
+<div class="page-break"></div>
 
-  <!-- Image -->
-  {% for post in site.posts %}
-  {% if post.content-type == 'image' %}
+<!-- Image -->
+{% for post in site.posts %}
+{% if post.content-type == 'image' %}
 
+<div class="content">
   {{ post.date | date: "%m.%d.%Y" }}<br />
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
   <img src="{{ post.imgurl }}" />
   {{post.content}}
+</div>
 
 <div class="page-break"></div>
 
 {% endif %}
 {% endfor %}
-<div class="page-break"></div> <!-- After Images -->
+<div class="page-break"></div>
+<!-- After Images -->
 
 <h1>interviews</h1>
 <div class="page-break"></div>
@@ -128,14 +131,17 @@ All Content
 {% for post in site.posts %}
 {% if post.content-type == 'interview' %}
 
-{{ post.date | date: "%m.%d.%Y" }}<br />
-<h1>{{ post.content-type }}: {{ post.title }}</h1><br />
-{{post.content}}
+<div class="content interview" interviewee_initials="{{ page.interviewee_initials }}" interviewer_initials="{{ page.interviewer_initials }}">
+  {{ post.date | date: "%m.%d.%Y" }}<br />
+  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+  {{post.content}}
+</div>
 
 <div class="page-break"></div>
 {% endif %}
 {% endfor %}
-<div class="page-break"></div> <!-- After Interviews -->
+<div class="page-break"></div>
+<!-- After Interviews -->
 
 <h1>blog posts</h1>
 <div class="page-break"></div>
@@ -144,11 +150,14 @@ All Content
 {% for post in site.posts %}
 {% if post.content-type == 'blogpost' %}
 
-{{ post.date | date: "%m.%d.%Y" }}<br />
-<h1>{{ post.content-type }}: {{ post.title }}</h1><br />
-{{post.content}}
+<div class="content">
+  {{ post.date | date: "%m.%d.%Y" }}<br />
+  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+  {{post.content}}
+</div>
 
 <div class="page-break"></div>
 {% endif %}
 {% endfor %}
-<div class="page-break"></div> <!-- After Blog Posts -->
+<div class="page-break"></div>
+<!-- After Blog Posts -->
