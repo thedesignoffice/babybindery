@@ -1,3 +1,7 @@
+*{
+  border: none;
+}
+
 #content-source {
   flow-into: toprint;
 }
@@ -5,4 +9,9 @@
 .page-content {
   flow-from: toprint;
   height: 500px;
+}
+
+#book-wrapper{
+  width: 6.5in
+  padding-left: 2in;
 }

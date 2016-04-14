@@ -5,8 +5,8 @@ layout: print
 
 
 <!--
-This is a display of content in preparation for print. The contents of this page are loaded into the print.html layout.
-
+This is a display of content in preparation for print.
+The contents of this page are loaded into the print.html layout.
 -->
 
 <!--
@@ -14,6 +14,7 @@ ____________________________________________________
 
 Blank Page
 -->
+
 <div class="page-break"></div>
 
 
@@ -31,7 +32,7 @@ ____________________________________________________
 Half Title Page
 -->
 <div class="halftitle-page">
-  <h1>{{ site.title }}</h1>
+  <h2>{{ site.title }}</h2>
   <p>Half Title Page</p>
 </div>
 <div class="page-break"></div>
@@ -51,7 +52,7 @@ ____________________________________________________
 Title Page
 -->
 <div class="title-page">
-  <h2>{{ site.title }}</h2>
+  <h1>{{ site.title }}</h1>
   <p>Title Page<p>
 
 </div>
@@ -64,9 +65,9 @@ ____________________________________________________
 Front Matter, maybe?
 -->
 <div class="title-page copyright">
-<p>{% for page in site.pages %}{% if page.category == 'credits' %}
-               {{page.content}}
-                {% endif %}{% endfor %}</p>
+  <p>{% for page in site.pages %}{% if page.category == 'credits' %}
+    {{page.content}}
+    {% endif %}{% endfor %}</p>
 </div>
 <div class="page-break"></div>
 <p><em>{{ page.subtitle }}</em></p>
@@ -86,7 +87,7 @@ Table of Contents
   {% for post in site.posts %}
   <li>
     <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
-      {{ post.content-type }}: {{ post.title }}
+    {{ post.content-type }}: {{ post.title }}
   </li>
   {% endfor %}
 </ul>
@@ -94,59 +95,60 @@ Table of Contents
 
 <div class="page-break"></div>
 
-
-
-
-
-
-
-
-
 <!--
 ____________________________________________________
 
 All Content
 -->
 
-<h1>images</h1>
+  <!--If we want, do a loop through types here...? -->
 
-<!-- Image -->
-{% for post in site.posts %}
-    {% if post.content-type == 'image' %}
-      <p style="border: 1px solid blue; margin: 10px;">
-      <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
-      {{ post.content-type }}: {{ post.title }}
-      <img src="{{ post.imgurl }}" />
-      {{post.content}}
-      </p>
-      <div class="page-break"></div>
-  {% endif %}
+  <h1>images</h1>
+  <div class="page-break"></div>
+
+  <!-- Image -->
+  {% for post in site.posts %}
+  {% if post.content-type == 'image' %}
+
+  {{ post.date | date: "%m.%d.%Y" }}<br />
+  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+  <img src="{{ post.imgurl }}" />
+  {{post.content}}
+
+<div class="page-break"></div>
+
+{% endif %}
 {% endfor %}
+<div class="page-break"></div> <!-- After Images -->
 
 <h1>interviews</h1>
+<div class="page-break"></div>
 
 <!-- Interview -->
 {% for post in site.posts %}
-    {% if post.content-type == 'interview' %}
-      <p style="border: 1px solid blue; margin: 10px;">
-      <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
-      {{ post.content-type }}: {{ post.title }}
-        {{post.content}}
-      </p>
-      <div class="page-break"></div>
-  {% endif %}
+{% if post.content-type == 'interview' %}
+
+{{ post.date | date: "%m.%d.%Y" }}<br />
+<h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+{{post.content}}
+
+<div class="page-break"></div>
+{% endif %}
 {% endfor %}
+<div class="page-break"></div> <!-- After Interviews -->
 
 <h1>blog posts</h1>
+<div class="page-break"></div>
 
 <!-- Blogpost -->
 {% for post in site.posts %}
-    {% if post.content-type == 'blogpost' %}
-      <p style="border: 1px solid blue; margin: 10px;">
-      <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
-      {{ post.content-type }}: {{ post.title }}
-      {{post.content}}
-      </p>
-      <div class="page-break"></div>
-  {% endif %}
+{% if post.content-type == 'blogpost' %}
+
+{{ post.date | date: "%m.%d.%Y" }}<br />
+<h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+{{post.content}}
+
+<div class="page-break"></div>
+{% endif %}
 {% endfor %}
+<div class="page-break"></div> <!-- After Blog Posts -->

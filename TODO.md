@@ -4,10 +4,10 @@
 ~~Make basic templates~~
 - TOC filtering by category
 - book.html page
-~~pulls content~~
-	- Title
-	- Half-title
-	- TOC
+	- ~~pulls content~~
+	- ~~Title~~
+	- ~~Half-title~~
+	- ~~TOC~~
 	- book content, by content type
 - print.html (as in Jekyll layout for book.html)
 - ~~adding print.css (media=“print”), separate from book.css (for web view of print preview)~~

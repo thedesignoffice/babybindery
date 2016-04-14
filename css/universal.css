@@ -1,6 +1,12 @@
 body{
   background: white;
   font-family: 'Helvetica',sans-serif;
+  text-align: left;
+  width: 100%;
+}
+
+img{
+  max-width: 100%;
 }
 
 h1{
