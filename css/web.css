@@ -1,6 +1,7 @@
 /*CSS in addition to Meyer's reset, which is an Include.*/
 
-*{}
+*{
+}
 
 body{
   line-height: 120%;

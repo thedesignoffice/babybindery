@@ -4,4 +4,10 @@
   page-break-after: always;
 }
 
-@page { size: auto;  margin: 0mm; padding: 1in; } /* This hides typical URL/Date/Page stuff added by default print styling. All content, full-bleed, baby. */
+@page {size: auto;  margin: 0mm;} /* This hides typical URL/Date/Page stuff added by default print styling. All content, full-bleed, baby. */
+
+#content-source{ width: 100%; }
+
+.page-content{
+  page-break-after: always;
+}

@@ -1,14 +1,21 @@
-*{
-  border: none;
+/* Styling for book.html content in print.html layout - the html "print preview" */
+#content-source { /* Wrapper for all book content, pre-flow */
+  /* might need to separated from a staging ground post-filtering. */
+  flow-into: toprint;
+  width: 80%;
+  margin: 0 auto;
 }
 
-#content-source {
-  flow-into: toprint;
+#pages{ /* Contains all pages as .page-content divs, once content flowed in. */
 }
 
 .page-content {
   flow-from: toprint;
-  height: 500px;
+  display: block;
+  height: 9in;
+  width: 6.5in;
+  margin: 0.5in auto;
+  border: 1px solid blue;
 }
 
 #book-wrapper{

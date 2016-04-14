@@ -7,22 +7,23 @@
     {% include universal_css.html %}
     {% include book_css.html %} <!-- Styles web view of book content, the html "print preview"-->
     {% include print_css.html %} <!-- Print-media stylesheet. -->
-    <!-- {% include regions_js.html %} <!-- See https://github.com/FremyCompany/css-regions-polyfill -->
+    {% include regions_js.html %} <!-- See https://github.com/FremyCompany/css-regions-polyfill -->
   </head>
 
   <body>
     <!-- ostensibly just pulling in book.html -->
     <div id="content-source">
-    {{ content }}
+      {{ content }}
     </div>
 
-    <!-- should make one of these for each page, probably -->
-    <!--
-    <div class="page-content"></div>
-    <div class='page-content'></div>
-    <div class='page-content'></div>
-    <div class='page-content'></div>
-    <div class='page-content'></div> -->
+    <!-- We'll use this once we get polyfill working...
+    <div id="pages">
+      <div class="page-content"></div>
+      <div class='page-content'></div>
+      <div class='page-content'></div>
+      <div class='page-content'></div>
+      <div class='page-content'></div>
+    </div> -->
 
   </body>
 
