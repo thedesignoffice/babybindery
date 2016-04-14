@@ -1,0 +1,17 @@
+body{
+  background: white;
+  font-family: 'Helvetica',sans-serif;
+}
+
+h1{
+  font-weight: bold;
+  margin: 2em 0;
+}
+
+h2{
+  text-decoration: underline;
+}
+
+p{
+  margin: 1em 0;
+}
