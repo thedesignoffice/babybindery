@@ -467,4 +467,33 @@ figcaption{
 ._book-spread-r img {
 	right: 0;
 	text-align: right;
+=======
+/* Styling for book.html content in print.html layout - the html "print preview" */
+
+#content-source { /* Wrapper for all book content, pre-flow */
+  /* might need to separated from a staging ground post-filtering. */
+  flow-into: toprint;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.content{ /* Contains one post. */
+
+}
+
+#pages{ /* Contains all pages as .page-content divs, once content flowed in. */
+}
+
+.page-content {
+  flow-from: toprint;
+  display: block;
+  height: 9in;
+  width: 6.5in;
+  margin: 0.5in auto;
+  border: 1px solid blue;
+}
+
+#book-wrapper{
+  width: 6.5in
+  padding-left: 2in;
 }

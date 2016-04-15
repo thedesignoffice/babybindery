@@ -1,9 +1,9 @@
 /*CSS in addition to Meyer's reset, which is an Include.*/
 
-*{}
+*{
+}
 
 body{
-  font-family: 'Helvetica',sans-serif;
   line-height: 120%;
 }
 
@@ -14,14 +14,12 @@ a:hover{
   text-decoration: none;
 }
 
-h1{
-  font-weight: bold;
+.wrapper{
+  /* Goes just within the body, around all Page or Post Content. */
+  width: 70%;
+  margin: 0 auto;
 }
 
-h2{
-  text-decoration: underline;
-}
-
-p{
-  margin: 1em 0;
+.wrapper img{
+  width: 100%;
 }

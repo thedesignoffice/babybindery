@@ -1,0 +1,27 @@
+body{
+  background: white;
+  font-family: 'Helvetica',sans-serif;
+  text-align: left;
+  width: 100%;
+}
+
+img{
+  max-width: 100%;
+}
+
+h1{
+  font-weight: bold;
+  margin: 2em 0;
+}
+
+h2{
+  text-decoration: underline;
+}
+
+p{
+  margin: 1em 0;
+}
+
+.initials{
+  font-family: monospace;
+}

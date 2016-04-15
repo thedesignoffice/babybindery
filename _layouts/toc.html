@@ -3,14 +3,16 @@
   <head>
     {% include metadata.html %}
     {% include meyer_reset.html %}
+    {% include universal_css.html %}
     {% include web_css.html %}
     <title>{{ page.title }}</title>
   </head>
 
   <body>
 
-    <div class="page-content">
-      <div class="wrapper">
+
+    <div class="wrapper">
+      <div class="page-content">
         {{ content }}
       </div>
     </div>

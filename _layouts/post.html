@@ -1,17 +1,20 @@
 <html>
-    <head>
-      {% include metadata.html %}
-      {% include meyer_reset.html %}
-      {% include web_css.html %}
-    </head>
+  <head>
+    {% include metadata.html %}
+    {% include meyer_reset.html %}
+    {% include universal_css.html %}
+    {% include web_css.html %}
+  </head>
   <body>
-    <header>
-      <h1>{{ page.title }}</h1>
-      <span>{{ page.date | date: "%m %d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}</span>
-    </header>
+    <div class="wrapper">
+      <header>
+        <h1>{{ page.title }}</h1>
+        <span>{{ page.date | date: "%m %d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}</span>
+      </header>
 
-    <div>
-      {{ content }}
+      <div>
+        {{ content }}
+      </div>
     </div>
   </body>
 </html>
