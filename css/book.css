@@ -1,11 +1,12 @@
 body{
-background: white;
+  background: white;
 }
 
 #content-source{
-flow-into: toprint;
+  flow-into: toprint;
 }
 
 .page-content{
-flow-from: toprint;
+  flow-from: toprint;
+  height: 500px;
 }
