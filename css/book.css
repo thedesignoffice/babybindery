@@ -1,3 +1,473 @@
+
+/* ----------------------------------
+
+Book overall style
+
+----------------------------------*/
+
+* {
+	font-family: 'Helvetica', sans-serif;
+}
+
+.printy{
+  display: visible;
+}
+.noprinty{
+  display: none;
+}
+
+._book {
+	font: 12pt/1.4 'Helvetica', sans-serif;
+	text-rendering: optimizeLegibility;
+}
+
+[data-page-kind="project"].page-outer {
+	/* background: rgb(226, 228, 243); */
+}
+
+._book p {
+	position: relative;
+	z-index: 1;
+}
+
+._book-content .sidematter {
+	display: none;
+}
+
+._book-content .url{
+  overflow: visible;
+  white-space: nowrap; /* necessary to prevent line breaks */
+  text-indent: 0pt;
+  opacity: 1;
+  letter-spacing: .5pt;
+  color: rgb(0,0,255);
+  font-size: 6pt;
+  text-transform: uppercase;
+  z-index: -1;
+  display: inline-block;
+  margin: 0pt;
+  padding: 0pt;
+  /* xbackground-color: rgb(0,0,255);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: -15pt;
+  left: 15pt; */
+  font-style: normal;
+
+}
+ 
+._book-content a{
+  color: rgb(0,0,255);
+  text-decoration: none;
+}
+
+._sideways-page {
+	overflow: hidden;
+	position: relative;
+	/*height: 4in;*/
+}
+
+._bleed ._sideways-page {
+	/*height: 7.05in;*/
+}
+
+._sideways-page h1 {
+	position: absolute;
+	top: 50%;
+	left: -2.5in;
+	width: 6in;
+	font-size: 90pt;
+	line-height: 100%;
+	-webkit-transform: rotate(-90deg);
+	-webkit-transform-origin: top center;
+	font-family: BentonModernDisp;
+	font-weight: bold;
+}
+
+._sideways-page[data-sideways-part='2'] h1 {
+	left: -6.75in;
+}
+
+._sideways-page[data-sideways-part='3'] h1 {
+	left: -11in;
+}
+
+
+h3 { font-weight: bold; font-size: 100%; margin-bottom: 0;}
+/* ----------------------------------
+
+Title page
+ 
+----------------------------------*/
+ 
+.halftitle-page h1, .title-page h2{
+	color: rgba(0, 255, 0, 1);
+	font-weight: normal;
+	display: inline-block;
+	font-size: 1.1em;
+  	border-bottom: 5px solid rgba(0, 255, 0, 1);
+
+}
+
+.title-page h1 {
+	font-size: 7pc;
+	line-height: 90%;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.title-page h2{
+	color: black;
+	border-bottom: 5px solid black;
+}  
+
+.title-page.copyright p {
+	margin-right: 1.8pc;
+	font-weight: normal;
+	font-size: 0.75em;
+}
+
+.title-page ._running-head ._footer {
+	top: 5in !important;
+}
+
+
+.category-name {
+	font-size: 3em;
+	text-transform: uppercase;
+	-webkit-transform: rotate(90deg);
+	line-height: 5in;
+}
+
+[data-page-kind="section-page"] .page-inner {
+	background: black;
+	color: white;
+}
+
+/* ----------------------------------
+
+Table of contents
+
+----------------------------------*/
+
+.toc label { margin-bottom: 8px;}
+
+.margintopem { margin-top: 20px;}
+
+.toc-heading {
+	margin-left: 1.5pc;
+	color: rgba(0, 255, 0, 1);
+	font-size: 1.1em;
+	line-height: 110%;
+	display: inline-block;
+  	border-bottom: 3px solid rgba(0, 255, 0, 1);
+  	padding-bottom: 1px;
+	margin-bottom: 4px; margin-top: 1em;
+}
+
+.toc-heading.two, h1.intro.project-name {
+	font-size: 1.3em;
+	line-height: 110%;
+	color: black;
+	font-weight: bold;
+	display: inline-block;
+  	border-bottom: 5px solid black;
+	margin-left: 1.5pc;
+	margin-top: 1pc;
+	padding-bottom: 1px;
+}
+
+
+.toc-title {
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 0.8em;
+}
+ 
+.toc-item {
+	position: relative;
+	padding-right: 0in;
+	margin-bottom: 0;
+	display: block;
+}
+
+.toc-item h4 {
+	margin: 0;
+	font-size: 12pt;
+	font-weight: normal;
+	text-indent: 0;
+	padding-left: 25px;
+	line-height: 147%;
+	margin-top: 4px; 
+}
+ 
+.toc-author {
+	color: rgba(0, 255, 0, 1);
+}
+
+.toc-pg {
+	position: absolute;
+	left: -11px;
+	top: 0px;
+	font-weight: normal;
+	font-size: 0.92em;
+	text-align:right;
+	width: 26px;
+	color: rgba(0, 255, 0, 1);
+}
+
+
+/* ----------------------------------
+
+Interview print styles
+
+----------------------------------*/
+
+
+
+
+/* ----------------------------------
+
+Code snippet
+
+----------------------------------*/
+
+
+
+/* ----------------------------------
+
+Page size and paginalia
+
+----------------------------------*/
+
+.page-outer {
+	height: 7.13in;
+	width: 4.5in;
+	position: relative;
+    page-break-after: always;
+    margin: auto;
+    /*display: none;*/
+}
+
+@page {
+	height: 7.13in;
+	width:  4.5in;
+	/*width: 3.5in;*/
+	margin: 0.25in;
+}
+
+.page-inner {
+	position: absolute;
+	margin:   auto;
+	bottom:   0;
+	top:      0;
+	left:     0;
+	right:    0;
+	overflow: hidden;
+	padding:  0.6in 0.6in 0.84in;
+}
+
+
+._running-head ._section,
+._running-head ._book-name {
+	position: absolute;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-size: 0.55em;
+	z-index: 100;
+}
+
+._running-head ._section {
+	bottom: 0in;
+	width: 7.13in;
+	text-align: center;
+	/*text-decoration: underline;*/
+}
+
+._running-head ._section span {
+	border-bottom: 1px solid black;
+}
+
+/*[data-page-kind='interview'] ._running-head ._section span {
+	color: lime;
+	border-bottom: 1px solid lime;
+}*/
+
+._running-head ._book-name {
+	bottom: 0.6in;
+	display: none;
+}
+
+._running-head ._pagenum {
+	position: absolute;
+	bottom: 0.56in;
+	font-weight: normal;
+	font-size: 0.6em;
+	z-index: 100;
+}
+
+._recto ._running-head ._pagenum {
+	right: 0.32in;
+	-webkit-transform: rotate(90deg);
+}
+._verso ._running-head ._pagenum {
+	left: 0.29in;
+	-webkit-transform: rotate(-90deg);
+}
+
+._running-head ._footer {
+	bottom: .38in;
+	left: .625in;
+  	width: 3in;
+	position: absolute;
+	font-size: 0.6em;
+}
+
+._running-head ._footer i, ._book sup {
+	color: rgb(0,0,255);
+}
+
+._running-head ._headurl {
+	text-transform: none;
+	letter-spacing: 0.2pt;
+	font-size: 110%;
+	color: black;
+}
+
+._book sup {
+	font-size: 0.6em;
+	line-height: 0;
+}
+
+
+.page-inner._bleed {
+	padding: 0;
+}
+
+._verso ._running-head ._section {
+	/*text-align: right;*/
+} 
+
+._recto ._running-head ._section,
+._recto ._running-head ._book-name {
+	-webkit-transform-origin: top right;
+	-webkit-transform: rotate(90deg);
+	-moz-transform-origin: top right;
+	-moz-transform: rotate(90deg);
+	right: 0.28in;
+}
+
+._verso ._running-head ._section,
+._verso ._running-head ._book-name  {
+	-webkit-transform-origin: top left;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform-origin: top left;
+	-moz-transform: rotate(-90deg);
+	left: 0.28in;
+}
+
+
+/* ----------------------------------
+
+Footnotes
+
+----------------------------------*/
+
+footnote{
+  display: visible;
+}
+
+.page-outer > footnotes{
+  position: absolute;
+  bottom: 0.12in;
+  font-family: Messenger Mono;
+  font-size: 0.5rem;
+}
+.page-outer._recto > footnotes{
+  right: 0.5in;
+  text-align: right;
+}
+.page-outer._verso > footnotes{
+  left: 0.5in;
+  text-align: left;
+}
+
+/* ----------------------------------
+
+Book image spreads
+
+----------------------------------*/
+
+._book-content img {
+	display: block;
+	width: 100%;
+}
+
+/**/
+._book-spread-l,
+._book-spread-r {
+	height: 5in;
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+	/*outline: 1px solid red;*/
+	break-after: region;
+	box-sizing: content-box;
+}
+
+
+._bleed [data-fullbleed],
+._bleed [data-fullbleed] {
+	height: 7.13in !important; /* Sorry */
+	/*margin: -0.5em -0.5in;
+	padding: 0.5em 0.5in;*/
+}
+
+
+/*._book-spread-l figcaption {
+	position: absolute;
+	background: white;
+	bottom: 1in;
+	left: 1in;
+	font-size: 10pt;
+} */
+
+figcaption{
+  text-align: center;
+  font-size: 8.5pt;
+  padding: 1pc 0pc;
+  font-style: italic;
+}
+
+._book-spread-l > img,
+._book-spread-r > img {
+	position: absolute;
+	display: block;
+	/*outline: 1px solid orange;*/
+	top: 0;
+	width: 196%;
+	/* less than 200% to account for bleed and spine */
+}
+
+._book-spread-l {
+	/* padding-right: 0.5in; */
+}
+
+._book-spread-r {
+	/* padding-left: 0.5in;
+	margin-left: -0.5in; */
+	/* 'Undo' the inside margin */
+}
+
+._book-spread-l img {
+	left: 0;
+}
+
+._book-spread-r img {
+	right: 0;
+	text-align: right;
+=======
 /* Styling for book.html content in print.html layout - the html "print preview" */
 
 #content-source { /* Wrapper for all book content, pre-flow */

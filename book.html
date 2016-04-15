@@ -108,18 +108,19 @@ All Content
 
 <!-- Image -->
 {% for post in site.posts %}
-{% if post.content-type == 'image' %}
 
-<div class="content">
-  {{ post.date | date: "%m.%d.%Y" }}<br />
-  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
-  <img src="{{ post.imgurl }}" />
-  {{post.content}}
-</div>
+  {% if post.content-type == 'image' %}
 
-<div class="page-break"></div>
+  <div class="content">
+    {{ post.date | date: "%m.%d.%Y" }}<br />
+    <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+    <img src="{{ post.imgurl }}" />
+    {{post.content}}
+  </div>
 
-{% endif %}
+  <div class="page-break"></div>
+
+  {% endif %}
 {% endfor %}
 <div class="page-break"></div>
 <!-- After Images -->
@@ -129,16 +130,24 @@ All Content
 
 <!-- Interview -->
 {% for post in site.posts %}
-{% if post.content-type == 'interview' %}
+  {% if post.content-type == 'interview' %}
 
+<<<<<<< HEAD
 <div class="content interview" interviewee_initials="{{ post.interviewee_initials }}" interviewer_initials="{{ post.interviewer_initials }}">
   {{ post.date | date: "%m.%d.%Y" }}<br />
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
   {{post.content}}
 </div>
+=======
+  <div class="content interview" interviewee_initials="{{ page.interviewee_initials }}" interviewer_initials="{{ page.interviewer_initials }}">
+    {{ post.date | date: "%m.%d.%Y" }}<br />
+    <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+    {{post.content}}
+  </div>
+>>>>>>> origin/master
 
-<div class="page-break"></div>
-{% endif %}
+  <div class="page-break"></div>
+  {% endif %}
 {% endfor %}
 <div class="page-break"></div>
 <!-- After Interviews -->
@@ -148,16 +157,16 @@ All Content
 
 <!-- Blogpost -->
 {% for post in site.posts %}
-{% if post.content-type == 'blogpost' %}
+  {% if post.content-type == 'blogpost' %}
 
-<div class="content">
-  {{ post.date | date: "%m.%d.%Y" }}<br />
-  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
-  {{post.content}}
-</div>
+  <div class="content">
+    {{ post.date | date: "%m.%d.%Y" }}<br />
+    <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+    {{post.content}}
+  </div>
 
-<div class="page-break"></div>
-{% endif %}
+  <div class="page-break"></div>
+  {% endif %}
 {% endfor %}
 <div class="page-break"></div>
 <!-- After Blog Posts -->
