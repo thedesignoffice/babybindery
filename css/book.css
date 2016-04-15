@@ -8,5 +8,7 @@ body{
 
 .page-content{
   flow-from: toprint;
-  height: 500px;
+  height: 11.69in;
+  width: 8.26;
+  overflow-hidden;
 }

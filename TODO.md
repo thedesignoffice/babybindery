@@ -2,30 +2,29 @@
 
 ~~Get dummy content~~
 ~~Make basic templates~~
-- TOC filtering by category
+- TOC filtering by category/date/checkboxes
 - book.html page
 	- ~~pulls content~~
 	- ~~Title~~
 	- ~~Half-title~~
 	- ~~TOC~~
 	- book content, by content type
-- print.html (as in Jekyll layout for book.html)
+- print.html styling (as in Jekyll layout for book.html)
 - ~~adding print.css (media=“print”), separate from book.css (for web view of print preview)~~
 - figuring out what is needed from
 	- bindery.js
 	- book.js
-- investigating if these can revert to original 
-	- cssregions.js
-	- bindery-cssregions-polyfill.js
-- getting page-breaks working
+- ~~investigating if these can revert to original ~~
+	- ~~cssregions.js~~
+	- ~~bindery-cssregions-polyfill.js~~
+- ~~getting page-breaks working~~
+- Port “interview” to “conversation” w/Liquid Tags
+- Explore images in posts, “gallery” ability
+- Footnotes/Links
+- codifying semantic tag use
+- Columns
 
 ## ISSUES
 
 - quotes don't display correctly
-- images breaking in web version
-	- external links or everything internal? 
-
-## LATER
-- folio
-- links / footnotes
-- page layout details
+- external links or everything internal? 
