@@ -132,19 +132,12 @@ All Content
 {% for post in site.posts %}
   {% if post.content-type == 'interview' %}
 
-<<<<<<< HEAD
+
 <div class="content interview" interviewee_initials="{{ post.interviewee_initials }}" interviewer_initials="{{ post.interviewer_initials }}">
   {{ post.date | date: "%m.%d.%Y" }}<br />
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
   {{post.content}}
 </div>
-=======
-  <div class="content interview" interviewee_initials="{{ page.interviewee_initials }}" interviewer_initials="{{ page.interviewer_initials }}">
-    {{ post.date | date: "%m.%d.%Y" }}<br />
-    <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
-    {{post.content}}
-  </div>
->>>>>>> origin/master
 
   <div class="page-break"></div>
   {% endif %}
