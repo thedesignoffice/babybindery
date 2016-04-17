@@ -15,3 +15,4 @@ Fresco and lime painting
 Museum Appropriation Fund 38.058.9
 
 Depictions of luxurious villas are ubiquitous in Pompeian wall frescoes, where they were considered to be symbols of wealth and cultivation. Tiny vignettes, like this harbor scene, provided a secondary focal point within a larger mythological or narrative theme. These seemingly independent works were intended to generate scholarly and philosophical discussion among the villa guests, allowing the host to demonstrate his intellectual and cultural superiority. The seaside villa depicted in this panel would have been associated with prosperity, and thus identified with the leisurely and pleasurable activities of the elite.
+http://google.com is a url dropped into markdown.
