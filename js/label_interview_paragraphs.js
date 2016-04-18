@@ -24,7 +24,6 @@ for(var j=0; j<n_interviews;j++){
       // Now recombine newly wrapped initials.
       if(hyphen > 0){
         p_contents = "<span class='conversation-question'>"+initials+p_contents;+"</span>";
-        console.log("hyphen triggered");
       }else{
         p_contents = initials+p_contents;
       }
