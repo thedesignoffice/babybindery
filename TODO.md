@@ -18,7 +18,7 @@
 	- ~~cssregions.js~~
 	- ~~bindery-cssregions-polyfill.js~~
 - ~~getting page-breaks working~~
-- Port “interview” to “conversation” w/Liquid Tags
+- ~~Port “interview” to “conversation” w/Liquid Tags~~
 - Footnotes/Links
 - Semantic Tag use
 - Columns
@@ -35,3 +35,5 @@
 
 - quotes don't display correctly
 - external links or everything internal? (for images)
+- Multi-paragraph questions don’t work in conversations. 
+- Why not date sorted on front page ???
