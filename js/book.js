@@ -136,7 +136,7 @@ Bindery.beforeBind(function(){
   }
 });
 
-
+// CLS: we do this later
 
 
 
@@ -205,7 +205,7 @@ Bindery.afterBind({}, function(pg, state){
   }
 });
 
-
+// CLS: later
 
 
 
@@ -264,7 +264,7 @@ Bindery.afterBind({}, function(pg, state){
   }
 });
 
-
+// CLS: add later 
 
 
 
@@ -344,5 +344,5 @@ Bindery.afterBind({ head: "", headUrl: "", intervName: ""}, function(pg, state){
 
 });
 
-
+// CLS: do this later
 
