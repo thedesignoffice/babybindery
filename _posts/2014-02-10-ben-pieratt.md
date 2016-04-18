@@ -1,23 +1,23 @@
 ---
-layout: interview
+layout: conversation
 title: Ben Pieratt
 interviewer_initials: LTWP
 interviewee_initials: BP
 date: 2014-02-10
 
-content-type: interview
+content-type: conversation
 
 ---
 
-Thank you for joining me, um, basically I’ve been an internet fanboy of yours for a little while but other people in the class don’t know who you are. So if you could say who you are and what you do…?
+LTWP-q: Thank you for joining me, um basically I’ve been an internet fanboy of yours for a little while but other people in the class don’t know who you are. So if you could say who you are and what you do…?
 
-Noooooo
+BP: Noooooo
 
-no? ok start on what you’re doing this year then, internet land…
+LTWP-q: no? ok start on what you’re doing this year then, internet land…
 
-No i didn’t mean to be rude, I can do that. Could you give me a frame for this a little bit? So I can be as useful as I can? tell me a little more about the class and the context of this video.
+BP: No i didn’t mean to be rude, I can do that. Could you give me a frame for this a little bit? So I can be as useful as I can? tell me a little more about the class and the context of this video.
 
-So, this is for HTML Output at RISD here in Providence. It’s a class in the graphic design department taught by john caserta and the way he presented the class is basically we’re doing experimental web design, experimenting with what the browser can do and what the browser is as a tool. 
+LTWP-q: So, this is for HTML Output at RISD here in Providence. It’s a class in the graphic design department taught by john caserta and the way he presented the class is basically we’re doing experimental web design, experimenting with what the browser can do and what the browser is as a tool. 
 
 That’s rad. that sounds super cool.
 

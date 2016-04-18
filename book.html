@@ -128,12 +128,12 @@ All Content
 <h1>interviews</h1>
 <div class="page-break"></div>
 
-<!-- Interview -->
+<!-- Conversation -->
 {% for post in site.posts %}
-  {% if post.content-type == 'interview' %}
+  {% if post.content-type == 'conversation' %}
 
 
-<div class="content interview" interviewee_initials="{{ post.interviewee_initials }}" interviewer_initials="{{ post.interviewer_initials }}">
+<div class="content conversation">
   {{ post.date | date: "%m.%d.%Y" }}<br />
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
   {{post.content}}
@@ -143,7 +143,7 @@ All Content
   {% endif %}
 {% endfor %}
 <div class="page-break"></div>
-<!-- After Interviews -->
+<!-- After Conversations -->
 
 <h1>blog posts</h1>
 <div class="page-break"></div>

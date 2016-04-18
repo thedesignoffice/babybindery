@@ -1,11 +1,11 @@
 ---
-layout: interview
+layout: conversation
 title: Clyde Briant
 interviewer_initials: LTWP
 interviewee_initials: CB
 date: 2016-03-22
 
-content-type: interview
+content-type: conversation
 
 ---
 

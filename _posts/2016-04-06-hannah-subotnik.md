@@ -1,21 +1,19 @@
 ---
-layout: interview
+layout: conversation
 title: Hannah Subtonik
-interviewer_initials: LTWP
-interviewee_initials: HS
 date: 2015-04-06
 
-content-type: interview
+content-type: conversation
 
 ---
 
-Hello! Alright, great. uhh it is march 1st in providence, rhode island and my name is Lukas winklerprins and we’re here in Market House and I am interviewing 
+LTWP: Hello! Alright, great. uhh it is march 1st in providence, rhode island and my name is Lukas winklerprins and we’re here in Market House and I am interviewing 
 
-Hannah Subotnik
+HS: Hannah Subotnik
 
-thank you, and thanks for agreeing to do this. so, uhh, i guess the first question is: What do you identify as, at this point in your life?
+LTWP: thank you, and thanks for agreeing to do this. so, uhh, i guess the first question is: What do you identify as, at this point in your life?
 
-Mmmm, a girl, [laughs], I guess an artist, although I’m not sure. I know I want to be an artist. I want to be someone who is an active thinker, someone who is excited by things and the world. 
+HS: Mmmm, a girl, [laughs], I guess an artist, although I’m not sure. I know I want to be an artist. I want to be someone who is an active thinker, someone who is excited by things and the world. 
 
 OK
 
