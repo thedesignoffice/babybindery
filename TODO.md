@@ -19,10 +19,11 @@
 	- ~~bindery-cssregions-polyfill.js~~
 - ~~getting page-breaks working~~
 - Port “interview” to “conversation” w/Liquid Tags
-- Explore images in posts, “gallery” ability
 - Footnotes/Links
 - codifying semantic tag use
 - Columns
+
+- Explore images in posts, “gallery” ability
 
 ## ISSUES
 
