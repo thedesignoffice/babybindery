@@ -8,9 +8,4 @@ body{
 
 .page-content{
   flow-from: toprint;
-  height: 7in;
-  width: 4.5in;
-  overflow: hidden;
-  margin: 0.5in auto;
-  border: 1px solid blue;
 }

@@ -1,13 +1,11 @@
 /* Use this document for things that should _only_ happen once you hit print. Much can be done in book.css which will apply in-browser and in-print. */
 
 .page-break{
-  page-break-after: always;
+  xpage-break-after: always;
 }
 
 @page {size: auto;  margin: 0mm;} /* This hides typical URL/Date/Page stuff added by default print styling. All content, full-bleed, baby. */
 
-#content-source{ width: 100%; }
-
 .page-content{
-  page-break-after: always;
+  xpage-break-after: always;
 }

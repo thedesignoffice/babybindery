@@ -22,6 +22,7 @@
 - Footnotes/Links
 - Semantic Tag use
 - Columns
+- get page breaks to look right in book.html 
 
 ## Later…
 
