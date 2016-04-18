@@ -17,12 +17,10 @@
     </div>
 
     <div id="pages">
+      <!-- Use Jekyll to make 100 pages, to be trimmed later. -->
+      {% for num in (1...100) %}
       <div class='page-content'></div>
-      <div class='page-content'></div>
-      <div class='page-content'></div>
-      <div class='page-content'></div>
-      <div class='page-content'></div>
-      <div class='page-content'></div>
+      {% endfor %}
     </div>
 
     {% include label_interview_paragraphs.html %} <!-- Needs to happen after content is dropped in. -->
