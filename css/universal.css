@@ -25,3 +25,7 @@ p{
 .initials{
   font-family: monospace;
 }
+
+.conversation-question{ /* For Conversation Questions, denoted [INITIALS]-q in post files. */
+  font-weight: bold;
+}

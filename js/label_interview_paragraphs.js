@@ -1,17 +1,34 @@
 var n_interviews = $(".interview").length;
 for(var j=0; j<n_interviews;j++){
   var chosen_interview = $(".interview").eq(j);
+
   var n_paragraphs = chosen_interview.children("p").length;
 
-  // Grab initials from attributes in .interview div.
-  var interviewer_initials = chosen_interview.attr("interviewer_initials");
-  var interviewee_initials = chosen_interview.attr("interviewee_initials");
   for(var i=0; i<n_paragraphs; i++){
-    if(i%2==0){
-      chosen_interview.children("p").eq(i).prepend("<span class='initials'>"+interviewer_initials+": </span>");
-    }else{
-      chosen_interview.children("p").eq(i).prepend("<span class='initials'>"+interviewee_initials+": </span>");
+    var chosen_p = chosen_interview.children("p").eq(i);
+    var colon_index = chosen_p.html().indexOf(":");
+    if(colon_index > 0 && colon_index < 7){
+      // If there's a colon in first 7 characters (assuming initials smaller than that...)
+      // If your speaker initials exceed 7 characters, adjust that number there.
+      var p_contents = chosen_p.html();
+      var initials = p_contents.slice(0,colon_index+1); // Slice up html based on where this early colon is. Include the colon!
+      p_contents = p_contents.substr(colon_index+1,p_contents.length); // The +1 gets the space after the colon.
+
+      var hyphen = initials.indexOf("-q");
+      if(hyphen > 0){ // If there is a -q in the initials, i.e. it is a QUESTION
+        initials = initials.slice(0,hyphen) +":"; // Remove the "-q:", add colon back on.
+      }
+
+      initials = "<span class='question'><span class='initials'>"+initials+"</span>";
+
+      // Now recombine newly wrapped initials.
+      if(hyphen > 0){
+        p_contents = "<span class='conversation-question'>"+initials+p_contents;+"</span>";
+        console.log("hyphen triggered");
+      }else{
+        p_contents = initials+p_contents;
+      }
+      chosen_p.html(p_contents); // Plop it into the paragraph.
     }
-    // chosen_interview just alternates paragraph labeling, assuming the interviewer goes first... probably need a way to toggle chosen_interview. And make it smarter, if there are <p>s elsewhere in the page.
   }
 }
