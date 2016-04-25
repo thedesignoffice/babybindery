@@ -12,12 +12,12 @@ The contents of this page are loaded into the print.html layout.
 <div class="blank">
   Page intentionally left blank.
 </div>
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 
 <div class="blank">
   Page intentionally left blank.
 </div>
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 
 
 <!-- Half Title Page -->
@@ -25,19 +25,19 @@ The contents of this page are loaded into the print.html layout.
   <h2>{{ site.title }}</h2>
   <p>Half Title Page</p>
 </div>
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 
 <!-- Blank Page -->
 <div class="blank">
   Page intentionally left blank.
 </div>
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 
 
 <!-- Title Page -->
 <h1>{{ site.title }}</h1>
 <p>Title Page<p>
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 
 
 <!-- Front Matter... ish -->
@@ -45,10 +45,10 @@ The contents of this page are loaded into the print.html layout.
   {{page.content}}
   {% endif %}{% endfor %}
 </p>
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 
 <p><em>{{ page.subtitle }}</em></p>
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 
 
 <!-- Table of Contents -->
@@ -61,7 +61,7 @@ The contents of this page are loaded into the print.html layout.
   </li>
   {% endfor %}
 </ul>
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 
 <!-- All Content, by content type. -->
 
@@ -69,7 +69,7 @@ The contents of this page are loaded into the print.html layout.
 
 
 <h1>images</h1>
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 
 
 <!-- Image -->
@@ -83,15 +83,15 @@ The contents of this page are loaded into the print.html layout.
   <img src="{{ post.imgurl }}" />
   {{post.content}}
 </div>
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 {% endif %}
 {% endfor %}
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 
 <!-- /Image -->
 
 <h1>interviews</h1>
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 
 <!-- Conversation -->
 {% for post in site.posts %}
@@ -103,15 +103,15 @@ The contents of this page are loaded into the print.html layout.
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
   {{post.content}}
 </div>
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 {% endif %}
 {% endfor %}
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 
 <!-- /Conversation -->
 
 <h1>blog posts</h1>
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 
 <!-- Blogpost -->
 {% for post in site.posts %}
@@ -122,8 +122,8 @@ The contents of this page are loaded into the print.html layout.
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
   {{post.content}}
 </div>
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 {% endif %}
 {% endfor %}
-<!--<div class="page-break"></div>-->
+<div class="page-break"></div>
 <!-- /Blogpost -->
