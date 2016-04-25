@@ -1,11 +1,13 @@
-var n_interviews = $(".interview").length;
-for(var j=0; j<n_interviews;j++){
-  var chosen_interview = $(".interview").eq(j);
+var n_conversations = $(".conversation").length;
+console.log("There are "+n_conversations+" conversations.");
+for(var j=0; j<n_conversations;j++){
+  var chosen_conversation = $(".conversation").eq(j);
 
-  var n_paragraphs = chosen_interview.children("p").length;
+  var n_paragraphs = chosen_conversation.children("p").length;
+  console.log("There are "+n_paragraphs+" paragraphs in conversation "+j+".");
 
   for(var i=0; i<n_paragraphs; i++){
-    var chosen_p = chosen_interview.children("p").eq(i);
+    var chosen_p = chosen_conversation.children("p").eq(i);
     var colon_index = chosen_p.html().indexOf(":");
     if(colon_index > 0 && colon_index < 7){
       // If there's a colon in first 7 characters (assuming initials smaller than that...)
