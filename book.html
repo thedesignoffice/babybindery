@@ -7,11 +7,17 @@ This is a display of content in preparation for print.
 The contents of this page are loaded into the print.html layout.
 -->
 
-<!-- Blank Page -->
-<div class="blank-page"></div>
+<!-- 2 Blank Pages -->
 
-<!-- Blank Page -->
-<div class="blank-page"></div>
+<div class="blank">
+  Page intentionally left blank.
+</div>
+<!--<div class="page-break"></div>-->
+
+<div class="blank">
+  Page intentionally left blank.
+</div>
+<!--<div class="page-break"></div>-->
 
 
 <!-- Half Title Page -->
@@ -19,77 +25,77 @@ The contents of this page are loaded into the print.html layout.
   <h2>{{ site.title }}</h2>
   <p>Half Title Page</p>
 </div>
-
+<!--<div class="page-break"></div>-->
 
 <!-- Blank Page -->
-<div class="blank-page"></div>
+<div class="blank">
+  Page intentionally left blank.
+</div>
+<!--<div class="page-break"></div>-->
 
 
 <!-- Title Page -->
-<div class="front-page">
-  <h1>{{ site.title }}</h1>
-  <p>Title Page<p>
-
-</div>
+<h1>{{ site.title }}</h1>
+<p>Title Page<p>
+<!--<div class="page-break"></div>-->
 
 
 <!-- Front Matter... ish -->
-<div class="front-page">
-  <p>{% for page in site.pages %}{% if page.category == 'credits' %}
-    {{page.content}}
-    {% endif %}{% endfor %}
-  </p>
-</div>
+<p>{% for page in site.pages %}{% if page.category == 'credits' %}
+  {{page.content}}
+  {% endif %}{% endfor %}
+</p>
+<!--<div class="page-break"></div>-->
 
-<div class="front-page">
-  <p><em>{{ page.subtitle }}</em></p>
-</div>
+<p><em>{{ page.subtitle }}</em></p>
+<!--<div class="page-break"></div>-->
 
 
 <!-- Table of Contents -->
-<div class="front-page">
-  <h1>Table of Contents</h1>
-  <ul>
-    {% for post in site.posts %}
-    <li>
-      <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
-      {{ post.content-type }}: {{ post.title }}
-    </li>
-    {% endfor %}
-  </ul>
-</div>
+<h1>Table of Contents</h1>
+<ul>
+  {% for post in site.posts %}
+  <li>
+    <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
+    {{ post.content-type }}: {{ post.title }}
+  </li>
+  {% endfor %}
+</ul>
+<!--<div class="page-break"></div>-->
 
 <!-- All Content, by content type. -->
 
 <!--If we want, do a loop through types here...? -->
 
-<div class="front-page">
-  <h1>images</h1>
-</div>
+
+<h1>images</h1>
+<!--<div class="page-break"></div>-->
 
 
 <!-- Image -->
 {% for post in site.posts %}
 
-  {% if post.content-type == 'image' %}
+{% if post.content-type == 'image' %}
 
-  <div class="content image">
-    {{ post.date | date: "%m.%d.%Y" }}<br />
-    <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
-    <img src="{{ post.imgurl }}" />
-    {{post.content}}
-  </div>
-
-  {% endif %}
-{% endfor %}
-<!-- /Image -->
-<div class="front-page">
-  <h1>interviews</h1>
+<div class="content image">
+  {{ post.date | date: "%m.%d.%Y" }}<br />
+  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+  <img src="{{ post.imgurl }}" />
+  {{post.content}}
 </div>
+<!--<div class="page-break"></div>-->
+{% endif %}
+{% endfor %}
+<!--<div class="page-break"></div>-->
+
+<!-- /Image -->
+
+<h1>interviews</h1>
+<!--<div class="page-break"></div>-->
 
 <!-- Conversation -->
 {% for post in site.posts %}
-  {% if post.content-type == 'conversation' %}
+{% if post.content-type == 'conversation' %}
 
 
 <div class="content conversation">
@@ -97,24 +103,27 @@ The contents of this page are loaded into the print.html layout.
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
   {{post.content}}
 </div>
-  {% endif %}
+<!--<div class="page-break"></div>-->
+{% endif %}
 {% endfor %}
+<!--<div class="page-break"></div>-->
+
 <!-- /Conversation -->
 
-<div class="front-page">
-  <h1>blog posts</h1>
-</div>
+<h1>blog posts</h1>
+<!--<div class="page-break"></div>-->
 
 <!-- Blogpost -->
 {% for post in site.posts %}
-  {% if post.content-type == 'blogpost' %}
+{% if post.content-type == 'blogpost' %}
 
-  <div class="content blogpost">
-    {{ post.date | date: "%m.%d.%Y" }}<br />
-    <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
-    {{post.content}}
-  </div>
-
-  {% endif %}
+<div class="content blogpost">
+  {{ post.date | date: "%m.%d.%Y" }}<br />
+  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+  {{post.content}}
+</div>
+<!--<div class="page-break"></div>-->
+{% endif %}
 {% endfor %}
+<!--<div class="page-break"></div>-->
 <!-- /Blogpost -->

@@ -17,6 +17,10 @@ body{
 .page-content{
   /* Regions container. */
   flow-from: toprint;
-  xmargin: 1in; /* margin & padding only seem to work on the sides in regions.  */
-  xheight: 9in; /* This just serves to split up the CSS regions flow.  */
+  margin: 0in 1in; /* margin & padding only seem to work on the sides in regions.  */
+  height: 5in; /* This just serves to split up the CSS regions flow. BREAKS SHIT. */
+}
+
+.blank{
+  visibility: hidden;
 }
