@@ -1,9 +1,9 @@
 ---
 layout: conversation
 title: Clyde Briant
+date: 2016-03-22
 interviewer_initials: LTWP
 interviewee_initials: CB
-date: 2016-03-22
 
 content-type: conversation
 
