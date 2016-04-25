@@ -1,3 +1,7 @@
+/* CSS to format the /book.html page, which uses print.html layout file. */
+/* BE AWARE: THIS FORMATTING IS BROUGHT INTO THE PRINT TOO... */
+/* For changes _only_ needed for printed document, use print.css. */
+
 body{
   background: white;
 }
@@ -6,6 +10,17 @@ body{
   flow-into: toprint;
 }
 
+#pages{
+  /* Container for page-content divs. */
+}
+
 .page-content{
+  /* Regions container. */
   flow-from: toprint;
+  margin: 0in 1in; /* margin & padding only seem to work on the sides in regions.  */
+  height: 5in; /* This just serves to split up the CSS regions flow. BREAKS SHIT. */
+}
+
+.blank{
+  visibility: hidden;
 }
