@@ -5,4 +5,8 @@ for(var i=0;i<n_pages;i++){
     chosen_page.remove();
     console.log("Removed page "+i);
   }
+  if(chosen_page.html() == ""){
+    chosen_page.remove();
+    console.log("Removed page "+i);
+  }
 }
