@@ -2,131 +2,90 @@
 layout: print
 ---
 
-
-
 <!--
 This is a display of content in preparation for print.
 The contents of this page are loaded into the print.html layout.
 -->
 
-<!--
-____________________________________________________
+<!-- Blank Page -->
+<div class="blank-page"></div>
 
-Blank Page
--->
-
-<div class="page-break"></div>
+<!-- Blank Page -->
+<div class="blank-page"></div>
 
 
-<!--
-____________________________________________________
-
-Blank Page
--->
-<div class="page-break"></div>
-
-
-<!--
-____________________________________________________
-
-Half Title Page
--->
-<div class="halftitle-page">
+<!-- Half Title Page -->
+<div class="front-page">
   <h2>{{ site.title }}</h2>
   <p>Half Title Page</p>
 </div>
-<div class="page-break"></div>
 
 
-<!--
-____________________________________________________
-
-Blank Page
--->
-<div class="page-break"></div>
+<!-- Blank Page -->
+<div class="blank-page"></div>
 
 
-<!--
-____________________________________________________
-
-Title Page
--->
-<div class="title-page">
+<!-- Title Page -->
+<div class="front-page">
   <h1>{{ site.title }}</h1>
   <p>Title Page<p>
 
 </div>
-<div class="page-break"></div>
 
 
-<!--
-____________________________________________________
-
-Front Matter, maybe?
--->
-<div class="title-page copyright">
+<!-- Front Matter... ish -->
+<div class="front-page">
   <p>{% for page in site.pages %}{% if page.category == 'credits' %}
     {{page.content}}
-    {% endif %}{% endfor %}</p>
+    {% endif %}{% endfor %}
+  </p>
 </div>
-<div class="page-break"></div>
-<p><em>{{ page.subtitle }}</em></p>
-<div class="page-break"></div>
+
+<div class="front-page">
+  <p><em>{{ page.subtitle }}</em></p>
+</div>
 
 
-<!--
-____________________________________________________
+<!-- Table of Contents -->
+<div class="front-page">
+  <h1>Table of Contents</h1>
+  <ul>
+    {% for post in site.posts %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
+      {{ post.content-type }}: {{ post.title }}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
 
-Table of Contents
--->
-
-
-
-<h1>Table of Contents</h1>
-<ul>
-  {% for post in site.posts %}
-  <li>
-    <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
-    {{ post.content-type }}: {{ post.title }}
-  </li>
-  {% endfor %}
-</ul>
-
-
-<div class="page-break"></div>
-
-<!--
-____________________________________________________
-
-All Content
--->
+<!-- All Content, by content type. -->
 
 <!--If we want, do a loop through types here...? -->
 
-<h1>images</h1>
-<div class="page-break"></div>
+<div class="front-page">
+  <h1>images</h1>
+</div>
+
 
 <!-- Image -->
 {% for post in site.posts %}
 
   {% if post.content-type == 'image' %}
 
-  <div class="content">
+  <div class="content image">
     {{ post.date | date: "%m.%d.%Y" }}<br />
     <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
     <img src="{{ post.imgurl }}" />
     {{post.content}}
   </div>
 
-  <div class="page-break"></div>
-
   {% endif %}
 {% endfor %}
-<div class="page-break"></div>
-<!-- After Images -->
-
-<h1>interviews</h1>
-<div class="page-break"></div>
+<!-- /Image -->
+<div class="front-page">
+  <h1>interviews</h1>
+</div>
 
 <!-- Conversation -->
 {% for post in site.posts %}
@@ -138,28 +97,24 @@ All Content
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
   {{post.content}}
 </div>
-
-  <div class="page-break"></div>
   {% endif %}
 {% endfor %}
-<div class="page-break"></div>
-<!-- After Conversations -->
+<!-- /Conversation -->
 
-<h1>blog posts</h1>
-<div class="page-break"></div>
+<div class="front-page">
+  <h1>blog posts</h1>
+</div>
 
 <!-- Blogpost -->
 {% for post in site.posts %}
   {% if post.content-type == 'blogpost' %}
 
-  <div class="content">
+  <div class="content blogpost">
     {{ post.date | date: "%m.%d.%Y" }}<br />
     <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
     {{post.content}}
   </div>
 
-  <div class="page-break"></div>
   {% endif %}
 {% endfor %}
-<div class="page-break"></div>
-<!-- After Blog Posts -->
+<!-- /Blogpost -->

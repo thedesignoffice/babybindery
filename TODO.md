@@ -36,5 +36,4 @@
 
 - quotes don't display correctly
 - external links or everything internal? (for images)
-- Multi-paragraph questions don’t work in conversations. 
 - Why not date sorted on front page ???
