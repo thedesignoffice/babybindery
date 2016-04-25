@@ -30,10 +30,12 @@
 - Load images before doing polyfill. 
 - Work w/Image Bleeds
 - Running headers
-- Trimming empty pages. 
+- ~~Trimming empty pages.~~
 
 ## ISSUES
 
 - quotes don't display correctly
 - external links or everything internal? (for images)
 - Why not date sorted on front page ???
+- CONTENT OVERLAPPING SHIT…
+- Page trim needs to be done asynchronously, at very end… 
