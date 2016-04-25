@@ -18,7 +18,7 @@ body{
   /* Regions container. */
   flow-from: toprint;
   margin: 0in 1in; /* margin & padding only seem to work on the sides in regions.  */
-  height: 10in; /* This just serves to split up the CSS regions flow. BREAKS IF YOU MAKE IT 11" LOL */
+  height: 9in; /* This just serves to split up the CSS regions flow. BREAKS IF YOU MAKE IT 11" LOL */
 }
 
 .blank{

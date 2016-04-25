@@ -1,10 +1,8 @@
 var n_conversations = $(".conversation").length;
-console.log("There are "+n_conversations+" conversations.");
 for(var j=0; j<n_conversations;j++){
   var chosen_conversation = $(".conversation").eq(j);
 
   var n_paragraphs = chosen_conversation.children("p").length;
-  console.log("There are "+n_paragraphs+" paragraphs in conversation "+j+".");
 
   for(var i=0; i<n_paragraphs; i++){
     var chosen_p = chosen_conversation.children("p").eq(i);
