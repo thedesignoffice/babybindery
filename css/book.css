@@ -29,5 +29,6 @@ body{
 .content{ /* Divs that contain everything coming through book.html */
 }
 
-.page-break{
+.blank{
+  visibility: hidden;
 }

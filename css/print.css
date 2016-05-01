@@ -4,10 +4,6 @@
 /* This hides typical URL/Date/Page stuff added by default print styling. All content, full-bleed, baby. */
 /* Margins, then, are coming from... uh... somewhere else. */
 
-.page-break{
-  page-break-after: always;
-}
-
 .page-content{
   page-break-after: always;
 }
