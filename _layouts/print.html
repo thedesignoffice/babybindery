@@ -16,14 +16,18 @@
     <div id="content-source">
       {{ content }}
     </div>
-    <!-- Use Jekyll to make 100 pages, to be trimmed later. -->
-    {% for num in (1...100) %}
-    <div class='page-content'></div>
-    {% endfor %}
+
+    <div id="pages">
+      <!-- Use Jekyll to make 100 pages, to be trimmed later. -->
+      {% for num in (1...100) %}
+      <div class='page-content'></div>
+      {% endfor %}
+    </div>
+
 
     {% include label_interview_paragraphs.html %} <!-- Needs to happen after content is dropped in. -->
 
-     {% include remove_empty_pages.html %}
+     <!-- {% include remove_empty_pages.html %} --> <!-- This doesn't seem to work yet. Maybe synchronicity problem. -->
   </body>
 
 </html>

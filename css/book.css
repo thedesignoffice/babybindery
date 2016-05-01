@@ -4,7 +4,7 @@
 
 body{
   background: white;
-  width: 8.5in;
+  width: 8.4in; /* Just shy of 8.5 to avoid problems */
 }
 
 #content-source{
@@ -15,11 +15,15 @@ body{
   /* Regions container. */
   flow-from: toprint;
   /* margin & padding only seem to work on the sides in regions.  */
-  height: 11in; /* This just serves to split up the CSS regions flow. */
+  height: 8.5in; /* This just serves to split up the CSS regions flow. */
+
+  /* Now some white space around pages... */
+  margin-top: 1in;
+  margin-bottom: 1in;
 }
 
-.blank{
-  visibility: hidden;
+#pages{ /* Container for all .page-content divs */
+  margin: 0in 0.5in;
 }
 
 .content{ /* Divs that contain everything coming through book.html */
