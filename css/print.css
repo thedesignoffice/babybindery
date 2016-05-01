@@ -7,3 +7,7 @@
 .page-break{
   page-break-after: always;
 }
+
+.blank{
+  visibility: visible;
+}

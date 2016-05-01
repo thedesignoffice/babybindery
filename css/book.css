@@ -4,25 +4,25 @@
 
 body{
   background: white;
+  width: 8.5in;
 }
 
 #content-source{
   flow-into: toprint;
 }
 
-#pages{
-  /* Container for page-content divs. */
-}
-
 .page-content{
   /* Regions container. */
   flow-from: toprint;
-  margin: 0in 1in; /* margin & padding only seem to work on the sides in regions.  */
-  height: 800px; /* This just serves to split up the CSS regions flow. */
+  /* margin & padding only seem to work on the sides in regions.  */
+  height: 11in; /* This just serves to split up the CSS regions flow. */
 }
 
 .blank{
   visibility: hidden;
+}
+
+.content{ /* Divs that contain everything coming through book.html */
 }
 
 .page-break{
