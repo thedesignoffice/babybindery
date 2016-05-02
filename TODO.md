@@ -37,5 +37,5 @@
 - quotes don't display correctly
 - external links or everything internal? (for images)
 - Why not date sorted on front page ???
-- CONTENT OVERLAPPING SHIT…
+- ~~CONTENT OVERLAPPING SHIT…~~
 - Page trim needs to be done asynchronously, at very end… 
