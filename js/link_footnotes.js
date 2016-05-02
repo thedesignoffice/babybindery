@@ -1,3 +1,4 @@
+/*
 var write_footnotes = function(){
 
   var pages = $('.page');
@@ -5,6 +6,8 @@ var write_footnotes = function(){
     var pg = pages.eq(i);
 
     var links = pg.children('a');
+    if(links.length != 0){
+      console.log(links.length+' links on page '+i);
 
     //console.log('There are '+links.length+' links on page '+i);
 
@@ -21,7 +24,7 @@ var write_footnotes = function(){
 
     }
   }
-}
+} */
 
 /*
 
