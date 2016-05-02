@@ -64,7 +64,32 @@ The contents of this page are loaded into the print.html layout.
   Page intentionally left blank.
 </div>
 
-<h1>images</h1>
+<div class="content conversation">
+  <h1>conversations</h1>
+</div>
+
+<!-- Conversation -->
+{% for post in site.posts %}
+{% if post.content-type == 'conversation' %}
+
+<div class="content conversation">
+  {{ post.date | date: "%m.%d.%Y" }}<br />
+  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+  {{post.content}}
+</div>
+
+{% endif %}
+{% endfor %}
+<!-- /Conversation -->
+
+<!-- Blank Page -->
+<div class="blank">
+  Page intentionally left blank.
+</div>
+
+<div class="content image">
+  <h1>images</h1>
+</div>
 
 <!-- Image -->
 {% for post in site.posts %}
@@ -86,29 +111,9 @@ The contents of this page are loaded into the print.html layout.
   Page intentionally left blank.
 </div>
 
-<h1>conversations</h1>
-
-
-<!-- Conversation -->
-{% for post in site.posts %}
-{% if post.content-type == 'conversation' %}
-
-<div class="content conversation">
-  {{ post.date | date: "%m.%d.%Y" }}<br />
-  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
-  {{post.content}}
+<div class="content blogpost">
+  <h1>blog posts</h1>
 </div>
-
-{% endif %}
-{% endfor %}
-<!-- /Conversation -->
-
-<!-- Blank Page -->
-<div class="blank">
-  Page intentionally left blank.
-</div>
-
-<h1>blog posts</h1>
 
 <!-- Blogpost -->
 {% for post in site.posts %}

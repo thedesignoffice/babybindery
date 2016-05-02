@@ -20,6 +20,7 @@ body{
   /* Now some white space around pages... */
   margin-top: 1in;
   margin-bottom: 1in;
+  border: 1px solid blue;
 }
 
 #pages{ /* Container for all .page-content divs */
@@ -30,6 +31,6 @@ body{
 }
 
 .blank{
-  visibility: hidden;
+  visibility: hidden; /* hiding any mystery content, just takin up space. */
   height: 8.5in;
 }

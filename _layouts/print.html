@@ -11,7 +11,17 @@
     {% include regions_js.html %} <!-- See https://github.com/FremyCompany/css-regions-polyfill -->
   </head>
 
+
+
   <body>
+
+    <div class="noprint">
+      {% for content-type in site.types %}
+      <input type="checkbox" id="checkbox-{{content-type}}" /> {{ content-type }}<br />
+      {% endfor %}
+    </div>
+
+
     <!-- ostensibly just pulling in book.html -->
     <div id="content-source">
       {{ content }}
@@ -27,7 +37,9 @@
 
     {% include label_interview_paragraphs.html %} <!-- Needs to happen after content is dropped in. -->
 
-     <!-- {% include remove_empty_pages.html %} --> <!-- This doesn't seem to work yet. Maybe synchronicity problem. -->
+    <!-- {% include remove_empty_pages.html %} --> <!-- This doesn't seem to work yet. Maybe synchronicity problem. -->
+
+    {% include checkboxes.html %}
   </body>
 
 </html>
