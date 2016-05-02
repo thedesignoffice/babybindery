@@ -21,7 +21,7 @@
 - ~~Port “interview” to “conversation” w/Liquid Tags~~
 - Footnotes/Links. (incl. running headers)
 - Semantic Tag use
-- Grouping Pages & Footnotes for easier manipulation. 
+- ~~Grouping Pages & Footnotes for easier manipulation~~ 
 - Columns
 - ~~get page breaks to look right in book.html~~
 - Polish page trim (pages & footers together)

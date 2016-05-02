@@ -15,7 +15,9 @@ body{
   margin: 0in 0.5in;
 }
 .page{ /* container for each .page-content and .page-footer */
-  border: 1px solid blue;
+  xborder: 1px solid blue;
+
+  /* Now some white space around pages... */
   margin-top: 0.75in;
   margin-bottom: 0.75in;
 }
@@ -25,15 +27,10 @@ body{
   /* margin & padding only seem to work on the sides in regions.  */
   flow-from: toprint;
   height: 8in; /* This just serves to split up the CSS regions flow. */
-
-  /* Now some white space around pages... */
 }
 .page-footer{
-  height: 1in;
-  border-top: 1px solid blue;
+  height: 0.75in;
 }
-
-
 
 .content{ /* Divs that contain everything coming through book.html */
   break-after: always;

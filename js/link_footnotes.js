@@ -1,6 +1,6 @@
 var write_footnotes = function(){
 
-  var pages = $('.page-content');
+  var pages = $('.page');
   for (var i = 0; i < pages.length; i++) {
     var pg = pages.eq(i);
 
