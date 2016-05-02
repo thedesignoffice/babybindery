@@ -28,6 +28,7 @@
 - ~~Polish page trim (pages & footers together)~~
 
 ## Later…
+- Nice Docs with microsite
 - Load images before doing polyfill. 
 - ~~Trimming empty pages.~~
 
