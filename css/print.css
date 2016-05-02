@@ -7,3 +7,7 @@
 .page-content{
   page-break-after: always;
 }
+
+.noprint{ /* HANDY FOR MAKIN STUFF THAT SHOULDN'T PRINT! */
+  display: none;
+}

@@ -31,6 +31,6 @@ body{
 }
 
 .blank{
-  visibility: hidden;
+  visibility: hidden; /* hiding any mystery content, just takin up space. */
   height: 8.5in;
 }
