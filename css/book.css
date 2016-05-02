@@ -11,26 +11,32 @@ body{
   flow-into: toprint;
 }
 
+#pages{ /* Container for all .page-content divs */
+  margin: 0in 0.5in;
+}
+.page{ /* container for each .page-content and .page-footer */
+  border: 1px solid blue;
+  margin-top: 0.75in;
+  margin-bottom: 0.75in;
+}
+
 .page-content{
   /* Regions container. */
   /* margin & padding only seem to work on the sides in regions.  */
   flow-from: toprint;
-  height: 8.5in; /* This just serves to split up the CSS regions flow. */
+  height: 8in; /* This just serves to split up the CSS regions flow. */
 
   /* Now some white space around pages... */
-  margin-top: 1in;
-  margin-bottom: 0.25in; /* Leave room for footer. */
-  border: 1px solid blue;
 }
 .page-footer{
   height: 1in;
+  border-top: 1px solid blue;
 }
 
-#pages{ /* Container for all .page-content divs */
-  margin: 0in 0.5in;
-}
+
 
 .content{ /* Divs that contain everything coming through book.html */
+  break-after: always;
 }
 
 .blank{
