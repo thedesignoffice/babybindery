@@ -2,7 +2,7 @@
 
 ~~Get dummy content~~
 ~~Make basic templates~~
-- TOC filtering by category/date/checkboxes
+- ~~TOC filtering by category/date/checkboxes~~
 - book.html page
 	- ~~pulls content~~
 	- ~~Title~~

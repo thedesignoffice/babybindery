@@ -13,14 +13,17 @@ body{
 
 .page-content{
   /* Regions container. */
-  flow-from: toprint;
   /* margin & padding only seem to work on the sides in regions.  */
+  flow-from: toprint;
   height: 8.5in; /* This just serves to split up the CSS regions flow. */
 
   /* Now some white space around pages... */
   margin-top: 1in;
-  margin-bottom: 1in;
+  margin-bottom: 0.25in; /* Leave room for footer. */
   border: 1px solid blue;
+}
+.page-footer{
+  height: 1in;
 }
 
 #pages{ /* Container for all .page-content divs */
@@ -33,4 +36,9 @@ body{
 .blank{
   visibility: hidden; /* hiding any mystery content, just takin up space. */
   height: 8.5in;
+}
+
+sup{
+  font-size: 6px;
+  font-family: monospace;
 }

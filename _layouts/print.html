@@ -11,13 +11,11 @@
     {% include regions_js.html %} <!-- See https://github.com/FremyCompany/css-regions-polyfill -->
   </head>
 
-
-
   <body>
 
     <div class="noprint">
       {% for content-type in site.types %}
-      <input type="checkbox" id="checkbox-{{content-type}}" /> {{ content-type }}<br />
+      <input type="checkbox" id="checkbox-{{content-type}}" />{{ content-type }}<br />
       {% endfor %}
     </div>
 
@@ -31,15 +29,15 @@
       <!-- Use Jekyll to make 100 pages, to be trimmed later. -->
       {% for num in (1...100) %}
       <div class='page-content'></div>
+      <div class='page-footer'>{{ num }}</div>
       {% endfor %}
     </div>
 
 
     {% include label_interview_paragraphs.html %} <!-- Needs to happen after content is dropped in. -->
+    {% include checkboxes.html %}
 
     <!-- {% include remove_empty_pages.html %} --> <!-- This doesn't seem to work yet. Maybe synchronicity problem. -->
-
-    {% include checkboxes.html %}
   </body>
 
 </html>

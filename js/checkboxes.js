@@ -13,16 +13,17 @@ function refreshContent(){
   for(var i=0; i<n_checkboxes;i++){
     var n_checked = checked_contents.length;
     if($('input[type=checkbox]').eq(i).is(':checked')){
-
       // Slice off the "checkbox-" prefix in id attribute.
       checked_contents[n_checked] = $('input[type=checkbox]').eq(i).attr('id').slice(9,$('input[type=checkbox]').eq(i).attr('id').length);
     }
   }
-
   $('.content').css('display','none');
 
+  console.log(checked_contents);
+  console.log(n_checked);
   for(var j=0;j<n_checked;j++){
     $('.content.'+checked_contents[j]).css('display','block');
+    console.log('Flowing in '+checked_contents[j]+' contents.');
   }
 }
 

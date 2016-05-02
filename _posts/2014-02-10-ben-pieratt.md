@@ -11,7 +11,7 @@ content-type: conversation
 
 LTWP-q: Thank you for joining me, um basically I’ve been an internet fanboy of yours for a little while but other people in the class don’t know who you are. So if you could say who you are and what you do…?
 
-BP: Noooooo
+BP: Noooooo. [THIS IS A FAKE LINK](http://pieratt.com)
 
 LTWP-q: no? ok start on what you’re doing this year then, internet land…
 
