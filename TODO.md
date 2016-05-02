@@ -26,13 +26,12 @@
 - Columns
 - ~~get page breaks to look right in book.html~~
 - ~~Polish page trim (pages & footers together)~~
+- Trimming empty pages.
 
 ## Later…
 - Nice Docs with microsite
-- Load images before doing polyfill. 
-- ~~Trimming empty pages.~~
-
-## ISSUES
+- Load images before doing polyfill.
+- DOCUMENTATION!
 
 ## Dreams
 - Explore images in posts, “gallery” ability

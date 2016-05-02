@@ -7,6 +7,46 @@ function uncheckAll(){
   }
 }
 
+function writeFootnotes(){
+
+  var links = $('a');
+  for(var i=0; i<links.length; i++){
+
+    var link = links.eq(i);
+    var href = link.attr('href');
+    console.log('Moving over link '+i+' which goes to url '+href);
+    var temp = href;
+
+    // strip "http://"
+    var start = temp.indexOf("://");
+    var end = temp.length;
+    if(start !== -1){
+      start = start + 3;
+      temp = temp.substring(start,end);
+    }
+
+    // strip "www."
+    start = temp.indexOf("www.");
+    end = temp.length;
+    if(start !== -1){
+      start = start + 4;
+      temp = temp.substring(start,end);
+    }
+
+    href = temp; // Now stripped & clean=looking.
+    console.log(href);
+
+    $("<sup data-footnote='" + href + "'>"+i+"</sup>").insertAfter(link);
+
+    var associated_footer = link.parents('.page').find('.page-footer');
+    temp = associated_footer.html()+'<br />'+href;
+    console.log(temp);
+    associated_footer.html(temp);
+
+  }
+}
+
+
 function refreshContent(){
   var n_checkboxes = $("input[type=checkbox]").length;
   var checked_contents = []; // contains strings of content types that have checked boxes.
@@ -24,11 +64,15 @@ function refreshContent(){
     $('.content.'+checked_contents[j]).css('display','block');
     console.log('Flowing in '+checked_contents[j]+' contents.');
   }
+
 }
+
+
 
 // on loading...
 uncheckAll();
 $('.content').css('display','none');
+writeFootnotes();
 
 
 $("input[type=checkbox]").on("click", refreshContent );
