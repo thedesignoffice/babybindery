@@ -14,8 +14,8 @@
   <body>
 
     <div class="noprint">
-      {% for content-type in site.types %}
-      <input type="checkbox" id="checkbox-{{content-type}}" />{{ content-type }}<br />
+      {% for content_type in site.types %}
+      <input type="checkbox" id="checkbox-{{content_type}}" />{{ content_type }}<br />
       {% endfor %}
     </div>
 
@@ -29,7 +29,8 @@
       <!-- Use Jekyll to make 100 pages, to be trimmed later. -->
       {% for num in (1...100) %}
       <div class="page">
-        <div class='page-content'></div>
+        <div class='column left page-content'></div>
+        <div class='column right page-content'></div>
         <div class='page-footer'>{{ num }}</div>
       </div>
       {% endfor %}
