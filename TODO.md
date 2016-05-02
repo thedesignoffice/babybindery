@@ -8,8 +8,9 @@
 	- ~~Title~~
 	- ~~Half-title~~
 	- ~~TOC~~
-	- book content, by content type
+	- ~~book content, by content type~~
 - print.html styling (as in Jekyll layout for book.html)
+	- typography refinement
 - ~~adding print.css (media=“print”), separate from book.css (for web view of print preview)~~
 - ~~figuring out what is needed from~~
 	- ~~bindery.js~~
@@ -24,17 +25,17 @@
 - ~~Grouping Pages & Footnotes for easier manipulation~~ 
 - Columns
 - ~~get page breaks to look right in book.html~~
-- Polish page trim (pages & footers together)
+- ~~Polish page trim (pages & footers together)~~
 
 ## Later…
-
-- Explore images in posts, “gallery” ability
 - Load images before doing polyfill. 
-- Work w/Image Bleeds
 - ~~Trimming empty pages.~~
 
 ## ISSUES
 
-- quotes don't display correctly
-- Why not date sorted on front page ???
-- ~~CONTENT OVERLAPPING SHIT…~~
+## Dreams
+- Explore images in posts, “gallery” ability
+- Work w/Image Bleeds
+
+
+
