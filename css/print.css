@@ -5,9 +5,10 @@
 /* Margins, then, are coming from... uh... somewhere else. */
 
 .page-content{
-  /* page-break-after: always; */
 }
 .page-footer{
+}
+.page{
   page-break-after: always;
 }
 

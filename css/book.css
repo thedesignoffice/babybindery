@@ -15,7 +15,7 @@ body{
   margin: 0in 0.5in;
 }
 .page{ /* container for each .page-content and .page-footer */
-  xborder: 1px solid blue;
+  border: 1px solid blue;
 
   /* Now some white space around pages... */
   margin-top: 0.75in;
@@ -29,7 +29,7 @@ body{
   height: 8in; /* This just serves to split up the CSS regions flow. */
 }
 .page-footer{
-  height: 0.75in;
+  height: 1in;
 }
 
 .content{ /* Divs that contain everything coming through book.html */
