@@ -19,23 +19,22 @@
 	- ~~bindery-cssregions-polyfill.js~~
 - ~~getting page-breaks working~~
 - ~~Port “interview” to “conversation” w/Liquid Tags~~
-- Footnotes/Links
+- Footnotes/Links. (incl. running headers)
 - Semantic Tag use
+- Grouping Pages & Footnotes for easier manipulation. 
 - Columns
 - ~~get page breaks to look right in book.html~~
+- Polish page trim (pages & footers together)
 
 ## Later…
 
 - Explore images in posts, “gallery” ability
 - Load images before doing polyfill. 
 - Work w/Image Bleeds
-- Running headers
 - ~~Trimming empty pages.~~
 
 ## ISSUES
 
 - quotes don't display correctly
-- external links or everything internal? (for images)
 - Why not date sorted on front page ???
 - ~~CONTENT OVERLAPPING SHIT…~~
-- Page trim needs to be done asynchronously, at very end… 

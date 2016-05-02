@@ -1,19 +1,25 @@
-var pages = document.querySelectorAll(".page-content");
-for (var i = 0; i < pages.length; i++) {
-  var pg = pages[i];
+var write_footnotes = function(){
 
-  var links = document.querySelectorAll("a[href]");
-  if (links) {
-    for (var j = 0; j < links.length; j++) {
-      var href = links[j].getAttribute("href");
-      $("<sup data-footnote='" + href + "'>&rarr;</sup>").insertAfter(links[i]);
+  var pages = $('.page-content');
+  for (var i = 0; i < pages.length; i++) {
+    var pg = pages.eq(i);
+
+    var links = pg.children('a');
+
+    //console.log('There are '+links.length+' links on page '+i);
+
+    if (links) {
+      for (var j = 0; j < links.length; j++) {
+        //var href = links[j].getAttribute("href");
+        //$("<sup data-footnote='" + href + "'>&rarr;</sup>").insertAfter(links[i]);
+      }
     }
-  }
 
-  var footnotes = $('sup');
-  if(footnotes){
-    var notes = pg.parentNode.querySelector(".page-footer").innerHTML;
+    var footnotes = $('sup');
+    if(footnotes){
+      //var notes = pg.parentNode.querySelector(".page-footer").innerHTML;
 
+    }
   }
 }
 

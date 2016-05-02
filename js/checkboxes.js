@@ -19,8 +19,7 @@ function refreshContent(){
   }
   $('.content').css('display','none');
 
-  console.log(checked_contents);
-  console.log(n_checked);
+  n_checked = checked_contents.length; // Update this...
   for(var j=0;j<n_checked;j++){
     $('.content.'+checked_contents[j]).css('display','block');
     console.log('Flowing in '+checked_contents[j]+' contents.');
@@ -29,6 +28,8 @@ function refreshContent(){
 
 // on loading...
 uncheckAll();
-refreshContent();
+$('.content').css('display','none');
+
 
 $("input[type=checkbox]").on("click", refreshContent );
+//$("input[type=checkbox]").on("click", remove_pages );
