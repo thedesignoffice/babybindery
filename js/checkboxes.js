@@ -14,7 +14,8 @@ function writeFootnotes(){
 
     var link = links.eq(i);
     var href = link.attr('href');
-    console.log('Moving over link '+i+' which goes to url '+href);
+    //console.log('Moving over link '+i+' which goes to url '+href);
+
     var temp = href;
 
     // strip "http://"
@@ -34,14 +35,18 @@ function writeFootnotes(){
     }
 
     href = temp; // Now stripped & clean=looking.
-    console.log(href);
 
     $("<sup data-footnote='" + href + "'>"+i+"</sup>").insertAfter(link);
 
-    var associated_footer = link.parents('.page').find('.page-footer');
-    temp = associated_footer.html()+'<br />'+href;
-    console.log(temp);
-    associated_footer.html(temp);
+
+
+    //var associated_page = link.parents('.page');
+    //console.log(associated_page);
+    //var associated_footer = associated_page.find('.page-footer');
+    //console.log(associated_footer);
+    //temp = associated_footer.html()+'<br />'+href;
+    //console.log(temp);
+    //associated_footer.html(temp);
 
   }
 }

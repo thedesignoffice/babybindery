@@ -4,7 +4,8 @@
 
 body{
   background: white;
-  width: 8.4in; /* Just shy of 8.5 to avoid problems */
+  width: 8.4in;/* Just shy of 8.5 to avoid problems */
+  height: 10.9in; 
 }
 
 #content-source{
@@ -30,8 +31,17 @@ body{
   flow-from: toprint;
   height: 8in; /* This just serves to split up the CSS regions flow. */
 }
+
+.column {
+  width: 3in;
+  float: left;
+  margin-right: .25in;
+  border: 1px solid;
+}
+
 .page-footer{
   height: 1in;
+  width: 100%;
 }
 
 .content{ /* Divs that contain everything coming through book.html */
