@@ -29,9 +29,10 @@
     <div id="pages">
       <!-- Use Jekyll to make 100 pages, to be trimmed later. -->
       {% for num in (1...100) %}
+      <div class='page-content'></div>
+      <div class='page-footer'>{{ num }}</div>
       <div class="page">
-        <div class='column left page-content'></div>
-        <div class='column right page-content'></div>
+        <div class='page-content'></div>
         <div class='page-footer'>{{ num }}</div>
       </div>
       {% endfor %}
