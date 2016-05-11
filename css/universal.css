@@ -1,6 +1,7 @@
 body{
   background: white;
-  font-family: 'Helvetica',sans-serif;
+ /* font-family: 'Helvetica',sans-serif; */
+ /* see type.css */
   text-align: left;
   width: 100%;
 }
@@ -23,7 +24,8 @@ p{
 }
 
 .initials{
-  font-family: monospace;
+  /* font-family: monospace; */
+  /* see type.css */
 }
 
 .conversation-question{ /* For Conversation Questions, denoted [INITIALS]-q in post files. */

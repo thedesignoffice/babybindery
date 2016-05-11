@@ -4,11 +4,13 @@
 }
 
 body{
-  line-height: 120%;
+  /* line-height: 120%; */
+  /* see type.css */
 }
 
 a{
-  color: #0000ff;
+  /* color: #0000ff; */
+  /* see type.css */
 }
 a:hover{
   text-decoration: none;

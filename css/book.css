@@ -15,11 +15,13 @@ body{
   margin: 0in 0.5in;
 }
 .page{ /* container for each .page-content and .page-footer */
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 
   /* Now some white space around pages... */
   margin-top: 0.75in;
   margin-bottom: 0.75in;
+
+  clear:both;
 }
 
 .page-content{

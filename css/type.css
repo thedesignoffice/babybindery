@@ -1,0 +1,23 @@
+/* suggestions for typesetting. 
+ * is this redundant with web.css?
+ */
+
+* {
+	font-family: "Career";
+	color: red;
+	font-size: 14pt;
+	line-height: 20pt;
+}
+
+body {
+	font-family: "Career";
+	color: red;
+	font-size: 14pt;
+	line-height: 20pt;
+}
+
+a {
+	color: red;
+	padding-bottom: 1px solid;
+	border-bottom: 1px solid red;
+} 
