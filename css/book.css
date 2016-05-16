@@ -8,6 +8,10 @@ body{
   height: 10.9in;
 }
 
+a{
+  display: inherit; /* Necessary to identify visible links for footnotes. */
+}
+
 #content-source{
   flow-into: toprint;
 }

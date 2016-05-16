@@ -1,8 +1,6 @@
 ---
 layout: conversation
 title: Ben Pieratt
-interviewer_initials: LTWP
-interviewee_initials: BP
 date: 2014-02-10
 
 content-type: conversation
