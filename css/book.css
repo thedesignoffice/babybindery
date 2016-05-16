@@ -32,15 +32,9 @@ body{
   height: 8in; /* This just serves to split up the CSS regions flow. */
 }
 
-.column {
-  width: 3in;
-  float: left;
-  margin-right: .25in;
-  border: 1px solid;
-}
-
 .page-footer{
-  height: 1in;
+  clear: both;
+  height: 1in !important;
   width: 100%;
 }
 

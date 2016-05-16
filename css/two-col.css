@@ -7,7 +7,7 @@
  * see book.css */ 
 .col {
   width: 3.5in;
-  height: 8.75in; /* any taller causes problems */
+  height: 8in; /* any taller causes problems */
   float: left;
   margin-right: .25in;
   background-color: white;
@@ -20,8 +20,9 @@
  * the page */
 .wrapper {
   clear: both;
-  height: 8.5in;
-  width: 8.75in; /* must match height of .col */
+  height: 8in;
+  max-height: 8in;
+  width: 8in; /* must match height of .col */
   margin-bottom: .25in;
   display: inline-block;
 }
