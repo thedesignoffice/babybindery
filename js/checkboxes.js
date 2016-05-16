@@ -7,6 +7,7 @@ function uncheckAll(){
   }
 }
 
+/*
 function writeFootnotes(){
 
   var links = $('a');
@@ -50,6 +51,7 @@ function writeFootnotes(){
 
   }
 }
+*/
 
 
 function refreshContent(){
@@ -77,7 +79,7 @@ function refreshContent(){
 // on loading...
 uncheckAll();
 $('.content').css('display','none');
-writeFootnotes();
+//writeFootnotes();
 
 
 $("input[type=checkbox]").on("click", refreshContent );
