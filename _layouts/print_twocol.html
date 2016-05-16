@@ -6,10 +6,7 @@
     {% include jquery.html %}
     {% include universal_css.html %}
     {% include type_css.html %}
-    {% include book_css.html %}
-    {% include book_twocol_css.html %} 
-
-    <!-- Styles web view of book content, the html "print preview"-->
+    {% include book_css.html %} <!-- Styles web view of book content, the html "print preview"-->
     {% include print_css.html %} <!-- Print-media stylesheet. -->
     {% include preload_images.html %} <!-- Loads images before other javascript stuff.... maybe not doing anything yet. -->
     {% include regions_js.html %} <!-- See https://github.com/FremyCompany/css-regions-polyfill -->
@@ -18,7 +15,7 @@
   <body>
 
     <div class="noprint">
-      {% for content_type in site.types %}
+      {% for content_type in site.content_types %}
       <input type="checkbox" id="checkbox-{{content_type}}" />{{ content_type }}<br />
       {% endfor %}
     </div>

@@ -5,7 +5,11 @@
 body{
   background: white;
   width: 8.4in;/* Just shy of 8.5 to avoid problems */
-  height: 10.9in; 
+  height: 10.9in;
+}
+
+a{
+  display: inherit; /* Necessary to identify visible links for footnotes. */
 }
 
 #content-source{
@@ -16,8 +20,6 @@ body{
   margin: 0in 0.5in;
 }
 .page{ /* container for each .page-content and .page-footer */
-  /* border: 1px solid blue; */
-
   /* Now some white space around pages... */
   margin-top: 0.75in;
   margin-bottom: 0.75in;
@@ -27,15 +29,32 @@ body{
 
 .page-content{
   /* Regions container. */
+  border: 1px solid blue;
   /* margin & padding only seem to work on the sides in regions.  */
   flow-from: toprint;
-  height: 8in; /* This just serves to split up the CSS regions flow. */
+  height: 8.25in; /* This just serves to split up the CSS regions flow - any taller causes problems */
+  margin-bottom: 0.25in;
 }
 
 .page-footer{
   clear: both;
   height: 1in !important;
+}
+.col {
+  width: 3.5in;
+  float: left;
+  display: inline;
+
+}
+.col.left{
+  margin-right: 0.25in;
+}
+
+.page-footer{
+  border: 1px solid blue;
+  height: 0.75in;
   width: 100%;
+  clear: both;
 }
 
 .content{ /* Divs that contain everything coming through book.html */

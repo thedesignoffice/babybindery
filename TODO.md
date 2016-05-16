@@ -27,15 +27,15 @@
 - ~~get page breaks to look right in book.html~~
 - ~~Polish page trim (pages & footers together)~~
 - Trimming empty pages.
+- Make book TOC reflect checkboxes
+- web page TOC ordering
 
 ## Later…
 - Nice Docs with microsite
-- Load images before doing polyfill.
-- DOCUMENTATION!
 
 ## Dreams
 - Explore images in posts, “gallery” ability
 - Work w/Image Bleeds
-
+- Load images before doing polyfill.
 
 
