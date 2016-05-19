@@ -3,7 +3,7 @@
 ~~Get dummy content~~
 ~~Make basic templates~~
 - ~~TOC filtering by category/date/checkboxes~~
-- book.html page
+- ~~book.html page~~
 	- ~~pulls content~~
 	- ~~Title~~
 	- ~~Half-title~~
@@ -15,7 +15,7 @@
 - ~~figuring out what is needed from~~
 	- ~~bindery.js~~
 	- ~~book.js~~
-- ~~investigating if these can revert to original ~~
+- ~~investigating if these can revert to original~~
 	- ~~cssregions.js~~
 	- ~~bindery-cssregions-polyfill.js~~
 - ~~getting page-breaks working~~
@@ -29,6 +29,10 @@
 - Trimming empty pages.
 - Make book TOC reflect checkboxes
 - web page TOC ordering
+- add license
+- clean up page css
+- tie page & type size to _config.yml
+- more detailed README
 
 ## Later…
 - Nice Docs with microsite
