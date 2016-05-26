@@ -8,25 +8,22 @@ function uncheckAll(){
 }
 
 
-function writeFootnotes(){
+function writeLinks(){
 
-  //var visible_links = $('a').filter(function(index){
-  //  return $(this).css("display")!="none";
-  //});
+  var links = $('a');
+  console.log(links);
 
-  var visible_links = $('.content').filter(function(index){
-    return $(this).css("display")=="block";
-  }).find('a');
+  for(var i=0; i<links.length; i++){
 
-  for(var i=0; i<visible_links.length; i++){
-
-    var link = visible_links.eq(i);
+    var link = links.eq(i);
     var href = link.attr('href');
     //console.log('Moving over link '+i+' which goes to url '+href);
 
     var temp = href;
+    console.log(temp);
 
     /*
+
     // strip "http://"
     var start = temp.indexOf("://");
     var end = temp.length;
@@ -42,20 +39,13 @@ function writeFootnotes(){
       start = start + 4;
       temp = temp.substring(start,end);
     }
+
     */
+
 
     href = temp; // Now stripped & clean=looking.
 
-    $("<sup data-footnote='" + href + "'>"+i+"</sup>").insertAfter(link);
-
-    var associated_page = link.parents('.page');
-    var associated_footer = associated_page.find('.page-footer');
-    console.log('Link '+href+' going into footer of page '+associated_footer.html());
-    associated_footer.html('hey lukas what is up');
-    //console.log(associated_footer);
-    //temp = associated_footer.html()+'<br />'+href;
-    //console.log(temp);
-    //associated_footer.html(temp);
+    $(" (" + href + ")").insertAfter(link);
 
   }
 }
@@ -78,12 +68,12 @@ function refreshContent(){
     console.log('Flowing in '+checked_contents[j]+' contents.');
   }
 
-  writeFootnotes();
 }
 
 
 // on loading...
 uncheckAll();
+writeLinks();
 $('.content').css('display','none');
 
 
