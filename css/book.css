@@ -4,8 +4,8 @@
 
 body{
   background: white;
-  width: 8.4in;/* Just shy of 8.5 to avoid problems */
-  height: 10.9in;
+   width: 8.4in;/* Just shy of 8.5 to avoid problems */
+   height: 10.9in;
 }
 
 a{
@@ -21,8 +21,7 @@ a{
 }
 .page{ /* container for each .page-content and .page-footer */
   /* Now some white space around pages... */
-  margin-top: 0.75in;
-  margin-bottom: 0.75in;
+ margin: .75in 0.5in;
 
   clear:both;
 }

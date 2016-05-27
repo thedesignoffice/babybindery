@@ -17,6 +17,6 @@ github_username:
 
 # Build settings
 markdown: kramdown
-page_width: 8.5in
-page_height: 11in
+page_width: "8.5in"
+page_height: "11in"
 content_types: [conversation, image, blogpost]
