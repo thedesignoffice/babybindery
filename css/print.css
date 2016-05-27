@@ -16,3 +16,16 @@
 .noprint{ /* HANDY FOR MAKIN STUFF THAT SHOULDN'T PRINT! */
   display: none;
 }
+
+@media print {
+
+.content-wrapper {
+	display: inline;
+	position: static;
+	top: 0;
+	left: 0;
+	height: 8.5in;
+	width: 7.5in;
+}
+
+}

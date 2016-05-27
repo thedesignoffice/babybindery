@@ -16,9 +16,6 @@ a{
   flow-into: toprint;
 }
 
-#pages{ /* Container for all .page-content divs */
-  margin: 0in 0.5in;
-}
 .page{ /* container for each .page-content and .page-footer */
   /* Now some white space around pages... */
  margin: .75in 0.5in;
@@ -28,6 +25,8 @@ a{
 
 .page-content{
   /* Regions container. */
+  position: static; /* needs to have a position
+  because display is inline from Polyfill */
   border: 1px solid blue;
   /* margin & padding only seem to work on the sides in regions.  */
   flow-from: toprint;
@@ -68,3 +67,4 @@ sup{
   font-size: 6px;
   font-family: monospace;
 }
+
