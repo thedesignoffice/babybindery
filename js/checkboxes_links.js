@@ -10,17 +10,14 @@ function uncheckAll(){
 
 function writeLinks(){
 
-  var links = $('a');
-  console.log(links);
+  var links = $('.page-content').find('a');
 
   for(var i=0; i<links.length; i++){
 
     var link = links.eq(i);
     var href = link.attr('href');
-    //console.log('Moving over link '+i+' which goes to url '+href);
 
     var temp = href;
-    console.log(temp);
 
     /*
 
@@ -44,8 +41,8 @@ function writeLinks(){
 
 
     href = temp; // Now stripped & clean=looking.
-
-    $(" (" + href + ")").insertAfter(link);
+    console.log(href);
+    //$(" (" + href + ")").insertAfter(link);
 
   }
 }
