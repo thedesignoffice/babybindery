@@ -25,26 +25,16 @@ a{
 
 .page-content{
   /* Regions container. */
-  position: static; /* needs to have a position
+  display: block;
+  /* needs to have a position
   because display is inline from Polyfill */
   border: 1px solid blue;
   /* margin & padding only seem to work on the sides in regions.  */
   flow-from: toprint;
-  height: 8.25in; /* This just serves to split up the CSS regions flow - any taller causes problems */
+  height: 8.25in;
+  max-height: 8.25in;
+  /* This just serves to split up the CSS regions flow - any taller causes problems */
   margin-bottom: 0.25in;
-}
-
-.page-footer{
-  clear: both;
-  height: 1in !important;
-}
-.col {
-  width: 3.5in;
-  float: left;
-  display: inline;
-}
-.col.left{
-  margin-right: 0.25in;
 }
 
 .page-footer{
@@ -63,8 +53,5 @@ a{
   height: 8.5in;
 }
 
-sup{
-  font-size: 6px;
-  font-family: monospace;
-}
+
 

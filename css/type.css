@@ -21,3 +21,8 @@ a {
 	padding-bottom: 1px solid;
 	border-bottom: 1px solid red;
 } 
+
+sup{
+  font-size: 6px;
+  font-family: monospace;
+}

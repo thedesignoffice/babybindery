@@ -21,7 +21,7 @@
 
 .content-wrapper {
 	display: inline;
-	position: static;
+	position: relative;
 	top: 0;
 	left: 0;
 	height: 8.5in;
