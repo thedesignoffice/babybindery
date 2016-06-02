@@ -11,13 +11,8 @@ img{
   max-width: 100%;
 }
 
-h1{
-  font-weight: bold;
-  margin: 2em 0;
-}
-
-h2{
-  text-decoration: underline;
+h1, h2, h3 {
+  font-weight: normal;
 }
 
 p{
@@ -29,9 +24,23 @@ p{
 
 .initials{
   font-family: monospace;
-  /* see type.css */
+  font-size: .8em;
 }
 
 .conversation-question{ /* For Conversation Questions, denoted [INITIALS]-q in post files. */
   font-weight: bold;
+}
+
+a.button{  
+  display: inline-block;
+  padding: 20px;
+  margin: 10px;
+  border: 2px solid blue;
+  text-transform: uppercase;
+  font-size: .8em;
+  letter-spacing: 1px;
+  text-decoration: none;
+} a.button:hover {
+  color: white;
+  background-color: blue;
 }

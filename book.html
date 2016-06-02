@@ -49,7 +49,7 @@ The contents of this page are loaded into the print.html layout.
 <ul>
   {% for post in site.posts %}
   <li>
-    <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
+    <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span>
     {{ post.content-type }}: {{ post.title }}
   </li>
   {% endfor %}
@@ -73,7 +73,7 @@ The contents of this page are loaded into the print.html layout.
 {% if post.content-type == 'conversation' %}
 
 <div class="content conversation">
-  {{ post.date | date: "%m.%d.%Y" }}<br />
+  {{ post.date | date: "%-d %B %Y" }}<br />
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
   {{post.content}}
 </div>
@@ -96,7 +96,7 @@ The contents of this page are loaded into the print.html layout.
 {% if post.content-type == 'image' %}
 
 <div class="content image">
-  {{ post.date | date: "%m.%d.%Y" }}<br />
+  {{ post.date | date: "%-d %B %Y" }}<br />
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
   <img src="{{ post.imgurl }}" />
   {{post.content}}
@@ -120,7 +120,7 @@ The contents of this page are loaded into the print.html layout.
 {% if post.content-type == 'blogpost' %}
 
 <div class="content blogpost">
-  {{ post.date | date: "%m.%d.%Y" }}<br />
+  {{ post.date | date: "%-d %B %Y" }}<br />
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
   {{post.content}}
 </div>
