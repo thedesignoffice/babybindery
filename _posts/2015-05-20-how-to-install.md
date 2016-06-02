@@ -17,4 +17,4 @@ Download this repo, firstly. Then, bring:<br />
 - book_css.html, checkboxes_links.html, *** into your _includes directory. <br />
 - Our _config.yml has three properties at the end: page_width, page_height, and content_types—copy these into your config file. See post “How Do I Change The Content Types”! <br />
 
-
+If you are serving your site using github pages, you need to change the css and javascript include HTML files to reflect the URL structure when referring to pages inside the site. [See documentation for this on Jekyll](https://jekyllrb.com/docs/github-pages/#project-page-url-structure).
