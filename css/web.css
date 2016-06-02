@@ -4,13 +4,12 @@
 }
 
 body{
-  /* line-height: 120%; */
-  /* see type.css */
+  /* line-height: 1.5em; */
+  /* line-height really screws with reflow */
 }
 
 a{
-  /* color: #0000ff; */
-  /* see type.css */
+  color: blue;
 }
 a:hover{
   text-decoration: none;

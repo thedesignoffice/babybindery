@@ -18,9 +18,16 @@ a{
 
 .page{ /* container for each .page-content and .page-footer */
   /* Now some white space around pages... */
- margin: .75in 0.5in;
+ margin: .75in 1in;
 
   clear:both;
+}
+
+.page-header {
+  font-size:.75em;
+  height: .75in;
+  width: 100%;
+  clear: both;
 }
 
 .page-content{
@@ -28,7 +35,6 @@ a{
   display: block;
   /* needs to have a position
   because display is inline from Polyfill */
-  border: 1px solid blue;
   /* margin & padding only seem to work on the sides in regions.  */
   flow-from: toprint;
   height: 8.25in;
@@ -38,8 +44,8 @@ a{
 }
 
 .page-footer{
-  border: 1px solid blue;
   height: 0.75in;
+  font-size:.75em;
   width: 100%;
   clear: both;
 }
