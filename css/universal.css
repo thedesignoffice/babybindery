@@ -1,7 +1,8 @@
 body{
   background: white;
- /* font-family: 'Helvetica',sans-serif; */
- /* see type.css */
+  font-family: 'Work Medor',sans-serif;
+  color: blue;
+  font-size: 20px;
   text-align: left;
   width: 100%;
 }
@@ -21,6 +22,9 @@ h2{
 
 p{
   margin: 1em 0;
+  font-family: 'Bagnard', serif;
+  line-height: 1.5em;
+  color: red;
 }
 
 .initials{
