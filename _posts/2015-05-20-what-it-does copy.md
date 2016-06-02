@@ -11,6 +11,8 @@ Babybindery is still fragile in some spots.
 
 We do not recommend complex embeds / iframes in your content. 
 
+Do not muck with line-height. This breaks the polyfill regions’ ability to find the “bottom” of a region, so content spills all over the place. 
+
 The connection between book.html and what actually prints out is tenuous; we suggest doing your best to make the book preview at book.html look as you’d like it, and we’ll do our best to make sure it prints like that. 
 
 We do not recommend editing content margins, or attempting to force page-breaks anywhere. 

@@ -68,3 +68,7 @@ a:after {
 	font-size: 90%;
 }
 
+.noprint{
+  border: 2px dashed blue;
+}
+
