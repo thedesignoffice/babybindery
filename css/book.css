@@ -23,6 +23,13 @@ a{
   clear:both;
 }
 
+.page-header {
+  font-size:.75em;
+  height: .75in;
+  width: 100%;
+  clear: both;
+}
+
 .page-content{
   /* Regions container. */
   display: block;
@@ -38,6 +45,7 @@ a{
 
 .page-footer{
   height: 0.75in;
+  font-size:.75em;
   width: 100%;
   clear: both;
 }
