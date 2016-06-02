@@ -59,5 +59,12 @@ a{
   height: 8.5in;
 }
 
+a{
+  text-decoration: none;
+}
 
+a:after {
+	content: " (" attr(href) ") ";
+	font-size: 90%;
+}
 

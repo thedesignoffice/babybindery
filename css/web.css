@@ -8,13 +8,6 @@ body{
   /* line-height really screws with reflow */
 }
 
-a{
-  color: blue;
-}
-a:hover{
-  text-decoration: none;
-}
-
 .wrapper{
   /* Goes just within the body, around all Page or Post Content. */
   width: 70%;

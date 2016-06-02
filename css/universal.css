@@ -22,16 +22,14 @@ p{
   color: red;
 }
 
-.initials{
-  font-family: monospace;
-  font-size: .8em;
+a{
+  color: blue;
+}
+a:hover{
+  text-decoration: none;
 }
 
-.conversation-question{ /* For Conversation Questions, denoted [INITIALS]-q in post files. */
-  font-weight: bold;
-}
-
-a.button{  
+a.button{
   display: inline-block;
   padding: 20px;
   margin: 10px;
@@ -44,3 +42,14 @@ a.button{
   color: white;
   background-color: blue;
 }
+
+.initials{
+  font-family: monospace;
+  font-size: .8em;
+}
+
+.conversation-question{ /* For Conversation Questions, denoted [INITIALS]-q in post files. */
+  font-weight: bold;
+}
+
+

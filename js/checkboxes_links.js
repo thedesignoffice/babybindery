@@ -16,10 +16,7 @@ function writeLinks(){
 
     var link = links.eq(i);
     var href = link.attr('href');
-
     var temp = href;
-
-    /*
 
     // strip "http://"
     var start = temp.indexOf("://");
@@ -37,12 +34,10 @@ function writeLinks(){
       temp = temp.substring(start,end);
     }
 
-    */
-
-
     href = temp; // Now stripped & clean=looking.
     console.log(href);
-    //$(" (" + href + ")").insertAfter(link);
+
+    //$( "<span class='link_url'>"+href+"</span>" ).insertAfter(link); // This line currently not working. Going the css :after route for now.
 
   }
 }
@@ -71,7 +66,7 @@ function refreshContent(){
 
 // on loading...
 uncheckAll();
-writeLinks();
+//writeLinks();
 $('.content').css('display','none');
 
 
