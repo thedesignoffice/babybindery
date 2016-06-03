@@ -26,15 +26,28 @@ body{
   clear: both;
 }
 
+.content-wrapper {
+  /* used in both print.html & print_twocol.html to keep columns from floating
+   & to enforce height */
+  display: inline; /* don't touch display, postition, top, and left */
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 8.5in;
+  width: 7.5in;
+  clear: both;
+  
+}
+
 .page-content{
   /* Regions container. Flows from #content-source */
   display: block;
   /* margin & padding only seem to work on the sides in regions.  */
   flow-from: toprint;
-  height: 8.25in;
-  max-height: 8.25in;
-  /* This just serves to split up the CSS regions flow - any taller causes problems */
+  height: 8.25in; /* extremely wack */
+  /* Don't make taller than .content-wrapper and page size (defined in print.css) */
   margin-bottom: 0.25in;
+
 }
 
 .page-footer{
@@ -44,25 +57,14 @@ body{
   clear: both;
 }
 
-.content-wrapper {
-  /* used in both print.html & print_twocol.html to keep columns from floating
-   & to enforce height */
-  display: inline;
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 8.5in;
-  width: 7.5in;
-}
-
 
 .content{ /* Divs that contain everything coming through book.html */
-  break-after: always;
+  break-after: always; /* needed for polyfill */
 }
 
 .blank{
   visibility: hidden; /* hiding any mystery content, just takin up space. */
-  height: 8.5in;
+  height: 8.25in; /* should match .page-content? */
 }
 
 a{

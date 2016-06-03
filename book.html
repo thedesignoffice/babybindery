@@ -7,42 +7,24 @@ This is a display of content in preparation for print.
 The contents of this page are loaded into the print.html layout.
 -->
 
-<!-- Blank Page -->
-<div class="blank">
-  Page intentionally left blank.
-</div>
-
 <!-- Half Title Page -->
 <h2>{{ site.title }}</h2>
 <p>Half Title Page</p>
-
-
-<!-- Blank Page -->
-<div class="blank">
-  Page intentionally left blank.
-</div>
 
 <!-- Title Page -->
 <h1>{{ site.title }}</h1>
 <p>Title Page<p>
 
-<!-- Blank Page -->
-<div class="blank">
-  Page intentionally left blank.
-</div>
-
 <!-- Front Matter... ish -->
+<div class="content">
+  <p> hey </p>
 <p>{% for page in site.pages %}{% if page.category == 'credits' %}
   {{page.content}}
   {% endif %}{% endfor %}
 </p>
+</div>
 
 <p><em>{{ page.subtitle }}</em></p>
-
-<!-- Blank Page -->
-<div class="blank">
-  Page intentionally left blank.
-</div>
 
 <!-- Table of Contents -->
 <h1>Table of Contents</h1>
@@ -56,13 +38,6 @@ The contents of this page are loaded into the print.html layout.
 </ul>
 
 <!-- All Content, by content type. -->
-
-<!--If we want, do a loop through types here...? -->
-
-<!-- Blank Page -->
-<div class="blank">
-  Page intentionally left blank.
-</div>
 
 <div class="content conversation">
   <h1>conversations</h1>
@@ -117,7 +92,7 @@ The contents of this page are loaded into the print.html layout.
   <h1>blog posts</h1>
 </div>
 
-<!-- Blogpost -->
+<!-- Text -->
 {% for post in site.posts %}
 {% if post.content-type == 'text' %}
 
@@ -130,4 +105,4 @@ The contents of this page are loaded into the print.html layout.
 
 {% endif %}
 {% endfor %}
-<!-- /Blogpost -->
+<!-- /Text -->
