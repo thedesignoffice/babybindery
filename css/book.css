@@ -13,6 +13,10 @@ body{
   flow-into: toprint;
 }
 
+img{
+  max-height: 8.25in; /* Should be as big as .page-content */
+}
+
 .menu{
   width: 80%;
   padding: 5%;
@@ -63,6 +67,9 @@ body{
   clear: both;
 }
 
+.front-content{ /* Divs with Half Title, Title, Credits, TOC in book.html */
+  break-after: always; /* needed for polyfill */
+}
 
 .content{ /* Divs that contain everything coming through book.html */
   break-after: always; /* needed for polyfill */

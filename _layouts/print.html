@@ -27,25 +27,22 @@
       {{ content }}
     </div>
 
-   <!-- <div id="pages"> -->
-      <!-- Use Jekyll to make 100 pages, to be trimmed later. -->
-      {% for num in (1...100) %}
-      <div class="page">
-        <div class="page-header">{{site.title}}</div>
-        <div class="content-wrapper">
+    <!-- Use Jekyll to make 100 pages. Edit here if you need fewer. -->
+    {% for num in (1...100) %}
+    <div class="page">
+      <div class="page-header">{{site.title}}</div>
+      <div class="content-wrapper">
 
-          <div class='page-content'></div> <!-- Flow-from Elements -->
-
-        </div>
-        <div class='page-footer'>{{ num }}</div>
+        <div class='page-content'></div> <!-- Flow-from Elements -->
 
       </div>
-      {% endfor %}
-   <!-- </div> -->
+      <div class='page-footer'>{{ num }}</div>
+
+    </div>
+    {% endfor %}
 
 
     {% include label_interview_paragraphs.html %} <!-- Needs to happen after content is dropped in. -->
-    <!-- {% include remove_empty_pages.html %} --> <!-- This doesn't seem to work yet. Maybe synchronicity problem. -->
     {% include checkboxes_links.html %}
   </body>
 

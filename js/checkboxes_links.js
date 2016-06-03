@@ -35,7 +35,6 @@ function writeLinks(){
     }
 
     href = temp; // Now stripped & clean=looking.
-    console.log(href);
 
     //$( "<span class='link_url'>"+href+"</span>" ).insertAfter(link); // This line currently not working. Going the css :after route for now.
 

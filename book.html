@@ -7,35 +7,60 @@ This is a display of content in preparation for print.
 The contents of this page are loaded into the print.html layout.
 -->
 
-<!-- Half Title Page -->
-<h2>{{ site.title }}</h2>
-<p>Half Title Page</p>
-
-<!-- Title Page -->
-<h1>{{ site.title }}</h1>
-<p>Title Page<p>
-
-<!-- Front Matter... ish -->
-<div class="content">
-  <p> hey </p>
-<p>{% for page in site.pages %}{% if page.category == 'credits' %}
-  {{page.content}}
-  {% endif %}{% endfor %}
-</p>
+<div class="blank">
+  This page intentionally left blank.
 </div>
 
-<p><em>{{ page.subtitle }}</em></p>
+<!-- Half Title Page -->
+<div class="front-content">
+  <h2>{{ site.title }}</h2>
+  <p>Half Title Page</p>
+</div>
+
+<div class="blank">
+  This page intentionally left blank.
+</div>
+
+<!-- Title Page -->
+<div class="front-content">
+  <h1>{{ site.title }}</h1>
+  <p>Title Page</p>
+</div>
+
+<div class="blank">
+  This page intentionally left blank.
+</div>
+<div class="blank">
+  This page intentionally left blank.
+</div>
+
+<!-- Front Matter... ish -->
+<div class="front-content">
+  {% for page in site.pages %}
+  {% if page.content-type == 'credits' %}
+  {{page.content}}
+  {% endif %}
+  {% endfor %}
+</div>
 
 <!-- Table of Contents -->
-<h1>Table of Contents</h1>
-<ul>
-  {% for post in site.posts %}
-  <li>
-    <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span>
-    {{ post.content-type }}: {{ post.title }}
-  </li>
-  {% endfor %}
-</ul>
+<div class="front-content">
+  <h1>Table of Contents</h1>
+  <p>
+  <ul>
+    {% for post in site.posts %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span>
+      {{ post.content-type }}: {{ post.title }}
+    </li>
+    {% endfor %}
+  </ul>
+  </p>
+</div>
+
+<div class="blank">
+  This page intentionally left blank.
+</div>
 
 <!-- All Content, by content type. -->
 
