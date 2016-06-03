@@ -3,7 +3,7 @@ layout: image
 title: The Book Structure
 date: 2015-05-28
 content-type: image
-imgurl: 
+imgurl: https://66.media.tumblr.com/1d80ba9426d054c54a21f846997589e4/tumblr_o876c5AjEa1sn9lg7o1_1280.png
 byline:
 ---
 
