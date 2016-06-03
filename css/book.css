@@ -13,7 +13,13 @@ body{
   flow-into: toprint;
 }
 
-.page{ 
+.menu{
+  width: 80%;
+  padding: 5%;
+  margin: 20px auto;
+}
+
+.page{
   /* container for each .page-content, .page-header, and .page-footer */
   margin: .75in 1in;
   clear:both;
@@ -36,7 +42,7 @@ body{
   height: 8.5in;
   width: 7.5in;
   clear: both;
-  
+
 }
 
 .page-content{
