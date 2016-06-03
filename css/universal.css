@@ -52,4 +52,17 @@ a.button{
   font-weight: bold;
 }
 
+/*
+
+  Web Stuff
+
+*/
+
+/* only used on the web */
+.wrapper{
+  /* Goes just within the body, around all Page or Post Content. */
+  width: 70%;
+  margin: 0 auto;
+}
+
 
