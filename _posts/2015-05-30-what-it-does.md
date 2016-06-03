@@ -1,9 +1,9 @@
 ---
-layout: post
+layout: default
 title: What Babybindery Does
-date: 2015-05-31
+date: 2015-05-30
 author: Lukas & Cathy
-content-type: blogpost
+content-type: text
 
 ---
 

@@ -75,6 +75,7 @@ The contents of this page are loaded into the print.html layout.
 <div class="content conversation">
   {{ post.date | date: "%-d %B %Y" }}<br />
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+  {{site.baseurl}}{{post.url}}<br />
   {{post.content}}
 </div>
 
@@ -98,6 +99,7 @@ The contents of this page are loaded into the print.html layout.
 <div class="content image">
   {{ post.date | date: "%-d %B %Y" }}<br />
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+  {{site.baseurl}}{{post.url}}<br />
   <img src="{{ post.imgurl }}" />
   {{post.content}}
 </div>
@@ -117,11 +119,12 @@ The contents of this page are loaded into the print.html layout.
 
 <!-- Blogpost -->
 {% for post in site.posts %}
-{% if post.content-type == 'blogpost' %}
+{% if post.content-type == 'text' %}
 
-<div class="content blogpost">
+<div class="content text">
   {{ post.date | date: "%-d %B %Y" }}<br />
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+  {{site.baseurl}}{{post.url}}<br />
   {{post.content}}
 </div>
 

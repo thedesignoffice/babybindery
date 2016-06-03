@@ -1,7 +1,7 @@
 ---
 layout: image
 title: The Book Structure
-date: 2015-05-31
+date: 2015-05-28
 content-type: image
 imgurl: 
 byline:

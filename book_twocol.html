@@ -117,9 +117,9 @@ The contents of this page are loaded into the print.html layout.
 
 <!-- Blogpost -->
 {% for post in site.posts %}
-{% if post.content-type == 'blogpost' %}
+{% if post.content-type == 'text' %}
 
-<div class="content blogpost">
+<div class="content text">
   {{ post.date | date: "%m.%d.%Y" }}<br />
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
   {{post.content}}

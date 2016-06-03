@@ -1,9 +1,9 @@
 ---
-layout: post
+layout: default
 title: How Do I Install It?
-date: 2015-05-31
+date: 2015-05-29
 author: Lukas & Cathy
-content-type: blogpost
+content-type: text
 
 ---
 

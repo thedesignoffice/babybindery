@@ -1,7 +1,7 @@
 ---
 layout: image
 title: How Content Flows
-date: 2015-05-31
+date: 2015-05-27
 content-type: image
 imgurl: http://i.imgur.com/JFPLvO8.jpg
 byline:

@@ -19,7 +19,6 @@ a{
 .page{ /* container for each .page-content and .page-footer */
   /* Now some white space around pages... */
  margin: .75in 1in;
-
   clear:both;
 }
 
@@ -64,7 +63,7 @@ a{
 }
 
 a:after {
-	content: " (" attr(href) ") ";
+	content: " (→" attr(href) ") ";
 	font-size: 90%;
 }
 

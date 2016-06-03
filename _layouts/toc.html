@@ -14,10 +14,31 @@
 
     <div class="wrapper">
       <div class="page-content">
-        {{ content }}
-      </div>
-    </div>
+        <h1>
+          {{ page.title }}
+        </h1>
 
-  </body>
+        <ul>
+          {% for post in site.posts %}
+          <li>
+            <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span></br>
+        {{ post.content-type }} <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }}</a>
+        </li>
+      {% endfor %}
+      </ul>
+
+    {{ content }}
+
+    <p>
+      {{ site.description }}
+    </p>
+    <p>
+      <a href="book.html" class="button">MAKE BOOK</a><br />
+      <a href="book_twocol.html" class="button">MAKE TWO-COLUMN BOOK</a><br />
+    </p>
+    </div>
+  </div>
+
+</body>
 
 </html>
