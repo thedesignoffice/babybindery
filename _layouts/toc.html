@@ -17,26 +17,31 @@
         </h1>
 
         <ul>
+
+          {% for type in site.content_types %}
           {% for post in site.posts %}
-          <li>
-            <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span></br>
-        {{ post.content-type }} <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }}</a>
-        </li>
-      {% endfor %}
-      </ul>
 
-    {{ content }}
+            {% if post.content-type == type %}
+            <li>
+              <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> <span style="text-transform: capitalize">{{ post.content-type }}:</span> <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }}</a>
+            </li>
+            {% endif %}
+          {% endfor %}
+          {% endfor %}
+        </ul>
 
-    <p>
-      {{ site.description }}
-    </p>
-    <p>
-      <a href="book.html" class="button">MAKE BOOK</a><br />
-      <a href="book_twocol.html" class="button">MAKE TWO-COLUMN BOOK</a><br />
-    </p>
+        {{ content }}
+
+        <p>
+          {{ site.description }}
+        </p>
+        <p>
+          <a href="book.html" class="button">MAKE BOOK</a><br />
+          <a href="book_twocol.html" class="button">MAKE TWO-COLUMN BOOK</a><br />
+        </p>
+      </div>
     </div>
-  </div>
 
-</body>
+  </body>
 
 </html>
