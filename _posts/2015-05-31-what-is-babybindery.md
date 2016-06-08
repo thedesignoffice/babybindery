@@ -5,7 +5,7 @@ date: 2015-05-31
 content-type: conversation
 ---
 
-With John Caserta, Catherine Leigh Schmidt, Lukas WinklerPrins.
+With John Caserta (JC), Catherine Leigh Schmidt (CLS), Lukas WinklerPrins (LW).
 
 JC: Hey guys… back when you took [HTML Output](http://htmloutput.risd.gd/) with me we made a chunk of javascript, Bindery, that prepared a set of web-native content to be printed, directly out of the browser, with some printing parameters. 
 
@@ -29,6 +29,6 @@ CLS: A baby bindery.
 
 JC: Sounds good. Babybindery can build a responsive book. Design your content for the web, then print. It handles the rest.
 
-LW: As long as you’re using Jekyll (for now).
+LW: As long as you’re using Jekyll.
 
 

@@ -3,12 +3,12 @@ layout: image
 title: The Book Structure
 date: 2015-05-28
 content-type: image
-imgurl: https://66.media.tumblr.com/1d80ba9426d054c54a21f846997589e4/tumblr_o876c5AjEa1sn9lg7o1_1280.png
-byline:
+imgurl: http://i.imgur.com/uhFjKxz.jpg
+byline: Lukas & Cathy
 ---
 
 While the webpage structures are mutable to your needs, the print.html and print_twocol.html layouts are special. 
 
-There is one giant div, id=“pages”, that contains a particular number of class=“page” divs. (This number is, as of writing, editable in print.html or print_twocol.html). 
+In each layout, a fixed number of pages are generated (you can change this number by editing the Liquid tags). Each page consists of a `.page` object, which contains a `.page-header`  object and `.page-footer` object, with a `.content-wrapper` object between them. 
 
-Within each page div… **
+Within `.content-wrapper`, there are either one or two `.page-content` objects (depending on if it is the one- or two-column layout). The content of posts flows into these divs according to the structure written in book.html and book_twocol.html. 

@@ -7,14 +7,9 @@ content-type: text
 
 ---
 
-First, we’re assuming you are running Jekyll to power your site. 
-
-Download this repo, firstly. Then, bring:<br />
-- print.html and print_twocol.html layouts into your _layouts directory. <br />
-- any other layout templates you want into your _layouts directory.  By default we have “post”—a generic text-based layout, “image”—which serves well the need for a show catalogue, and “conversation”, which brings in some special javascript to format initials for interview-type content.<br />
-- checkboxes_links.js, ** into a folder “js” in your Jekyll base directory. (This is used in the book generation.)<br />
-- book.css, print.css, and two-col.css into your “css” folder. <br />
-- book_css.html, checkboxes_links.html, *** into your _includes directory. <br />
-- Our _config.yml has three properties at the end: page_width, page_height, and content_types—copy these into your config file. See post “How Do I Change The Content Types” if you wish to deviate from post/image/conversation. <br />
-
-If you are serving your site using github pages, you need to change the css and javascript include HTML files to reflect the URL structure when referring to pages inside the site. [See documentation for this on Jekyll](https://jekyllrb.com/docs/github-pages/#project-page-url-structure).
+1. First, embrace [Jekyll](https://jekyllrb.com/) as your static-site generator. 
+2. Then, clone [the babybindery repo](https://github.com/thedesignoffice/babybindery) and set it up in your directory of choice for local development. ([Install Jekyll](https://jekyllrb.com/docs/installation/) if you haven’t.)
+3. Decide what your content categories should be. We have started you off with “image,” “conversation,” and “text” (the last of which can really be a catchall). If you want to change these, please see the guide for “How Do I Change The Content Types?”. 
+4. Hop into the `css` directory and make changes to your body, headings, headers, footers, and so forth. Careful though! Please look at the “Caveats” document for a couple warnings.  
+5. Write your posts! Make sure to check the posts we’ve provided to get a sense of the front matter you need to write. 
+6. Once ready to publish, push to a `gh-pages` branch or do whatever necessary for your [github pages](https://pages.github.com/) to get working. 
