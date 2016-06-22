@@ -27,15 +27,17 @@
 
     <!-- Use Jekyll to make 100 pages. Edit here if you need fewer. -->
     {% for num in (1...100) %}
-    <div class="page">
-      <div class="page-header">{{site.title}}</div>
-      <div class="content-wrapper">
+    <div class="sheet">
+        <div class="page">
+        <div class="page-header">{{site.title}}</div>
+        <div class="content-wrapper">
 
-        <div class='page-content'></div> <!-- Flow-from Elements -->
+          <div class='page-content'></div> <!-- Flow-from Elements -->
+
+        </div>
+        <div class='page-footer'>{{ num }}</div>
 
       </div>
-      <div class='page-footer'>{{ num }}</div>
-
     </div>
     {% endfor %}
 
