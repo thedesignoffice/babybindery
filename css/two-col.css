@@ -6,23 +6,20 @@
 /* used with .page-content
  * see book.css */ 
 .col {
-  width: 3.5in;
-  height: 8in; /* any taller causes problems */
+  width: 3.6in;
+  border: 1px solid blue;
   float: left;
   margin-right: .25in;
-  background-color: white;
 } .col:last-child{
   margin-right:0;
 }
 
-/* an extra div in print_twocol.html
- * to keep footer at the bottom of
- * the page */
-.wrapper {
-  clear: both;
-  height: 8in;
-  max-height: 8in;
-  width: 8in; /* must match height of .col */
-  margin-bottom: .25in;
-  display: inline-block;
+.page {
+  /* larger text block for two-column layout */
+    margin: .75in .5in;
+
+}
+
+p {
+  /* should be a smaller type size */
 }

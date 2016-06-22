@@ -3,7 +3,7 @@
 /* For changes _only_ needed for printed document, use print.css. */
 
 body{
-  background: white;
+  background: #e4edfd;
    width: 8.4in;/* Just shy of 8.5 to avoid problems, see print.css */
    height: 10.9in;
 }
@@ -23,9 +23,22 @@ img{
   margin: 20px auto;
 }
 
+.sheet {
+  /* illustrates the size of each sheet,
+     to get a better sense of the text block */
+  background: #fff7d9;
+  height: 11in;
+  width: 8.5in;
+  margin: 3vw;
+}
+
 .page{
-  /* container for each .page-content, .page-header, and .page-footer */
+  /* container for each .page-content, 
+     .page-header, and .page-footer */
   margin: .75in 1in;
+  position: relative;
+  top: .5in;
+  background: white;
   clear:both;
 }
 
@@ -44,7 +57,6 @@ img{
   top: 0;
   left: 0;
   height: 8.5in;
-  width: 7.5in;
   clear: both;
 
 }

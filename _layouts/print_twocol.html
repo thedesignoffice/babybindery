@@ -5,14 +5,17 @@
     {% include meyer_reset.html %}
     {% include jquery.html %}
     {% include universal_css.html %}
-    {% include book_css.html %} <!-- Styles web view of book content, the html "print preview"-->
+    {% include book_css.html %}
+    <!-- Styles web view of book content, the html "print preview"-->
+    {% include two-col_css.html %}
+    <!-- for two-column book specifically -->
     {% include print_css.html %} <!-- Print-media stylesheet. -->
-    {% include regions_js.html %} <!-- See https:/github.com/FremyCompany/css-regions-polyfill -->
+    {% include regions_js.html %} <!-- See https://github.com/FremyCompany/css-regions-polyfill -->
   </head>
 
   <body>
 
-    <div class="noprint">
+    <div class="menu noprint">
       {% for content_type in site.content_types %}
       <input type="checkbox" id="checkbox-{{content_type}}" />{{ content_type }}<br />
       {% endfor %}
@@ -24,18 +27,22 @@
       {{ content }}
     </div>
 
-    <div id="pages">
       <!-- Use Jekyll to make 100 pages, to be trimmed later. -->
-      {% for num in (1...100) %}
-      <div class="page">
-        <div class="page-wrapper">
+    {% for num in (1...100) %}
+    <div class="sheet">
+        <div class="page">
+        <div class="page-header">{{site.title}}</div>
+        <div class="content-wrapper">
+
           <div class='col page-content'></div>
-          <div class='col page-content'></div>
+          <div class='col page-content'></div> <!-- Flow-from Elements -->
+
         </div>
         <div class='page-footer'>{{ num }}</div>
+
       </div>
-      {% endfor %}
     </div>
+    {% endfor %}
 
 
     {% include label_interview_paragraphs.html %} <!-- Needs to happen after content is dropped in. -->
