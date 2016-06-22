@@ -1,6 +1,6 @@
 body{
   background: white;
-  font-family: 'Work Medor',sans-serif;
+  font-family: sans-serif;
   color: blue;
   font-size: 20px;
   text-align: left;
@@ -17,7 +17,7 @@ h1, h2, h3 {
 
 p{
   margin: 1em 0;
-  font-family: 'Bagnard', serif;
+  font-family: serif;
   line-height: 1.5em;
   color: red;
 }
