@@ -50,19 +50,6 @@ a:hover{
   margin: 0 auto;
 }
 
-a.button{
-  /* on index */
-  display: inline-block;
-  padding: 20px;
-  margin: 10px;
-  border: 2px solid blue;
-  text-transform: uppercase;
-  font-size: .8em;
-  letter-spacing: 1px;
-  text-decoration: none;
-} a.button:hover {
-  color: white;
-  background-color: blue;
-}
+
 
 

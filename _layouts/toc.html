@@ -5,6 +5,35 @@
     {% include meyer_reset.html %}
     {% include universal_css.html %}
     <title>{{ page.title }}</title>
+    <style>
+
+      body {
+        margin-top: 3vh;
+        font-size: 20px;
+        line-height: 2rem;
+      }
+
+      h1 {
+        font-size: 3rem;
+        line-height: 4rem;
+      }
+      a.button{
+        /* on index */
+        display: block;
+        padding: 2rem;
+        margin: 2rem;
+        float: left;
+        border: 2px solid blue;
+        text-transform: uppercase;
+        text-decoration: none;
+      } a.button:hover {
+        color: white;
+        background-color: blue;
+      } a.button:first-child {
+        margin-left: 0;
+      }
+
+    </style>
   </head>
 
   <body>
@@ -35,10 +64,10 @@
         <p>
           {{ site.description }}
         </p>
-        <p>
-          <a href="book.html" class="button">MAKE BOOK</a><br />
+        <div style="clear:both">
+          <a href="book.html" class="button">MAKE BOOK</a>
           <a href="book_twocol.html" class="button">MAKE TWO-COLUMN BOOK</a><br />
-        </p>
+        </div>
       </div>
     </div>
 

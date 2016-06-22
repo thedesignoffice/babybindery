@@ -35,7 +35,7 @@ img{
 .page{
   /* container for each .page-content, 
      .page-header, and .page-footer */
-  margin: .75in 1in;
+  margin: 0in 1in;
   position: relative;
   top: .5in;
   background: white;
@@ -66,7 +66,7 @@ img{
   display: block;
   /* margin & padding only seem to work on the sides in regions.  */
   flow-from: toprint;
-  height: 8.25in; /* extremely wack */
+  height: 8.5in; /* extremely wack */
   /* Don't make taller than .content-wrapper and page size (defined in print.css) */
   margin-bottom: 0.25in;
 
@@ -89,7 +89,7 @@ img{
 
 .blank{
   visibility: hidden; /* hiding any mystery content, just takin up space. */
-  height: 8.25in; /* should match .page-content? */
+  height: 8.5in; /* should match .page-content? */
 }
 
 a{
