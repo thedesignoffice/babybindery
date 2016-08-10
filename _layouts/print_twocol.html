@@ -29,10 +29,8 @@
       <div class="page">
         <div class="page-header">{{site.title}}</div>
         <div class="content-wrapper">
-
           <div class='col page-content'></div>
-          <div class='col page-content'></div> <!-- Flow-from Elements -->
-
+          <div class='col page-content'></div>
         </div>
         <div class='page-footer'>{{ num }}</div>
 
@@ -40,9 +38,9 @@
     </div>
     {% endfor %}
 
-
     {% include label_interview_paragraphs.html %} <!-- Needs to happen after content is dropped in. -->
     {% include checkboxes_links.html %}
+    {% include remove_empty_pages.html %}
   </body>
 
 </html>
