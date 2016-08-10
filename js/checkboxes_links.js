@@ -69,8 +69,4 @@ function refreshContent(){
 
 // on loading...
 uncheckAll();
-//writeLinks();
-$('.content').css('display','none');
-
-
 $("input[type=checkbox]").on("click", refreshContent );
