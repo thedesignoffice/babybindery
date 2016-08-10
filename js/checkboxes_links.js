@@ -52,6 +52,7 @@ function refreshContent(){
     }
   }
   $('.content').css('display','none'); // Clear the slate, then re-flow.
+  $('.content').css('break-after','never');
 
   n_checked = checked_contents.length;
   for(var j=0;j<n_checked;j++){

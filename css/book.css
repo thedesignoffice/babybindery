@@ -83,6 +83,7 @@ img{
 }
 
 .content{ /* Divs that contain everything coming through book.html */
+  break-after: never; /* overwritten if specific content displayed. */
 }
 
 .blank{
