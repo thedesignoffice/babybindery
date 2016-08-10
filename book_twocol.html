@@ -13,8 +13,10 @@ The contents of this page are loaded into the print.html layout.
 </div>
 
 <!-- Half Title Page -->
-<h2>{{ site.title }}</h2>
-<p>Half Title Page</p>
+<div class="front-content">
+  <h2>{{ site.title }}</h2>
+  <p>Half Title Page</p>
+</div>
 
 
 <!-- Blank Page -->
@@ -23,8 +25,10 @@ The contents of this page are loaded into the print.html layout.
 </div>
 
 <!-- Title Page -->
-<h1>{{ site.title }}</h1>
-<p>Title Page<p>
+<div class="front-content">
+  <h1>{{ site.title }}</h1>
+  <p>Title Page</p>
+</div>
 
 <!-- Blank Page -->
 <div class="blank">
@@ -32,28 +36,28 @@ The contents of this page are loaded into the print.html layout.
 </div>
 
 <!-- Front Matter... ish -->
-<p>{% for page in site.pages %}{% if page.category == 'credits' %}
+<div class="front-content">
+  {% for page in site.pages %}
+  {% if page.content-type == 'credits' %}
   {{page.content}}
-  {% endif %}{% endfor %}
-</p>
-
-<p><em>{{ page.subtitle }}</em></p>
-
-<!-- Blank Page -->
-<div class="blank">
-  Page intentionally left blank.
+  {% endif %}
+  {% endfor %}
 </div>
 
 <!-- Table of Contents -->
-<h1>Table of Contents</h1>
-<ul>
-  {% for post in site.posts %}
-  <li>
-    <span class="post-meta">{{ post.date | date: "%m.%d.%Y" }}</span>
-    {{ post.content-type }}: {{ post.title }}
-  </li>
-  {% endfor %}
-</ul>
+<div class="front-content">
+  <h1>Table of Contents</h1>
+  <p>
+  <ul>
+    {% for post in site.posts %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span>
+      {{ post.content-type }}: {{ post.title }}
+    </li>
+    {% endfor %}
+  </ul>
+  </p>
+</div>
 
 <!-- All Content, by content type. -->
 
@@ -73,8 +77,9 @@ The contents of this page are loaded into the print.html layout.
 {% if post.content-type == 'conversation' %}
 
 <div class="content conversation">
-  {{ post.date | date: "%m.%d.%Y" }}<br />
+  {{ post.date | date: "%-d %B %Y" }}<br />
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+  {{site.baseurl}}{{post.url}}<br />
   {{post.content}}
 </div>
 
@@ -96,8 +101,9 @@ The contents of this page are loaded into the print.html layout.
 {% if post.content-type == 'image' %}
 
 <div class="content image">
-  {{ post.date | date: "%m.%d.%Y" }}<br />
+  {{ post.date | date: "%-d %B %Y" }}<br />
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+  {{site.baseurl}}{{post.url}}<br />
   <img src="{{ post.imgurl }}" />
   {{post.content}}
 </div>
@@ -120,11 +126,17 @@ The contents of this page are loaded into the print.html layout.
 {% if post.content-type == 'text' %}
 
 <div class="content text">
-  {{ post.date | date: "%m.%d.%Y" }}<br />
+  {{ post.date | date: "%-d %B %Y" }}<br />
   <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+  {{site.baseurl}}{{post.url}}<br />
   {{post.content}}
 </div>
 
 {% endif %}
 {% endfor %}
 <!-- /Blogpost -->
+
+<!-- Blank Page, so that end spread doesn't get trimmed.  -->
+<div class="blank">
+  Page intentionally left blank.
+</div>

@@ -4,8 +4,8 @@
 
 body{
   background: #e4edfd;
-   width: 8.4in;/* Just shy of 8.5 to avoid problems, see print.css */
-   height: 10.9in;
+  width: 8.4in;/* Just shy of 8.5 to avoid problems, see print.css */
+  height: 10.9in;
 }
 
 #content-source{
@@ -25,7 +25,7 @@ img{
 
 .sheet {
   /* illustrates the size of each sheet,
-     to get a better sense of the text block */
+  to get a better sense of the text block */
   background: #fff7d9;
   height: 11in;
   width: 8.5in;
@@ -34,7 +34,7 @@ img{
 
 .page{
   /* container for each .page-content,
-     .page-header, and .page-footer */
+  .page-header, and .page-footer */
   margin: 0in 1in;
   position: relative;
   top: .5in;
@@ -51,7 +51,7 @@ img{
 
 .content-wrapper {
   /* used in both print.html & print_twocol.html to keep columns from floating
-   & to enforce height */
+  & to enforce height */
   display: inline; /* don't touch display, postition, top, and left */
   position: relative;
   top: 0;
@@ -84,6 +84,7 @@ img{
 
 .content{ /* Divs that contain everything coming through book.html */
   break-after: never; /* overwritten if specific content displayed. */
+  display: none;
 }
 
 .blank{
@@ -96,8 +97,8 @@ a{
 }
 
 a:after {
-	content: " (→" attr(href) ") ";
-	font-size: 90%;
+  content: " (→" attr(href) ") ";
+  font-size: 90%;
 }
 
 .noprint{

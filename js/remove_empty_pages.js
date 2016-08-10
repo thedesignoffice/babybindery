@@ -1,25 +1,30 @@
-
-
 var remove_pages = function(){
   var n_pages = $(".page-content").length;
-  console.log('There are '+n_pages+' pages.');
+  //console.log('There are '+n_pages+' pages.');
+  var counter = 0;
   for(var i=0;i<n_pages;i++){
     var chosen_page = $(".page-content").eq(i);
+
     if(chosen_page.html() == "<cssregion></cssregion>"){
-      chosen_page.remove();
-      console.log("Removed page "+i);
+      //chosen_page.parents(".sheet").remove();
+      chosen_page.parents(".sheet").css('display','none');
+      counter += 1;
     }else if(chosen_page.html() == ""){
-      chosen_page.remove();
-      console.log("Removed page "+i);
+      //chosen_page.parents(".sheet").remove();
+      chosen_page.parents(".sheet").css('display','none');
+      counter += 1;
     }
   }
+  console.log(counter + " regions trimmed.");
 }
 
-*/
+$("#trim_pages_button").click(function(){
+  remove_pages();
+});
 
 
-// Recommended version:
-
+// Version from Bindery:
+/*
 
 // deletes any empty regions from the end of a flow:
 function trimRegions(flowName) {
@@ -37,4 +42,4 @@ function trimRegions(flowName) {
 
 trimRegions('toprint');
 
-
+*/
