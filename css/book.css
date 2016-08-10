@@ -33,13 +33,13 @@ img{
 }
 
 .page{
-  /* container for each .page-content, 
+  /* container for each .page-content,
      .page-header, and .page-footer */
   margin: 0in 1in;
   position: relative;
   top: .5in;
   background: white;
-  clear:both;
+  clear: both;
 }
 
 .page-header {
@@ -56,20 +56,19 @@ img{
   position: relative;
   top: 0;
   left: 0;
-  height: 8.5in;
+  height: 8.5in; /* Needs to match .page-content height. */
   clear: both;
 
 }
 
 .page-content{
   /* Regions container. Flows from #content-source */
-  display: block;
   /* margin & padding only seem to work on the sides in regions.  */
   flow-from: toprint;
+  display: block;
   height: 8.5in; /* extremely wack */
   /* Don't make taller than .content-wrapper and page size (defined in print.css) */
   margin-bottom: 0.25in;
-
 }
 
 .page-footer{
@@ -80,16 +79,15 @@ img{
 }
 
 .front-content{ /* Divs with Half Title, Title, Credits, TOC in book.html */
-  break-after: always; /* needed for polyfill */
+  break-after: always;
 }
 
 .content{ /* Divs that contain everything coming through book.html */
-  break-after: always; /* needed for polyfill */
 }
 
 .blank{
   visibility: hidden; /* hiding any mystery content, just takin up space. */
-  height: 8.5in; /* should match .page-content? */
+  height: 8.5in; /* should match .page-content height. */
 }
 
 a{

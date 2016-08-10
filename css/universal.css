@@ -5,6 +5,7 @@ body{
   font-size: 20px;
   text-align: left;
   width: 100%;
+  line-height: 1.5em;
 }
 
 img{
@@ -38,17 +39,14 @@ a:hover{
   font-weight: bold;
 }
 
-/*
-
-  Web Stuff — following classes only used on website, not in print layout
-
-*/
+/* Web-only stuff: */
 
 .wrapper{
   /* Goes just within the body, around all Page or Post Content. */
   width: 70%;
   margin: 0 auto;
 }
+
 
 
 
