@@ -15,8 +15,7 @@
 
 .page {
   /* larger text block for two-column layout */
-  margin: .75in .5in;
-
+  margin: 0in .5in;
 }
 
 p {
