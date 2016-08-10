@@ -1,5 +1,3 @@
-
-
 var remove_pages = function(){
   var n_pages = $(".page-content").length;
   console.log('There are '+n_pages+' pages.');
@@ -15,11 +13,11 @@ var remove_pages = function(){
   }
 }
 
-*/
+$("#trim_pages_button").click(remove_pages());
 
 
 // Recommended version:
-
+/*
 
 // deletes any empty regions from the end of a flow:
 function trimRegions(flowName) {
@@ -37,4 +35,4 @@ function trimRegions(flowName) {
 
 trimRegions('toprint');
 
-
+*/

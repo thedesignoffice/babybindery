@@ -7,18 +7,15 @@
     {% include universal_css.html %}
     {% include book_css.html %}
     <!-- Styles web view of book content, the html "print preview"-->
-    {% include two-col_css.html %} <!-- for two-column book specifically -->
     {% include print_css.html %} <!-- Print-media stylesheet. -->
     {% include regions_js.html %} <!-- See https://github.com/FremyCompany/css-regions-polyfill -->
+
+    {% include two-col_css.html %} <!-- for two-column book specifically -->
   </head>
 
   <body>
 
-    <div class="menu noprint">
-      {% for content_type in site.content_types %}
-      <input type="checkbox" id="checkbox-{{content_type}}" />{{ content_type }}<br />
-      {% endfor %}
-    </div>
+    {% include print_menu.html %}
 
 
     <!-- ostensibly just pulling in book.html -->
@@ -26,10 +23,10 @@
       {{ content }}
     </div>
 
-      <!-- Use Jekyll to make 100 pages, to be trimmed later. -->
+    <!-- Use Jekyll to make 100 pages, to be trimmed later. -->
     {% for num in (1...100) %}
     <div class="sheet">
-        <div class="page">
+      <div class="page">
         <div class="page-header">{{site.title}}</div>
         <div class="content-wrapper">
 
