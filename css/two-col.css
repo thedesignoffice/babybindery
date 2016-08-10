@@ -3,8 +3,7 @@
 /* For changes _only_ needed for printed document, use print.css. */
 
 
-/* used with .page-content
- * see book.css */
+/* used with .page-content, see book.css */
 .col {
   width: 3.6in;
   border: 1px solid blue;
@@ -16,7 +15,7 @@
 
 .page {
   /* larger text block for two-column layout */
-    margin: .75in .5in;
+  margin: .75in .5in;
 
 }
 

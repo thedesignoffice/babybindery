@@ -55,7 +55,10 @@ function refreshContent(){
 
   n_checked = checked_contents.length;
   for(var j=0;j<n_checked;j++){
+    $('.content.'+checked_contents[j]).parents().css('display','block');
     $('.content.'+checked_contents[j]).css('display','block');
+    //$('.content.'+checked_contents[j]).css('break-after','always');
+
     // what should the correct display be here?
     console.log('Flowing in '+checked_contents[j]+' contents.');
   }
