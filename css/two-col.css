@@ -1,10 +1,9 @@
-/* CSS to format the /book.html page, which uses print.html layout file. */
+/* CSS to format the /book.html page, which uses print.html layout file. This adds on top of the book.css styling. */
 /* BE AWARE: THIS FORMATTING IS BROUGHT INTO THE PRINT TOO... */
 /* For changes _only_ needed for printed document, use print.css. */
 
 
-/* used with .page-content
- * see book.css */ 
+/* used with .page-content, see book.css */
 .col {
   width: 3.6in;
   border: 1px solid blue;
@@ -16,8 +15,7 @@
 
 .page {
   /* larger text block for two-column layout */
-    margin: .75in .5in;
-
+  margin: 0in .5in;
 }
 
 p {
