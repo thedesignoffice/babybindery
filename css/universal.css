@@ -4,7 +4,10 @@ body{
   color: blue;
   text-align: left;
   width: 100%;
+  font-size: 17px;
+  line-height: 140%;
   margin-top: 3vh;
+  -webkit-font-smoothing: antialiased;
 }
 
 img{
