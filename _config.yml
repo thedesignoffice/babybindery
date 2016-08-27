@@ -28,3 +28,4 @@ content_types: [conversation, image, text]
 john_caserta:
     name: John Caserta
     email: jcaserta@risd.edu
+    web: http://twitter.com/johncaserta

@@ -5,6 +5,8 @@
     {% include universal_css.html %}
   </head>
   <body>
+    <!-- Look the author details up from the site config. -->
+    {% assign author = site.data.authors[page.author] %}
     <div class="wrapper">
       <header>
         <h1>{{ page.title }}</h1>
