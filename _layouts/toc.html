@@ -45,7 +45,7 @@
           {{ page.title }}
         </h1>
 
-        <h2>Text</h2>
+        <h2>All</h2>
         <ul>
           {% for type in site.content_types %}
           {% for post in site.posts %}
@@ -61,17 +61,17 @@
         </ul>
 
 
-        <h2>Image</h2>
+        <h2>Text</h2>
         <ul>
           {% for type in site.content_types %}
           {% for post in site.posts %}
 
-            {% if post.content_types == 'text' %}
+            {% if post.content-type == type %}{% if post.content_types == 'text' %}
 
             <li>
               <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> <span style="text-transform: capitalize">{{ post.content-type }}:</span> <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
             </li>
-            {% endif %}
+            {% endif %}{% endif %}
           {% endfor %}
           {% endfor %}
         </ul>
