@@ -35,12 +35,12 @@
           {{ page.title }}
         </h1>
 
-        <h3>text</h3>
+        <h3>Text</h3>
         <ul>
           {% for post in site.posts %}
           {% if post.content_types == 'text' %}
             <li>
-              <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> {{ post.content_types }}:
+              <span class="post-meta">{{ post.date | date: "%Y %B %-d" }}</span> {{ post.content_types }}:
               <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
             </li>
           {% endif %}
@@ -48,7 +48,7 @@
         </ul>
 
 
-          <h3>conversation</h3>
+          <h3>Conversation</h3>
           <ul>
             {% for post in site.posts %}
           {% if post.content_types == 'conversation' %}
