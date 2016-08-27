@@ -5,7 +5,7 @@ body{
   text-align: left;
   width: 100%;
   font-size: 17px;
-  line-height: 24px;
+  line-height: 26px;
   margin-top: 3vh;
   -webkit-font-smoothing: antialiased;
 }
@@ -24,7 +24,6 @@ p{
 
 a{
   border-bottom: 1px solid blue;
-  padding-bottom: 1px;
   color: blue;
   text-decoration: none;
 }
