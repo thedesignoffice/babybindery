@@ -14,7 +14,7 @@ img{
   max-width: 100%;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-weight: bold;
 }
 h3 { text-indent: 41px; margin-top: 24px; font-style: italic;}
@@ -25,11 +25,13 @@ p{
 a{
   border-bottom: 1px solid blue;
   padding-bottom: 1px;
+  color: blue;
   text-decoration: none;
 }
 a:hover{
   background: blue; color: white;
 }
+
 
 .initials{
   color: red;
