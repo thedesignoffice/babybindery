@@ -45,12 +45,13 @@
           {{ page.title }}
         </h1>
 
+        <h2>Text</h2>
         <ul>
-
           {% for type in site.content_types %}
           {% for post in site.posts %}
 
-            {% if post.content-type == type %}
+            {% if post.content-type == text %}
+
             <li>
               <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> <span style="text-transform: capitalize">{{ post.content-type }}:</span> <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
             </li>
@@ -58,6 +59,38 @@
           {% endfor %}
           {% endfor %}
         </ul>
+
+
+        <h2>Image</h2>
+        <ul>
+          {% for type in site.content_types %}
+          {% for post in site.posts %}
+
+            {% if post.content-type == image %}
+
+            <li>
+              <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> <span style="text-transform: capitalize">{{ post.content-type }}:</span> <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
+            </li>
+            {% endif %}
+          {% endfor %}
+          {% endfor %}
+        </ul>
+
+        <h2>Conversation</h2>
+        <ul>
+          {% for type in site.content_types %}
+          {% for post in site.posts %}
+
+            {% if post.content-type == conversation %}
+
+            <li>
+              <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> <span style="text-transform: capitalize">{{ post.content-type }}:</span> <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
+            </li>
+            {% endif %}
+          {% endfor %}
+          {% endfor %}
+        </ul>
+
 
         {{ content }}
 
