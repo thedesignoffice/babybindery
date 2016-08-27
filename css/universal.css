@@ -1,11 +1,9 @@
 body{
-  background: white;
-  font-family: sans-serif;
+  background: yellow;
+  font-family: 'Space Mono', monospace;
   color: blue;
-  font-size: 20px;
   text-align: left;
   width: 100%;
-  line-height: 1.5em;
 }
 
 img{
@@ -46,8 +44,3 @@ a:hover{
   width: 70%;
   margin: 0 auto;
 }
-
-
-
-
-
