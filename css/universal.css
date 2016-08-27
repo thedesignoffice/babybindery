@@ -24,7 +24,8 @@ p{
 
 a{
   border-bottom: 1px solid blue;
-  padding-bottom: 2px;
+  padding-bottom: 1px;
+  text-decoration: none;
 }
 a:hover{
   background: blue; color: white;
