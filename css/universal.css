@@ -17,8 +17,6 @@ h1, h2, h3 {
 p{
   margin: 1em 0;
   font-family: serif;
-  line-height: 1.5em;
-  color: red;
 }
 
 a{
@@ -43,4 +41,10 @@ a:hover{
   /* Goes just within the body, around all Page or Post Content. */
   width: 70%;
   margin: 0 auto;
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+  -webkit-column-gap: 20px; /* Chrome, Safari, Opera */
+  -moz-column-gap: 20px; /* Firefox */
+  column-gap: 20px;
 }
