@@ -20,7 +20,6 @@ h1, h2, h3 {
 h3 { text-indent: 41px; margin-top: 24px; font-style: italic;}
 p{
   margin: 1em 0;
-  font-family: serif;
 }
 
 a{
@@ -31,8 +30,7 @@ a:hover{
 }
 
 .initials{
-  font-family: monospace;
-  font-size: .8em;
+  color: red;
 }
 
 .conversation-question{ /* For Conversation Questions, denoted [INITIALS]-q in post files. */
