@@ -40,7 +40,7 @@
           {% for post in site.posts %}
           {% if post.content_types == 'text' %}
             <li>
-              {{ post.unit }} <span class="post-meta">{{ post.date | date: "%Y %B %-d" }}</span> {{ post.content_types }}:
+              Unit 1: {{ post.unit }} <span class="post-meta">{{ post.date | date_to_string }}</span> {{ post.content_types }}:
               <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a> {{ post.author }}
             </li>
           {% endif %}
