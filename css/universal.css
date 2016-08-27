@@ -23,10 +23,11 @@ p{
 }
 
 a{
-  color: blue;
+  border-bottom: 1px solid blue;
+  padding-bottom: 2px;
 }
 a:hover{
-  text-decoration: none;
+  background: blue; color: white;
 }
 
 .initials{
