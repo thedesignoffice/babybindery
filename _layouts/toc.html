@@ -49,13 +49,15 @@
 
         <h3>text</h3>
         <ul>
-            {% for post in site.post %}{% if post.content_types == 'text' %}
+            {% for post in site.post %}
+            {% if post.content_types == 'text' %}
             <li>
               <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> {{ post.content_types }}:
               <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
             </li>
 
-            {% endif %}{% endfor %}
+            {% endif %}
+            {% endfor %}
         </ul>
 
 
