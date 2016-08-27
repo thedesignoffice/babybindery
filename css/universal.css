@@ -5,7 +5,7 @@ body{
   text-align: left;
   width: 100%;
   font-size: 17px;
-  line-height: 140%;
+  line-height: 24px;
   margin-top: 3vh;
   -webkit-font-smoothing: antialiased;
 }
@@ -15,9 +15,9 @@ img{
 }
 
 h1, h2, h3 {
-  font-weight: normal;
+  font-weight: normal; background: blue; color: white; 
 }
-
+h3 { text-indent: 41px; margin-top: 24px;}
 p{
   margin: 1em 0;
   font-family: serif;
