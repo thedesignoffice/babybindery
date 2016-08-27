@@ -22,10 +22,4 @@ kramdown:
   input: GFM
 page_width: "8.5in"
 page_height: "11in"
-content_types: [conversation, image, text]
-
-# Author details.
-john_caserta:
-    name: John Caserta
-    email: jcaserta@risd.edu
-    web: http://twitter.com/johncaserta
+content_types: [conversation, image, text, other]

@@ -50,10 +50,10 @@
         </ul>
 
 
-          <h3>Conversation</h3>
+          <h3>Other</h3>
           <ul>
             {% for post in site.posts %}
-          {% if post.content_types == 'conversation' %}
+          {% if post.content_types == 'other' %}
             <li>
               <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a> {{ post.author }} / <span class="post-meta">{{ post.date | date_to_string }}</span>
             </li>
