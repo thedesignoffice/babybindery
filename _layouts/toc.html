@@ -45,9 +45,7 @@
           {{ page.title }}
         </h1>
 
-        <h2>All</h2>
         <ul>
-          {% for type in site.content_types %}
           {% for post in site.posts %}
 
           {% if post.content_types == 'text' %}
@@ -61,7 +59,7 @@
           {% endif %}
 
           {% if post.content_types == 'image' %}
-          <h3>Text</h3>
+          <h3>image</h3>
           <ul>
             <li>
               <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> {{ post.content_types }}:
@@ -71,7 +69,7 @@
           {% endif %}
 
           {% if post.content_types == 'conversation' %}
-          <h3>Text</h3>
+          <h3>conversation</h3>
           <ul>
             <li>
               <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> {{ post.content_types }}:
@@ -82,7 +80,6 @@
 
 
 
-          {% endfor %}
           {% endfor %}
 
 
