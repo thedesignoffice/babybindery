@@ -50,44 +50,42 @@
           {% for type in site.content_types %}
           {% for post in site.posts %}
 
-
+          {% if post.content_types == 'text' %}
+          <h3>Text</h3>
+          <ul>
             <li>
-              <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> <span style="text-transform: capitalize">{{ post.content-type }}:</span> <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
+              <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> {{ post.content_types }}:
+              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
             </li>
-          {% endfor %}
-          {% endfor %}
-        </ul>
+          </ul>
+          {% endif %}
 
-
-        <h2>Text</h2>
-        <ul>
-          {% for type in site.content_types %}
-          {% for post in site.posts %}
-
-            {% if post.content-type == type %}{% if post.content_types == 'text' %}
-
+          {% if post.content_types == 'image' %}
+          <h3>Text</h3>
+          <ul>
             <li>
-              <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> <span style="text-transform: capitalize">{{ post.content-type }}:</span> <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
+              <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> {{ post.content_types }}:
+              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
             </li>
-            {% endif %}{% endif %}
-          {% endfor %}
-          {% endfor %}
-        </ul>
+          </ul>
+          {% endif %}
 
-        <h2>Conversation</h2>
-        <ul>
-          {% for type in site.content_types %}
-          {% for post in site.posts %}
-
-            {% if post.content_types == 'conversation' %}
-
+          {% if post.content_types == 'conversation' %}
+          <h3>Text</h3>
+          <ul>
             <li>
-              <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> <span style="text-transform: capitalize">{{ post.content-type }}:</span> <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
+              <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> {{ post.content_types }}:
+              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
             </li>
-            {% endif %}
+          </ul>
+          {% endif %}
+
+
+
           {% endfor %}
           {% endfor %}
-        </ul>
+
+
 
 
         {{ content }}
