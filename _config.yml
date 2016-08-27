@@ -18,6 +18,8 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
 page_width: "8.5in"
 page_height: "11in"
 content_types: [conversation, image, text]
