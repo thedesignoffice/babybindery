@@ -28,6 +28,10 @@
 
   <body>
 
+    <!-- Look the author details up from the site config. -->
+    {% assign author = site.data.authors[page.author] %}
+
+    <!-- Output author details if some exist. -->
 
     <div class="wrapper">
       <div class="page-content">
@@ -40,8 +44,12 @@
           {% for post in site.posts %}
           {% if post.content_types == 'text' %}
             <li>
-              Unit 1: {{ post.unit }} <span class="post-meta">{{ post.date | date_to_string }}</span> {{ post.content_types }}:
-              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a> {{ post.author }}
+              Unit {{ post.unit }}: <span class="post-meta">{{ post.date | date_to_string }}</span>
+              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
+                  {% if author %}
+                      <span><a href="{{ author.web }}" target="_blank">{{ author.name }}</a></span>
+                  {% endif %}
+
             </li>
           {% endif %}
           {% endfor %}
@@ -53,7 +61,7 @@
             {% for post in site.posts %}
           {% if post.content_types == 'conversation' %}
             <li>
-              <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> {{ post.content_types }}:
+              <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span>
               <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
             </li>
           {% endif %}
