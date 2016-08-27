@@ -15,9 +15,9 @@ img{
 }
 
 h1, h2, h3 {
-  font-weight: normal; background: blue; color: white; 
+  font-weight: bold;
 }
-h3 { text-indent: 41px; margin-top: 24px;}
+h3 { text-indent: 41px; margin-top: 24px; font-style: italic;}
 p{
   margin: 1em 0;
   font-family: serif;
