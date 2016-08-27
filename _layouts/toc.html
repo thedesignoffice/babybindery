@@ -48,35 +48,35 @@
         <ul>
           {% for post in site.posts %}
 
-          {% if post.content_types == 'text' %}
           <h3>Text</h3>
           <ul>
+          {% if post.content_types == 'text' %}
             <li>
               <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> {{ post.content_types }}:
               <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
             </li>
-          </ul>
           {% endif %}
+        </ul>
 
-          {% if post.content_types == 'image' %}
           <h3>image</h3>
           <ul>
+          {% if post.content_types == 'image' %}
             <li>
               <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> {{ post.content_types }}:
               <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
             </li>
-          </ul>
           {% endif %}
+        </ul>
 
-          {% if post.content_types == 'conversation' %}
           <h3>conversation</h3>
           <ul>
+          {% if post.content_types == 'conversation' %}
             <li>
               <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> {{ post.content_types }}:
               <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
             </li>
-          </ul>
           {% endif %}
+        </ul>
 
 
 
