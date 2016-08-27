@@ -50,7 +50,7 @@
           {% for type in site.content_types %}
           {% for post in site.posts %}
 
-            {% if post.content-type == text %}
+            {% if post.content-type == type %}
 
             <li>
               <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> <span style="text-transform: capitalize">{{ post.content-type }}:</span> <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
@@ -66,7 +66,7 @@
           {% for type in site.content_types %}
           {% for post in site.posts %}
 
-            {% if post.content-type == image %}
+            {% if post.content_types == text' %}
 
             <li>
               <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> <span style="text-transform: capitalize">{{ post.content-type }}:</span> <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
@@ -81,7 +81,7 @@
           {% for type in site.content_types %}
           {% for post in site.posts %}
 
-            {% if post.content-type == conversation %}
+            {% if post.content-type == type %}{% if post.content_types == 'conversation' %}
 
             <li>
               <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> <span style="text-transform: capitalize">{{ post.content-type }}:</span> <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
