@@ -34,7 +34,6 @@ a.makebook{
   /* on index */
   display: block;
   padding: 2rem;
-  margin: 2rem;
   float: left;
   border: 2px solid blue;
   text-transform: uppercase;
