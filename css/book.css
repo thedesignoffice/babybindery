@@ -6,6 +6,7 @@ body{
   background: #e4edfd;
   width: 8.4in; Just shy of 8.5 to avoid problems, see print.css */
   height: 10.9in;
+  color: black;
 }
 
 #content-source{
@@ -90,9 +91,9 @@ img{
  }
 .sheet:nth-child(odd) .page-footer span { display: none; }
 
-.sheet:nth-child(odd) .page-header  { visibility: hidden; }
 .sheet .page-header, .sheet .page-footer  { visibility: hidden; }
 .sheet:nth-child(n+3) .page-header, .sheet:nth-child(n+3) .page-footer  { visibility: visible; }
+.sheet:nth-child(odd) .page-header  { visibility: hidden; }
 
 .front-content{ /* Divs with Half Title, Title, Credits, TOC in book.html */
   break-after: always;
