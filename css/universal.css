@@ -1,12 +1,10 @@
 body{
-  background: yellow;
   font-family: 'Space Mono', monospace;
   color: blue;
-  word-spacing: -1px;
   text-align: left;
   width: 100%;
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 11pt;
+  line-height: 19pt;
   margin-top: 3vh;
 }
 
