@@ -42,16 +42,21 @@ The contents of this page are loaded into the print.html layout.
 
 <!-- Table of Contents -->
 <div class="front-content">
-  <h1>Table of Contents</h1>
+  <h1>Contents</h1>
   <p>
-  <ul>
-    {% for post in site.posts %}
-    <li>
-      <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span>
-      {{ post.content-type }}: {{ post.title }}
-    </li>
-    {% endfor %}
-  </ul>
+    <ul>
+      {% for type in site.content_types %}
+      <h3>{{ type }}</h3>
+      {% for post in site.posts %}
+
+        {% if post.content-type == type %}
+        <li class="{{ post.content-type }}">
+          <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>, {{ post.author }}, <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span>
+        </li>
+        {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </ul>
   </p>
 </div>
 
@@ -59,72 +64,19 @@ The contents of this page are loaded into the print.html layout.
   This page intentionally left blank.
 </div>
 
-<!-- All Content, by content type. -->
 
-<div class="content conversation">
-  <h1>conversations</h1>
-</div>
 
-<!-- Conversation -->
+{% for type in site.content_types %}
+<h3>{{ type }}</h3>
 {% for post in site.posts %}
-{% if post.content-type == 'conversation' %}
 
-<div class="content conversation">
-  {{ post.date | date: "%-d %B %Y" }}<br />
-  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
-  {{site.baseurl}}{{post.url}}<br />
-  {{post.content}}
-</div>
+  {% if post.content-type == type %}
+  <div class="content {{ post.content-type }}">
 
-{% endif %}
+    <h2>{{ post.title }}</h2>
+    <p>{{site.baseurl}}{{post.url}}</p>
+    {{post.content}}
+  </div>
+  {% endif %}
 {% endfor %}
-<!-- /Conversation -->
-
-<!-- Blank Page -->
-<div class="content blank">
-  Page intentionally left blank.
-</div>
-
-<div class="content image">
-  <h1>images</h1>
-</div>
-
-<!-- Image -->
-{% for post in site.posts %}
-{% if post.content-type == 'image' %}
-
-<div class="content image">
-  {{ post.date | date: "%-d %B %Y" }}<br />
-  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
-  {{site.baseurl}}{{post.url}}<br />
-  <img src="{{ post.imgurl }}" />
-  {{post.content}}
-</div>
-
-{% endif %}
 {% endfor %}
-<!-- /Image -->
-
-<!-- Blank Page -->
-<div class="content blank">
-  Page intentionally left blank.
-</div>
-
-<div class="content blogpost">
-  <h1>blog posts</h1>
-</div>
-
-<!-- Text -->
-{% for post in site.posts %}
-{% if post.content-type == 'text' %}
-
-<div class="content text">
-  {{ post.date | date: "%-d %B %Y" }}<br />
-  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
-  {{site.baseurl}}{{post.url}}<br />
-  {{post.content}}
-</div>
-
-{% endif %}
-{% endfor %}
-<!-- /Text -->
