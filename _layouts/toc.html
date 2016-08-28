@@ -36,31 +36,19 @@
           {{ page.title }}
         </h1>
 
-        <h3>Text</h3>
         <ul>
+
+          {% for type in site.content_types %}
           {% for post in site.posts %}
-          {% if post.content_types == 'text' %}
-            <li>
-              Unit {{ post.unit }}:
-              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a> {{ post.author }} / <span class="post-meta">{{ post.date | date_to_string }}</span>
 
+            {% if post.content-type == type %}
+            <li>
+              <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> <span style="text-transform: capitalize">{{ post.content-type }}:</span> <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
             </li>
-          {% endif %}
+            {% endif %}
+          {% endfor %}
           {% endfor %}
         </ul>
-
-
-          <h3>Other</h3>
-          <ul>
-            {% for post in site.posts %}
-          {% if post.content_types == 'other' %}
-            <li>
-              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a> {{ post.author }} / <span class="post-meta">{{ post.date | date_to_string }}</span>
-            </li>
-          {% endif %}
-          {% endfor %}
-        </ul>
-
 
 
 

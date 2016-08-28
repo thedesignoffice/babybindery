@@ -2,7 +2,7 @@
 layout: conversation
 title: What is BabyBindery?
 date: 2015-05-31
-content_types: conversation
+content-type: conversation
 ---
 
 With John Caserta (JC), Catherine Leigh Schmidt (CLS), Lukas WinklerPrins (LW).
