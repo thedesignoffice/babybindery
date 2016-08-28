@@ -31,6 +31,11 @@ img{
   width: 8.5in;
   margin: 3vh;
 }
+@media print {
+  .sheet {
+    margin: 0;
+  }
+ }
 
 .page{
   /* container for each .page-content,
