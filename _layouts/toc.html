@@ -21,8 +21,9 @@
 
           {% for type in site.content_types %}
           <style>
-            .toc .{{ post.content-type }}:nth-of-type(1) { margin-top: 1em; }
+            .toc .{{ site.content_types }}:nth-of-type(1) { margin-top: 1em; }
           </style>
+          <h3>{{ site.content_types }}</h3>
           {% for post in site.posts %}
 
             {% if post.content-type == type %}
