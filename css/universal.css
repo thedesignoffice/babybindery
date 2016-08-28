@@ -33,8 +33,9 @@ a:hover{
 a.makebook{
   /* on index */
   display: block;
-  padding: 2rem;
-  float: left;
+  font-size: 1.5em;
+  padding: 2em;
+  margin-top: 1em;
   border: 2px solid blue;
   text-transform: uppercase;
   text-decoration: none;
