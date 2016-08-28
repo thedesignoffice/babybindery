@@ -21,6 +21,7 @@
       {{ content }}
     </div>
 
+    <div class="sheetwrapper">
     <!-- Use Jekyll to make 100 pages. Edit here if you need fewer. -->
     {% for num in (1...100) %}
     <div class="sheet page{{num}}">
@@ -34,7 +35,7 @@
       </div>
     </div>
     {% endfor %}
-
+    </div>
 
     {% include label_interview_paragraphs.html %} <!-- Needs to happen after content is dropped in. -->
     {% include checkboxes_links.html %}
