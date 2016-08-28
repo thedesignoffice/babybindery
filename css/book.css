@@ -103,6 +103,7 @@ img{
   break-after: always;
   font-size: 6em;
   line-height: 100%;
+  text-indent: -6px;
   -webkit-hyphens: auto;
 -ms-hyphens: auto;
 hyphens: auto;

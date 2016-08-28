@@ -7,14 +7,10 @@ This is a display of content in preparation for print.
 The contents of this page are loaded into the print.html layout.
 -->
 
-<div class="blank">
-  This page intentionally left blank.
-</div>
 
 <!-- Half Title Page -->
 <div class="front-content">
   <h2>{{ site.title }}</h2>
-  <p>Half Title Page</p>
 </div>
 
 <div class="blank">
@@ -23,8 +19,7 @@ The contents of this page are loaded into the print.html layout.
 
 <!-- Title Page -->
 <div class="front-content">
-  <h1>{{ site.title }}</h1>
-  <p>Title Page</p>
+  <h1 class="chapter_head">{{ site.title }}</h1>
 </div>
 
 <div class="blank">
@@ -51,7 +46,7 @@ The contents of this page are loaded into the print.html layout.
 
         {% if post.content-type == type %}
         <li class="{{ post.content-type }}">
-          <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>, {{ post.author }}, <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span>
+          <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>, {{ post.author }}
         </li>
         {% endif %}
       {% endfor %}
