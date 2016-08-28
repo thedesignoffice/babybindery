@@ -25,11 +25,11 @@
     {% for num in (1...100) %}
     <div class="sheet {{num}}">
       <div class="page">
-        <div class="page-header">{{site.title}}</div>
+        <div class="page-header">{{type}}</div>
         <div class="content-wrapper">
           <div class='page-content'></div>
         </div>
-        <div class='page-footer'>{{ num }}</div>
+        <div class='page-footer'><span>{{site.title}}</span> {{ num }}</div>
 
       </div>
     </div>
