@@ -30,6 +30,23 @@ a:hover{
   background: blue; color: white;
 }
 
+a.makebook{
+  /* on index */
+  display: block;
+  padding: 2rem;
+  margin: 2rem;
+  float: left;
+  border: 2px solid blue;
+  text-transform: uppercase;
+  text-decoration: none;
+} a.button:hover {
+  color: white;
+  background-color: blue;
+} a.button:first-child {
+  margin-left: 0;
+}
+
+.toc li:nth-of-type(1) { margin-top: 1em; }
 
 .initials{
   color: red;
