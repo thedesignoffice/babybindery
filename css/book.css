@@ -84,7 +84,7 @@ img{
   clear: both;
   text-align: right;
 }
-*/
+
 .sheet:nth-child(odd) .page-footer  {   text-align:justify;
   text-align-last:justify;
  }
