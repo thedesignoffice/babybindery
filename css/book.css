@@ -82,11 +82,12 @@ img{
   font-size:.75em;
   width: 100%;
   clear: both;
-  text-align:justify;
-  text-align-last:justify;
+  text-align: right;
 }
 */
-.sheet:nth-child(odd) .page-footer  { text-align: right; }
+.sheet:nth-child(odd) .page-footer  {   text-align:justify;
+  text-align-last:justify;
+ }
 .sheet:nth-child(odd) .page-footer span { display: none; }
 
 .sheet .page-header, .sheet .page-footer  { visibility: hidden; }
