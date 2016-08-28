@@ -99,6 +99,15 @@ img{
   height: 8.5in; /* should match .page-content height. */
 }
 
+.chapter_head {
+  break-after: always;
+  font-size: 4em;
+  -webkit-hyphens: auto;
+-ms-hyphens: auto;
+hyphens: auto;
+
+}
+
 a{
   text-decoration: none;
 }
@@ -107,5 +116,5 @@ a:after {
   font-size: 70%;
 }
 
-.noprint input { padding-left: 2em; 
+.noprint input { padding-left: 2em;
 }
