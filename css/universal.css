@@ -2,12 +2,12 @@ body{
   background: yellow;
   font-family: 'Space Mono', monospace;
   color: blue;
+  word-spacing: -1px;
   text-align: left;
   width: 100%;
   font-size: 18px;
   line-height: 30px;
   margin-top: 3vh;
-  -webkit-font-smoothing: antialiased;
 }
 
 img{
