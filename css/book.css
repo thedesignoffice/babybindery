@@ -85,7 +85,7 @@ img{
   text-align: right;
 }
 
-.sheet:nth-child(odd) .page-footer  {   text-align:justify;
+.sheet:nth-child(even) .page-footer  {   text-align:justify;
   text-align-last:justify;
  }
 .sheet:nth-child(odd) .page-footer span { display: none; }
