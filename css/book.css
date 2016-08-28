@@ -82,7 +82,7 @@ img{
   width: 100%;
   clear: both;
 }
-.sheet:nth-child(even) .page-footer { text-align: right; }
+.sheet:nth-child(odd) .page-footer { text-align: right; }
 
 .front-content{ /* Divs with Half Title, Title, Credits, TOC in book.html */
   break-after: always;
