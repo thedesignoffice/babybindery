@@ -30,7 +30,7 @@ a:hover{
   background: blue; color: white;
 }
 
-a.makebook{
+a.makebook, #trim_pages_button{
   /* on index */
   display: inline-block;
   font-size: 1.4em;
@@ -39,10 +39,13 @@ a.makebook{
   border: 2px solid blue;
   text-transform: uppercase;
   text-decoration: none;
-} a.button:hover {
+}
+
+a.button:hover {
   color: white;
   background-color: blue;
-} a.button:first-child {
+}
+a.button:first-child {
   margin-left: 0;
 }
 
