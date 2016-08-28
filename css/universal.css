@@ -30,7 +30,7 @@ a:hover{
   background: blue; color: white;
 }
 
-a.makebook, #trim_pages_button{
+a.makebook {
   /* on index */
   display: inline-block;
   font-size: 1.4em;

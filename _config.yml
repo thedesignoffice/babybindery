@@ -6,10 +6,10 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Design Studio 2016-18
+title: BabyBindery
 email: john@thedesignoffice.org
 description: > # this means to ignore newlines until "baseurl:"
-  RISD GD class
+    Web-to-Print framework, templated using Jekyll. By Catherine Leigh Schmidt and Lukas WinklerPrins, for The Design Office PVD with John Caserta.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://risd-gd.github.io/ds16-18" # the base hostname & protocol for your site
 twitter_username:

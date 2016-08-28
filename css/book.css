@@ -101,7 +101,8 @@ img{
 
 .chapter_head {
   break-after: always;
-  font-size: 4em;
+  font-size: 6em;
+  line-height: 100%;
   -webkit-hyphens: auto;
 -ms-hyphens: auto;
 hyphens: auto;
