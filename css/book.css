@@ -83,7 +83,7 @@ img{
   width: 100%;
   clear: both;
   text-align:justify;
-
+  text-align-last:justify;
 }
 */
 .sheet:nth-child(odd) .page-footer  { text-align: right; }
