@@ -43,7 +43,7 @@ img{
   .page-header, and .page-footer */
   margin: 0in 1in;
   position: relative;
-  top: .5in;
+  top: 0; /* was .5in, may not be necessary */
   background: white;
   clear: both;
 }
@@ -74,7 +74,7 @@ img{
   display: block;
   height: 8.5in; /* extremely wack */
   /* Don't make taller than .content-wrapper and page size (defined in print.css) */
-  margin-bottom: 1in;
+  margin-bottom: 0.25in;
 }
 
 .page-footer{
