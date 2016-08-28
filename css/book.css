@@ -91,7 +91,7 @@ img{
  }
 .sheet:nth-child(odd) .page-footer span { display: none; }
 
-.page1 .page-footer, .page2 .page-footer, .page3 .page-footer, .page2 .page-header,   { visibility: hidden; }
+.page1 .page-footer, .page2 .page-footer, .page3 .page-footer, .page2 .page-header { visibility: hidden; }
 
 .sheet:nth-child(odd) .page-header  { visibility: hidden; }
 
