@@ -58,3 +58,73 @@ The contents of this page are loaded into the print.html layout.
 <div class="blank">
   This page intentionally left blank.
 </div>
+
+<!-- All Content, by content type. -->
+
+<div class="content conversation">
+  <h1>conversations</h1>
+</div>
+
+<!-- Conversation -->
+{% for post in site.posts %}
+{% if post.content-type == 'conversation' %}
+
+<div class="content conversation">
+  {{ post.date | date: "%-d %B %Y" }}<br />
+  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+  {{site.baseurl}}{{post.url}}<br />
+  {{post.content}}
+</div>
+
+{% endif %}
+{% endfor %}
+<!-- /Conversation -->
+
+<!-- Blank Page -->
+<div class="content blank">
+  Page intentionally left blank.
+</div>
+
+<div class="content image">
+  <h1>images</h1>
+</div>
+
+<!-- Image -->
+{% for post in site.posts %}
+{% if post.content-type == 'image' %}
+
+<div class="content image">
+  {{ post.date | date: "%-d %B %Y" }}<br />
+  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+  {{site.baseurl}}{{post.url}}<br />
+  <img src="{{ post.imgurl }}" />
+  {{post.content}}
+</div>
+
+{% endif %}
+{% endfor %}
+<!-- /Image -->
+
+<!-- Blank Page -->
+<div class="content blank">
+  Page intentionally left blank.
+</div>
+
+<div class="content blogpost">
+  <h1>blog posts</h1>
+</div>
+
+<!-- Text -->
+{% for post in site.posts %}
+{% if post.content-type == 'text' %}
+
+<div class="content text">
+  {{ post.date | date: "%-d %B %Y" }}<br />
+  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
+  {{site.baseurl}}{{post.url}}<br />
+  {{post.content}}
+</div>
+
+{% endif %}
+{% endfor %}
+<!-- /Text -->
