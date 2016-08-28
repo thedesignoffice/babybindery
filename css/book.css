@@ -31,6 +31,9 @@ img{
   width: 8.5in;
   margin: 3vh;
 }
+.sheet:nth-child(odd) { float: left; clear: left; }
+.sheet:nth-child(even) { float: left; }
+
 @media print {
   .sheet, html, body {
     margin: 0;
