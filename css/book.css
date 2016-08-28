@@ -26,10 +26,10 @@ img{
 .sheet {
   /* illustrates the size of each sheet,
   to get a better sense of the text block */
-  background: #fff7d9;
+  background: #fff;
   height: 11in;
   width: 8.5in;
-  margin: 3vw;
+  margin: 3vh;
 }
 
 .page{
@@ -104,4 +104,3 @@ a:after {
 .noprint{
   border: 2px dashed blue;
 }
-
