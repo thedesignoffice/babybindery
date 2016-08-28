@@ -46,6 +46,7 @@ a.makebook{
   margin-left: 0;
 }
 
+.toc h3 { text-transform: capitalize; }
 
 .initials{
   color: red;
