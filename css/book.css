@@ -107,6 +107,5 @@ a:after {
   font-size: 70%;
 }
 
-.noprint{
-  border: 2px dashed blue;
+.noprint input { padding-left: 2em; 
 }
