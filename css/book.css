@@ -102,10 +102,10 @@ img{
 a{
   text-decoration: none;
 }
-
+a:hover { background: none;}
 a:after {
   content: " (→" attr(href) ") ";
-  font-size: 90%;
+  font-size: 70%; padding-bottom: -6px;
 }
 
 .noprint{
