@@ -1,6 +1,6 @@
 <div class="menu noprint">
   {% for content_type in site.content_types %}
-  <input type="checkbox" id="checkbox-{{content_type}}" />{{ content_type }}
+  <input type="checkbox" id="checkbox-{{content_type}}" checked>{{ content_type }}
   {% endfor %}
 
   <input id="trim_pages_button" type="button" value="Trim Pages">

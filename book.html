@@ -46,7 +46,7 @@ The contents of this page are loaded into the print.html layout.
   <p>
     <ul>
       {% for type in site.content_types %}
-      <h3>{{ type }}</h3>
+      <h3 class="">{{ type }}</h3>
       {% for post in site.posts %}
 
         {% if post.content-type == type %}
