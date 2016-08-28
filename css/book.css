@@ -4,8 +4,8 @@
 
 body{
   background: #e4edfd;
-/*  width: 8.4in; Just shy of 8.5 to avoid problems, see print.css
-  height: 10.9in; */
+  width: 8.4in; Just shy of 8.5 to avoid problems, see print.css */
+  height: 10.9in;
 }
 
 #content-source{
@@ -31,8 +31,6 @@ img{
   width: 8.5in;
   margin: 3vh;
 }
-.sheet:nth-child(odd) { float: left; clear: left; }
-.sheet:nth-child(even) { float: left; }
 
 @media print {
   .sheet, html, body {
