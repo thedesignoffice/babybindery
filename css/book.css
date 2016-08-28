@@ -74,7 +74,7 @@ img{
   display: block;
   height: 8.5in; /* extremely wack */
   /* Don't make taller than .content-wrapper and page size (defined in print.css) */
-  margin-bottom: 0.25in;
+  margin-bottom: 1in;
 }
 
 .page-footer{
