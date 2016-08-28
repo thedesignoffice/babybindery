@@ -90,6 +90,7 @@ img{
  }
 .sheet:nth-child(odd) .page-footer span { display: none; }
 
+.sheet:nth-child(odd) .page-header  { visibility: hidden; }
 .sheet .page-header, .sheet .page-footer  { visibility: hidden; }
 .sheet:nth-child(n+3) .page-header, .sheet:nth-child(n+3) .page-footer  { visibility: visible; }
 
