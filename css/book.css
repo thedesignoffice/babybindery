@@ -126,7 +126,7 @@ img{
 hyphens: auto;
 position: absolute;
 transform: rotate(45deg);
-margin-top: 3in;
+margin: 1in;
 }
 
 a{
