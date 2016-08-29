@@ -127,6 +127,7 @@ hyphens: auto;
 position: absolute;
 transform: rotate(45deg);
 margin: 1in;
+color: blue;
 }
 
 a{
