@@ -15,7 +15,9 @@ img{
 h1, h2, h3, h4 {
   font-weight: bold;
 }
-h3 { text-indent: 41px; margin-top: 24px; font-style: italic;}
+h3 {  font-style: italic;}
+.toc h3 { text-transform: capitalize; margin-top: 24px; text-indent: 41px; }
+
 p{
   margin: 0;
   margin-top: 1em;
@@ -49,7 +51,6 @@ a.button:first-child {
   margin-left: 0;
 }
 
-.toc h3 { text-transform: capitalize; }
 
 .initials{
   color: red;
