@@ -64,7 +64,7 @@ img{
   position: relative;
   top: 0;
   left: 0;
-  height: 8.75in; /* Needs to match .page-content height. */
+  height: 8.5in; /* Needs to match .page-content height. */
   clear: both;
 
 }
@@ -74,13 +74,13 @@ img{
   /* margin & padding only seem to work on the sides in regions.  */
   flow-from: toprint;
   display: block;
-  height: 8.75in; /* extremely wack */
+  height: 8.5in; /* extremely wack */
   /* Don't make taller than .content-wrapper and page size (defined in print.css) */
   margin-bottom: 0.25in;
 }
 
 .page-footer{
-  height: 0.75in;
+  height: 0.5in;
   margin-top: .25in;
   font-size:.75em;
   width: 100%;
