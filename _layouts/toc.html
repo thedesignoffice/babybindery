@@ -14,18 +14,17 @@
     <div class="wrapper toc">
       <div class="page-content">
         <h1>
-          {{ page.title }}
+          {{ site.title }}
         </h1>
 
         <ul>
-
           {% for type in site.content_types %}
           <h3>{{ type }}</h3>
           {% for post in site.posts %}
 
             {% if post.content-type == type %}
             <li class="{{ post.content-type }}">
-              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>, {{ post.author }}, <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> 
+              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>, {{ post.author }}, <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span>
             </li>
             {% endif %}
           {% endfor %}
@@ -34,14 +33,18 @@
 
 
 
+        <div>
+          <a href="book.html" class="makebook">MAKE BOOK</a>
+        </div>
+
+
         {{ content }}
 
         <p>
           {{ site.description }}
         </p>
-        <div>
-          <a href="book.html" class="makebook">MAKE BOOK</a>
-        </div>
+
+
       </div>
     </div>
 
