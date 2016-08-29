@@ -24,7 +24,7 @@
 
             {% if post.content-type == type %}
             <li class="{{ post.content-type }}">
-              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a> {{ post.author }} <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span>
+              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a> {{ post.author }} <span class="post-meta agate">{{ post.date | date: "%-d %B %Y" }}</span>
             </li>
             {% endif %}
           {% endfor %}
