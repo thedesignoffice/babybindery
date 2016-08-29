@@ -79,7 +79,6 @@ img{
   height: 8.75in; /* extremely wack */
   /* Don't make taller than .content-wrapper and page size (defined in print.css) */
   margin-bottom: 0.25in;
-  background: blue;
 }
 
 .page-footer{
@@ -89,7 +88,6 @@ img{
   width: 100%;
   clear: both;
   text-align: right;
-  background: red;
 }
 
 .sheet:nth-child(even) .page-footer  {   text-align:justify;
