@@ -133,8 +133,9 @@ a{
   text-decoration: none;
 }
 a:after {
-  content: " →" attr(href) " ";
+  content: " " attr(href) " ";
   font-size: 70%;
+  font-style: italic;
 }
 
 .noprint input { padding-left: 2em;
