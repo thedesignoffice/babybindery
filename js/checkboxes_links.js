@@ -1,8 +1,8 @@
 function checkAll(){
-  var w = document.getElementsByTagName('input');
-  for(var i = 0; i < w.length; i++){
-    if(w[i].type=='checkbox'){
-      w[i].checked = true;
+  var inputs = document.getElementsByTagName('input');
+  for(var i = 0; i < inputs.length; i++){
+    if(inputs[i].type=='checkbox'){
+      inputs[i].checked = true;
     }
   }
 }
@@ -39,6 +39,7 @@ function writeLinks(){
   for(var i=0; i<links.length; i++){
 
     var link = links.eq(i);
+    var name = link.html();
     var href = link.attr('href');
     var temp = href;
 
@@ -50,6 +51,7 @@ function writeLinks(){
       temp = temp.substring(start,end);
     }
 
+    /*
     // strip "www."
     start = temp.indexOf("www.");
     end = temp.length;
@@ -57,10 +59,13 @@ function writeLinks(){
       start = start + 4;
       temp = temp.substring(start,end);
     }
+    */
 
     href = temp; // Now stripped & clean=looking.
 
     //$( "<span class='link_url'>"+href+"</span>" ).insertAfter(link); // This line currently not working. Going the css :after route for now.
+
+    $("#footnotes").append(name+" &rarr; "+href+"<br />");
 
   }
 }
@@ -96,9 +101,9 @@ function refreshContent(){
 $('.content').css('display','none');
 checkAll();
 refreshContent();
+writeLinks();
 
 
 $("input[type=checkbox]").on("click", function(){
   refreshContent();
-  // remove_pages();
 });

@@ -82,6 +82,9 @@ img{
   break-after: always;
 }
 
+.end-content{ /* Footnotes, links, etc.  */
+  break-after: always;
+}
 .content{ /* Divs that contain everything coming through book.html */
   break-after: never; /* overwritten if specific content displayed. */
   display: none;
