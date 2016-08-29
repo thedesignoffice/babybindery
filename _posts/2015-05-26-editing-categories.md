@@ -9,6 +9,9 @@ author: Lukas & Cathy
 
 <img src="/ds16-18/img/mandance.jpg">
 
+![Alt text](/path/to/img.jpg "Optional title")
+
+
 Before building your site, edit the _config.yml file in your Jekyll root repo.
 
 We anticipated three content types: “Conversations” (a generalized interview), “Images” (appropriate for show catalogues or portfolios), and “Text” (catchall text-based content).
