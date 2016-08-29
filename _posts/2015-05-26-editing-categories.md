@@ -3,7 +3,7 @@ layout: image
 title: How Do I Change The Content Types?
 date: 2015-05-26
 content-type: image
-imgurl: img/mandance.jpg
+imgurl: /ds16-18/img/mandance.jpg
 author: Lukas & Cathy
 ---
 
