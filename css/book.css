@@ -118,6 +118,7 @@ img{
 
 .chapter_head {
   break-after: always;
+  text-transform: capitalize;
   font-size: 5em;
   line-height: 100%;
   text-indent: -6px;
