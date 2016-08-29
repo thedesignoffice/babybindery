@@ -43,10 +43,12 @@ img{
   .page-header, and .page-footer */
   margin: 0in 1in;
   position: relative;
-  top: 0; /* was .5in, may not be necessary */
+  top:  .5in;
   background: white;
   clear: both;
 }
+.sheet:nth-child(odd) .page  { margin-right: 1.25in; margin-left: .75in; }
+.sheet:nth-child(even) .page  { margin-left: 1.25in; margin-right: .75in; }
 
 .page-header {
   font-size:.75em;
@@ -62,7 +64,7 @@ img{
   position: relative;
   top: 0;
   left: 0;
-  height: 8.5in; /* Needs to match .page-content height. */
+  height: 9in; /* Needs to match .page-content height. */
   clear: both;
 
 }
@@ -72,13 +74,14 @@ img{
   /* margin & padding only seem to work on the sides in regions.  */
   flow-from: toprint;
   display: block;
-  height: 8.5in; /* extremely wack */
+  height: 9in; /* extremely wack */
   /* Don't make taller than .content-wrapper and page size (defined in print.css) */
   margin-bottom: 0.25in;
 }
 
 .page-footer{
   height: 0.75in;
+  margin-top: .25in;
   font-size:.75em;
   width: 100%;
   clear: both;
@@ -92,9 +95,8 @@ img{
 
 .page1 .page-footer, .page2 .page-footer, .page3 .page-footer, .page2 .page-header { visibility: hidden; }
 
-/* .sheet:nth-child(odd) .page-header  { visibility: hidden; } */
-.sheetwrapper:nth-child(odd) .page-header  { background: green; }
-.sheet:nth-child(odd) .page-header  { background: blue; }
+.sheet:nth-child(odd) .page-header  { visibility: hidden; }
+
 
 
 
