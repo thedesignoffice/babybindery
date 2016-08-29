@@ -8,6 +8,7 @@ body{
   height: 10.9in;
   font-size: 10pt;
   line-height: 18pt;
+  word-spacing: -1px;
 }
 
 #content-source{
