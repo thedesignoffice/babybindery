@@ -126,7 +126,8 @@ img{
 hyphens: auto;
 position: absolute;
 transform: rotate(45deg);
-margin: 1in;
+-webkit-transform-origin: left top;
+transform-origin: left top;
 color: blue;
 }
 
