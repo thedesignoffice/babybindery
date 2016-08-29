@@ -49,8 +49,8 @@ img{
   background: white;
   clear: both;
 }
-.sheet:nth-child(odd) .page  { margin-right: 1.1in; margin-left: .9in; }
-.sheet:nth-child(even) .page  { margin-left: 1.1in; margin-right: .9in; }
+.sheet:nth-child(odd) .page  { margin-right: 1in; margin-left: 2in; }
+.sheet:nth-child(even) .page  { margin-left: 1in; margin-right: 2in; }
 
 .page-header {
   font-size:.75em;
@@ -118,16 +118,12 @@ img{
 
 .chapter_head {
   break-after: always;
-  font-size: 6em;
+  font-size: 8em;
   line-height: 100%;
   text-indent: -6px;
   -webkit-hyphens: auto;
 -ms-hyphens: auto;
 hyphens: auto;
-position: absolute;
-transform: rotate(45deg);
--webkit-transform-origin: left top;
-transform-origin: left top;
 color: blue;
 }
 
