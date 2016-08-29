@@ -3,7 +3,7 @@ layout: default
 title: How Do I Install It?
 date: 2015-05-29
 author: Lukas & Cathy
-content-type: other
+content-type: text
 
 ---
 

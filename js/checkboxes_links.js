@@ -58,7 +58,7 @@ function refreshContent(){
   for(var j=0;j<n_checked;j++){
     $('.content.'+checked_contents[j]).parents().css('display','block');
     $('.content.'+checked_contents[j]).css('display','block');
-    $('.content.'+checked_contents[j]).css('break-after','always'); // If this is in all of them, even the hidden .content cause region-breaks.
+    $('.content.'+checked_contents[j]).css('break-after','always'); // If this is in all .content blocks, even the hidden .content cause region-breaks. (so we only put it on visible ones)
 
     // what should the correct display be here?
     console.log('Flowing in '+checked_contents[j]+' contents.');
