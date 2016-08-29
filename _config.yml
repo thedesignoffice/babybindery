@@ -19,4 +19,5 @@ github_username: thedesignoffice
 markdown: kramdown
 page_width: "8.5in"
 page_height: "11in"
+num_pages: 100
 content_types: [conversation, image, text, other]

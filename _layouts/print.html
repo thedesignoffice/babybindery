@@ -22,10 +22,11 @@
     </div>
 
     <!-- Use Jekyll to make 100 pages. Edit here if you need fewer. -->
-    {% for num in (1...100) %}
+    {% for num in (1..site.num_pages) %}
+
     <div class="sheet">
       <div class="page">
-        <div class="page-header">{{site.title}}</div>
+        <div class="page-header">{{ site.title }}</div>
         <div class="content-wrapper">
           <div class='page-content'></div>
         </div>
