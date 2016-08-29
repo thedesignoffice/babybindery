@@ -78,8 +78,8 @@ img{
   /* Don't make taller than .content-wrapper and page size (defined in print.css) */
   margin-bottom: 0.25in;
 }
-.sheet:nth-child(odd) .page-content  { margin-right: 1in; margin-left: 2in; }
-.sheet:nth-child(even) .page-content  { margin-left: 1in; margin-right: 2in; }
+.sheet:nth-child(odd) .page-content  {  margin-left: 1in; }
+.sheet:nth-child(even) .page-content  { margin-right: 1in; }
 
 .page-footer{
   height: 0.5in;
@@ -118,7 +118,7 @@ img{
 
 .chapter_head {
   break-after: always;
-  font-size: 8em;
+  font-size: 6em;
   line-height: 100%;
   text-indent: -6px;
   -webkit-hyphens: auto;
