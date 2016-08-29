@@ -9,7 +9,7 @@ author: Lukas & Cathy
 
 <img src="/ds16-18/img/mandance.jpg">
 
-![Alt text](/path/to/img.jpg "Optional title")
+![Alt text](/ds16-18/img/mandance.jpg "Optional title")
 
 
 Before building your site, edit the _config.yml file in your Jekyll root repo.
