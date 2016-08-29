@@ -32,9 +32,7 @@ $("#trim_pages_button").click(function(){
 });
 
 
-function writeLinks(){
-
-  var links = $('.page-content').find('a');
+function writeLinks(links){
 
   for(var i=0; i<links.length; i++){
 
@@ -51,16 +49,6 @@ function writeLinks(){
       temp = temp.substring(start,end);
     }
 
-    /*
-    // strip "www."
-    start = temp.indexOf("www.");
-    end = temp.length;
-    if(start !== -1){
-      start = start + 4;
-      temp = temp.substring(start,end);
-    }
-    */
-
     href = temp; // Now stripped & clean=looking.
 
     //$( "<span class='link_url'>"+href+"</span>" ).insertAfter(link); // This line currently not working. Going the css :after route for now.
@@ -72,6 +60,7 @@ function writeLinks(){
 
 function refreshContent(){
   $(".sheet").css('display','block'); // Reverses anything hidden by remove_pages.
+  $("#footnotes").html("<h1>Links</h1>");
 
   var n_checkboxes = $("input[type=checkbox]").length;
   var checked_contents = []; // contains string names of content types whose boxes are checked.
@@ -91,6 +80,11 @@ function refreshContent(){
     $('.content.'+checked_contents[j]).css('display','block');
     $('.content.'+checked_contents[j]).css('break-after','always'); // If this is in all .content blocks, even the hidden .content cause region-breaks. (so we only put it on visible ones)
 
+    var links = $('.content.'+checked_contents[j]).find('a');
+    links = links.slice(0,links.length/2); // links in here twice for polyfill reasons.
+    //console.log(links);
+    writeLinks(links);
+
     // This line could be more informative.
     console.log('Flowing in '+checked_contents[j]+' contents.');
   }
@@ -101,7 +95,6 @@ function refreshContent(){
 $('.content').css('display','none');
 checkAll();
 refreshContent();
-writeLinks();
 
 
 $("input[type=checkbox]").on("click", function(){
