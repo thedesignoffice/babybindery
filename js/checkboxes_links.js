@@ -1,11 +1,35 @@
-function uncheckAll(){
+function checkAll(){
   var w = document.getElementsByTagName('input');
   for(var i = 0; i < w.length; i++){
     if(w[i].type=='checkbox'){
-      w[i].checked = false;
+      w[i].checked = true;
     }
   }
 }
+
+var remove_pages = function(){
+  var n_pages = $(".page-content").length;
+  //console.log('There are '+n_pages+' pages.');
+  var counter = 0;
+  for(var i=0;i<n_pages;i++){
+    var chosen_page = $(".page-content").eq(i);
+
+    if(chosen_page.html() == "<cssregion></cssregion>"){
+      //chosen_page.parents(".sheet").remove();
+      chosen_page.parents(".sheet").css('display','none');
+      counter += 1;
+    }else if(chosen_page.html() == ""){
+      //chosen_page.parents(".sheet").remove();
+      chosen_page.parents(".sheet").css('display','none');
+      counter += 1;
+    }
+  }
+  console.log(counter + " sheets removed.");
+}
+
+$("#trim_pages_button").click(function(){
+  remove_pages();
+});
 
 
 function writeLinks(){
@@ -42,6 +66,8 @@ function writeLinks(){
 }
 
 function refreshContent(){
+  $(".sheet").css('display','block'); // Reverses anything hidden by remove_pages.
+
   var n_checkboxes = $("input[type=checkbox]").length;
   var checked_contents = []; // contains string names of content types whose boxes are checked.
   for(var i=0; i<n_checkboxes;i++){
@@ -60,18 +86,19 @@ function refreshContent(){
     $('.content.'+checked_contents[j]).css('display','block');
     $('.content.'+checked_contents[j]).css('break-after','always'); // If this is in all .content blocks, even the hidden .content cause region-breaks. (so we only put it on visible ones)
 
-    // what should the correct display be here?
+    // This line could be more informative.
     console.log('Flowing in '+checked_contents[j]+' contents.');
   }
-
 }
 
 
 // on loading...
-uncheckAll();
-//writeLinks();
 $('.content').css('display','none');
+checkAll();
+refreshContent();
 
 
-$("input[type=checkbox]").on("click", refreshContent );
-//$("input[type=checkbox]").on("click", remove_pages );
+$("input[type=checkbox]").on("click", function(){
+  refreshContent();
+  // remove_pages();
+});
