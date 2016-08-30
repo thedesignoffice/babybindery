@@ -50,6 +50,7 @@ The contents of this page are loaded into the print.html layout.
     </ul>
 </div>
 
+<!-- All Content -->
 {% for type in site.content_types %}
 <!-- Blank Page -->
 <div class="content blank">
@@ -76,37 +77,7 @@ The contents of this page are loaded into the print.html layout.
 {% endfor %} <!-- posts loop -->
 {% endfor %} <!-- content type loop -->
 
-
 <!-- Blank Page -->
-<div class="content blank">
-  Page intentionally left blank.
-</div>
-
-<<<<<<< HEAD
-<div class="content text">
-  <h1>texts</h1>
-</div>
-
-<!-- Text -->
-{% for post in site.posts %}
-{% if post.content-type == 'text' %}
-
-<div class="content text">
-  {{ post.date | date: "%-d %B %Y" }}<br />
-  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
-  {{site.baseurl}}{{post.url}}<br />
-  {{post.content}}
-</div>
-
-{% endif %}
-{% endfor %}
-<!-- /Text -->
-
-<!-- Blank Page -->
-<div class="content blank">
-  Page intentionally left blank.
-</div>
-
 <div class="content blank">
   Page intentionally left blank.
 </div>
@@ -114,8 +85,3 @@ The contents of this page are loaded into the print.html layout.
 <div class="end-content" id="footnotes">
   <h1>Links</h1>
 </div>
-=======
-<div class="end-content" id="footnotes">
-  <h1>Links</h1>
-</div>
->>>>>>> pr/6
