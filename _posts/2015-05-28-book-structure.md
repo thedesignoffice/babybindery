@@ -9,6 +9,6 @@ byline: Lukas & Cathy
 
 While the webpage structures are mutable to your needs, the print.html and print_twocol.html layouts are special. 
 
-In each layout, a fixed number of pages are generated (you can change this number by editing the Liquid tags). Each page consists of a `.page` object, which contains a `.page-header`  object and `.page-footer` object, with a `.content-wrapper` object between them. 
+In each layout, a fixed number of pages are generated (you can change this number by editing `_config.yml`. There’s a lot of nesting to keep track of details, and this is the list from outside in: `.sheet`, `.page`, `.content-wrapper`, then either one or two `.page-content` (based on one- or two-column layout), then `.content` divs that have content flowed into them. 
 
-Within `.content-wrapper`, there are either one or two `.page-content` objects (depending on if it is the one- or two-column layout). The content of posts flows into these divs according to the structure written in book.html and book_twocol.html. 
+All of the content comes from `book.html` or `book_twocol.html`. 
