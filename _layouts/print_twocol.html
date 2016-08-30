@@ -24,7 +24,7 @@
     </div>
 
     <!-- Use Jekyll to make 100 pages, to be trimmed later. -->
-    {% for num in (1...100) %}
+    {% for num in (1..site.num_pages) %}
     <div class="sheet">
       <div class="page">
         <div class="page-header">{{site.title}}</div>
@@ -40,7 +40,6 @@
 
     {% include label_interview_paragraphs.html %} <!-- Needs to happen after content is dropped in. -->
     {% include checkboxes_links.html %}
-    {% include remove_empty_pages.html %}
   </body>
 
 </html>
