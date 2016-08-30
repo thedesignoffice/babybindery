@@ -52,36 +52,33 @@ The contents of this page are loaded into the print.html layout.
 
 <!-- All Content -->
 {% for type in site.content_types %}
-<!-- Blank Page -->
-<div class="content blank">
-  Page intentionally left blank.
-</div>
 
 <div class="content {{ type }}">
   <h4 class="chapter_head">{{ type }}</h4>
 </div>
 
-{% for post in site.posts %}
-  {% if post.content-type == type %}
-  <div class="content {{ post.content-type }}">
-    <h2>{{ post.title }}</h2>
-    <p>
-      {{ post.date | date: "%-d %B %Y" }}
-    </p>
-    <p>
-      {{site.baseurl}}{{post.url}}
-    </p>
-    {{post.content}}
-  </div>
-  {% endif %}
-{% endfor %} <!-- posts loop -->
-{% endfor %} <!-- content type loop -->
+  {% for post in site.posts %}
+    {% if post.content-type == type %}
+      <div class="content {{ post.content-type }}">
+        <h2>{{ post.title }}</h2>
+        <p>
+          {{ post.date | date: "%-d %B %Y" }}
+        </p>
+        <p>
+          {{site.baseurl}}{{post.url}}
+        </p>
+        {{post.content}}
+      </div>
+    {% endif %}
+  {% endfor %} <!-- posts loop -->
 
-<!-- Blank Page -->
-<div class="content blank">
-  Page intentionally left blank.
-</div>
+{% endfor %} <!-- content type loop -->
 
 <div class="end-content" id="footnotes">
   <h1>Links</h1>
+</div>
+
+<!-- Blank Page -->
+<div class="blank">
+  Page intentionally left blank.
 </div>

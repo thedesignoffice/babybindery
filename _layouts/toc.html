@@ -4,7 +4,7 @@
     {% include metadata.html %}
     {% include meyer_reset.html %}
     {% include universal_css.html %}
-    <title>{{ page.title }}</title>
+    <title>{{ site.title }}</title>
   </head>
 
   <body>
@@ -31,14 +31,11 @@
           {% endfor %}
         </ul>
 
-
-
         <div style="clear:both">
           <a href="book.html" class="button makebook">MAKE BOOK</a>
           <!-- <a href="book_twocol.html" class="button makebook">MAKE TWO-COLUMN BOOK</a><br /> -->
           <!-- Two-column currently out of comission. -->
         </div>
-
 
         {{ content }}
 

@@ -39,7 +39,7 @@ img{
   .sheet, html, body {
     margin: 0;
   }
- }
+}
 
 .page{
   /* container for each .page-content,
@@ -93,7 +93,7 @@ img{
 
 .sheet:nth-child(even) .page-footer  {   text-align:justify;
   text-align-last:justify;
- }
+}
 .sheet:nth-child(odd) .page-footer span { display: none; }
 
 .page1 .page-footer, .page2 .page-footer, .page3 .page-footer, .page2 .page-header { visibility: hidden; }
@@ -101,7 +101,9 @@ img{
 .sheet:nth-child(odd) .page-header  { visibility: hidden; }
 
 
-
+.end-content{
+  break-after: always;
+}
 
 .front-content{ /* Divs with Half Title, Title, Credits, TOC in book.html */
   break-after: always;
@@ -127,9 +129,9 @@ img{
   line-height: 100%;
   text-indent: -6px;
   -webkit-hyphens: auto;
--ms-hyphens: auto;
-hyphens: auto;
-color: blue;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  color: blue;
 }
 
 a{
