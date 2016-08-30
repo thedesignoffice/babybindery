@@ -5,69 +5,46 @@
     {% include meyer_reset.html %}
     {% include universal_css.html %}
     <title>{{ page.title }}</title>
-    <style>
-
-      body {
-        margin-top: 3vh;
-        font-size: 20px;
-        line-height: 2rem;
-      }
-
-      h1 {
-        font-size: 3rem;
-        line-height: 4rem;
-      }
-      a.button{
-        /* on index */
-        display: block;
-        padding: 2rem;
-        margin: 2rem;
-        float: left;
-        border: 2px solid blue;
-        text-transform: uppercase;
-        text-decoration: none;
-      } a.button:hover {
-        color: white;
-        background-color: blue;
-      } a.button:first-child {
-        margin-left: 0;
-      }
-
-    </style>
   </head>
 
   <body>
 
+    <!-- Output author details if some exist. -->
 
-    <div class="wrapper">
+    <div class="wrapper toc">
       <div class="page-content">
         <h1>
-          {{ page.title }}
+          {{ site.title }}
         </h1>
 
         <ul>
-
           {% for type in site.content_types %}
+          <h3>{{ type }}</h3>
           {% for post in site.posts %}
 
             {% if post.content-type == type %}
-            <li>
-              <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span> <span style="text-transform: capitalize">{{ post.content-type }}:</span> <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
+            <li class="{{ post.content-type }}">
+              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a> {{ post.author }} <span class="post-meta agate">{{ post.date | date: "%-d %B %Y" }}</span>
             </li>
             {% endif %}
           {% endfor %}
           {% endfor %}
         </ul>
 
+
+
+        <div>
+          <a href="book.html" class="makebook">MAKE BOOK</a>
+        </div>
+
+
         {{ content }}
 
         <p>
           {{ site.description }}
         </p>
-        <div style="clear:both">
-          <a href="book.html" class="button">MAKE BOOK</a>
-          <a href="book_twocol.html" class="button">MAKE TWO-COLUMN BOOK</a><br />
-        </div>
+
+
       </div>
     </div>
 

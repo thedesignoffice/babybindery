@@ -4,8 +4,11 @@
 
 body{
   background: #e4edfd;
-  width: 8.4in;/* Just shy of 8.5 to avoid problems, see print.css */
+  width: 8.4in; Just shy of 8.5 to avoid problems, see print.css */
   height: 10.9in;
+  font-size: 10pt;
+  line-height: 17pt;
+  word-spacing: -1px;
 }
 
 #content-source{
@@ -26,18 +29,24 @@ img{
 .sheet {
   /* illustrates the size of each sheet,
   to get a better sense of the text block */
-  background: #fff7d9;
+  background: #fff;
   height: 11in;
   width: 8.5in;
-  margin: 3vw;
+  margin: 3vh;
 }
+
+@media print {
+  .sheet, html, body {
+    margin: 0;
+  }
+ }
 
 .page{
   /* container for each .page-content,
   .page-header, and .page-footer */
   margin: 0in 1in;
   position: relative;
-  top: .5in;
+  top:  .5in;
   background: white;
   clear: both;
 }
@@ -70,13 +79,29 @@ img{
   /* Don't make taller than .content-wrapper and page size (defined in print.css) */
   margin-bottom: 0.25in;
 }
+.sheet:nth-child(odd) .page-content  {  margin-left: 1in; }
+.sheet:nth-child(even) .page-content  { margin-right: 1in; }
 
 .page-footer{
-  height: 0.75in;
+  height: 0.5in;
+  margin-top: 0.5in;
   font-size:.75em;
   width: 100%;
   clear: both;
+  text-align: right;
 }
+
+.sheet:nth-child(even) .page-footer  {   text-align:justify;
+  text-align-last:justify;
+ }
+.sheet:nth-child(odd) .page-footer span { display: none; }
+
+.page1 .page-footer, .page2 .page-footer, .page3 .page-footer, .page2 .page-header { visibility: hidden; }
+
+.sheet:nth-child(odd) .page-header  { visibility: hidden; }
+
+
+
 
 .front-content{ /* Divs with Half Title, Title, Credits, TOC in book.html */
   break-after: always;
@@ -95,16 +120,26 @@ img{
   height: 8.5in; /* should match .page-content height. */
 }
 
+.chapter_head {
+  break-after: always;
+  text-transform: capitalize;
+  font-size: 5em;
+  line-height: 100%;
+  text-indent: -6px;
+  -webkit-hyphens: auto;
+-ms-hyphens: auto;
+hyphens: auto;
+color: blue;
+}
+
 a{
   text-decoration: none;
 }
-
 a:after {
-  content: " (→" attr(href) ") ";
-  font-size: 90%;
+  content: " " attr(href) " ";
+  font-size: 70%;
+  font-style: italic;
 }
 
-.noprint{
-  border: 2px dashed blue;
+.noprint input { padding-left: 2em;
 }
-

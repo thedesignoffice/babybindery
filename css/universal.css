@@ -1,38 +1,58 @@
 body{
-  background: white;
-  font-family: sans-serif;
-  color: blue;
-  font-size: 20px;
+  font-family: 'Space Mono', monospace;
+  color: black;
   text-align: left;
   width: 100%;
-  line-height: 1.5em;
+  font-size: 17px;
+  line-height: 30px;
+  margin-top: 3vh;
 }
 
 img{
   max-width: 100%;
 }
 
-h1, h2, h3 {
-  font-weight: normal;
+h1, h2, h4 {
+  font-weight: bold;
 }
+h3 {  font-style: italic;}
+.toc h3 { text-transform: capitalize; margin-top: 24px; text-indent: 41px; }
 
 p{
-  margin: 1em 0;
-  font-family: serif;
-  line-height: 1.5em;
-  color: red;
+  margin: 0;
+  margin-top: 1em;
 }
 
 a{
+  border-bottom: 1px solid blue;
   color: blue;
+  text-decoration: none;
 }
 a:hover{
+  background: blue; color: white;
+}
+
+a.makebook {
+  /* on index */
+  display: inline-block;
+  padding: 1.6em;
+  margin-top: 2em;
+  border: 2px solid blue;
+  text-transform: uppercase;
   text-decoration: none;
 }
 
+a.button:hover {
+  color: white;
+  background-color: blue;
+}
+a.button:first-child {
+  margin-left: 0;
+}
+
+.agate { font-size: 70%; }
 .initials{
-  font-family: monospace;
-  font-size: .8em;
+  color: red;
 }
 
 .conversation-question{ /* For Conversation Questions, denoted [INITIALS]-q in post files. */
@@ -47,7 +67,11 @@ a:hover{
   margin: 0 auto;
 }
 
-
-
-
-
+/*
+-webkit-column-count: 2;
+-moz-column-count: 2;
+column-count: 2;
+-webkit-column-gap: 20px;
+-moz-column-gap: 20px;
+column-gap: 20px;
+*/

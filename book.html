@@ -7,14 +7,10 @@ This is a display of content in preparation for print.
 The contents of this page are loaded into the print.html layout.
 -->
 
-<div class="blank">
-  This page intentionally left blank.
-</div>
 
 <!-- Half Title Page -->
 <div class="front-content">
   <h2>{{ site.title }}</h2>
-  <p>Half Title Page</p>
 </div>
 
 <div class="blank">
@@ -23,13 +19,9 @@ The contents of this page are loaded into the print.html layout.
 
 <!-- Title Page -->
 <div class="front-content">
-  <h1>{{ site.title }}</h1>
-  <p>Title Page</p>
+  <h1 class="chapter_head">{{ site.title }}</h1>
 </div>
 
-<div class="blank">
-  This page intentionally left blank.
-</div>
 
 <!-- Front Matter... ish -->
 <div class="front-content">
@@ -41,69 +33,48 @@ The contents of this page are loaded into the print.html layout.
 </div>
 
 <!-- Table of Contents -->
-<div class="front-content">
-  <h1>Table of Contents</h1>
-  <p>
-  <ul>
-    {% for post in site.posts %}
-    <li>
-      <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span>
-      {{ post.content-type }}: {{ post.title }}
-    </li>
-    {% endfor %}
-  </ul>
-  </p>
+<div class="toc front-content">
+  <h1 class="chapter_head">Contents</h1>
+    <ul>
+      {% for type in site.content_types %}
+      <h3>{{ type }}</h3>
+      {% for post in site.posts %}
+
+        {% if post.content-type == type %}
+        <li class="{{ post.content-type }}">
+          <a class="post-link" href="{{ post.url  }}"> {{ post.title }}</a> {{ post.author }}  <!-- | prepend: site.github.url-->
+        </li>
+        {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </ul>
 </div>
 
-<div class="blank">
-  This page intentionally left blank.
-</div>
-
-<!-- All Content, by content type. -->
-
-<div class="content conversation">
-  <h1>conversations</h1>
-</div>
-
-<!-- Conversation -->
-{% for post in site.posts %}
-{% if post.content-type == 'conversation' %}
-
-<div class="content conversation">
-  {{ post.date | date: "%-d %B %Y" }}<br />
-  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
-  {{site.baseurl}}{{post.url}}<br />
-  {{post.content}}
-</div>
-
-{% endif %}
-{% endfor %}
-<!-- /Conversation -->
-
+{% for type in site.content_types %}
 <!-- Blank Page -->
 <div class="content blank">
   Page intentionally left blank.
 </div>
 
-<div class="content image">
-  <h1>images</h1>
+<div class="content {{ type }}">
+  <h4 class="chapter_head">{{ type }}</h4>
 </div>
 
-<!-- Image -->
 {% for post in site.posts %}
-{% if post.content-type == 'image' %}
-
-<div class="content image">
-  {{ post.date | date: "%-d %B %Y" }}<br />
-  <h1>{{ post.content-type }}: {{ post.title }}</h1><br />
-  {{site.baseurl}}{{post.url}}<br />
-  <img src="{{ post.imgurl }}" />
-  {{post.content}}
-</div>
-
-{% endif %}
-{% endfor %}
-<!-- /Image -->
+  {% if post.content-type == type %}
+  <div class="content {{ post.content-type }}">
+    <h2>{{ post.title }}</h2>
+    <p>
+      {{ post.date | date: "%-d %B %Y" }}
+    </p>
+    <p>
+      {{site.baseurl}}{{post.url}}
+    </p>
+    {{post.content}}
+  </div>
+  {% endif %}
+{% endfor %} <!-- posts loop -->
+{% endfor %} <!-- content type loop -->
 
 
 <!-- Blank Page -->
@@ -111,6 +82,7 @@ The contents of this page are loaded into the print.html layout.
   Page intentionally left blank.
 </div>
 
+<<<<<<< HEAD
 <div class="content text">
   <h1>texts</h1>
 </div>
@@ -142,3 +114,8 @@ The contents of this page are loaded into the print.html layout.
 <div class="end-content" id="footnotes">
   <h1>Links</h1>
 </div>
+=======
+<div class="end-content" id="footnotes">
+  <h1>Links</h1>
+</div>
+>>>>>>> pr/6

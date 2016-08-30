@@ -21,21 +21,22 @@
       {{ content }}
     </div>
 
+    <div class="sheetwrapper">
     <!-- Use Jekyll to make 100 pages. Edit here if you need fewer. -->
     {% for num in (1..site.num_pages) %}
 
-    <div class="sheet">
+    <div class="sheet page{{num}}">
       <div class="page">
         <div class="page-header">{{ site.title }}</div>
         <div class="content-wrapper">
-          <div class='page-content'></div>
+          <div class="page-content"></div>
         </div>
-        <div class='page-footer'>{{ num }}</div>
+        <div class="page-footer">{{ num }} <span>{{site.url}}</span></div>
 
       </div>
     </div>
     {% endfor %}
-
+    </div>
 
     {% include label_interview_paragraphs.html %} <!-- Needs to happen after content is dropped in. -->
     {% include checkboxes_links.html %}
