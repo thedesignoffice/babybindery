@@ -25,12 +25,9 @@ var remove_pages = function(){
     }
   }
   console.log(counter + " sheets removed.");
+  $("#trim_pages_button").css("text-decoration","line-through");
+  $("#print_button").css("display","inline");
 }
-
-$("#trim_pages_button").click(function(){
-  remove_pages();
-});
-
 
 function writeLinks(links){
 
@@ -61,6 +58,8 @@ function writeLinks(links){
 function refreshContent(){
   $(".sheet").css('display','block'); // Reverses anything hidden by remove_pages.
   $("#footnotes").html("<h1>Links</h1>");
+  $("#trim_pages_button").css("text-decoration","none");
+  $("#print_button").css("display","none");
 
   var n_checkboxes = $("input[type=checkbox]").length;
   var checked_contents = []; // contains string names of content types whose boxes are checked.
@@ -96,7 +95,16 @@ $('.content').css('display','none');
 checkAll();
 refreshContent();
 
+// on interaction...
+
+$("#trim_pages_button").click(function(){
+  remove_pages();
+});
 
 $("input[type=checkbox]").on("click", function(){
   refreshContent();
+});
+
+$("#print_button").click(function(){
+  window.print();
 });
