@@ -8,8 +8,7 @@
 # Site settings
 title: Baby Bindery
 email: john@thedesignoffice.org
-description: > # this means to ignore newlines until "baseurl:"
-  Babybindery is a web-to-print framework, templated using Jekyll. By Catherine Leigh Schmidt and Lukas WinklerPrins, for The Design Office PVD with John Caserta.
+description: "Babybindery is a web-to-print framework, templated using Jekyll. By Catherine Leigh Schmidt and Lukas WinklerPrins, for The Design Office PVD with John Caserta."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://thedesignoffice.github.io/babybindery/" # the base hostname & protocol for your site
 twitter_username:
@@ -20,4 +19,4 @@ markdown: kramdown
 page_width: "8.5in"
 page_height: "11in"
 num_pages: 100
-content_types: ["conversation", image, text, other] # note that if you have a multi-word content type to wrap it in quotes. This is not necessary in your post files, however. 
+content_types: ["conversation", image, text, other] # note that if you have a multi-word content type to wrap it in quotes. This is not necessary in your post files, however.
