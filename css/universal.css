@@ -1,3 +1,8 @@
+:root {
+  --trim-width: 8.5in;
+  --trim-height: 11in;
+}
+
 body{
   font-family: times, 'Space Mono', monospace;
   color: black;
