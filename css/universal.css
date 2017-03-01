@@ -1,5 +1,5 @@
 body{
-  font-family: 'Space Mono', monospace;
+  font-family: times, 'Space Mono', monospace;
   color: black;
   text-align: left;
   width: 100%;
@@ -57,7 +57,7 @@ a.button {
 /* Web-only stuff: */
 
 .wrapper{
-  /* Goes just within the body, around all Page or Post Content. */
+  /* Goes just within the body, around all Page or Post Content.
   width: 70%;
-  margin: 0 auto;
+  margin: 0 auto; */
 }
