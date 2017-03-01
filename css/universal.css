@@ -2,10 +2,10 @@ body{
   font-family: times, 'Space Mono', monospace;
   color: black;
   text-align: left;
-  width: 100%;
+  width: 80%;
   font-size: 17px;
   line-height: 30px;
-  margin-top: 3vh;
+  margin: 7vw;
 }
 
 img{
