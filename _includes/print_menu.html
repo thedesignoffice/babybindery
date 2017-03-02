@@ -1,7 +1,6 @@
 <div class="menu noprint">
   {% for post in site.posts %}
-  <input type="checkbox" id="checkbox-post" />{{ post.title }}<br />
-  {% break %}
+    <input type="checkbox" id="checkbox-post" />{{ post.title }}<br />
   {% endfor %}
   <a id="trim_pages_button" class="button">Trim Pages</a> <a style="display: none" id="print_button" class="button">Print!</a>
 </div>

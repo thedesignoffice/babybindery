@@ -2,6 +2,10 @@
 
 @page {size: 8.5in 11in; margin: 0in; /* see book.css */}
 
+sheet, html, body {
+  margin: 0;
+}
+
 body { width: 8.4in; background: white; }
 .sheetwrapper {  width: inherit;  }
 
