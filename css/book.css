@@ -4,7 +4,7 @@
 
 body{
   background: #e4edfd;
-  width: 18in; Just shy of 8.5 to avoid problems, see print.css */
+  width: 18in; /* Just shy of 8.5 to avoid problems, see print.css */
   font-size: 12pt;
   line-height: 18pt;
   counter-reset: section;

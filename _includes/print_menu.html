@@ -1,14 +1,7 @@
 <div class="menu noprint">
-  {% for content_type in site.content_types %}
   {% for post in site.posts %}
-  {% if post.content-type == content_type %}
-  <input type="checkbox" id="checkbox-{{content_type}}" />{{ content_type }}<br />
+  <input type="checkbox" id="checkbox-post" />{{ post.title }}<br />
   {% break %}
-  {% endif %}
-   <!-- Basically, break if we see any content of the type we're looking for (so no checkbox appears if no content of that content type) -->
   {% endfor %}
-
-  {% endfor %}
-
   <a id="trim_pages_button" class="button">Trim Pages</a> <a style="display: none" id="print_button" class="button">Print!</a>
 </div>

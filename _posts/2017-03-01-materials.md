@@ -2,7 +2,6 @@
 layout: default
 title: Typography and Material Workshop
 date: 2017-03-01
-content-type: text
 author: John Caserta
 
 ---
