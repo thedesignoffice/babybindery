@@ -1,11 +1,11 @@
 body{
-  font-family: 'Space Mono', monospace;
+  font-family: times, 'Space Mono', monospace;
   color: black;
   text-align: left;
-  width: 100%;
+  width: 80%;
   font-size: 17px;
   line-height: 30px;
-  margin-top: 3vh;
+  margin: 7vw;
 }
 
 img{
@@ -57,7 +57,7 @@ a.button {
 /* Web-only stuff: */
 
 .wrapper{
-  /* Goes just within the body, around all Page or Post Content. */
+  /* Goes just within the body, around all Page or Post Content.
   width: 70%;
-  margin: 0 auto;
+  margin: 0 auto; */
 }

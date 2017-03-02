@@ -4,11 +4,10 @@
 
 body{
   background: #e4edfd;
-  width: 8.4in; Just shy of 8.5 to avoid problems, see print.css */
-  height: 10.9in;
-  font-size: 10pt;
-  line-height: 17pt;
-  word-spacing: -1px;
+  width: 18in; Just shy of 8.5 to avoid problems, see print.css */
+  font-size: 12pt;
+  line-height: 18pt;
+  counter-reset: section;
 }
 
 #content-source{
@@ -21,19 +20,22 @@ img{
 }
 
 .menu{
-  width: 80%;
-  padding: 5%;
-  margin: 20px auto;
+  margin: 20px;
 }
 
+.sheetwrapper {  width: 17.25in;  }
 .sheet {
   /* illustrates the size of each sheet,
   to get a better sense of the text block */
   background: #fff;
   height: 11in;
   width: 8.5in;
-  margin: 3vh;
+  margin: 20px 6px;
+  float: left;
 }
+
+.sheet:nth-child(1) { float: right; }
+.sheet:nth-child(even) { clear: both; }
 
 @media print {
   .sheet, html, body {
@@ -44,18 +46,13 @@ img{
 .page{
   /* container for each .page-content,
   .page-header, and .page-footer */
-  margin: 0in 1in;
-  position: relative;
-  top:  .5in;
-  background: white;
-  clear: both;
+  margin: 7% 30% 30% 7%;
 }
+.sheet:nth-child(odd) .page { margin: 7% 7% 30% 30%; }
 
-.page-header {
+.page-header { /* nothing in the header now */
   font-size:.75em;
-  height: .75in;
-  width: 100%;
-  clear: both;
+  background: red;
 }
 
 .content-wrapper {
@@ -79,8 +76,8 @@ img{
   /* Don't make taller than .content-wrapper and page size (defined in print.css) */
   margin-bottom: 0.25in;
 }
-.sheet:nth-child(odd) .page-content  {  margin-left: 1in; }
-.sheet:nth-child(even) .page-content  { margin-right: 1in; }
+.sheet:nth-child(odd) .page-content  {  margin-left: 0; }
+.sheet:nth-child(even) .page-content  { margin-right: 0; }
 
 .page-footer{
   height: 0.5in;
@@ -90,11 +87,14 @@ img{
   clear: both;
   text-align: right;
 }
-
+/*
 .sheet:nth-child(even) .page-footer  {   text-align:justify;
   text-align-last:justify;
-}
-.sheet:nth-child(odd) .page-footer span { display: none; }
+} */
+.page-footer span { margin-left: 7%; }
+.sheet:nth-child(even) .page-footer { text-align: left; }
+.sheet:nth-child(odd) .page-footer .page-title {  display: none;  }
+.sheet:nth-child(even) .page-footer .page-url {  display: none;  }
 
 .page1 .page-footer, .page2 .page-footer, .page3 .page-footer, .page2 .page-header { visibility: hidden; }
 
@@ -124,18 +124,21 @@ img{
 
 .chapter_head {
   break-after: always;
-  text-transform: capitalize;
-  font-size: 5em;
-  line-height: 100%;
-  text-indent: -6px;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
   color: blue;
 }
 
+.page p { margin: 0; text-indent: -5%; display: inline; }
+.page p:before {
+  counter-increment: section;
+  content: counter(section) " ";
+  font-family: "space mono"; font-size: .5rem; color: green;
+}
+
 a{
-  text-decoration: none;
+  text-decoration: none; color: inherit;
 }
 a:after {
   content: " " attr(href) " ";
