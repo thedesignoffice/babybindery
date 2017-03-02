@@ -27,12 +27,12 @@
 
     <div class="sheet page{{num}}">
       <div class="page">
-        <div class="page-header"><!-- {{ site.title }} --></div>
-        <div class="content-wrapper">
+        <div class="page-header"><!--{{ site.title }} --></div>
+        <!-- <div class="content-wrapper"> -->
           <div class="page-content"></div>
-        </div>
-        <div class="page-footer"><span class="page-num">{{ num }}</span> <span class="page-url">{{site.url}}</span> <span class="page-title">{{site.title}}</span></div>
-
+        <!-- </div> -->
+        <div class="page-footer"><span>{{ site.title }}</span><span>{{ site.author }}</span></div>
+        <div class="page-num">{{ num }}</div>
       </div>
     </div>
     {% endfor %}
