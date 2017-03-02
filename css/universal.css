@@ -1,6 +1,6 @@
 :root {
-  --trim-width: 8.5in;
-  --trim-height: 11in;
+  --trim-width: 4.8in;
+  --trim-height: 6.88in;
 }
 
 body{
@@ -17,11 +17,11 @@ img{
   max-width: 100%;
 }
 
-h1, h2, h4 {
+h1, h2, h3, h4 {
   font-weight: bold;
 }
 h3 {  font-style: italic;}
-.toc h3 { text-transform: capitalize; margin-top: 24px; text-indent: 41px; }
+.toc h3 { text-transform: capitalize; text-indent: 41px; }
 
 p{
   margin: 0;
