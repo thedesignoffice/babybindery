@@ -1,8 +1,7 @@
 ---
-layout: image
+layout: default
 title: The Book Structure
 date: 2015-05-28
-content-type: image
 imgurl: http://i.imgur.com/uhFjKxz.jpg
 author: Lukas & Cathy
 ---

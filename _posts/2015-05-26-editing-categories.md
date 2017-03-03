@@ -1,8 +1,7 @@
 ---
-layout: image
+layout: default
 title: How Do I Change The Content Types?
 date: 2015-05-26
-content-type: image
 imgurl: http://i.imgur.com/vh4HeNP.png
 author: Lukas & Cathy
 ---
