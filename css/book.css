@@ -1,13 +1,16 @@
 /* CSS to format the /book.html page, which uses print.html layout file. */
 /* BE AWARE: THIS FORMATTING IS BROUGHT INTO THE PRINT TOO... */
 /* For changes _only_ needed for printed document, use print.css. */
+:root {
+}
 
 body{
   background: #e4edfd;
-  width: 18in; /* Just shy of 8.5 to avoid problems, see print.css */
+  width: calc((var(--trim-width)*2 + 50px));
   font-size: 12pt;
   line-height: 18pt;
   counter-reset: section;
+  margin: 0;
 }
 
 #content-source {
@@ -16,80 +19,88 @@ body{
 }
 
 img{
-  max-height: 8.25in; /* Should be as big as .page-content */
+  max-height: 100%; /* Should be as big as .page-content */
 }
 
 .menu{
   margin: 20px;
 }
 
-.sheetwrapper {  width: 17.25in;  }
+.sheetwrapper {  width: calc((var(--trim-width)*2 + 25px));  }
 .sheet {
   /* illustrates the size of each sheet,
   to get a better sense of the text block */
   background: #fff;
-  height: 11in;
-  width: 8.5in;
+  height: var(--trim-height);
+  width: var(--trim-width);
   margin: 20px 6px;
   float: left;
+  overflow: hidden;
 }
 
+.page { position: absolute;
+  height: var(--trim-height);
+  width: var(--trim-width);
+  overflow: hidden;
+  padding: 3em;
+  padding-top: 2em;
+  padding-left: 6em;
+}
+.sheet:nth-child(even) .page { padding-left: 3em; padding-right: 6em; }
 .sheet:nth-child(1) { float: right; }
 .sheet:nth-child(even) { clear: both; }
 
 .page{
-  /* container for each .page-content,
-  .page-header, and .page-footer */
   margin: 7% 30% 30% 7%;
 }
 .sheet:nth-child(odd) .page { margin: 7% 7% 30% 30%; }
+*/
 
 .page-header { /* nothing in the header now */
   font-size:.75em;
   background: red;
 }
-
+  /*
 .content-wrapper {
   /* used in both print.html to enforce height */
   display: inline; /* don't touch display, postition, top, and left */
   position: relative;
   top: 0;
   left: 0;
-  height: 8.5in; /* Needs to match .page-content height. */
+  height: calc(var(--trim-height)*.82);  Needs to match .page-content height.
   clear: both;
-
 }
-
+*/
 .page-content{
   /* Regions container. Flows from #content-source */
   /* margin & padding only seem to work on the sides in regions.  */
   flow-from: toprint;
   display: block;
-  height: 8.5in; /* extremely wack */
+  height: calc(var(--trim-height)*.86);
+  height: calc(var(--trim-height) - 6em); /* extremely wack */
   /* Don't make taller than .content-wrapper and page size (defined in print.css) */
-  margin-bottom: 0.25in;
+  margin-bottom: 1em;
 }
 .sheet:nth-child(odd) .page-content  {  margin-left: 0; }
 .sheet:nth-child(even) .page-content  { margin-right: 0; }
 
-.page-footer{
-  height: 0.5in;
-  margin-top: 0.5in;
-  font-size:.75em;
+.page-num{
+  position: absolute;
+  z-index: 0;
+  top: 42%; left: 0;
+  font-size: 10em;
   width: 100%;
-  clear: both;
-  text-align: right;
+  clear: both; text-align: center;
+  margin: 0;
+  mix-blend-mode: multiply;
 }
-/*
-.sheet:nth-child(even) .page-footer  {   text-align:justify;
-  text-align-last:justify;
-} */
-.page-footer span { margin-left: 7%; }
-.sheet:nth-child(even) .page-footer { text-align: left; }
-.sheet:nth-child(odd) .page-footer .page-title {  display: none;  }
-.sheet:nth-child(even) .page-footer .page-url {  display: none;  }
+.sheet:nth-child(odd) .page-num { transform: rotate(5deg); }
 
-.page1 .page-footer, .page2 .page-footer, .page3 .page-footer, .page2 .page-header { visibility: hidden; }
+.page-footer { font-size: .6em; height: 3em;  letter-spacing: .2em; text-align: center; text-transform: uppercase; }
+.sheet:nth-child(odd) .page-footer span:nth-child(1)  { display: none; }
+.sheet:last-child .page-num, .sheet:nth-child(even) .page-footer span:nth-child(2)  { display: none; }
+
+.page1 .page-num, .page2 .page-num, .page1 .page-footer, .page2 .page-footer, .page3 .page-footer, .page2 .page-header { visibility: hidden; }
 
 .sheet:nth-child(odd) .page-header  { visibility: hidden; }
 
@@ -105,32 +116,25 @@ img{
   break-after: always;
 }
 .content{ /* Divs that contain everything coming through book.html */
-  break-after: never; /* overwritten if specific content displayed. */
+/*  break-after: never;  overwritten if specific content displayed. */
   display: none;
 }
 
 .blank{
   visibility: hidden; /* hiding any mystery content, just takin up space. */
-  height: 8.5in; /* should match .page-content height. */
+  height: calc(var(--trim-height)*.85); /* should match .page-content height. */
 }
 
-.chapter_head {
-  break-after: always;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-  color: blue;
-}
+h2 {  }
 
 .page p { margin: 0; text-indent: -5%; display: inline; }
 .page p:before {
   counter-increment: section;
   content: counter(section) " ";
-  font-family: "space mono"; font-size: .5rem; color: green;
 }
 
 a{
-  text-decoration: none; color: inherit;
+  text-decoration: none;
 }
 a:after {
   content: " (" attr(href) ") ";
