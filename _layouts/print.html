@@ -5,8 +5,8 @@
     {% include meyer_reset.html %}
     {% include jquery.html %}
     {% include universal_css.html %}
+    {% include custom_css.html %}
     {% include book_css.html %}
-    <!-- Styles web view of book content, the html "print preview"-->
     {% include print_css.html %} <!-- Print-media stylesheet. -->
     {% include regions_js.html %} <!-- See https://github.com/FremyCompany/css-regions-polyfill -->
   </head>
@@ -29,7 +29,7 @@
         <div class="page-header"><!--{{ site.title }} --></div>
          <div class="content-wrapper">
           <div class="page-content"></div>
-         </div> 
+         </div>
         <div class="page-footer"><span>{{ site.title }}</span><span>{{ site.author }}</span></div>
         <div class="page-num">{{ num }}</div>
       </div>
@@ -37,7 +37,6 @@
     {% endfor %}
     </div>
 
-    {% include label_interview_paragraphs.html %} <!-- Needs to happen after content is dropped in. -->
     {% include checkboxes_links.html %}
   </body>
 
