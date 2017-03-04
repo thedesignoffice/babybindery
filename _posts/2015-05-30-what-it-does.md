@@ -3,8 +3,6 @@ layout: default
 title: What Babybindery Does
 date: 2015-05-30
 author: Lukas & Cathy
-content-type: text
-
 ---
 
 Babybindery takes a set of categorized post content in Jekyll and turns it into a printable book, the styling of which is easily editable. 

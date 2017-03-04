@@ -1,0 +1,14 @@
+/* This document is for things we hope people modify! */
+
+:root {
+  --trim-width: 6in;
+  --trim-height: 9in;
+}
+
+body {
+  font-family: times, 'Space Mono', monospace;
+}
+
+a {
+  border-bottom: 1px solid blue;
+}

@@ -1,3 +1,4 @@
+
 html {
   --trim-width: 6in;
   --trim-height: 9in;
@@ -6,7 +7,6 @@ html {
 }
 
 body{
-  font-family: times, 'Space Mono', monospace;
   color: black;
   text-align: left;
   width: 80%;
@@ -62,13 +62,6 @@ a.button {
 }
 
 .agate { font-size: 70%; }
-.initials{
-  color: red;
-}
-
-.conversation-question{ /* For Conversation Questions, denoted [INITIALS]-q in post files. */
-  font-weight: bold;
-}
 
 /* Web-only stuff: */
 

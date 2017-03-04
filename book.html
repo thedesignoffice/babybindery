@@ -7,7 +7,6 @@ This is a display of content in preparation for print.
 The contents of this page are loaded into the print.html layout.
 -->
 
-
 <!-- Half Title Page -->
 <div class="front-content">
   <h2>{{ site.title }}</h2>
@@ -27,7 +26,7 @@ The contents of this page are loaded into the print.html layout.
 <div class="front-content">
   {% for page in site.pages %}
   {% if page.content-type == 'credits' %}
-  {{page.content}}
+  {{ page.content }}
   {% endif %}
   {% endfor %}
 </div>
@@ -36,42 +35,33 @@ The contents of this page are loaded into the print.html layout.
 <div class="toc front-content">
   <h1 class="chapter_head">Contents</h1>
     <ul>
-      {% for type in site.content_types %}
-      <h3>{{ type }}</h3>
       {% for post in site.posts %}
 
-        {% if post.content-type == type %}
-        <li class="{{ post.content-type }}">
-          <a class="post-link" href="{{ post.url  }}"> {{ post.title }}</a> {{ post.author }}  <!-- | prepend: site.github.url-->
+        <li class="">
+          <a class="post-link" href="{{ post.url }}"> {{ post.title }}</a> {{ post.author }}  <!-- | prepend: site.github.url-->
         </li>
-        {% endif %}
-      {% endfor %}
       {% endfor %}
     </ul>
 </div>
 
 <!-- All Content -->
-{% for type in site.content_types %}
 
 <div class="content newchapter {{ type }}">
   <h4 class="chapter_head">{{ type }}</h4>
 </div>
+{% for post in site.posts %}
+    <div class="content {{ post.content-type }}">
+      <h2>{{ post.title }}</h2>
+      <p>
+        {{ post.date | date: "%-d %B %Y" }}
+      </p>
+      <p>
+        {{site.url}}{{post.url}}
+      </p>
+      {{post.content}}
+    </div>
+{% endfor %} <!-- posts loop -->
 
-  {% for post in site.posts %}
-    {% if post.content-type == type %}
-      <div class="content {{ post.content-type }}">
-        <h2>{{ post.title }}</h2>
-        <p>
-          {{ post.date | date: "%-d %B %Y" }}
-        </p>
-        <p>
-          {{site.url}}{{post.url}}
-        </p>
-        {{post.content}}
-      </div>
-    {% endif %}
-  {% endfor %} <!-- posts loop -->
-{% endfor %} <!-- content type loop -->
 
 
 
