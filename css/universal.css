@@ -1,4 +1,7 @@
-
+:root {
+  --trim-width: 6in;
+  --trim-height: 9in;
+ }
 
 body{
   color: black;

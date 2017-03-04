@@ -2,6 +2,9 @@
 /* BE AWARE: THIS FORMATTING IS BROUGHT INTO THE PRINT TOO... */
 /* For changes _only_ needed for printed document, use print.css. */
 
+:root {
+ }
+
 body{
   width: calc((var(--trim-width)*2 + 50px));
   font-size: 12pt;
@@ -55,6 +58,18 @@ img{
   font-size:.75em;
   background: red;
 }
+
+/* don't touch display, postition, top, and left */
+/*
+.content-wrapper {
+  display: inline;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: calc(var(--trim-height)*.82);  Needs to match .page-content height.
+  clear: both;
+ }
+ */
 
 .page-content{
   /* Regions container. Flows from #content-source */
