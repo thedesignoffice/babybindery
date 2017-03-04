@@ -7,8 +7,6 @@
 
 body{
   width: calc((var(--trim-width)*2 + 50px));
-  font-size: 12pt;
-  line-height: 18pt;
   counter-reset: section;
   margin: 0;
 }
@@ -24,7 +22,10 @@ img{
 
 .menu{
   margin: 20px;
+  font-family: 'space mono', monospace;
+  font-size: .8rem; 
 }
+.menu li { display: inline-block; margin-left: 1rem; }
 
 .sheetwrapper {  width: calc((var(--trim-width)*2 + 25px));  }
 .sheet {
@@ -120,12 +121,44 @@ img{
   height: calc(var(--trim-height)*.85); /* should match .page-content height. */
 }
 
+.chapter_head {
+  break-before: always;
+  break-after: always;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  color: red;
+  font-size: 4em;
+  margin-left: 1em;
+  width: 200%;
+  margin-bottom: 4em;
+  display: inline-block;
+  line-height: 100%;
+  transform: rotate(45deg);
+  /*
+  -moz-text-fill-color: #fff;
+-webkit-text-fill-color: #fff;
+-moz-text-stroke-color: #000;
+-webkit-text-stroke-color: #000;
+-moz-text-stroke-width: 2px;
+-webkit-text-stroke-width: 2px;
+*/
+  transform-origin: left top;
+  mix-blend-mode: multiply;
+  text-transform: capitalize;
+}
+
+.newchapter {
+
+}
+
 h2 {  }
 
 .page p { margin: 0; text-indent: -5%; display: inline; }
 .page p:before {
   counter-increment: section;
-  content: counter(section) " ";
+  content:  counter(section) "  ";
+  font-family: "space mono"; font-size: .5rem; line-height: 0; color: green;
 }
 
 a{

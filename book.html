@@ -46,6 +46,9 @@ The contents of this page are loaded into the print.html layout.
 
 <!-- All Content -->
 
+<div class="content newchapter {{ type }}">
+  <h4 class="chapter_head">{{ type }}</h4>
+</div>
 {% for post in site.posts %}
     <div class="content {{ post.content-type }}">
       <h2>{{ post.title }}</h2>

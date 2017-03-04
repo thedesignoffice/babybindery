@@ -1,15 +1,28 @@
 :root {
   --trim-width: 6in;
   --trim-height: 9in;
- }
+}
+
+html {
+  --trim-width: 6in;
+  --trim-height: 9in;
+  font-size: 15pt;
+  line-height: 40pt;
+}
 
 body{
   color: black;
   text-align: left;
   width: 80%;
-  font-size: 17px;
-  line-height: 30px;
-  margin: 7vw;
+  margin: 1rem;
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+@media (min-width: 1500px) {
+  :root {  }
+}
+@media (max-width: 400px) {
+  :root {  }
 }
 
 img{
@@ -18,6 +31,9 @@ img{
 
 h1, h2, h3, h4 {
   font-weight: bold;
+  text-align: justify;
+  text-align-last: justify;
+  font-size: 3rem;
 }
 h3 {  font-style: italic;}
 .toc h3 { text-transform: capitalize; text-indent: 41px; }
