@@ -2,11 +2,11 @@
 /* BE AWARE: THIS FORMATTING IS BROUGHT INTO THE PRINT TOO... */
 /* For changes _only_ needed for printed document, use print.css. */
 
-:root {
+:root { /* Should variables be defined in here again...? */
  }
 
 body{
-  width: calc((var(--trim-width)*2 + 50px));
+  width: calc((var(--trim-width)*2 + 50px)); /* What about on mobile? Maybe we just imipose this as a max width. -Lukas */
   counter-reset: section;
   margin: 0;
 }
@@ -17,17 +17,23 @@ body{
 }
 
 img{
-  max-height: 100%; /* Should be as big as .page-content */
+  max-height: 100%;
 }
 
 .menu{
   margin: 20px;
-  font-family: 'space mono', monospace;
+  font-family: 'space mono', monospace; /* Fonts should be defined in universal or custom.css -Lukas */
   font-size: .8rem;
 }
-.menu li { display: inline-block; margin-left: 1rem; }
+.menu li {
+  display: inline-block;
+  margin-left: 1rem;
+}
 
-.sheet-wrapper {  width: calc((var(--trim-width)*2 + 25px));  }
+.sheet-wrapper {
+  width: calc((var(--trim-width)*2 + 25px));  /* can we make this in a relative amount instead of pixels? -Lukas */
+}
+
 .sheet {
   /* illustrates the size of each sheet,
   to get a better sense of the text block */
@@ -38,22 +44,30 @@ img{
   overflow: hidden;
 }
 
-.page { position: absolute;
+.page {
+  position: absolute;
   height: var(--trim-height);
   width: var(--trim-width);
   overflow: hidden;
   padding: 3em;
   padding-top: 2em;
   padding-left: 6em;
-}
-.sheet:nth-child(even) .page { padding-left: 3em; padding-right: 6em; }
-.sheet:nth-child(1) { float: right; }
-.sheet:nth-child(even) { clear: both; }
-
-.page{
   margin: 7% 30% 30% 7%;
 }
-.sheet:nth-child(odd) .page { margin: 7% 7% 30% 30%; }
+.sheet:nth-child(even) .page {
+  padding-left: 3em;
+  padding-right: 6em;
+}
+.sheet:nth-child(1) { /* Why just the first sheet? Maybe should be in custom.css -Lukas */
+  float: right;
+}
+.sheet:nth-child(even) {
+  clear: both;
+}
+
+.sheet:nth-child(odd) .page {
+  margin: 7% 7% 30% 30%;
+}
 
 .page-header { /* nothing in the header now */
   font-size:.75em;
@@ -67,10 +81,9 @@ img{
   position: relative;
   top: 0;
   left: 0;
-  height: calc(var(--trim-height)*.82);  Needs to match .page-content height.
+  height: calc(var(--trim-height)*.82);  /* cool */
   clear: both;
  }
-
 
 .page-content{
   /* Regions container. Flows from #content-source */
@@ -78,12 +91,16 @@ img{
   flow-from: toprint;
   display: block;
   height: calc(var(--trim-height)*.86);
-  height: calc(var(--trim-height) - 6em); /* extremely wack */
+  height: calc(var(--trim-height) - 6em); /* extremely wack */ /* LOL - lukas */
   /* Don't make taller than .content-wrapper and page size (defined in print.css) */
   margin-bottom: 1em;
 }
-.sheet:nth-child(odd) .page-content  {  margin-left: 0; }
-.sheet:nth-child(even) .page-content  { margin-right: 0; }
+.sheet:nth-child(odd) .page-content  {
+  margin-left: 0;
+}
+.sheet:nth-child(even) .page-content  {
+  margin-right: 0;
+}
 
 .page-num{
   position: absolute;
@@ -96,13 +113,16 @@ img{
   mix-blend-mode: multiply;
 }
 
-.page1 .page-num, .page2 .page-num, .page1 .page-footer, .page2 .page-footer, .page3 .page-footer, .page2 .page-header { visibility: hidden; }
+.page1 .page-num,
+.page2 .page-num,
+.page1 .page-footer,
+.page2 .page-footer,
+.page3 .page-footer,
+.page2 .page-header {
+  visibility: hidden; /* Huh. Should the user be able to indicate a number of pages on which to avoid this stuff? This feels messy. */
+}
 
 .sheet:nth-child(odd) .page-header  { visibility: hidden; }
-
-.end-content{
-  break-after: always;
-}
 
 .front-content{ /* Divs with Half Title, Title, Credits, TOC in book.html */
   break-after: always;
@@ -128,7 +148,7 @@ img{
   -ms-hyphens: auto;
   hyphens: auto;
   color: red;
-  font-size: 4em;
+  font-size: 4em; /* I feel like some of this should be in custom.css -Lukas */
   margin-left: 1em;
   width: 200%;
   margin-bottom: 4em;
@@ -148,17 +168,24 @@ img{
   text-transform: capitalize;
 }
 
-.newchapter {
+.newchapter { /* What are your intentions with this, John? -Lukas */
 
 }
 
 h2 {  }
 
-.page p { margin: 0; text-indent: -5%; display: inline; }
+.page p {
+  margin: 0;
+  text-indent: -5%;
+  display: inline;
+}
 .page p:before {
   counter-increment: section;
-  content:  counter(section) "  ";
-  font-family: "space mono"; font-size: .5rem; line-height: 0; color: green;
+  content:  counter(section) "  "; /* Whoah interesting. What prompted this? */
+  font-family: "space mono";
+  font-size: .5rem;
+  line-height: 0;
+  color: green;
 }
 
 a{
@@ -170,4 +197,6 @@ a:after {
   font-style: italic;
 }
 
-.noprint input { padding-left: 2em; }
+.noprint input {
+  padding-left: 2em; /* This feels superfluous ? I would apply styling to .menu instead. -Lukas */
+}

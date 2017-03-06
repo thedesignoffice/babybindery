@@ -1,8 +1,8 @@
 /* This document is for things we hope people modify! */
 
 :root {
-  --trim-width: 8.5in;
-  --trim-height: 11in;
+  --trim-width: 6in;
+  --trim-height: 9in;
 }
 
 body {
@@ -10,5 +10,6 @@ body {
 }
 
 a {
+  color: blue;
   border-bottom: 1px solid blue;
 }

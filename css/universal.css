@@ -36,7 +36,10 @@ h1, h2, h3, h4 {
   font-size: 3rem;
 }
 h3 {  font-style: italic;}
-.toc h3 { text-transform: capitalize; text-indent: 41px; }
+.toc h3 {
+  text-transform: capitalize;
+  text-indent: 41px;
+}
 
 p{
   margin: 0;
@@ -44,8 +47,6 @@ p{
 }
 
 a{
-  border-bottom: 1px solid blue;
-  color: blue;
   text-decoration: none;
 }
 a:hover{
@@ -65,7 +66,9 @@ a.button {
   cursor: pointer;
 }
 
-.agate { font-size: 70%; }
+.agate {
+  font-size: 70%;
+}
 
 /* Web-only stuff: */
 
