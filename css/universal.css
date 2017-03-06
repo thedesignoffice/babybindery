@@ -55,8 +55,9 @@ a:hover{
   background-color: blue;
 }
 
-a.button {
+.button {
   /* on index */
+  color: blue;
   display: inline-block;
   padding: 1.6em;
   margin-top: 2em;
@@ -64,6 +65,10 @@ a.button {
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
+}
+.button:hover{
+  background-color: blue;
+  color: white;
 }
 
 .agate {
