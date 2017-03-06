@@ -1,6 +1,8 @@
 <div class="menu noprint">
+  <ul>
   {% for post in site.posts %}
-    <input type="checkbox" id="checkbox-post" />{{ post.title }}<br />
+    <li><input type="checkbox" id="checkbox-post" />{{ post.title }} in {{ post.content-type }}</li>
   {% endfor %}
+  </ul>
   <div id="trim_pages_button" class="button">Trim Pages</div> <div style="display: none" id="print_button" class="button">Print!</div>
 </div>

@@ -1,12 +1,15 @@
 /* This document is for things we hope people modify! */
 
 :root {
-  --trim-width: 6in;
-  --trim-height: 9in;
+  --trim-width: 5.5in;
+  --trim-height: 8.5in;
+  --outside-margin: .35in;
 }
 
 body {
   font-family: times, 'Space Mono', monospace;
+  font-size: 14pt;
+  line-height: 1.35rem;
 }
 
 a {

@@ -9,6 +9,7 @@ body{
   width: calc((var(--trim-width)*2 + 50px)); /* What about on mobile? Maybe we just imipose this as a max width. -Lukas */
   counter-reset: section;
   margin: 0;
+  background: #e4edfd;
 }
 
 #content-source {
@@ -26,7 +27,6 @@ img{
   font-size: .8rem;
 }
 .menu li {
-  display: inline-block;
   margin-left: 1rem;
 }
 
@@ -37,63 +37,79 @@ img{
 .sheet {
   /* illustrates the size of each sheet,
   to get a better sense of the text block */
+  background: #fff;
   height: var(--trim-height);
   width: var(--trim-width);
   margin: 20px 6px;
   float: left;
   overflow: hidden;
 }
+/* not ready for prime time
+.page .full-bleed {
+  break-before: always;
+  break-after: always;
 
+}
+.page .full-bleed img {
+  position: absolute;
+  left: 0; top: 0;
+  height: var(--trim-height);
+  width: var(--trim-width);
+  padding: - var(--outside-margin);
+  padding-top: -2rem;
+  padding-left: - calc(var(--outside-margin)*2);
+  opacity: .4;
+  break-before: always;
+  break-after: always;
+}
+.sheet:nth-child(even) .page .full-bleed img {
+  padding-left: - var(--outside-margin);
+  padding-right: - calc(var(--outside-margin)*2);
+}
+*/
 .page {
   position: absolute;
   height: var(--trim-height);
   width: var(--trim-width);
   overflow: hidden;
-  padding: 3em;
-  padding-top: 2em;
-  padding-left: 6em;
-  margin: 7% 30% 30% 7%;
+  padding: var(--outside-margin);
+  padding-top: 2rem;
+  padding-left: calc(var(--outside-margin)*2);
 }
 .sheet:nth-child(even) .page {
-  padding-left: 3em;
-  padding-right: 6em;
+  padding-left: var(--outside-margin);
+  padding-right: calc(var(--outside-margin)*2);
 }
-.sheet:nth-child(1) { /* Why just the first sheet? Maybe should be in custom.css -Lukas */
+.sheet:nth-child(1) { /* Displays page 1 above page 3 on book.html */
   float: right;
 }
 .sheet:nth-child(even) {
   clear: both;
 }
 
-.sheet:nth-child(odd) .page {
-  margin: 7% 7% 30% 30%;
-}
-
 .page-header { /* nothing in the header now */
-  font-size:.75em;
-  background: red;
+  font-size:.75rem;
 }
 
 /* don't touch display, postition, top, and left */
-
+/* No style needed as of now... this element used for js only
 .content-wrapper {
   display: inline;
   position: relative;
   top: 0;
   left: 0;
-  height: calc(var(--trim-height)*.82);  /* cool */
+  height: calc(var(--trim-height)*.82);
   clear: both;
  }
-
+*/
 .page-content{
   /* Regions container. Flows from #content-source */
   /* margin & padding only seem to work on the sides in regions.  */
   flow-from: toprint;
   display: block;
-  height: calc(var(--trim-height)*.86);
-  height: calc(var(--trim-height) - 6em); /* extremely wack */ /* LOL - lukas */
+  height: calc(var(--trim-height) - 6rem);
   /* Don't make taller than .content-wrapper and page size (defined in print.css) */
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 .sheet:nth-child(odd) .page-content  {
   margin-left: 0;
@@ -105,24 +121,37 @@ img{
 .page-num{
   position: absolute;
   z-index: 0;
-  top: 42%; left: 0;
-  font-size: 10em;
+  bottom: 2rem;
+  font-size: 2rem;
   width: 100%;
-  clear: both; text-align: center;
+  clear: both; text-align: left;
   margin: 0;
   mix-blend-mode: multiply;
 }
+.sheet:nth-child(odd) .page-num { text-align: right; right: 3rem;  } /* page number on odd pages  */
 
+.page-footer { font-size: .6rem; height: 3rem;  letter-spacing: .2em; text-align: center; text-transform: uppercase;
+margin-left: 3rem;
+}
+.sheet:nth-child(odd) .page-footer {
+  margin-right: 3rem;
+  margin-left: 0;
+}
+
+.sheet:nth-child(odd) .page-footer span:nth-child(1),
+.sheet:last-child .page-num,
+.sheet:nth-child(even) .page-footer span:nth-child(2),
 .page1 .page-num,
 .page2 .page-num,
 .page1 .page-footer,
 .page2 .page-footer,
-.page3 .page-footer,
-.page2 .page-header {
-  visibility: hidden; /* Huh. Should the user be able to indicate a number of pages on which to avoid this stuff? This feels messy. */
+.page3 .page-footer {
+  display: none; /* Folio matter should stay off for first few pages */
 }
 
 .sheet:nth-child(odd) .page-header  { visibility: hidden; }
+
+
 
 .front-content{ /* Divs with Half Title, Title, Credits, TOC in book.html */
   break-after: always;
@@ -148,27 +177,14 @@ img{
   -ms-hyphens: auto;
   hyphens: auto;
   color: red;
-  font-size: 4em; /* I feel like some of this should be in custom.css -Lukas */
-  margin-left: 1em;
-  width: 200%;
-  margin-bottom: 4em;
-  display: inline-block;
+  font-size: 2rem;
+  margin: 2rem 0;
   line-height: 100%;
-  transform: rotate(45deg);
-  /*
-  -moz-text-fill-color: #fff;
--webkit-text-fill-color: #fff;
--moz-text-stroke-color: #000;
--webkit-text-stroke-color: #000;
--moz-text-stroke-width: 2px;
--webkit-text-stroke-width: 2px;
-*/
-  transform-origin: left top;
   mix-blend-mode: multiply;
   text-transform: capitalize;
 }
 
-.newchapter { /* What are your intentions with this, John? -Lukas */
+.newchapter { /* could be used to break between chapters, etc  */
 
 }
 
@@ -181,7 +197,7 @@ h2 {  }
 }
 .page p:before {
   counter-increment: section;
-  content:  counter(section) "  "; /* Whoah interesting. What prompted this? */
+  content:  counter(section) "  "; /* Looking to make use of webby conventions to sit alongside bookish ones */
   font-family: "space mono";
   font-size: .5rem;
   line-height: 0;
@@ -195,8 +211,4 @@ a:after {
   content: " (" attr(href) ") ";
   font-size: 70%;
   font-style: italic;
-}
-
-.noprint input {
-  padding-left: 2em; /* This feels superfluous ? I would apply styling to .menu instead. -Lukas */
 }

@@ -49,7 +49,7 @@ function writeLinks(links){
     }
 
     href = temp; // Now stripped & clean=looking.
-    link_string = link_string + name+" &rarr; "+href+"<br />";
+    link_string = link_string + name+" &rarr; "+href+"<br>";
   }
   return link_string;
 }
