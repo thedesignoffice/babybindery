@@ -20,18 +20,24 @@
       {{ content }}
     </div>
 
-    <div class="sheetwrapper">
+    <div class="sheet-wrapper">
     <!-- Use Jekyll to make 100 pages. Edit here if you need fewer. -->
     {% for num in (1..site.num_pages) %}
-
     <div class="sheet page{{num}}">
       <div class="page">
-        <div class="page-header"><!--{{ site.title }} --></div>
-         <div class="content-wrapper">
-          <div class="page-content"></div>
-         </div>
-        <div class="page-footer"><span>{{ site.title }}</span><span>{{ site.author }}</span></div>
-        <div class="page-num">{{ num }}</div>
+        <div class="page-header"><!--{{ site.title }} -->
+        </div>
+        <div class="content-wrapper">
+          <div class="page-content">
+            <!-- Content will flow into these divs. -->
+          </div>
+        </div>
+        <div class="page-footer">
+          <span>{{ site.title }}</span><span>{{ site.author }}</span>
+        </div>
+        <div class="page-num">
+          {{ num }}
+        </div>
       </div>
     </div>
     {% endfor %}

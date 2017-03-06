@@ -9,7 +9,7 @@ body {
   background: white;
 }
 
-.sheetwrapper {  width: inherit;  }
+.sheet-wrapper {  width: inherit;  }
 
 /* This hides typical URL/Date/Page stuff added by default print styling. All content, full-bleed, baby. */
 /* Margins, then, are coming from book.css */

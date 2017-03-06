@@ -27,7 +27,7 @@ img{
 }
 .menu li { display: inline-block; margin-left: 1rem; }
 
-.sheetwrapper {  width: calc((var(--trim-width)*2 + 25px));  }
+.sheet-wrapper {  width: calc((var(--trim-width)*2 + 25px));  }
 .sheet {
   /* illustrates the size of each sheet,
   to get a better sense of the text block */
@@ -70,7 +70,7 @@ img{
   height: calc(var(--trim-height)*.82);  Needs to match .page-content height.
   clear: both;
  }
- 
+
 
 .page-content{
   /* Regions container. Flows from #content-source */
