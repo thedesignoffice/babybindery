@@ -4,15 +4,17 @@
   size: var(--trim-width) var(--trim-height);
   margin: 0; /* see book.css */}
 
-body {
-  width: cal(var(--trim-width)-.05in);
+body, html {
+  width: var(--trim-width);
   background: white;
+  margin: 0;
 }
 
 .sheet-wrapper {
   width: inherit;
 }
 
+.sheet { margin: 0; }
 /* This hides typical URL/Date/Page stuff added by default print styling. All content, full-bleed, baby. */
 /* Margins, then, are coming from book.css */
 

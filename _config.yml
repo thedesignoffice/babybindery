@@ -14,11 +14,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://thedesignoffice.github.io/babybindery" # the base hostname & protocol for your site
 twitter_username:
 github_username: thedesignoffice
+content_types: ["chapter one", demo, plates, workshops] # note that if you have a multi-word content type to wrap it in quotes. This is not necessary in your post files, however.
 
 # Build settings
 markdown: kramdown
-page_width: "8.5in"
-page_height: "11in"
 num_pages: 100
-
-# DimensionsUnitsStructure
