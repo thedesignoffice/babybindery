@@ -9,7 +9,7 @@ function checkAll(){
 
 var remove_pages = function(){
   var n_pages = $(".page-content").length;
-  //console.log('There are '+n_pages+' pages.');
+  console.log('There are '+n_pages+' pages.');
   var counter = 0;
   for(var i=0;i<n_pages;i++){
     var chosen_page = $(".page-content").eq(i);
