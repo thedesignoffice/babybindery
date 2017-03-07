@@ -2,7 +2,6 @@
 layout: default
 title: How Do I Change The Content Types?
 date: 2015-05-26
-imgurl: http://i.imgur.com/vh4HeNP.png
 author: Lukas & Cathy
 content-type: demo
 
@@ -12,6 +11,6 @@ We anticipated three content types: “Conversations” (a generalized interview
 
 If you seek to shrink or expand this list, start in `_config.yml` and simply edit the variable `content-types`. If you want a multi-word content type, please wrap it in quotes in `_config.yml`, but don’t wrap it in quotes in your post files.
 
-Reminder: you must rebuild if you make a change to _config.yml to see the changes appear.
+Reminder: you must rebuild if you make a change to `_config.yml` to see the changes appear.
 
 And as a final point: layouts and content-types do not need to be one and the same!

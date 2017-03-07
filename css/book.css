@@ -44,6 +44,7 @@ img{
   float: left;
   overflow: hidden;
 }
+
 /* not ready for prime time
 .page .full-bleed {
   break-before: always;
@@ -178,9 +179,7 @@ margin-left: 3rem;
   hyphens: auto;
   color: red;
   font-size: 2rem;
-  margin: 2rem 0;
-  line-height: 100%;
-  mix-blend-mode: multiply;
+  padding-bottom: 2rem;
   text-transform: capitalize;
 }
 
