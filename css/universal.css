@@ -18,7 +18,6 @@ h1, h2, h3, h4 {
   font-weight: bold;
   text-align: justify;
   text-align-last: justify;
-  font-size: 3rem;
 }
 h3 {  font-style: italic;}
 .toc h3 {

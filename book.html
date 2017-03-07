@@ -52,7 +52,7 @@ The contents of this page are loaded into the print.html layout.
 <!-- All Content -->
 {% for type in site.content_types %}
 
-<div class="content newchapter {{ type }}">
+<div class="content {{ type }}">
   <h4 class="chapter_head">{{ type }}</h4>
 </div>
 
@@ -73,6 +73,10 @@ The contents of this page are loaded into the print.html layout.
 {% endfor %} <!-- content type loop -->
 
 
+<!-- Blank Page -->
+<div class="content blank">
+  Page intentionally left blank.
+</div>
 
 
 <h4 class="chapter_head">Index of URLs</h4>

@@ -3,7 +3,7 @@ layout: default
 title: Typography and Material Workshop
 date: 2017-03-01
 author: John Caserta
-content-type: workshops
+content-type: demo
 
 ---
 
@@ -15,7 +15,5 @@ The shape of letters is dependent on tools and materials. Materials aren involve
 
 RISD Associate Professor in Graphic Design John Caserta will show digital and physical examples of typography made with various tools and materials. Attendees should bring their laptops in order to fabricate their own  typography in the Brown Design Workshop. Some materials will be on hand, but attendees are encouraged to bring their own.
 
-<div class="full-bleed"  markdown="1">
 ![Shannon Ebner](http://1.bp.blogspot.com/-9S5L2nrk-l0/T8zQ1RedFOI/AAAAAAAAGiE/7eOijCeQgU8/s1600/7.jpg)
-</div>
-Artist Shannon Ebner works with concrete blocks
+>> Artist Shannon Ebner works with concrete blocks
