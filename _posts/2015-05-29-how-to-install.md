@@ -3,7 +3,7 @@ layout: default
 title: How Do I Install It?
 date: 2015-05-29
 author: Lukas & Cathy
-content-type: demo
+chapter: demo
 ---
 
 1. First, embrace [Jekyll](https://jekyllrb.com/) as your static-site generator.

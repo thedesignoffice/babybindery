@@ -3,7 +3,7 @@ layout: default
 title: Letter to the Editor
 date: 2017-01-24
 author: John Caserta
-content-type: demo
+chapter: demo
 
 ---
 

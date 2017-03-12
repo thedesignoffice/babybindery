@@ -3,7 +3,7 @@ layout: default
 title: The Book Structure
 date: 2015-05-28
 author: Lukas & Cathy
-content-type: demo
+chapter: demo
 ---
 
 While the webpage structures are mutable to your needs, the print.html and layouts is special.

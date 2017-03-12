@@ -4,7 +4,7 @@ layout: default
 title: How Content Flows
 date: 2015-05-27
 author: Lukas & Cathy
-content-type: demo
+chapter: demo
 
 ---
 

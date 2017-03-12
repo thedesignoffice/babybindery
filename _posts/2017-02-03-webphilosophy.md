@@ -2,7 +2,7 @@
 layout: default
 title: Towards a web teaching philosophy
 date: 2017-02-03
-content-type: demo
+chapter: demo
 
 ---
 

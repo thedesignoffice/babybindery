@@ -3,7 +3,7 @@ layout: default
 title: Flexbox bar chart
 date: 2017-03-09
 author: Dave Rupert
-content-type: demo
+chapter: demo
 
 ---
 <style>

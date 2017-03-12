@@ -3,7 +3,7 @@ layout: default
 title: How Do I Change The Content Types?
 date: 2015-05-26
 author: Lukas & Cathy
-content-type: demo
+chapter: demo
 
 ---
 
