@@ -7,7 +7,7 @@ function checkAll(){
   }
 }
 
-var remove_pages = function(){
+var trim_empty_pages = function(){
   var n_pages = $(".page-content").length;
   console.log('There are '+n_pages+' pages.');
   var counter = 0;
@@ -55,12 +55,12 @@ function writeLinks(links){
 }
 
 function refreshContent(){
-  $(".sheet").css('display','block'); // Reverses anything hidden by remove_pages.
+  $(".sheet").css('display','block'); // Reverses anything hidden by trim_empty_pages.
   $("#trim_pages_button").css("text-decoration","none");
   $("#print_button").css("display","none");
   $("#footnotes").html("");
 
-  var n_checkboxes = $("input[type=checkbox]").length;
+  var n_checkboxes = $('.menu-checkbox').length;
   var checked_contents = [];
   for(var i=0; i<n_checkboxes;i++){
     var n_checked = checked_contents.length;
@@ -78,16 +78,20 @@ function refreshContent(){
   var links_html = "";
   n_checked = checked_contents.length;
 
-  console.log(checked_contents);
-
   for(var j=0; j<n_checked; j++) {
-    $('.content')
+    var selected_content = $('.content')
       .filter(function() {
         return $( this ).attr( "data-slug" ) === checked_contents[j];
-      })
+      });
+
+    selected_content
       .css( "display", "block" )
-      .css('break-after','always')
+      .css('break-after','always') // If this is in all .content blocks, even the hidden .content cause region-breaks. (so we only put it on visible ones)
       .parents().css('display','block');
+
+    var page_of_content = selected_content.parents('.page');
+
+    console.log(checked_contents[j] + ' is on page ' + page_of_content.attr('data-pagenum'));
 
     $('.post-in-toc')
       .filter(function() {
@@ -95,17 +99,8 @@ function refreshContent(){
       })
       .css( "display", "block" );
 
-    var links = $('.content').filter(function(){
-      return $( this ).attr("data-slug") === checked_contents[j];
-    }).find('a');
+    var links = selected_content.find('a');
 
-
-    // $('.content').attr(checked_contents[j]).parents().css('display','block'); // Display sheets of content types selected.
-    // $('.content').attr(checked_contents[j]).css('display','block');
-    // $('.post-in-toc').attr(checked_contents[j]).css('display', 'block');
-    // $('.content').attr(checked_contents[j]).css('break-after','always'); // If this is in all .content blocks, even the hidden .content cause region-breaks. (so we only put it on visible ones)
-
-    //var links = $('.content').attr(checked_contents[j]).find('a');
     links_html = links_html + writeLinks(links);
   }
 
@@ -121,7 +116,7 @@ refreshContent();
 // on interaction...
 
 $("#trim_pages_button").click(function(){
-  remove_pages();
+  trim_empty_pages();
 });
 
 $("input[type=checkbox]").on("click", function(){

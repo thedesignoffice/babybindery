@@ -22,8 +22,8 @@
 
     <div class="sheet-wrapper">
     {% for num in (1..site.num_pages) %}
-    <div class="sheet page{{num}}">
-      <div class="page">
+    <div class="sheet">
+      <div class="page page{{ num }}" data-pagenum="{{ num }}">
         <div class="page-header">
           <!-- Optional page headers. -->
         </div>
