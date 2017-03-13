@@ -32,8 +32,8 @@ The contents of this page are loaded into the print.html layout.
     {% for post in site.posts %}
 
       {% if post.chapter == chapter %}
-      <li class="{{ post.chapter }}">
-        <span class="post-in-toc"> {{ post.title }} - {{ post.author }}</span>
+      <li class="chapter-{{ post.chapter }} post-in-toc" data-slug="{{ post.url }}">
+        <span> {{ post.title }} - {{ post.author }}</span>
       </li>
       {% endif %}
     {% endfor %}
@@ -50,7 +50,7 @@ The contents of this page are loaded into the print.html layout.
 
   {% for post in site.posts %}
     {% if post.chapter == chapter %}
-      <div class="content {{ post.chapter }}">
+      <div class="content chapter-{{ post.chapter }}" data-slug="{{ post.url }}">
         <h2>{{ post.title }}</h2>
         <p>
           {{ post.date | date: "%-d %B %Y" }}
