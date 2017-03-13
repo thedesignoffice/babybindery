@@ -35,13 +35,13 @@ The contents of this page are loaded into the print.html layout.
 <div class="toc front-content">
   <h1 class="chapter_head">Contents</h1>
     <ul>
-      {% for type in site.content_types %}
-      <h3>{{ type }}</h3>
+      {% for chapter in site.chapters %}
+      <h3>{{ chapter }}</h3>
       {% for post in site.posts %}
 
-        {% if post.content-type == type %}
-        <li class="{{ post.content-type }}">
-          <a class="post-link" href="{{ post.url  }}"> {{ post.title }}</a> {{ post.author }}  <!-- | prepend: site.github.url-->
+        {% if post.chapter == chapter %}
+        <li class="{{ post.chapter }}">
+          <span class="post-link"> {{ post.title }}</span> {{ post.author }}  <!-- | prepend: site.github.url-->
         </li>
         {% endif %}
       {% endfor %}
@@ -50,15 +50,15 @@ The contents of this page are loaded into the print.html layout.
 </div>
 
 <!-- All Content -->
-{% for type in site.content_types %}
+{% for chapter in site.chapters %}
 
-<div class="content {{ type }}">
-  <h4 class="chapter_head">{{ type }}</h4>
+<div class="content {{ chapter }}">
+  <h4 class="chapter_head">{{ chapter }}</h4>
 </div>
 
   {% for post in site.posts %}
-    {% if post.content-type == type %}
-      <div class="content {{ post.content-type }}">
+    {% if post.chapter == chapter %}
+      <div class="content {{ post.chapter }}">
         <h2>{{ post.title }}</h2>
         <p>
           {{ post.date | date: "%-d %B %Y" }}
