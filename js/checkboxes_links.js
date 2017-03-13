@@ -71,21 +71,23 @@ function refreshContent(){
 
   // Clear the slate, then re-flow.
   $('.content').css('display','none');
+  //$('.post-in-toc').css('display', 'none');
   $('.content').css('break-after','never');
 
-  var link_html = "";
+  var links_html = "";
   n_checked = checked_contents.length;
 
   for(var j=0; j<n_checked; j++) {
     $('.content').eq(checked_contents[j]).parents().css('display','block'); // Display sheets of content types selected.
     $('.content').eq(checked_contents[j]).css('display','block');
+    //$('.post-in-toc').eq(checked_contents[j]).css('display', 'block');
     $('.content').eq(checked_contents[j]).css('break-after','always'); // If this is in all .content blocks, even the hidden .content cause region-breaks. (so we only put it on visible ones)
 
     var links = $('.content').eq(checked_contents[j]).find('a');
-    link_html = link_html + writeLinks(links);
+    links_html = links_html + writeLinks(links);
   }
 
-  $("#footnotes").html(""+link_html);
+  $("#footnotes").html(""+links_html);
 }
 
 
