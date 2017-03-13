@@ -4,7 +4,6 @@ title: How Do I Change The Content Types?
 date: 2015-05-26
 author: Lukas & Cathy
 chapter: demo
-
 ---
 
 We anticipated three content types: “Conversations” (a generalized interview), “Images” (appropriate for show catalogues or portfolios), and “Text” (catchall text-based content). There’s also “Other” on by default.

@@ -64,28 +64,52 @@ function refreshContent(){
   var checked_contents = [];
   for(var i=0; i<n_checkboxes;i++){
     var n_checked = checked_contents.length;
-    if($('input[type=checkbox]').eq(i).is(':checked')){
-      checked_contents[n_checked] = i; // checked_contents contains the numbers of the posts that should be flowed in.
+    var checkbox = $('.menu-checkbox').eq(i);
+    if(checkbox.is(':checked')){
+      checked_contents[n_checked] = checkbox.attr('data-slug'); // checked_contents contains the numbers of the posts that should be flowed in.
     }
   }
 
   // Clear the slate, then re-flow.
   $('.content').css('display','none');
   $('.content').css('break-after','never');
+  $('.post-in-toc').css('display', 'none');
 
-  var link_html = "";
+  var links_html = "";
   n_checked = checked_contents.length;
 
-  for(var j=0; j<n_checked; j++) {
-    $('.content').eq(checked_contents[j]).parents().css('display','block'); // Display sheets of content types selected.
-    $('.content').eq(checked_contents[j]).css('display','block');
-    $('.content').eq(checked_contents[j]).css('break-after','always'); // If this is in all .content blocks, even the hidden .content cause region-breaks. (so we only put it on visible ones)
+  console.log(checked_contents);
 
-    var links = $('.content').eq(checked_contents[j]).find('a');
-    link_html = link_html + writeLinks(links);
+  for(var j=0; j<n_checked; j++) {
+    $('.content')
+      .filter(function() {
+        return $( this ).attr( "data-slug" ) === checked_contents[j];
+      })
+      .css( "display", "block" )
+      .css('break-after','always')
+      .parents().css('display','block');
+
+    $('.post-in-toc')
+      .filter(function() {
+        return $( this ).attr( "data-slug" ) === checked_contents[j];
+      })
+      .css( "display", "block" );
+
+    var links = $('.content').filter(function(){
+      return $( this ).attr("data-slug") === checked_contents[j];
+    }).find('a');
+
+
+    // $('.content').attr(checked_contents[j]).parents().css('display','block'); // Display sheets of content types selected.
+    // $('.content').attr(checked_contents[j]).css('display','block');
+    // $('.post-in-toc').attr(checked_contents[j]).css('display', 'block');
+    // $('.content').attr(checked_contents[j]).css('break-after','always'); // If this is in all .content blocks, even the hidden .content cause region-breaks. (so we only put it on visible ones)
+
+    //var links = $('.content').attr(checked_contents[j]).find('a');
+    links_html = links_html + writeLinks(links);
   }
 
-  $("#footnotes").html(""+link_html);
+  $("#footnotes").html(""+links_html);
 }
 
 

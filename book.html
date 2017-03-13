@@ -11,21 +11,11 @@ The contents of this page are loaded into the print.html layout.
 <div class="front-content">
   <h2>{{ site.title }}</h2>
 </div>
-<!--
-<div class="blank">
-  This page intentionally left blank.
-</div>
 
-<div class="front-content">
-  <h1 class="chapter_head">{{ site.title }}</h1>
-</div>
-
--->
-
-<!-- Front Matter... ish -->
+<!-- Front Matter... -->
 <div class="front-content">
   {% for page in site.pages %}
-  {% if page.content-type == 'credits' %}
+  {% if page.chapter == 'credits' %}
   {{ page.content }}
   {% endif %}
   {% endfor %}
@@ -33,32 +23,34 @@ The contents of this page are loaded into the print.html layout.
 
 <!-- Table of Contents -->
 <div class="toc front-content">
-  <h1 class="chapter_head">Contents</h1>
-    <ul>
-      {% for type in site.content_types %}
-      <h3>{{ type }}</h3>
-      {% for post in site.posts %}
+  <h1 class="chapter_head">
+    Contents
+  </h1>
+  <ul>
+    {% for chapter in site.chapters %}
+    <h3>{{ chapter }}</h3>
+    {% for post in site.posts %}
 
-        {% if post.content-type == type %}
-        <li class="{{ post.content-type }}">
-          <a class="post-link" href="{{ post.url  }}"> {{ post.title }}</a> {{ post.author }}  <!-- | prepend: site.github.url-->
-        </li>
-        {% endif %}
-      {% endfor %}
-      {% endfor %}
-    </ul>
+      {% if post.chapter == chapter %}
+      <li class="chapter-{{ post.chapter }} post-in-toc" data-slug="{{ post.url }}">
+        <span> {{ post.title }} - {{ post.author }}</span>
+      </li>
+      {% endif %}
+    {% endfor %}
+    {% endfor %}
+  </ul>
 </div>
 
 <!-- All Content -->
-{% for type in site.content_types %}
+{% for chapter in site.chapters %}
 
-<div class="content {{ type }}">
-  <h4 class="chapter_head">{{ type }}</h4>
+<div class="content {{ chapter }}">
+  <h4 class="chapter_head">{{ chapter }}</h4>
 </div>
 
   {% for post in site.posts %}
-    {% if post.content-type == type %}
-      <div class="content {{ post.content-type }}">
+    {% if post.chapter == chapter %}
+      <div class="content chapter-{{ post.chapter }}" data-slug="{{ post.url }}">
         <h2>{{ post.title }}</h2>
         <p>
           {{ post.date | date: "%-d %B %Y" }}
@@ -77,7 +69,6 @@ The contents of this page are loaded into the print.html layout.
 <div class="content blank">
   Page intentionally left blank.
 </div>
-
 
 <h4 class="chapter_head">Index of URLs</h4>
 <div class="end-content" id="footnotes">
