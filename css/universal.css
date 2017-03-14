@@ -46,6 +46,7 @@ a:hover{
   background-color: blue;
 }
 
+ul li { margin-left: 3rem; list-style-type: circle; }
 .button {
   /* on index */
   color: blue;
