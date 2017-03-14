@@ -1,3 +1,7 @@
+function postpone( func ){
+  window.setTimeout(func,0);
+}
+
 function checkAll(){
   var inputs = document.getElementsByTagName('input');
   for(var i = 0; i < inputs.length; i++){
@@ -113,14 +117,17 @@ function find_pages(){
   for(var j=0; j<n_checked; j++) {
     var selected_content = $('.chapter-title')
       .filter(function() {
-        return $( this ).attr("data-slug") === checked_contents[j]; //&& $( this ).attr( "data-css-regions-fragment-source" ).length;
+        return $( this ).attr("data-slug") === checked_contents[j];
       });
 
     var css_regions_id = selected_content.data("css-regions-fragment-source");
+    console.log("Region ID of the "+j+"th selection is "+css_regions_id);
     var selected_content_in_flow = $('.chapter-title').filter(function(){
-      return $(this).data("css-regions-fragment-of") === css_regions_id;
+     return $(this).data("css-regions-fragment-of") === css_regions_id;
     });
-    console.log(selected_content_in_flow.closest('.page').attr('data-pagenum'));
+    console.log(selected_content_in_flow);
+    console.log('');
+    //console.log(selected_content_in_flow.closest('.page').attr('data-pagenum'));
   }
 }
 
@@ -129,7 +136,7 @@ $(window).bind("load", function() {
   $('.content').css('display','none');
   checkAll();
   refreshContent();
-  find_pages();
+  postpone(find_pages());
 });
 
 // on interaction...
@@ -140,7 +147,7 @@ $("#trim_pages_button").click(function(){
 
 $("input[type=checkbox]").on("click", function(){
   refreshContent();
-  find_pages();
+  postpone(find_pages());
 });
 
 $("#print_button").click(function(){
