@@ -117,18 +117,17 @@ function find_pages(){
       });
 
     var css_regions_id = selected_content.data("css-regions-fragment-source");
-    
-
-    //var selected_content_in_flow =
-
-    //console.log(selected_content.closest('.page').attr('data-pagenum'));
+    var selected_content_in_flow = $('.chapter-title').filter(function(){
+      return $(this).data("css-regions-fragment-of") === css_regions_id;
+    });
+    console.log(selected_content_in_flow.closest('.page').attr('data-pagenum'));
   }
 }
 
 $(window).bind("load", function() {
   // on loading...
   $('.content').css('display','none');
-  checkAll()
+  checkAll();
   refreshContent();
   find_pages();
 });
