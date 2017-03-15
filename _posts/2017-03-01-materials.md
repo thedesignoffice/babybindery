@@ -30,7 +30,8 @@ I have started a [Type & Materials collection](https://www.are.na/john-caserta/t
 * computation
 * desks
 * dots
-* everyday objects (elliman)
+* earth
+* everyday objects
 * fabric
 * fence
 * flag
@@ -42,7 +43,6 @@ I have started a [Type & Materials collection](https://www.are.na/john-caserta/t
 * hands
 * hot dogs
 * LED
-* landscape
 * lego
 * letters
 * light
