@@ -7,7 +7,8 @@ chapter: demo
 
 ---
 
-* Brown Design Workshop
+>>
+* Brown Design Workshop, Engineerring Bldg.
 * Wednesday, March 15, 2017, 5pm
 
 
@@ -18,6 +19,8 @@ I will show digital and physical examples of typography made with various tools 
 ![Shannon Ebner](http://1.bp.blogspot.com/-9S5L2nrk-l0/T8zQ1RedFOI/AAAAAAAAGiE/7eOijCeQgU8/s1600/7.jpg)
 
 >> Artist Shannon Ebner works with cement blocks
+
+**Index of works**
 
 I have started a [Type & Materials collection](https://www.are.na/john-caserta/type-and-materials) on *arena*. Anyone is welcome to add to this open collection of bookmarks. Each block (bookmark) is tagged with a material or tool below.
 
@@ -77,3 +80,8 @@ I have started a [Type & Materials collection](https://www.are.na/john-caserta/t
 * wax
 * weave
 * wire
+
+
+**Let's make something**
+
+In the time remaining, design and fabricate the word "we". Pick a machine and a material (clean or used) first, then make a design based on your choice. How can you push the conventional shapes of the letters based on the material, the machine and your own desire to stay something. Instagram pix of your final images with a mention of "@designofficepvd" and hashtag "we-made-type"
