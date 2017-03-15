@@ -43,6 +43,7 @@ I have started a [Type & Materials collection](https://www.are.na/john-caserta/t
 * hot dogs
 * LED
 * landscape
+* lego
 * letters
 * light
 * lips
@@ -64,6 +65,7 @@ I have started a [Type & Materials collection](https://www.are.na/john-caserta/t
 * scissors
 * sheets
 * stencil
+* stairs
 * sticks
 * stone
 * styrofoam
