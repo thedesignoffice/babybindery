@@ -23,7 +23,7 @@ var trim_empty_pages = function(){
       counter += 1;
     }
   }
-  console.log(counter + " pages of original " + n_pages+ " removed. Ready to print...");
+  console.log(counter + " pages of original " + n_pages+ " trimmed. ");
   $("#trim_pages_button").css("text-decoration","line-through");
   $("#assign_pagenums_button").css("display","inline");
 }
@@ -119,18 +119,21 @@ function find_pages(){
       .filter(function(index) {
         return $( this ).data('slug') === checked_contents[j];
       });
-    selected_content = selected_content.eq(0);
-    console.log(selected_content);
+    selected_content = selected_content.eq(0); // get the pre-flow one
+    selected_content_slug = selected_content.data('slug');
 
-    var css_regions_id = selected_content.attr("data-css-regions-fragment-source");
-    console.log(css_regions_id);
-    //console.log("Region ID of "+checked_contents[j]+" is "+css_regions_id);
-    // var selected_content_in_flow = $('.chapter-title').filter(function(){
-    //   return $(this).data('css-regions-fragment-of') === css_regions_id;
-    // })
-    //console.log(selected_content_in_flow);
-    console.log('');
-    //console.log(selected_content_in_flow.closest('.page').data('pagenum'));
+    var css_regions_id = selected_content.data("css-regions-fragment-source");
+    var selected_content_in_flow = $('.chapter-title').filter(function(){
+      return $(this).data('css-regions-fragment-of') === css_regions_id;
+    });
+    selected_content_page_num = selected_content_in_flow.closest('.page').data('pagenum');
+
+    var selected_content_in_toc = $('.pagenum').filter(function(){
+      return $(this).data('slug') == selected_content_slug;
+    }).html(selected_content_page_num);
+    selected_content_in_toc = selected_content_in_toc.eq(1); // get the post-flow one
+    console.log(selected_content_in_toc);
+    console.log(selected_content_slug + ' is on page number ' + selected_content_page_num);
   }
 
   //console.log('');
