@@ -1,7 +1,3 @@
-function postpone( func ){
-  window.setTimeout(func,0);
-}
-
 function checkAll(){
   var inputs = document.getElementsByTagName('input');
   for(var i = 0; i < inputs.length; i++){
@@ -29,7 +25,7 @@ var trim_empty_pages = function(){
   }
   console.log(counter + " pages of original " + n_pages+ " removed. Ready to print...");
   $("#trim_pages_button").css("text-decoration","line-through");
-  $("#print_button").css("display","inline");
+  $("#assign_pagenums_button").css("display","inline");
 }
 
 function writeLinks(links){
@@ -64,15 +60,18 @@ function get_checked_contents(){
     var n_checked = checked_contents.length;
     var checkbox = $('.menu-checkbox').eq(i);
     if(checkbox.is(':checked')){
-      checked_contents[n_checked] = checkbox.attr('data-slug'); // checked_contents contains the numbers of the posts that should be flowed in.
+      checked_contents[n_checked] = checkbox.data('slug'); // checked_contents contains the numbers of the posts that should be flowed in.
     }
   }
   return [checked_contents];
 }
 
 function refreshContent(){
+  console.log('Reflowing selected book content.');
   $(".sheet").css('display','block'); // Reverses anything hidden by trim_empty_pages.
   $("#trim_pages_button").css("text-decoration","none");
+  $("#assign_pagenums_button").css("text-decoration","none");
+  $("#assign_pagenums_button").css("display","none");
   $("#print_button").css("display","none");
   $("#footnotes").html("");
 
@@ -82,7 +81,7 @@ function refreshContent(){
   // Clear the slate, then re-flow.
   $('.content').css('display','none');
   $('.content').css('break-after','never');
-  $('.post-in-toc').css('display', 'none');
+  $('.post-in-toc').css('display','none');
 
   var links_html = "";
   n_checked = checked_contents.length;
@@ -90,7 +89,7 @@ function refreshContent(){
   for(var j=0; j<n_checked; j++) { // for each selected piece of content to be included
     var selected_content = $('.content')
       .filter(function() {
-        return $( this ).attr( "data-slug" ) === checked_contents[j];
+        return $( this ).data( "slug" ) === checked_contents[j];
       });
 
     selected_content
@@ -100,7 +99,7 @@ function refreshContent(){
 
     $('.post-in-toc')
       .filter(function() {
-        return $( this ).attr( "data-slug" ) === checked_contents[j];
+        return $( this ).data( "slug" ) === checked_contents[j];
       })
       .css( "display", "block" );
 
@@ -110,25 +109,33 @@ function refreshContent(){
 }
 
 function find_pages(){
+  console.log('Finding page numbers.');
   var temp_array = get_checked_contents();
   var checked_contents = temp_array[0];
   var n_checked = checked_contents.length;
 
   for(var j=0; j<n_checked; j++) {
     var selected_content = $('.chapter-title')
-      .filter(function() {
-        return $( this ).attr("data-slug") === checked_contents[j];
+      .filter(function(index) {
+        return $( this ).data('slug') === checked_contents[j];
       });
+    selected_content = selected_content.eq(0);
+    console.log(selected_content);
 
-    var css_regions_id = selected_content.data("css-regions-fragment-source");
-    console.log("Region ID of the "+j+"th selection is "+css_regions_id);
-    var selected_content_in_flow = $('.chapter-title').filter(function(){
-     return $(this).data("css-regions-fragment-of") === css_regions_id;
-    });
-    console.log(selected_content_in_flow);
+    var css_regions_id = selected_content.attr("data-css-regions-fragment-source");
+    console.log(css_regions_id);
+    //console.log("Region ID of "+checked_contents[j]+" is "+css_regions_id);
+    // var selected_content_in_flow = $('.chapter-title').filter(function(){
+    //   return $(this).data('css-regions-fragment-of') === css_regions_id;
+    // })
+    //console.log(selected_content_in_flow);
     console.log('');
-    //console.log(selected_content_in_flow.closest('.page').attr('data-pagenum'));
+    //console.log(selected_content_in_flow.closest('.page').data('pagenum'));
   }
+
+  //console.log('');
+  $("#assign_pagenums_button").css("text-decoration","line-through");
+  $("#print_button").css("display","inline");
 }
 
 $(window).bind("load", function() {
@@ -136,7 +143,6 @@ $(window).bind("load", function() {
   $('.content').css('display','none');
   checkAll();
   refreshContent();
-  postpone(find_pages());
 });
 
 // on interaction...
@@ -145,9 +151,12 @@ $("#trim_pages_button").click(function(){
   trim_empty_pages();
 });
 
+$("#assign_pagenums_button").click(function(){
+  find_pages(); // GOTTA ADD BUTTON FUNCTIONALITY ... !
+});
+
 $("input[type=checkbox]").on("click", function(){
   refreshContent();
-  postpone(find_pages());
 });
 
 $("#print_button").click(function(){
