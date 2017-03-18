@@ -32,7 +32,7 @@ The contents of this page are loaded into the print.html layout.
     {% for post in site.posts %}
 
       {% if post.chapter == chapter %}
-      <li class="chapter-{{ post.chapter }}" data-slug="{{ post.url }}">
+      <li class="chapter-{{ post.chapter }} post-in-toc" data-slug="{{ post.url }}">
         <span>{{ post.title }} - {{ post.author }}</span> <span class="pagenum" data-slug="{{ post.url }}">X</span>
       </li>
       {% endif %}

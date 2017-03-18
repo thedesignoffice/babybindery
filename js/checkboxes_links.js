@@ -126,17 +126,18 @@ function find_pages(){
     var selected_content_in_flow = $('.chapter-title').filter(function(){
       return $(this).data('css-regions-fragment-of') === css_regions_id;
     });
+    // Something wrong here ^^ ?
     selected_content_page_num = selected_content_in_flow.closest('.page').data('pagenum');
 
     var selected_content_in_toc = $('.pagenum').filter(function(){
       return $(this).data('slug') == selected_content_slug;
     }).html(selected_content_page_num);
     selected_content_in_toc = selected_content_in_toc.eq(1); // get the post-flow one
-    console.log(selected_content_in_toc);
+
     console.log(selected_content_slug + ' is on page number ' + selected_content_page_num);
   }
 
-  //console.log('');
+  console.log('\n If you would like to change the included content, you gotta refresh the page.');
   $("#assign_pagenums_button").css("text-decoration","line-through");
   $("#print_button").css("display","inline");
 }
@@ -149,7 +150,6 @@ $(window).bind("load", function() {
 });
 
 // on interaction...
-
 $("#trim_pages_button").click(function(){
   trim_empty_pages();
 });
