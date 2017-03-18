@@ -8,7 +8,6 @@
     {% include custom_css.html %}
     {% include book_css.html %}
     {% include print_css.html %} <!-- Print-media stylesheet. -->
-    {% include regions_js.html %} <!-- See https://github.com/FremyCompany/css-regions-polyfill -->
   </head>
 
   <body>
@@ -22,8 +21,8 @@
 
     <div class="sheet-wrapper">
     {% for num in (1..site.num_pages) %}
-    <div class="sheet page{{num}}">
-      <div class="page">
+    <div class="sheet">
+      <div class="page page{{ num }}" data-pagenum="{{ num }}">
         <div class="page-header">
           <!-- Optional page headers. -->
         </div>
@@ -42,6 +41,7 @@
     </div>
 
     {% include checkboxes_links.html %}
+    {% include regions_js.html %} <!-- See https://github.com/FremyCompany/css-regions-polyfill - at end of page so all assets load -->
   </body>
 
 </html>

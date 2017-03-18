@@ -7,9 +7,8 @@ function checkAll(){
   }
 }
 
-var remove_pages = function(){
+var trim_empty_pages = function(){
   var n_pages = $(".page-content").length;
-  console.log('There are '+n_pages+' pages.');
   var counter = 0;
   for(var i=0;i<n_pages;i++){
     var chosen_page = $(".page-content").eq(i);
@@ -24,9 +23,9 @@ var remove_pages = function(){
       counter += 1;
     }
   }
-  console.log(counter + " sheets removed. Ready to print...");
+  console.log(counter + " pages of original " + n_pages+ " trimmed. ");
   $("#trim_pages_button").css("text-decoration","line-through");
-  $("#print_button").css("display","inline");
+  $("#assign_pagenums_button").css("display","inline");
 }
 
 function writeLinks(links){
@@ -54,74 +53,109 @@ function writeLinks(links){
   return link_string;
 }
 
-function refreshContent(){
-  $(".sheet").css('display','block'); // Reverses anything hidden by remove_pages.
-  $("#trim_pages_button").css("text-decoration","none");
-  $("#print_button").css("display","none");
-  $("#footnotes").html("");
-
-  var n_checkboxes = $("input[type=checkbox]").length;
+function get_checked_contents(){
+  var n_checkboxes = $('.menu-checkbox').length;
   var checked_contents = [];
   for(var i=0; i<n_checkboxes;i++){
     var n_checked = checked_contents.length;
     var checkbox = $('.menu-checkbox').eq(i);
     if(checkbox.is(':checked')){
-      checked_contents[n_checked] = checkbox.attr('data-slug'); // checked_contents contains the numbers of the posts that should be flowed in.
+      checked_contents[n_checked] = checkbox.data('slug'); // checked_contents contains the numbers of the posts that should be flowed in.
     }
   }
+  return [checked_contents];
+}
+
+function refreshContent(){
+  console.log('Reflowing selected book content.');
+  $(".sheet").css('display','block'); // Reverses anything hidden by trim_empty_pages.
+  $("#trim_pages_button").css("text-decoration","none");
+  $("#assign_pagenums_button").css("text-decoration","none");
+  $("#assign_pagenums_button").css("display","none");
+  $("#print_button").css("display","none");
+  $("#footnotes").html("");
+
+  var temp_array = get_checked_contents();
+  var checked_contents = temp_array[0];
 
   // Clear the slate, then re-flow.
   $('.content').css('display','none');
   $('.content').css('break-after','never');
-  $('.post-in-toc').css('display', 'none');
+  $('.post-in-toc').css('display','none');
 
   var links_html = "";
   n_checked = checked_contents.length;
 
-  console.log(checked_contents);
-
-  for(var j=0; j<n_checked; j++) {
-    $('.content')
+  for(var j=0; j<n_checked; j++) { // for each selected piece of content to be included
+    var selected_content = $('.content')
       .filter(function() {
-        return $( this ).attr( "data-slug" ) === checked_contents[j];
-      })
+        return $( this ).data( "slug" ) === checked_contents[j];
+      });
+
+    selected_content
       .css( "display", "block" )
       .css('break-after','always')
       .parents().css('display','block');
 
     $('.post-in-toc')
       .filter(function() {
-        return $( this ).attr( "data-slug" ) === checked_contents[j];
+        return $( this ).data( "slug" ) === checked_contents[j];
       })
       .css( "display", "block" );
 
-    var links = $('.content').filter(function(){
-      return $( this ).attr("data-slug") === checked_contents[j];
-    }).find('a');
-
-
-    // $('.content').attr(checked_contents[j]).parents().css('display','block'); // Display sheets of content types selected.
-    // $('.content').attr(checked_contents[j]).css('display','block');
-    // $('.post-in-toc').attr(checked_contents[j]).css('display', 'block');
-    // $('.content').attr(checked_contents[j]).css('break-after','always'); // If this is in all .content blocks, even the hidden .content cause region-breaks. (so we only put it on visible ones)
-
-    //var links = $('.content').attr(checked_contents[j]).find('a');
-    links_html = links_html + writeLinks(links);
+    links_html = links_html + writeLinks(selected_content.find('a'));
   }
-
   $("#footnotes").html(""+links_html);
 }
 
+function find_pages(){
+  console.log('Finding page numbers.');
+  var temp_array = get_checked_contents();
+  var checked_contents = temp_array[0];
+  var n_checked = checked_contents.length;
 
-// on loading...
-$('.content').css('display','none');
-checkAll();
-refreshContent();
+  for(var j=0; j<n_checked; j++) {
+    var selected_content = $('.chapter-title')
+      .filter(function(index) {
+        return $( this ).data('slug') === checked_contents[j];
+      });
+    selected_content = selected_content.eq(0); // get the pre-flow one
+    selected_content_slug = selected_content.data('slug');
+
+    var css_regions_id = selected_content.data("css-regions-fragment-source");
+    var selected_content_in_flow = $('.chapter-title').filter(function(){
+      return $(this).data('css-regions-fragment-of') === css_regions_id;
+    });
+    // Something wrong here ^^ ?
+    selected_content_page_num = selected_content_in_flow.closest('.page').data('pagenum');
+
+    var selected_content_in_toc = $('.pagenum').filter(function(){
+      return $(this).data('slug') == selected_content_slug;
+    }).html(selected_content_page_num);
+    selected_content_in_toc = selected_content_in_toc.eq(1); // get the post-flow one
+
+    console.log(selected_content_slug + ' is on page number ' + selected_content_page_num);
+  }
+
+  console.log('\n If you would like to change the included content, you gotta refresh the page.');
+  $("#assign_pagenums_button").css("text-decoration","line-through");
+  $("#print_button").css("display","inline");
+}
+
+$(window).bind("load", function() {
+  // on loading...
+  $('.content').css('display','none');
+  checkAll();
+  refreshContent();
+});
 
 // on interaction...
-
 $("#trim_pages_button").click(function(){
-  remove_pages();
+  trim_empty_pages();
+});
+
+$("#assign_pagenums_button").click(function(){
+  find_pages(); // GOTTA ADD BUTTON FUNCTIONALITY ... !
 });
 
 $("input[type=checkbox]").on("click", function(){
