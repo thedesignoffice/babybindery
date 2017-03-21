@@ -10,6 +10,8 @@ If you’re confident with CSS and know something about Liquid and Jekyll, it is
 
 BabyBindery came out of [for / with / in](http://htmloutput.risd.gd), a RISD Graphic Design course taught by John Caserta in 2014. [Evan Brooks](http://evanbrooks.info) made a far more elaborate web-to-print tool called [Bindery.js](https://github.com/evnbr/bindery) on which BabyBindery is based. BabyBindery is an updated and hopefully slightly more stable version. BabyBindery was commissioned by the Design Office and was designed and programmed by [Lukas WinklerPrins](http://ltwp.net) and [Catherine Leigh Schmidt](http://cath.land).
 
+Keep in mind: [The Dark Side of Polyfilling CSS](https://philipwalton.com/articles/the-dark-side-of-polyfilling-css/).
+
 # License
 
 BabyBindery is licensed under the MIT License and is free to use & modify.
