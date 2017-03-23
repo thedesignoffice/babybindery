@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Tools for the common good
+title: Design for the Common Good
 date: 2017-03-22
 author: John Caserta
 chapter: demo
@@ -14,6 +14,13 @@ The theories that penned American democracy hardly hold up alongside the fast-mo
 
  The Web, a synthesis of free software and an open network, offers much to the graphic designer. For the aesthete, the modern browser supports sophisticated renderings that rival printed output. For the technically driven designer, the Web connects frameworks, libraries and communities together into multi-authored and fleeting hives of activity.
 -->
+
+
+## Graph XXXXX, RISD
+
+## Fall 2016, Wednesdays, 11:20 – 4:20p
+
+
 
 Is software making the world a better place? Or is it simply remaking the world – a peaceful means of transferring power and capital from 20th century corporations to 21st century ones? If the digital space is becoming primary, then who is tending to the systems of self-government, defined so articulately in the age of Enlightenment? What is the 21st century social contract?
 
