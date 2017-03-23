@@ -18,7 +18,7 @@ The theories that penned American democracy hardly hold up alongside the fast-mo
 
 ## Graph XXXXX, RISD
 
-## Fall 2016, Wednesdays, 11:20 – 4:20p
+## Fall 2017, Wednesdays, 11:20 – 4:20p
 
 
 
