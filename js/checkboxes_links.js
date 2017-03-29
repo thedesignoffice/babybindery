@@ -37,18 +37,10 @@ function writeLinks(links){
     var link = links.eq(i);
     var name = link.html();
     var href = link.attr('href');
-    var temp = href;
 
-    // strip "http://"
-    var start = temp.indexOf("://");
-    var end = temp.length;
-    if(start !== -1){
-      start = start + 3;
-      temp = temp.substring(start,end);
-    }
+    // Strip & clean URL?
 
-    href = temp; // Now stripped & clean=looking.
-    link_string = link_string + name+" &rarr; "+href+"<br>";
+    link_string = link_string + name+" "+href+"<br />";
   }
   return link_string;
 }
@@ -56,14 +48,16 @@ function writeLinks(links){
 function get_checked_contents(){
   var n_checkboxes = $('.menu-checkbox').length;
   var checked_contents = [];
+  var checked_contents_chapters = [];
   for(var i=0; i<n_checkboxes;i++){
     var n_checked = checked_contents.length;
     var checkbox = $('.menu-checkbox').eq(i);
     if(checkbox.is(':checked')){
       checked_contents[n_checked] = checkbox.data('slug'); // checked_contents contains the numbers of the posts that should be flowed in.
+      checked_contents_chapters[n_checked] = checkbox.data('chapter');
     }
   }
-  return [checked_contents];
+  return [checked_contents, checked_contents_chapters];
 }
 
 function refreshContent(){
@@ -112,7 +106,9 @@ function find_pages(){
   console.log('Finding page numbers.');
   var temp_array = get_checked_contents();
   var checked_contents = temp_array[0];
+  var checked_contents_chapters = temp_array[1];
   var n_checked = checked_contents.length;
+  var page_numbers = [];
 
   for(var j=0; j<n_checked; j++) {
     var selected_content = $('.chapter-title')
@@ -128,18 +124,47 @@ function find_pages(){
     });
     // Something wrong here ^^ ?
     selected_content_page_num = selected_content_in_flow.closest('.page').data('pagenum');
+    page_numbers.push(selected_content_page_num);
 
     var selected_content_in_toc = $('.pagenum').filter(function(){
       return $(this).data('slug') == selected_content_slug;
     }).html(selected_content_page_num);
     selected_content_in_toc = selected_content_in_toc.eq(1); // get the post-flow one
 
-    console.log(selected_content_slug + ' is on page number ' + selected_content_page_num);
+    //console.log(selected_content_slug + ' is on page number ' + selected_content_page_num);
   }
 
-  console.log('\n If you would like to change the included content, you gotta refresh the page.');
+  for(var i = 0; i < $(".page-content").length; i++){
+    var content_counter = 0;
+    if(i < page_numbers[0]){
+      // do nothing.
+
+      // We're assuming page numbers increase linearly.
+    }else{
+      if(i < page_numbers[content_counter+1]){
+        var header_in_flow = $('.page-header').eq(i);
+        header_in_flow.html(checked_contents_chapters[content_counter]);
+      }else{
+        content_counter = content_counter + 1;
+      }
+    }
+  }
+
+  // var n_checkboxes = $('.menu-checkbox').length;
+  // console.log(n_checkboxes);
+  // for(var i=0; i<n_checkboxes;i++){
+  //   var checkbox = $('.menu-checkbox').eq(i);
+  //   if(checkbox.is(':checked')){
+  //     checkbox.replaceWith("✔");
+  //   } else {
+  //     checkbox.replaceWith("");
+  //   }
+  // }
+
+  $('.menu-checkbox').replaceWith(" X ");
   $("#assign_pagenums_button").css("text-decoration","line-through");
   $("#print_button").css("display","inline");
+  $("#refresh_button").css("display","inline");
 }
 
 $(window).bind("load", function() {
@@ -155,7 +180,11 @@ $("#trim_pages_button").click(function(){
 });
 
 $("#assign_pagenums_button").click(function(){
-  find_pages(); // GOTTA ADD BUTTON FUNCTIONALITY ... !
+  find_pages();
+});
+
+$("#refresh_button").click(function(){
+  window.location.reload()
 });
 
 $("input[type=checkbox]").on("click", function(){

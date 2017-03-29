@@ -1,8 +1,8 @@
 <div class="menu noprint">
-  <ul>
+  <ul id="content_selection_menu">
   {% for post in site.posts %}
-    <li><input type="checkbox" id="checkbox-post" class="menu-checkbox" data-slug="{{ post.url }}" />{{ post.title }} in {{ post.chapter }}</li>
+    <li><input type="checkbox" id="checkbox-post" class="menu-checkbox" data-slug="{{ post.url }}" data-chapter = "{{ post.chapter }}" />{{ post.title }} in {{ post.chapter }}</li>
   {% endfor %}
   </ul>
-  <div id="trim_pages_button" class="button">Trim Pages</div> <div style="display: none" id="assign_pagenums_button" class="button">Get Page Numbers</div> <div style="display: none" id="print_button" class="button">Print!</div>
+  <div id="trim_pages_button" class="button">Trim Pages</div> <div style="display: none" id="assign_pagenums_button" class="button">Get Page Numbers</div> <div style="display: none" id="print_button" class="button">Print!</div> &nbsp; &nbsp; <div style="display: none" id="refresh_button" class="button">↺ Refresh</div>
 </div>
