@@ -184,7 +184,7 @@ $("#assign_pagenums_button").click(function(){
 });
 
 $("#refresh_button").click(function(){
-  window.location.reload()
+  window.location.reload();
 });
 
 $("input[type=checkbox]").on("click", function(){
