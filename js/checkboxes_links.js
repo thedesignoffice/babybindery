@@ -13,19 +13,13 @@ var trim_empty_pages = function(){
   for(var i=0;i<n_pages;i++){
     var chosen_page = $(".page-content").eq(i);
 
-    if(chosen_page.html() == "<cssregion></cssregion>"){
-      //chosen_page.parents(".sheet").remove();
-      chosen_page.parents(".sheet").css('display','none');
-      counter += 1;
-    }else if(chosen_page.html() == ""){
+    if(chosen_page.html() == "<cssregion></cssregion>" || chosen_page.html() == ""){
       //chosen_page.parents(".sheet").remove();
       chosen_page.parents(".sheet").css('display','none');
       counter += 1;
     }
   }
   console.log(counter + " pages of original " + n_pages+ " trimmed. ");
-  $("#trim_pages_button").css("text-decoration","line-through");
-  $("#assign_pagenums_button").css("display","inline");
 }
 
 function writeLinks(links){
@@ -63,10 +57,6 @@ function get_checked_contents(){
 function refreshContent(){
   console.log('Reflowing selected book content.');
   $(".sheet").css('display','block'); // Reverses anything hidden by trim_empty_pages.
-  $("#trim_pages_button").css("text-decoration","none");
-  $("#assign_pagenums_button").css("text-decoration","none");
-  $("#assign_pagenums_button").css("display","none");
-  $("#print_button").css("display","none");
   $("#footnotes").html("");
 
   var temp_array = get_checked_contents();
@@ -83,7 +73,7 @@ function refreshContent(){
   for(var j=0; j<n_checked; j++) { // for each selected piece of content to be included
     var selected_content = $('.content')
       .filter(function() {
-        return $( this ).data( "slug" ) === checked_contents[j];
+        return $( this ).data( "slug" ) === checked_contents[j]; // Need to grab the one in-flow.
       });
 
     selected_content
@@ -102,7 +92,7 @@ function refreshContent(){
   $("#footnotes").html(""+links_html);
 }
 
-function find_pages(){
+function assign_toc_pages(){
   console.log('Finding page numbers.');
   var temp_array = get_checked_contents();
   var checked_contents = temp_array[0];
@@ -122,14 +112,13 @@ function find_pages(){
     var selected_content_in_flow = $('.chapter-title').filter(function(){
       return $(this).data('css-regions-fragment-of') === css_regions_id;
     });
-    // Something wrong here ^^ ?
+
     selected_content_page_num = selected_content_in_flow.closest('.page').data('pagenum');
     page_numbers.push(selected_content_page_num);
 
     var selected_content_in_toc = $('.pagenum').filter(function(){
       return $(this).data('slug') == selected_content_slug;
     }).html(selected_content_page_num);
-    selected_content_in_toc = selected_content_in_toc.eq(1); // get the post-flow one
 
     //console.log(selected_content_slug + ' is on page number ' + selected_content_page_num);
   }
@@ -138,7 +127,6 @@ function find_pages(){
     var content_counter = 0;
     if(i < page_numbers[0]){
       // do nothing.
-
       // We're assuming page numbers increase linearly.
     }else{
       if(i < page_numbers[content_counter+1]){
@@ -150,21 +138,46 @@ function find_pages(){
     }
   }
 
-  // var n_checkboxes = $('.menu-checkbox').length;
-  // console.log(n_checkboxes);
-  // for(var i=0; i<n_checkboxes;i++){
-  //   var checkbox = $('.menu-checkbox').eq(i);
-  //   if(checkbox.is(':checked')){
-  //     checkbox.replaceWith("✔");
-  //   } else {
-  //     checkbox.replaceWith("");
-  //   }
-  // }
 
-  $('.menu-checkbox').replaceWith(" X ");
-  $("#assign_pagenums_button").css("text-decoration","line-through");
-  $("#print_button").css("display","inline");
-  $("#refresh_button").css("display","inline");
+  // Now filling in contextual page information.
+
+  var n_pages = $(".page-content").length;
+
+  let unique_chapters = [...new Set(checked_contents_chapters)];
+  unique_chapters.sort();
+  var unique_chapter_page_numbers = [];
+  for(var k = 0; k < unique_chapters.length; k++) {
+    unique_chapter_page_numbers.push(n_pages); // Set at maximum.
+    for(var kk=0; kk < n_checked; kk++) {
+      if(checked_contents_chapters[kk] == unique_chapters[k]) {
+        if(page_numbers[kk] < unique_chapter_page_numbers[k]) {
+          unique_chapter_page_numbers[k] = page_numbers[kk];
+        }
+      }
+    }
+  }
+
+  unique_chapter_page_numbers.push(n_pages);
+  unique_chapters.unshift('');
+  console.log(unique_chapter_page_numbers);
+
+  for(var k = 0; k <= unique_chapters.length; k++) {
+    var page_pointer = 0;
+    var chapter_pointer = 0;
+    while(page_pointer < n_pages) {
+      if(page_pointer < unique_chapter_page_numbers[chapter_pointer]) {
+        // label page!!
+        // $('.page').eq(page_pointer).closest('.contextual-info').html(unique_chapters[chapter_pointer]);
+        // console.log($('.page').eq(page_pointer).closest('.contextual-info'));
+        page_pointer++;
+      } else {
+        chapter_pointer++;
+      }
+      page_pointer++;
+    }
+  }
+
+  // end Page Numbers Assignment Function
 }
 
 $(window).bind("load", function() {
@@ -174,21 +187,31 @@ $(window).bind("load", function() {
   refreshContent();
 });
 
-// on interaction...
+$("input[type=checkbox]").on("click", function(){
+  refreshContent();
+  $("#trim_pages_button").css("text-decoration","none");
+  $("#assign_pagenums_button").css("text-decoration","none");
+  $("#assign_pagenums_button").css("display","none");
+  $("#refresh_button").css("display","none");
+  $("#print_button").css("display","none");
+});
+
 $("#trim_pages_button").click(function(){
   trim_empty_pages();
+  $("#trim_pages_button").css("text-decoration","line-through");
+  $("#assign_pagenums_button").css("display","inline");
 });
 
 $("#assign_pagenums_button").click(function(){
-  find_pages();
+  assign_toc_pages();
+  $('.menu-checkbox').replaceWith(" X ");
+  $("#assign_pagenums_button").css("text-decoration","line-through");
+  $("#print_button").css("display","inline");
+  $("#refresh_button").css("display","inline");
 });
 
 $("#refresh_button").click(function(){
   window.location.reload();
-});
-
-$("input[type=checkbox]").on("click", function(){
-  refreshContent();
 });
 
 $("#print_button").click(function(){
