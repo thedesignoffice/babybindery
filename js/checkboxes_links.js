@@ -33,7 +33,6 @@ var trim_empty_pages = function(){
 function writeLinks(container){
 
   var links = container.find('a');
-
   var link_string = "";
 
   for(var i=0; i<links.length; i++){
@@ -57,12 +56,25 @@ function writeLinks(container){
 }
 
 function get_checked_contents(){
-  var n_checkboxes = $('.menu-checkbox').length;
+  // First: Check boxes if chapter boxes checked.
+  var n_checkboxes = $('.post-checkbox').length;
+  var n_chapter_checkboxes = $('.chapter-checkbox').length;
+
+  for( var j = 0; j < n_chapter_checkboxes; j++){
+    var checkbox = $('.chapter-checkbox').eq(j);
+    var chapter_name = checkbox.data('chapter');
+    if(checkbox.is(':checked')){
+      $('.post-checkbox').filter(function(){
+        return $(this).data('chapter') == chapter_name;
+      }).prop('checked', true);
+    }
+  }
+
   var checked_contents = [];
   var checked_contents_chapters = [];
   for(var i=0; i<n_checkboxes;i++){
     var n_checked = checked_contents.length;
-    var checkbox = $('.menu-checkbox').eq(i);
+    var checkbox = $('.post-checkbox').eq(i);
     if(checkbox.is(':checked')){
       checked_contents[n_checked] = checkbox.data('slug'); // checked_contents contains the numbers of the posts that should be flowed in.
       checked_contents_chapters[n_checked] = checkbox.data('chapter');
@@ -230,7 +242,8 @@ $("#trim_pages_button").click(function(){
 
 $("#assign_pagenums_button").click(function(){
   assign_toc_pages();
-  $('.menu-checkbox').replaceWith(" X ");
+  $('.post-checkbox').replaceWith(" X ");
+  $('.chapter-checkbox').replaceWith(" X ");
   $("#assign_pagenums_button").css("text-decoration","line-through");
   $("#print_button").css("display","inline");
   $("#refresh_button").css("display","inline");
