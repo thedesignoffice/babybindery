@@ -7,6 +7,15 @@ function checkAll(){
   }
 }
 
+function uncheckAll(){
+  var inputs = document.getElementsByTagName('input');
+  for(var i = 0; i < inputs.length; i++){
+    if(inputs[i].type=='checkbox'){
+      inputs[i].checked = false;
+    }
+  }
+}
+
 var trim_empty_pages = function(){
   var n_pages = $(".page-content").length;
   var counter = 0;
@@ -158,14 +167,12 @@ function assign_toc_pages(){
 
   unique_chapter_page_numbers.push(n_pages);
   unique_chapters.unshift('');
-  console.log(unique_chapter_page_numbers);
 
   for(var k = 0; k <= unique_chapters.length; k++) {
     var page_pointer = 0;
     var chapter_pointer = 0;
     while(page_pointer < n_pages) {
       if(page_pointer < unique_chapter_page_numbers[chapter_pointer]) {
-        // label page!!
         var contextual_info = $('.page-num').filter(function(){
           return $(this).html() == page_pointer;
         }).siblings('.page-footer').children('.contextual-info');
@@ -174,7 +181,6 @@ function assign_toc_pages(){
       } else {
         chapter_pointer++;
       }
-      // page_pointer++;
     }
   }
 
@@ -196,6 +202,16 @@ $("input[type=checkbox]").on("click", function(){
   $("#refresh_button").css("display","none");
   $("#print_button").css("display","none");
 });
+
+$("#select_button").click(function(){
+  checkAll();
+  refreshContent();
+});
+
+$("#deselect_button").click(function(){
+  uncheckAll();
+  refreshContent();
+})
 
 $("#trim_pages_button").click(function(){
   trim_empty_pages();
