@@ -30,19 +30,28 @@ var trim_empty_pages = function(){
   console.log(counter + " pages of original " + n_pages+ " trimmed. ");
 }
 
-function writeLinks(links){
+function writeLinks(container){
+
+  var links = container.find('a');
 
   var link_string = "";
 
   for(var i=0; i<links.length; i++){
 
     var link = links.eq(i);
-    var name = link.html();
+    var name = "<strong>"+link.html()+"</strong>";
     var href = link.attr('href');
 
-    // Strip & clean URL?
+    var href = href.replace(/^https?\:\/\//i, "");
 
-    link_string = link_string + name+" "+href+"<br />";
+    var max_link_length = 75;
+
+    if(href.length > max_link_length){
+      href = href.substring(0,max_link_length);
+      href = href+"...";
+    }
+
+    link_string = link_string + name+": "+href+"<br />";
   }
   return link_string;
 }
@@ -95,7 +104,7 @@ function refreshContent(){
       })
       .css( "display", "block" );
 
-    links_html = links_html + writeLinks(selected_content.find('a'));
+    links_html = links_html + writeLinks(selected_content.eq(1));
   }
   $("#footnotes").html(""+links_html);
 }
