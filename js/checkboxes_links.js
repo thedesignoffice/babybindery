@@ -14,7 +14,6 @@ var trim_empty_pages = function(){
     var chosen_page = $(".page-content").eq(i);
 
     if(chosen_page.html() == "<cssregion></cssregion>" || chosen_page.html() == ""){
-      //chosen_page.parents(".sheet").remove();
       chosen_page.parents(".sheet").css('display','none');
       counter += 1;
     }
@@ -167,13 +166,15 @@ function assign_toc_pages(){
     while(page_pointer < n_pages) {
       if(page_pointer < unique_chapter_page_numbers[chapter_pointer]) {
         // label page!!
-        // $('.page').eq(page_pointer).closest('.contextual-info').html(unique_chapters[chapter_pointer]);
-        // console.log($('.page').eq(page_pointer).closest('.contextual-info'));
+        var contextual_info = $('.page-num').filter(function(){
+          return $(this).html() == page_pointer;
+        }).siblings('.page-footer').children('.contextual-info');
+        contextual_info.html(unique_chapters[chapter_pointer]);
         page_pointer++;
       } else {
         chapter_pointer++;
       }
-      page_pointer++;
+      // page_pointer++;
     }
   }
 
