@@ -21,6 +21,10 @@ img{
   max-height: 100%;
 }
 
+cite{
+  display: none; 
+}
+
 .menu{
   margin: 20px;
   font-family: 'space mono', monospace; /* Fonts should be defined in universal or custom.css -Lukas */

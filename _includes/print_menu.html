@@ -9,7 +9,7 @@
       {% endfor %}
       {% for post in site.posts %}
         {% if post.chapter == chapter %}
-          <li><input type="checkbox" id="checkbox-post" class="post-checkbox" data-slug="{{ post.url }}" data-chapter = "{{ post.chapter }}" />{{ post.title }} in {{ post.chapter }}</li>
+          <li><input type="checkbox" id="checkbox-post" class="post-checkbox" data-slug="{{ post.url }}" data-chapter = "{{ post.chapter }}" />{{ post.title }}</li>
         {% endif %}
       {% endfor %}
     {% endfor %}

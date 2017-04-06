@@ -30,29 +30,45 @@ var trim_empty_pages = function(){
   console.log(counter + " pages of original " + n_pages+ " trimmed. ");
 }
 
-function writeLinks(container){
+function write_endnotes(container){
 
   var links = container.find('a');
-  var link_string = "";
+  var notes = container.find('cite');
+  var endnote_string = "";
 
-  for(var i=0; i<links.length; i++){
+  if(links.length > 0){
+    for(var i=0; i<links.length; i++){
 
-    var link = links.eq(i);
-    var name = "<strong>"+link.html()+"</strong>";
-    var href = link.attr('href');
+      var link = links.eq(i);
+      var name = "<strong>"+link.html()+"</strong>";
+      var href = link.attr('href');
 
-    var href = href.replace(/^https?\:\/\//i, "");
+      var href = href.replace(/^https?\:\/\//i, "");
 
-    var max_link_length = 75;
+      var max_link_length = 75;
 
-    if(href.length > max_link_length){
-      href = href.substring(0,max_link_length);
-      href = href+"...";
+      if(href.length > max_link_length){
+        href = href.substring(0,max_link_length);
+        href = href+"...";
+      }
+
+      endnote_string = endnote_string + '['+i+'] '+name+": "+href+"<br />";
     }
-
-    link_string = link_string + name+": "+href+"<br />";
+    endnote_string = endnote_string + '<br /><br />';
   }
-  return link_string;
+
+  if(notes.length > 0){
+    for(var j=0; j<notes.length; j++){
+      var note = notes.eq(j);
+      endnote_string = endnote_string + '('+j+') '+ note.html()+'<br />';
+      console.log(note);
+      //note.replaceWith(' ('+j+')');
+      // this isn't displaying in the flow for some reason...
+    }
+    endnote_string = endnote_string + '<br /><br />';
+  }
+
+  return endnote_string;
 }
 
 function get_checked_contents(){
@@ -99,7 +115,6 @@ function refreshContent(){
   // GIF to PNG
   var images = $("#content-source").find('img')
   var num_images = images.length;
-  console.log(num_images);
   for(var i=0; i<num_images; i++){
     var image = images.eq(i);
     var src = image.attr("src");
@@ -131,7 +146,7 @@ function refreshContent(){
     }
   }
 
-  var links_html = "";
+  var endnotes_html = "";
   n_checked = checked_contents.length;
 
   for(var j=0; j<n_checked; j++) { // for each selected piece of content to be included
@@ -152,9 +167,13 @@ function refreshContent(){
       .css( "display", "block" );
 
     // get endnotes too
-    links_html = links_html + writeLinks(selected_content.eq(1));
+    console.log(selected_content);
+    var endnote_material = write_endnotes(selected_content.eq(1));
+    if(endnote_material != ''){
+      endnotes_html = endnotes_html + 'Links & Notes from '+checked_contents[j]+' <br />'+endnote_material;
+    }
   }
-  $("#footnotes").html(""+links_html);
+  $("#endnotes").html(""+endnotes_html);
 }
 
 function assign_toc_pages(){
