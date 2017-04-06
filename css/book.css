@@ -19,10 +19,6 @@ body{
 
 img{
   max-height: 100%;
-  -webkit-animation-play-state: paused !important;
-  -moz-animation-play-state: paused !important;
-  -o-animation-play-state: paused !important;
-  animation-play-state: paused !important;
 }
 
 .menu{

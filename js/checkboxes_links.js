@@ -112,7 +112,6 @@ function refreshContent(){
         url: src.substring(0,start)+'.png',
         type:'HEAD',
         error: function() {
-          // no file, don't swap anything.
           console.log("GIF found but no .png replacement.");
         },
         success: function() {
@@ -123,7 +122,6 @@ function refreshContent(){
         url: src.substring(0,start)+'.PNG',
         type:'HEAD',
         error: function() {
-          // no file, don't swap anything.
           console.log("GIF found but no .PNG replacement.");
         },
         success: function() {
