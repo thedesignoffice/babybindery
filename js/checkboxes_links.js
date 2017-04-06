@@ -96,6 +96,43 @@ function refreshContent(){
   $('.content').css('break-after','never');
   $('.post-in-toc').css('display','none');
 
+  // GIF to PNG
+  var images = $("#content-source").find('img')
+  var num_images = images.length;
+  console.log(num_images);
+  for(var i=0; i<num_images; i++){
+    var image = images.eq(i);
+    var src = image.attr("src");
+    var end = src.length;
+    var start = end-4;
+
+    if(src.substring(start,end)==".gif" || src.substring(start,end)==".GIF"){
+      // swap out GIF for PNG if PNG of same name exists
+      $.ajax({
+        url: src.substring(0,start)+'.png',
+        type:'HEAD',
+        error: function() {
+          // no file, don't swap anything.
+          console.log("GIF found but no .png replacement.");
+        },
+        success: function() {
+          image.attr("src",src.substring(0,start)+".png");
+        }
+      });
+      $.ajax({
+        url: src.substring(0,start)+'.PNG',
+        type:'HEAD',
+        error: function() {
+          // no file, don't swap anything.
+          console.log("GIF found but no .PNG replacement.");
+        },
+        success: function() {
+          image.attr("src",src.substring(0,start)+".PNG");
+        }
+      });
+    }
+  }
+
   var links_html = "";
   n_checked = checked_contents.length;
 
@@ -116,6 +153,7 @@ function refreshContent(){
       })
       .css( "display", "block" );
 
+    // get endnotes too
     links_html = links_html + writeLinks(selected_content.eq(1));
   }
   $("#footnotes").html(""+links_html);
@@ -166,7 +204,6 @@ function assign_toc_pages(){
       }
     }
   }
-
 
   // Now filling in contextual page information.
 
