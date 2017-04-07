@@ -37,9 +37,9 @@ function write_endnotes(container){
   var endnote_string = "";
 
   if(links.length > 0){
-    for(var i=0; i<links.length; i++){
+    for(var i=1; i<=links.length; i++){
 
-      var link = links.eq(i);
+      var link = links.eq(i-1);
       var name = "<strong>"+link.html()+"</strong>";
       var href = link.attr('href');
 
@@ -58,12 +58,9 @@ function write_endnotes(container){
   }
 
   if(notes.length > 0){
-    for(var j=0; j<notes.length; j++){
-      var note = notes.eq(j);
+    for(var j=1; j<=notes.length; j++){
+      var note = notes.eq(j-1);
       endnote_string = endnote_string + '('+j+') '+ note.html()+'<br />';
-      console.log(note);
-      //note.replaceWith(' ('+j+')');
-      // this isn't displaying in the flow for some reason...
     }
     endnote_string = endnote_string + '<br /><br />';
   }
@@ -105,7 +102,7 @@ function refreshContent(){
   $("#footnotes").html("");
 
   var temp_array = get_checked_contents();
-  var checked_contents = temp_array[0];
+  var checked_contents = temp_array[0]; // get contents, not chapters.
 
   // Clear the slate, then re-flow.
   $('.content').css('display','none');
@@ -152,7 +149,7 @@ function refreshContent(){
   for(var j=0; j<n_checked; j++) { // for each selected piece of content to be included
     var selected_content = $('.content')
       .filter(function() {
-        return $( this ).data( "slug" ) === checked_contents[j]; // Need to grab the one in-flow.
+        return $( this ).data( "slug" ) === checked_contents[j]; // This is the pre-flow selected content.
       });
 
     selected_content
@@ -167,8 +164,7 @@ function refreshContent(){
       .css( "display", "block" );
 
     // get endnotes too
-    console.log(selected_content);
-    var endnote_material = write_endnotes(selected_content.eq(1));
+    var endnote_material = write_endnotes(selected_content.eq(0));
     if(endnote_material != ''){
       endnotes_html = endnotes_html + 'Links & Notes from '+checked_contents[j]+' <br />'+endnote_material;
     }

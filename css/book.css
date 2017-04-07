@@ -7,9 +7,41 @@
 
 body{
   width: calc((var(--trim-width)*2 + 50px)); /* What about on mobile? Maybe we just imipose this as a max width. -Lukas */
-  counter-reset: section;
+  counter-reset: section links citations;
   margin: 0;
   background: #e4edfd;
+}
+
+a{
+  text-decoration: none;
+}
+
+a::after{
+  counter-increment: links;
+  content: " (" counter(links) ")";
+  font-family: "space mono";
+  font-size: .5rem;
+  line-height: 0;
+  color: red;
+}
+
+/*a:after {
+  content: " (" attr(href) ") ";
+  font-size: 70%;
+  font-style: italic;
+}*/
+cite{
+  font-size: 0pt; /* This is dumb but it works. */
+}
+cite::after{
+  counter-increment: citations;
+  content: " [" counter(citations) "]";
+  font-family: "space mono";
+  font-size: .5rem;
+  line-height: 0;
+  color: red;
+  position: relative;
+  left: -0.1rem;
 }
 
 #content-source {
@@ -19,10 +51,6 @@ body{
 
 img{
   max-height: 100%;
-}
-
-cite{
-  display: none; 
 }
 
 .menu{
@@ -205,13 +233,4 @@ h2 {  }
   font-size: .5rem;
   line-height: 0;
   color: green;
-}
-
-a{
-  text-decoration: none;
-}
-a:after {
-  content: " (" attr(href) ") ";
-  font-size: 70%;
-  font-style: italic;
 }
