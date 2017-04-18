@@ -17,7 +17,7 @@
           {{ site.title }}
         </h1>
 
-        <ul>
+        <ol>
           {% for chapter in site.chapters %}
           <h3>{{ chapter }}</h3>
           {% for post in site.posts %}
@@ -29,7 +29,7 @@
             {% endif %}
           {% endfor %}
           {% endfor %}
-        </ul>
+        </ol>
 
         <div style="clear:both">
           <a href="book.html" class="button">MAKE BOOK</a>

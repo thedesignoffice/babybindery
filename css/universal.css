@@ -1,7 +1,7 @@
 body{
   color: black;
   text-align: left;
-  margin: 1rem;
+  margin-bottom: 3rem;
 }
 @media (min-width: 1500px) {
   :root {  }
@@ -18,7 +18,6 @@ img{
 h1, h2, h3, h4 {
   font-weight: bold;
   text-align: justify;
-  text-align-last: justify;
 }
 h3 {  font-style: italic;}
 .toc h3 {
@@ -58,6 +57,7 @@ ul li { margin-left: 3rem; list-style-type: circle; }
   text-decoration: none;
   cursor: pointer;
 }
+ol li { margin-left: 3rem; list-style-type: decimal; }
 .button:hover{
   background-color: blue;
   color: white;

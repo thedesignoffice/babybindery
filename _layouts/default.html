@@ -4,17 +4,78 @@
     {% include meyer_reset.html %}
     {% include universal_css.html %}
     {% include custom_css.html %}
+    <style>
+      body { color: 3a3a3a; counter-reset: section; }
+      .twocol {
+      -moz-column-count: 2;
+      -webkit-column-count: 2;
+      column-count: 2;
+      }
+      .title { color: white;}
+      nav, footer {
+        display: grid;
+        margin: 0;
+        grid-template-columns: 10rem 1fr 10rem;
+        grid-template-rows: 4rem;
+        background: linear-gradient(to right, #eee,#111,#666);
+        justify-items: center;
+        align-items: center;
+      }
+      .wrapper {
+        display: grid;
+        margin: 0;
+        grid-template-columns: 10rem 1fr;
+        justify-items: center;
+        /* equal to footer height */
+      }
+      .wrapper * {         max-width: 1200px; }
+      aside { grid-column: 1 / 2; grid-row: 2 / 3; justify-self: center; align-self: center; }
+      header { width: 100%; margin-top: 2rem; grid-column: 2 / 3; grid-row: 1 / 2 }
+      article { grid-column: 2 / 3; grid-row: 2 / 3 }
+      h1 { inherit;font-size: 7vw; margin-top: 4rem; line-height: 100%; margin-bottom: 4rem;  }
+      header p, h5 { font-style: italic; margin-bottom: 2rem; }
+      article p:before {
+         counter-increment: section;
+         content:  counter(section) "  "; /* Looking to make use of webby conventions to sit alongside bookish ones */
+         font-family: "space mono";
+         font-size: .5rem;
+         line-height: 0;
+         color: red; margin: 0 .5rem;
+      }
+      article p { line-height: 130%; }
+      article p:nth-child(1) { font-size: 2rem; }
+      article p:nth-child(2) { font-size: 1.8rem; }
+      article p:nth-child(3) { font-size: 1.6rem; }
+      article p:nth-child(4) { font-size: 1.4rem; }
+      article p:nth-child(5) { font-size: 1.2rem; }
+     </style>
   </head>
   <body>
-    <div class="wrapper">
+    <nav>
+        <div><a href="/">Index</a></div>
+        <div class="title">{{ site.title }}</div>
+        <div><a href="/book.html">Book</a></div>
+    </nav>
+    <main class="wrapper">
+      <aside>
+        &larr;
+      </aside>
       <header>
+        <p>{% if page.author %}Posted by {{ page.author }} on {% endif %}
+        <time datetime="page.date">{{ page.date | date: "%B %-d, %Y" }}</time></p>
         <h1>{{ page.title }}</h1>
-        {% if page.author %}<span>{{ page.author }}</span>{% endif %}
+        <h2>{{ page.chapter }}</h2>
+        <h5>{{ page.introduction }}</h5>
       </header>
 
-      <div>
+      <article>
         {{ content }}
-      </div>
-    </div>
+      </article>
+    </main>
+    <footer>
+    <a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text={{ page.title }} by {{ page.author }} at {{ site.url }}{{ page.url }}">
+&larr;</a>  <a>Tweet / Top / Email</a> <a>About</a>
+    </footer>
   </body>
 </html>
