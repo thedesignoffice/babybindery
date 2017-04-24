@@ -5,37 +5,45 @@
     {% include universal_css.html %}
     {% include custom_css.html %}
     <style>
+      html {}
       main, body, nav, header, article { margin: 0; }
-      body { color: 3a3a3a; counter-reset: section; }
+      body { font-family: "Burgess-Regular"; color: #000; counter-reset: section;
+      -webkit-font-smoothing: antialiased;  }
       .twocol {
       -moz-column-count: 2;
       -webkit-column-count: 2;
       column-count: 2;
       }
-      .title { color: white;}
+      .title { color: white; font-weight: 900; }
       nav, footer {
         display: grid;
         margin: 0;
         grid-template-columns: 10rem 1fr 10rem;
         grid-template-rows: 4rem;
-        background: linear-gradient(to right, #eee,#111,#666);
+        background: linear-gradient(to right, pink,yellow,black,green,#666);
         justify-items: center;
         align-items: center;
+        font-family: "Lucida Grande", "space mono";
+        text-transform: uppercase;
+        font-size: .9rem;
       }
+      footer { background: linear-gradient(to left, cyan,green,darkgreen,green,cyan); }
       .wrapper {
+        background: linear-gradient(to bottom, white, rgba(255,192,203,.2));
         display: grid;
         margin: 0;
         grid-template-columns: 10rem 1fr;
         justify-items: center;
+        padding-bottom: 4rem;
         /* equal to footer height */
       }
-      footer { margin: 0; margin-top: 4rem; }
+      footer { margin: 0; }
       .wrapper * {         max-width: 1200px; }
       aside { grid-column: 1 / 2; grid-row: 2 / 3; justify-self: center; align-self: center; }
       header { width: 100%; margin-top: 2rem; grid-column: 2 / 3; grid-row: 1 / 2 }
       article { grid-column: 2 / 3; grid-row: 2 / 3 }
-      h1 { inherit;font-size: 7vw; margin-top: 4rem; line-height: 100%; margin-bottom: 4rem;  }
-      header p, h5 { font-style: italic; margin-bottom: 2rem; }
+      h1 { font-weight: normal; inherit;font-size: 7.5vw; margin-top: 4rem; line-height: 100%; margin-bottom: 4rem;  }
+      header p, h5 { font-size: 1.35rem; line-height: 140%; font-style: italic; margin-bottom: 1rem; width: 50%; }
       article p:before {
          counter-increment: section;
          content:  counter(section) "  "; /* Looking to make use of webby conventions to sit alongside bookish ones */
@@ -44,12 +52,23 @@
          line-height: 0;
          color: red; margin: 0 .5rem;
       }
-      article p { line-height: 130%; }
-      article p:nth-child(1) { font-size: 2rem; }
-      article p:nth-child(2) { font-size: 1.8rem; }
-      article p:nth-child(3) { font-size: 1.6rem; }
-      article p:nth-child(4) { font-size: 1.4rem; }
-      article p:nth-child(5) { font-size: 1.2rem; }
+      article p { line-height: 140%; letter-spacing: .1px; font-size: 1.8rem; color: #1a1a1a; padding-right: 6rem;  }
+      article li { font-size: 1.4rem; padding-bottom: .5rem; line-height: 120%; }
+      article ul, article ol {       -moz-column-count: 2;
+            -webkit-column-count: 2;
+            column-count: 2;
+}
+      article p:nth-child(1) { font-size: 2.4rem; }
+      article p:nth-child(2) { font-size: 2.2rem; }
+      article p:nth-child(3) { font-size: 2.0rem; }
+      img { width: 25%; margin: 2rem 0; mix-blend-mode: multiply;  }
+      cite { border-bottom: 3px double deeppink; }
+      cite:after { content: attr(data-parent); text-align: right; float: right; font-style: italic; font-size: 1rem; line-height: 110%; width: 15%; color: deeppink; margin-left: 2rem; margin-right: -6rem; }
+      h2, h3, h4   { margin-left: 2rem; font-weight: normal; color: hotpink; font-size: 2.4rem;  line-height: 140%; }
+      h3, h4 { font-style: italic; }
+  content: attr(data-parent);
+}
+
      </style>
   </head>
   <body>
@@ -66,8 +85,7 @@
         <p>{% if page.author %}Posted by {{ page.author }} on {% endif %}
         <time datetime="page.date">{{ page.date | date: "%B %-d, %Y" }}</time></p>
         <h1>{{ page.title }}</h1>
-        <h2>{{ page.chapter }}</h2>
-        <h5>{{ page.introduction }}</h5>
+        <h5>{{ page.introduction }}   This has {{ page.content | number_of_words }} words and is filed under: {{ page.chapter }}.</h5>
       </header>
 
       <article>

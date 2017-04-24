@@ -54,13 +54,15 @@ The contents of this page are loaded into the print.html layout.
         <h2 class="chapter-title" data-slug="{{ post.url }}">
           {{ post.title }}
         </h2>
-        <p>
+        <h5>
           {{ post.date | date: "%-d %B %Y" }}
-        </p>
-        <p>
+        </h5>
+        <h5>
           {{site.url}}{{post.url}}
-        </p>
+        </h5>
+        <article>
         {{post.content}}
+        </article>
       </div>
     {% endif %}
   {% endfor %} <!-- posts loop -->
