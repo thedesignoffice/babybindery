@@ -5,6 +5,8 @@
     {% include meyer_reset.html %}
     {% include universal_css.html %}
     {% include custom_css.html %}
+<style>
+</style>
   </head>
 
   <body>
@@ -16,11 +18,18 @@
 		<!-- Core -->
 		<main>
 			<aside>
-        &larr;
+
+        {% for image in site.static_files %}
+    {% if image.path contains '/img/cover/' %}
+        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+    {% endif %}
+{% endfor %}
+
       </aside>
 
 			<header>
-        {{ site.title }}
+        <h1>{{ site.title }}</h1>
+        <h5>{{ site.description }}</h5>
 			</header>
 
 			<article>
@@ -31,12 +40,16 @@
 
             {% if post.chapter == chapter %}
             <li class="{{ post.content-type }}">
-              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a> {{ post.author }} <span class="sans post-meta agate">{{ post.date | date: "%-d %B %Y" }}</span>
+              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
+              {{ post.author }}
+              <span class="sans post-meta agate">{{ post.date | date: "%-d %B %Y" }}</span>
             </li>
             {% endif %}
           {% endfor %}
           {% endfor %}
         </ol>
+
+
 
           <a href="book.html" class="button">MAKE BOOK</a>
 

@@ -8,7 +8,7 @@
     <style>
     body {  counter-reset: section;  }
 
-      header {padding-right: 4rem; margin-top: 2rem; margin-bottom: 1rem; }
+      header {padding-right: 4rem; margin-top: 2.5rem; margin-bottom: 1rem; }
       header p, time { font-size: 1.18rem; line-height: 140%; font-style: italic; width: 66%; }
       article p:before {
          counter-increment: section;
@@ -18,37 +18,17 @@
          line-height: 0;
          color: red; margin: 0 .5rem;
       }
-      article p { line-height: 140%; letter-spacing: .1px; font-size: 1.5rem; color: #1a1a1a; padding-right: 4rem;  }
-      article ul, article ol {
-          -moz-column-count: 2;
-            -webkit-column-count: 2;
-            column-count: 2;
-}
       article>p:nth-child(1) { font-size: 2rem; }
       article>p:nth-child(2) { font-size: 1.8rem; }
       article>p:nth-child(3) { font-size: 1.6rem; }
-      img { width: 100%; }
+      img { width: 66%; }
       figure img { width: 25%; margin: 0;  }
       article img {  mix-blend-mode: multiply;}
       cite { border-bottom: 3px double green; }
       cite:after { content: attr(data-parent); text-align: right; float: right; font-style: italic; font-size: 1rem; line-height: 110%; width: 15%; color: green; margin-left: 2rem; margin-right: -2rem; }
-      h1 { font-size: 7.5vw; margin-top: 4rem; line-height: 100%; margin-bottom: 4rem;  }
-      h2 { font-size: 2.6rem; color: green; padding-top: 2rem; line-height: 100%; margin-bottom: 2rem; }
-      h3, h4   { margin: 2rem 0 0 1.85rem ; font-weight: normal; color: green; font-size: 2rem;  line-height: 140%; }
-      h4   { color: black;  }
-      h3, h4, h5, h6 { font-style: italic; }
-      h5, h6 { font-size: 1.18rem; line-height: 140%; margin: 1rem 0; width: 66%; }
-      h6 { margin-left: 2rem; color: #636363; width: 66%;  }
-
-      @media (min-width: 1480px) {
-        h1 { font-size: 6.1rem; }
-      }
-      @media only screen and (max-width: 1000px) {
-  			header p, h5 { width: 100%; }
-        article p { padding-right: 1rem;}
-  		}
       @media only screen and (max-width: 700px) {
-  		}
+        header p { width: 100%; }
+}
      </style>
   </head>
   <body>

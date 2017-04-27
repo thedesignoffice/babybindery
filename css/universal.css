@@ -15,13 +15,13 @@ body{
 blockquote { margin: 0 2rem; font-style: italic;
 }
 blockquote p { font-style: italic; }
-article p a {
+main a {
   text-decoration: none;
   color: inherit;
   transition: all .5s;
   border-bottom: 1px solid blue;
 }
-aricle p a:hover{
+main a:hover{
   background: yellow;
   color: #3a3a3a;
 }
@@ -94,13 +94,38 @@ article  { 	grid-row: 2/3; }
   article, header { grid-column: 1/3;  margin: 2rem; }
   aside { display: none; }
 }
+h1 { font-size: 7.5vw; margin-top: 4rem; line-height: 100%; margin-bottom: 4rem;  }
+h2 { font-size: 2.2rem; color: green; padding-top: 2rem; line-height: 100%; margin-bottom: 1rem; }
+h3, h4   { margin: 0 0 0 1.85rem;  color: green; font-size: 1.5rem;  line-height: 130%; }
+h4   { color: black;  }
+h3, h4, h5, h6 { font-style: italic; }
+h5, h6 { font-size: 1.18rem; line-height: 140%; margin: 1rem 0; width: 66%; }
+h6 { margin-left: 2rem; color: #636363; width: 66%;  }
+img { width: 100%; }
+article p { line-height: 140%; letter-spacing: .1px; font-size: 1.5rem; color: #1a1a1a; padding-right: 4rem;  }
+article ul, article ol {
+    -moz-column-count: 2;
+      -webkit-column-count: 2;
+      column-count: 2;
+    font-size: 1.2rem;
+    line-height: 140%;
+    margin: 1rem 0;
+    color: #3a3a3a;
+  }
 
 p {  margin: 0; margin-bottom: 1em;
 }
-
+@media (min-width: 1480px) {
+  h1 { font-size: 6.1rem; }
+}
 @media only screen and (max-width: 1000px) {
   html { font-size: 12pt;}
+  header p, h5 { width: 100%; }
 }
 @media only screen and (max-width: 700px) {
+  h1 { font-size: 4.1rem; }
   html { font-size: 9pt;}
+  nav, .title { font-size: 10pt; }
+  article p, header { padding-right: 1rem; }
+  h5 { width: 100%; }
 }
