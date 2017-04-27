@@ -7,6 +7,7 @@
     {% include custom_css.html %}
 <style>
   article h3 { padding-right: 4rem; }
+  h2 { text-transform: capitalize;}
 </style>
   </head>
 
@@ -22,56 +23,57 @@
 
 
       </aside>
-
-			<header>
-        <h1>{{ site.title }}</h1>
-        <h5>{{ site.description }}</h5>
-        {% for image in site.static_files %}
-        {% if image.path contains '/img/cover2/' %}
-          <img src="{{ site.baseurl }}{{ image.path }}" style="width: 80%" alt="image" />
-        {% endif %}
-        {% endfor %}
-			</header>
-
-			<article>
-          {% for chapter in site.chapters %}
-          <h2>{{ chapter }}</h2>
-          {% for post in site.posts %}
-
-            {% if post.chapter == chapter %}
-            <h3 class="{{ post.content-type }}">
-              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}
-              {% if post.author %}<span style="padding-left: 4rem; font-style: italic;">{{ post.author }}</span> {% endif %}
-              <span style="padding-left: 2rem; float: right;" class="sans post-meta agate">{{ post.date | date: "%b %Y" }}</span>
-              </a>
-            </h3>
-            {% if post.index-caption %}<h5 style="padding-left: 4rem;">{{ post.index-caption }}</h5> {% endif %}
-            {% endif %}
-          {% endfor %}
-          {% endfor %}
-
-          <h2>cutting room floor</h2>
+      <div>
+  			<header>
+          <h1>{{ site.title }}</h1>
+          <h5>{{ site.description }}</h5>
           {% for image in site.static_files %}
-              {% if image.path contains '/img/cover/' %}
-                <figure><img src="{{ site.baseurl }}{{ image.path }}" alt="image" /></figure>
-              {% endif %}
+          {% if image.path contains '/img/cover2/' %}
+            <img src="{{ site.baseurl }}{{ image.path }}" style="width: 80%" alt="image" />
+          {% endif %}
           {% endfor %}
+  			</header>
 
-      <h2>Etc</h2>
+  			<article>
+            {% for chapter in site.chapters %}
+            <h2>{{ chapter }}</h2>
+            {% for post in site.posts %}
 
-          <p><a href="book.html" class="button">Make this into a book</a></p>
+              {% if post.chapter == chapter %}
+              <h3 class="{{ post.content-type }}">
+                <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}
+                {% if post.author %}<span style="padding-left: 4rem; font-style: italic;">{{ post.author }}</span> {% endif %}
+                <span style="padding-left: 2rem; float: right; font-variant-numeric: tabular-nums;" class="sans post-meta agate">{{ post.date | date: "%m/%y" }}</span>
+                </a>
+              </h3>
+              {% if post.index-caption %}<h5 style="padding-left: 4rem;">{{ post.index-caption }}</h5> {% endif %}
+              {% endif %}
+            {% endfor %}
+            {% endfor %}
 
-        {{ content }}
+            <h2>cutting room floor</h2>
+            {% for image in site.static_files %}
+                {% if image.path contains '/img/cover/' %}
+                  <figure><img src="{{ site.baseurl }}{{ image.path }}" alt="image" /></figure>
+                {% endif %}
+            {% endfor %}
 
-        <p><a class="twitter-share-button"
-      href="https://twitter.com/intent/tweet?text={{ page.title }} by {{ page.author }} at {{ site.url }}{{ page.url }}">
-    &larr;</a>  </p>
+        <h2>Etc</h2>
 
-    <p>
-      {{ site.description }}
-    </p>
+            <p><a href="book.html" class="button">Make this into a book</a></p>
 
-			</article>
+          {{ content }}
+
+          <p><a class="twitter-share-button"
+        href="https://twitter.com/intent/tweet?text={{ page.title }} by {{ page.author }} at {{ site.url }}{{ page.url }}">
+      &larr;</a>  </p>
+
+      <p>
+        {{ site.description }}
+      </p>
+
+  			</article>
+      </div>
 		</main>
 
 

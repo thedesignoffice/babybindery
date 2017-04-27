@@ -3,6 +3,7 @@ body{
   margin: 0;
   color: black;
   font-family: "Burgess-Regular", Times, Serif,;
+  font-variant-numeric: oldstyle-nums;
   font-size: 14pt;
   line-height: 140%;
   -webkit-font-smoothing: antialiased;
@@ -31,13 +32,13 @@ nav, footer, .title {
   display: grid;
   font-size: 12pt;
   text-transform: uppercase;
-  letter-spacing: 1px;
   color: white;
+  font-family: TrustSerif-Medium110422;
 }
 nav { grid-row: 1/2; grid-column: 1/3; }
 footer { grid-row: 3/4; grid-column: 1/3; }
 .title { grid-column: 1/3; grid-row: 1/2; color: white; z-index: 5;
-  align-self: center; justify-self: center; font-weight: 900;
+  align-self: center; justify-self: center;
 }
 .colorbar { grid-column: 1/3; grid-row: 1/2;  z-index: -2;
   background: linear-gradient(to right, blue,gold,black,aqua,blue);
@@ -84,21 +85,19 @@ aside { justify-self: center;
         grid-row: 1/3;
         grid-column: 1/2;
 }
-header, article {  max-width: 1200px; justify-self: center;
-  grid-column: 2/3; grid-row: 1/2;
-}
-article  { 	grid-row: 2/3;  }
+main>div { max-width: 1200px; justify-self: center;
+  grid-column: 2/3; grid-row: 1/3; }
 @media only screen and (min-width: 1380px) {
 }
 @media only screen and (max-width: 900px) {
   article, header { grid-column: 1/3;  margin: 2rem; }
   aside { display: none; }
 }
-h1 { font-size: 7.5vw; margin-top: 4rem; line-height: 100%; margin-bottom: 4rem;  }
+h1 { font-size: 7.5vw; margin-top: 4rem; line-height: 100%; margin-bottom: 4rem; font-variant-numeric: proportional-nums; }
 h2 { padding-left: 2rem; border-bottom: 1px solid black; border-top: 3px double black;
   font-size: 2.2rem; color: black; padding-top: 1rem; line-height: 100%;
   margin: 2rem 4rem 1rem 0; padding-bottom: 1.2rem; }
-h3, h4   { margin: 0 0 0 1.85rem;  color: green; font-size: 1.5rem;  line-height: 140%; }
+h3, h4   { margin: 0 0 0 1.85rem;  color: green; font-size: 1.5rem;  line-height: 150%; }
 h4   { color: black;  }
 h3, h4, h5, h6 { font-style: italic; }
 h5, h6 { font-size: 1.18rem; line-height: 140%; margin: 1rem 0; width: 66%; }
