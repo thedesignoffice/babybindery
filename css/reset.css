@@ -21,11 +21,12 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 1rem;
 	font: inherit;
 	vertical-align: baseline;
 	box-sizing: border-box;
-
+	font-weight: normal;
+	font-style: normal;
 }
 *, *:before, *:after {
 box-sizing: inherit;
@@ -34,9 +35,6 @@ box-sizing: inherit;
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
-}
-body {
-	line-height: 1;
 }
 ol, ul {
 	list-style: none;
@@ -52,4 +50,8 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+em { font-style: italic;
+}
+strong { font-weight: bold;
 }

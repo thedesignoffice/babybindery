@@ -1,101 +1,106 @@
-<html>
+<!doctype html>
+<html lang="en">
   <head>
     {% include metadata.html %}
     {% include meyer_reset.html %}
     {% include universal_css.html %}
     {% include custom_css.html %}
     <style>
-      html {}
-      main, body, nav, header, article { margin: 0; }
-      body { font-family: "Burgess-Regular"; color: #000; counter-reset: section;
-      -webkit-font-smoothing: antialiased;  }
-      .twocol {
-      -moz-column-count: 2;
-      -webkit-column-count: 2;
-      column-count: 2;
-      }
-      .title { color: white; font-weight: 900; }
-      nav, footer {
-        display: grid;
-        margin: 0;
-        grid-template-columns: 10rem 1fr 10rem;
-        grid-template-rows: 4rem;
-        background: linear-gradient(to right, pink,yellow,black,green,#666);
-        justify-items: center;
-        align-items: center;
-        font-family: "Lucida Grande", "space mono";
-        text-transform: uppercase;
-        font-size: .9rem;
-      }
-      footer { background: linear-gradient(to left, cyan,green,darkgreen,green,cyan); }
-      .wrapper {
-        background: linear-gradient(to bottom, white, rgba(255,192,203,.2));
-        display: grid;
-        margin: 0;
-        grid-template-columns: 10rem 1fr;
-        justify-items: center;
-        padding-bottom: 4rem;
-        /* equal to footer height */
-      }
-      footer { margin: 0; }
-      .wrapper * {         max-width: 1200px; }
-      aside { grid-column: 1 / 2; grid-row: 2 / 3; justify-self: center; align-self: center; }
-      header { width: 100%; margin-top: 2rem; grid-column: 2 / 3; grid-row: 1 / 2 }
-      article { grid-column: 2 / 3; grid-row: 2 / 3 }
-      h1 { font-weight: normal; inherit;font-size: 7.5vw; margin-top: 4rem; line-height: 100%; margin-bottom: 4rem;  }
-      header p, h5 { font-size: 1.35rem; line-height: 140%; font-style: italic; margin-bottom: 1rem; width: 50%; }
+    body {  counter-reset: section;  }
+
+      header {padding-right: 4rem; margin-top: 2rem; margin-bottom: 1rem; }
+      header p, time { font-size: 1.18rem; line-height: 140%; font-style: italic; width: 66%; }
       article p:before {
          counter-increment: section;
          content:  counter(section) "  "; /* Looking to make use of webby conventions to sit alongside bookish ones */
          font-family: "space mono";
-         font-size: .5rem;
+         font-size: .6rem;
          line-height: 0;
          color: red; margin: 0 .5rem;
       }
-      article p { line-height: 140%; letter-spacing: .1px; font-size: 1.8rem; color: #1a1a1a; padding-right: 6rem;  }
-      article li { font-size: 1.4rem; padding-bottom: .5rem; line-height: 120%; }
-      article ul, article ol {       -moz-column-count: 2;
+      article p { line-height: 140%; letter-spacing: .1px; font-size: 1.5rem; color: #1a1a1a; padding-right: 4rem;  }
+      article ul, article ol {
+          -moz-column-count: 2;
             -webkit-column-count: 2;
             column-count: 2;
 }
-      article p:nth-child(1) { font-size: 2.4rem; }
-      article p:nth-child(2) { font-size: 2.2rem; }
-      article p:nth-child(3) { font-size: 2.0rem; }
-      img { width: 25%; margin: 2rem 0; mix-blend-mode: multiply;  }
-      cite { border-bottom: 3px double deeppink; }
-      cite:after { content: attr(data-parent); text-align: right; float: right; font-style: italic; font-size: 1rem; line-height: 110%; width: 15%; color: deeppink; margin-left: 2rem; margin-right: -6rem; }
-      h2, h3, h4   { margin-left: 2rem; font-weight: normal; color: hotpink; font-size: 2.4rem;  line-height: 140%; }
-      h3, h4 { font-style: italic; }
-  content: attr(data-parent);
-}
+      article>p:nth-child(1) { font-size: 2rem; }
+      article>p:nth-child(2) { font-size: 1.8rem; }
+      article>p:nth-child(3) { font-size: 1.6rem; }
+      img { width: 100%; }
+      figure img { width: 25%; margin: 0;  }
+      article img {  mix-blend-mode: multiply;}
+      cite { border-bottom: 3px double green; }
+      cite:after { content: attr(data-parent); text-align: right; float: right; font-style: italic; font-size: 1rem; line-height: 110%; width: 15%; color: green; margin-left: 2rem; margin-right: -2rem; }
+      h1 { font-size: 7.5vw; margin-top: 4rem; line-height: 100%; margin-bottom: 4rem;  }
+      h2 { font-size: 2.6rem; color: green; padding-top: 2rem; line-height: 100%; margin-bottom: 2rem; }
+      h3, h4   { margin: 2rem 0 0 1.85rem ; font-weight: normal; color: green; font-size: 2rem;  line-height: 140%; }
+      h4   { color: black;  }
+      h3, h4, h5, h6 { font-style: italic; }
+      h5, h6 { font-size: 1.18rem; line-height: 140%; margin: 1rem 0; width: 66%; }
+      h6 { margin-left: 2rem; color: #636363; width: 66%;  }
 
+      @media (min-width: 1480px) {
+        h1 { font-size: 6.1rem; }
+      }
+      @media only screen and (max-width: 1000px) {
+  			header p, h5 { width: 100%; }
+        article p { padding-right: 1rem;}
+  		}
+      @media only screen and (max-width: 700px) {
+  		}
      </style>
   </head>
   <body>
-    <nav>
-        <div><a href="/">Index</a></div>
-        <div class="title">{{ site.title }}</div>
-        <div><a href="/book.html">Book</a></div>
-    </nav>
-    <main class="wrapper">
-      <aside>
+
+    <!-- Nav bar -->
+		<nav>
+					<a class="index" href="/">
+							<div>Index</div>
+					</a>
+					<a class="book" href="/book.html">
+							<div>Book</div>
+					</a>
+		</nav>
+		<div class="title">{{ site.title }}</div>
+		<div class="colorbar"></div>
+		<div class="colorbar_fixed"></div>
+		<div class="blackbar"></div>
+
+		<!-- Core -->
+		<main>
+			<aside>
         &larr;
       </aside>
-      <header>
+
+			<header>
         <p>{% if page.author %}Posted by {{ page.author }} on {% endif %}
         <time datetime="page.date">{{ page.date | date: "%B %-d, %Y" }}</time></p>
         <h1>{{ page.title }}</h1>
         <h5>{{ page.introduction }}   This has {{ page.content | number_of_words }} words and is filed under: {{ page.chapter }}.</h5>
-      </header>
+			</header>
 
-      <article>
+			<article>
         {{ content }}
-      </article>
-    </main>
-    <footer>
-    <a class="twitter-share-button"
-  href="https://twitter.com/intent/tweet?text={{ page.title }} by {{ page.author }} at {{ site.url }}{{ page.url }}">
-&larr;</a>  <a>Tweet / Top / Email</a> <a>About</a>
-    </footer>
+
+        <p><a class="twitter-share-button"
+      href="https://twitter.com/intent/tweet?text={{ page.title }} by {{ page.author }} at {{ site.url }}{{ page.url }}">
+    &larr;</a>  </p>
+			</article>
+		</main>
+
+
+		<!-- Footer -->
+		<footer>
+					<a class="social" href="http://google.com">
+							<div>social</div>
+					</a>
+					<a class="about" href="http://google.com">
+							<div>About</div>
+					</a>
+		</footer>
+
+
+
   </body>
 </html>

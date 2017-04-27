@@ -7,12 +7,7 @@
 }
 
 body {
-  font-family: times, 'Space Mono', monospace;
+  font-family: "Burgess-Regular", Times, Serif, 'Space Mono', monospace;
   font-size: 14pt;
-  line-height: 1.35rem;
-}
-
-a {
-  color: blue;
-  border-bottom: 1px solid blue;
+  line-height: 1.4rem;
 }
