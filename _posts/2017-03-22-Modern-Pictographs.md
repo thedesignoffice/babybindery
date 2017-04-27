@@ -1,12 +1,11 @@
 ---
 layout: default
-title: Animation test from Dropbox Paper
+title: Animated Pictograms
 date: 2017-03-22
-author: John
+author: John Caserta
 chapter: demo
+introduction: Animated versions of Modern Pictograms.
 ---
-# Modern Pictograms ✍️
-
 
 
 

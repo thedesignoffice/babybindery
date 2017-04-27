@@ -17,19 +17,19 @@
           {{ site.title }}
         </h1>
 
-        <ul>
+        <ol>
           {% for chapter in site.chapters %}
           <h3>{{ chapter }}</h3>
           {% for post in site.posts %}
 
             {% if post.chapter == chapter %}
             <li class="{{ post.content-type }}">
-              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a> {{ post.author }} <span class="post-meta agate">{{ post.date | date: "%-d %B %Y" }}</span>
+              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a> {{ post.author }} <span class="sans post-meta agate">{{ post.date | date: "%-d %B %Y" }}</span>
             </li>
             {% endif %}
           {% endfor %}
           {% endfor %}
-        </ul>
+        </ol>
 
         <div style="clear:both">
           <a href="book.html" class="button">MAKE BOOK</a>

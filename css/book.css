@@ -155,7 +155,7 @@ img{
   position: absolute;
   z-index: 0;
   bottom: 2rem;
-  font-size: 2rem;
+  font-size: 1rem;
   width: 100%;
   clear: both; text-align: left;
   margin: 0;
@@ -215,6 +215,7 @@ margin-left: 3rem;
   text-transform: capitalize;
 }
 
+.chapter-title .article {   counter-reset: section; }
 .newchapter { /* could be used to break between chapters, etc  */
 
 }
