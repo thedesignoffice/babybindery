@@ -4,6 +4,7 @@ title: Typography and Material Workshop
 date: 2017-03-01
 author: John Caserta
 chapter: demo
+index-caption: Activity and talk given at Brown Design Workshop
 introduction: Activity and talk given at Brown Design Workshop on Wednesday, March 15, 2017, 5pm – 7pm
 
 ---

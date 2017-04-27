@@ -26,10 +26,14 @@
 			<header>
         <h1>{{ site.title }}</h1>
         <h5>{{ site.description }}</h5>
+        {% for image in site.static_files %}
+        {% if image.path contains '/img/cover2/' %}
+          <img src="{{ site.baseurl }}{{ image.path }}" style="width: 80%" alt="image" />
+        {% endif %}
+        {% endfor %}
 			</header>
 
 			<article>
-        <h5>Index</h5>
           {% for chapter in site.chapters %}
           <h2>{{ chapter }}</h2>
           {% for post in site.posts %}
@@ -37,8 +41,8 @@
             {% if post.chapter == chapter %}
             <h3 class="{{ post.content-type }}">
               <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}
-              {% if post.author %}<span style="padding-left: 4rem;">{{ post.author }}</span> {% endif %}
-              <span style="padding-left: 2rem; float: right; font-style: italic;" class="sans post-meta agate">{{ post.date | date: "%b %Y" }}</span>
+              {% if post.author %}<span style="padding-left: 4rem; font-style: italic;">{{ post.author }}</span> {% endif %}
+              <span style="padding-left: 2rem; float: right;" class="sans post-meta agate">{{ post.date | date: "%b %Y" }}</span>
               </a>
             </h3>
             {% if post.index-caption %}<h5 style="padding-left: 4rem;">{{ post.index-caption }}</h5> {% endif %}
