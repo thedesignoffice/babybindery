@@ -9,14 +9,21 @@
 
   <body>
 
-    <!-- Output author details if some exist. -->
+    <!-- Nav bar -->
+		<div class="colorbar_fixed"></div>
+		<div class="blackbar"></div>
 
-    <div class="wrapper toc">
-      <div class="page-content">
-        <h1>
-          {{ site.title }}
-        </h1>
+		<!-- Core -->
+		<main>
+			<aside>
+        &larr;
+      </aside>
 
+			<header>
+        {{ site.title }}
+			</header>
+
+			<article>
         <ol>
           {% for chapter in site.chapters %}
           <h3>{{ chapter }}</h3>
@@ -31,21 +38,34 @@
           {% endfor %}
         </ol>
 
-        <div style="clear:both">
           <a href="book.html" class="button">MAKE BOOK</a>
-          <!-- <a href="book_twocol.html" class="button makebook">MAKE TWO-COLUMN BOOK</a><br /> -->
-          <!-- Two-column currently out of comission. -->
-        </div>
 
         {{ content }}
 
-        <p>
-          {{ site.description }}
-        </p>
+        <p><a class="twitter-share-button"
+      href="https://twitter.com/intent/tweet?text={{ page.title }} by {{ page.author }} at {{ site.url }}{{ page.url }}">
+    &larr;</a>  </p>
+
+    <p>
+      {{ site.description }}
+    </p>
+
+			</article>
+		</main>
 
 
-      </div>
-    </div>
+		<!-- Footer -->
+		<footer>
+					<a class="social" href="http://google.com">
+							<div>social</div>
+					</a>
+					<a class="about" href="http://google.com">
+							<div>About</div>
+					</a>
+		</footer>
+
+
+
 
   </body>
 

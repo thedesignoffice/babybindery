@@ -14,6 +14,7 @@ body{
 }
 blockquote { margin: 0 2rem; font-style: italic;
 }
+blockquote p { font-style: italic; }
 article p a {
   text-decoration: none;
   color: inherit;
