@@ -37,10 +37,11 @@
             {% if post.chapter == chapter %}
             <h3 class="{{ post.content-type }}">
               <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}
-              <span style="padding-left: 4rem;">{{ post.author }}</span>
+              {% if post.author %}<span style="padding-left: 4rem;">{{ post.author }}</span> {% endif %}
               <span style="padding-left: 2rem; float: right; font-style: italic;" class="sans post-meta agate">{{ post.date | date: "%b %Y" }}</span>
               </a>
             </h3>
+            {% if post.index-caption %}<h5 style="padding-left: 4rem;">{{ post.index-caption }}</h5> {% endif %}
             {% endif %}
           {% endfor %}
           {% endfor %}
