@@ -6,6 +6,7 @@
     {% include universal_css.html %}
     {% include custom_css.html %}
 <style>
+  article h3 { padding-right: 4rem; }
 </style>
   </head>
 
@@ -19,11 +20,6 @@
 		<main>
 			<aside>
 
-        {% for image in site.static_files %}
-    {% if image.path contains '/img/cover/' %}
-        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-    {% endif %}
-{% endfor %}
 
       </aside>
 
@@ -33,25 +29,32 @@
 			</header>
 
 			<article>
-        <ol>
+        <h5>Index</h5>
           {% for chapter in site.chapters %}
-          <h3>{{ chapter }}</h3>
+          <h2>{{ chapter }}</h2>
           {% for post in site.posts %}
 
             {% if post.chapter == chapter %}
-            <li class="{{ post.content-type }}">
-              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}</a>
-              {{ post.author }}
-              <span class="sans post-meta agate">{{ post.date | date: "%-d %B %Y" }}</span>
-            </li>
+            <h3 class="{{ post.content-type }}">
+              <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}
+              <span style="padding-left: 4rem;">{{ post.author }}</span>
+              <span style="padding-left: 2rem; float: right; font-style: italic;" class="sans post-meta agate">{{ post.date | date: "%b %Y" }}</span>
+              </a>
+            </h3>
             {% endif %}
           {% endfor %}
           {% endfor %}
-        </ol>
 
+          <h2>cutting room floor</h2>
+          {% for image in site.static_files %}
+              {% if image.path contains '/img/cover/' %}
+                <figure><img src="{{ site.baseurl }}{{ image.path }}" alt="image" /></figure>
+              {% endif %}
+          {% endfor %}
 
+      <h2>Etc</h2>
 
-          <a href="book.html" class="button">MAKE BOOK</a>
+          <p><a href="book.html" class="button">Make this into a book</a></p>
 
         {{ content }}
 

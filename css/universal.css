@@ -95,7 +95,9 @@ article  { 	grid-row: 2/3; }
   aside { display: none; }
 }
 h1 { font-size: 7.5vw; margin-top: 4rem; line-height: 100%; margin-bottom: 4rem;  }
-h2 { font-size: 2.2rem; color: green; padding-top: 2rem; line-height: 100%; margin-bottom: 1rem; }
+h2 { padding-left: 2rem; border-bottom: 1px solid black; border-top: 3px double black;
+  font-size: 2.2rem; color: black; padding-top: 1rem; line-height: 100%;
+  margin: 2rem 4rem 1rem 0; padding-bottom: 1.2rem; }
 h3, h4   { margin: 0 0 0 1.85rem;  color: green; font-size: 1.5rem;  line-height: 130%; }
 h4   { color: black;  }
 h3, h4, h5, h6 { font-style: italic; }
@@ -112,7 +114,7 @@ article ul, article ol {
     margin: 1rem 0;
     color: #3a3a3a;
   }
-
+figure img { width: 25%; margin: 0;   }
 p {  margin: 0; margin-bottom: 1em;
 }
 @media (min-width: 1480px) {
