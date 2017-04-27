@@ -90,7 +90,7 @@ main>div { max-width: 1200px; justify-self: center;
 @media only screen and (min-width: 1380px) {
 }
 @media only screen and (max-width: 900px) {
-  article, header { grid-column: 1/3;  margin: 2rem; }
+  main>div { grid-column: 1/3;  margin: 2rem; }
   aside { display: none; }
 }
 h1 { font-size: 7.5vw; margin-top: 4rem; line-height: 100%; margin-bottom: 4rem; font-variant-numeric: proportional-nums; }
@@ -129,4 +129,5 @@ p {  margin: 0; margin-bottom: 1em;
   nav, .title { font-size: 10pt; }
   article p, header { padding-right: 1rem; }
   h5 { width: 100%; }
+  h2 { margin: 2rem 0 1rem 0; }
 }
