@@ -40,6 +40,7 @@ footer { grid-row: 3/4; grid-column: 1/3; }
 .title { grid-column: 1/3; grid-row: 1/2; color: white; z-index: 5;
   align-self: center; justify-self: center;
 }
+.title a { text-decoration: none; color: white; }
 .colorbar { grid-column: 1/3; grid-row: 1/2;  z-index: -2;
   background: linear-gradient(to right, blue,gold,black,aqua,blue);
 }
