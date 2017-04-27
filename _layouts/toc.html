@@ -7,9 +7,11 @@
     {% include custom_css.html %}
 <style>
   article h3 { padding-right: 4rem; }
+  .author { padding-left: 4rem; font-style: italic; }
   @media only screen and (max-width: 900px) {
     h2, h3 { padding-left: 0;}
     article h3 { margin-left: 0; padding-right: 0; }
+    .author { padding-left: 1rem;  }
   }
   h2 { text-transform: capitalize;}
 </style>
@@ -46,7 +48,7 @@
               {% if post.chapter == chapter %}
               <h3 class="{{ post.content-type }}">
                 <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}
-                {% if post.author %}<span style="padding-left: 4rem; font-style: italic;">{{ post.author }}</span> {% endif %}
+                {% if post.author %}<span class="author">{{ post.author }}</span> {% endif %}
                 <span style="padding-left: 2rem; float: right; font-variant-numeric: tabular-nums;" class="sans post-meta agate">{{ post.date | date: "%m/%y" }}</span>
                 </a>
               </h3>
