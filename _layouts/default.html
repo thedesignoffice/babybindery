@@ -8,7 +8,8 @@
     <style>
     body {  counter-reset: section;  }
 
-      header {padding-right: 4rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+      header {padding-right: 4rem; margin-top: 2rem; margin-bottom: 1rem; }
+      header h5 { margin-bottom: 2rem; }
       header p, time { font-size: 1.18rem; line-height: 140%; font-style: italic; width: 66%; }
       article p:before {
          counter-increment: section;
@@ -64,8 +65,25 @@
 
           <h6><a class="twitter-share-button"
         href="https://twitter.com/intent/tweet?text={{ page.title }} by {{ page.author }} at {{ site.url }}{{ page.url }}">
-      Tweet this crap</a>  </h6>
-  			</article>
+      Tweet this</a>  </h6>
+        {% for chapter in page.chapter %}
+        <h2>More in {{ chapter }}</h2>
+        {% for post in site.posts %}
+
+          {% if post.chapter == chapter %}
+          <h3 class="{{ post.content-type }}">
+            <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}
+            {% if post.author %}<span class="author">{{ post.author }}</span> {% endif %}
+            <span style="padding-left: 2rem; float: right; font-variant-numeric: tabular-nums;" class="sans post-meta agate">{{ post.date | date: "%m/%y" }}</span>
+            </a>
+          </h3>
+          {% if post.index-caption %}<h5 style="padding-left: 4rem;">{{ post.index-caption }}</h5> {% endif %}
+          {% endif %}
+        {% endfor %}
+        {% endfor %}
+      </article>
+
+
       </div>
 		</main>
 

@@ -4,7 +4,7 @@ title: Typography and Material Workshop
 date: 2017-03-01
 author: John Caserta
 chapter: demo
-index-caption: 
+index-caption:
 introduction: Activity and talk given at Brown Design Workshop on Wednesday, March 15, 2017, 5pm – 7pm
 
 ---
@@ -17,6 +17,10 @@ The shape of letters is dependent on tools and materials. Materials are involved
 
 I will show <mark>digital</mark> and physical <cite data-parent="Footnote text here. Such and such and such. Footnote text here. Such and such and such">examples</cite> of typography made with various tools and materials. Attendees should bring their laptops in order to fabricate their own letterforms in the Brown Design Workshop. Some materials will be on hand, but attendees are encouraged to bring their own.
 
+{% include images.html url="http://1.bp.blogspot.com/-9S5L2nrk-l0/T8zQ1RedFOI/AAAAAAAAGiE/7eOijCeQgU8/s1600/7.jpg" description="figcaption using include" %}
+{% include images.html url="http://1.bp.blogspot.com/-9S5L2nrk-l0/T8zQ1RedFOI/AAAAAAAAGiE/7eOijCeQgU8/s1600/7.jpg" description="figcaption using include" %}
+{% include images.html url="http://1.bp.blogspot.com/-9S5L2nrk-l0/T8zQ1RedFOI/AAAAAAAAGiE/7eOijCeQgU8/s1600/7.jpg" description="figcaption using include" %}
+{% include images.html url="http://1.bp.blogspot.com/-9S5L2nrk-l0/T8zQ1RedFOI/AAAAAAAAGiE/7eOijCeQgU8/s1600/7.jpg" description="figcaption using include" %}
 {% include images.html url="http://1.bp.blogspot.com/-9S5L2nrk-l0/T8zQ1RedFOI/AAAAAAAAGiE/7eOijCeQgU8/s1600/7.jpg" description="figcaption using include" %}
 
 
