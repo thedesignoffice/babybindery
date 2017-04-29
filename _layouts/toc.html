@@ -46,7 +46,7 @@
               <h3 class="{{ post.content-type }}">
                 <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}
                 {% if post.author %}<span class="author">{{ post.author }}</span> {% endif %}
-                <span style="padding-left: 2rem; float: right; font-variant-numeric: tabular-nums;" class="sans post-meta agate">{{ post.date | date: "%m/%y" }}</span>
+                <span style="padding-left: 2rem; float: right; font-variant-numeric: proportional-nums;" class="sans post-meta agate">{{ post.date | date: "%b %Y" }}</span>
                 </a>
               </h3>
               {% if post.index-caption %}<h5 style="padding-left: 4rem;">{{ post.index-caption }}</h5> {% endif %}

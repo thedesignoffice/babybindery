@@ -11,7 +11,7 @@ author: The Design Office
 email: john@thedesignoffice.org
 description: "Babybindery is a web-to-print framework, templated using Jekyll. By Catherine Leigh Schmidt and Lukas WinklerPrins, for The Design Office PVD with John Caserta."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://thedesignoffice.github.io/babybindery" # the base hostname & protocol for your site
+url: "https://thedesignoffice.github.io/babybindery" # the base hostname & protocol for your site
 twitter_username:
 github_username: thedesignoffice
 chapters: ["chapter one", demo] # note that if you have a multi-word content type to wrap it in quotes. This is not necessary in your post files, however.

@@ -95,7 +95,7 @@ article {padding-right: 4rem; }
   main>div { grid-column: 1/3;  margin: 0 2rem; }
   aside { display: none; }
 }
-h1 { font-size: 7.5vw; margin-top: 4rem; line-height: 100%; margin-bottom: 4rem; font-variant-numeric: proportional-nums; }
+h1 { font-size: 6.225vw; margin-top: 4rem; line-height: 100%; margin-bottom: 4rem; font-variant-numeric: proportional-nums; }
 h2 { padding-left: 2rem; border-bottom: 1px solid black; border-top: 3px double black;
   font-size: 2.2rem; color: black; padding-top: 1rem; line-height: 100%;
   margin: 2rem 0 1rem 0; padding-bottom: 1.2rem; }
@@ -114,14 +114,37 @@ article ul, article ol {
     line-height: 140%;
     margin: 1rem 0;
     color: #3a3a3a;
-  }
-figure img { width: 25%; margin: 0;   }
+}
+article div.images {			display: grid;
+			padding: 0;
+			min-height: 200px;
+      margin: 1rem 0;
+      padding: 3rem 0;
+      border-top: 3px double grey;
+      border-bottom: 3px double grey;
+			grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+			grid-column-gap: 10px;
+			align-content: space-around;
+			justify-content: space-between;
+       counter-reset: figurecounter;
+}
+figure {
+justify-self: center; align-self: start; text-align: center;
+margin: 1rem .5rem;
+}
+figcaption:before {
+    color: red;
+        counter-increment: figurecounter;
+         content:   counter(figurecounter) " - "; /* Looking to make use of webby conventions to sit alongside bookish ones */
+}
+figure img { width: 100%; }
+
 p {  margin: 0; margin-bottom: 1em;
 }
 .author { padding-left: 2rem; font-style: italic; }
 
 @media (min-width: 1480px) {
-  h1 { font-size: 6.1rem; }
+  h1 { font-size: 5.1rem; }
 }
 @media only screen and (max-width: 1000px) {
   html { font-size: 12pt;}
