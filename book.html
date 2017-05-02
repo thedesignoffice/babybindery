@@ -28,7 +28,7 @@ The contents of this page are loaded into the print.html layout.
   </h1>
   <ul>
     {% for chapter in site.chapters %}
-    <h3>{{ chapter }}</h3>
+    <h1>{{ chapter }}</h1>
     {% for post in site.posts %}
       {% if post.chapter == chapter %}
       <li class="chapter-{{ post.chapter }} post-in-toc" data-slug="{{ post.url }}">
@@ -50,15 +50,15 @@ The contents of this page are loaded into the print.html layout.
   {% for post in site.posts %}
     {% if post.chapter == chapter %}
       <div class="content chapter-{{ post.chapter }}" data-slug="{{ post.url }}">
-        <h2 class="chapter-title" data-slug="{{ post.url }}">
+        <h1 class="chapter-title" data-slug="{{ post.url }}">
           {{ post.title }}
-        </h2>
-        <h5>
+        </h1>
+        <h3>
           {{ post.date | date: "%-d %B %Y" }}
-        </h5>
-        <h5>
+        </h3>
+        <h4>
           {{site.url}}{{post.url}}
-        </h5>
+        </h4>
         <article>
         {{post.content}}
         </article>

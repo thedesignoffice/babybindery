@@ -32,7 +32,7 @@
           <h5>{{ site.description }}</h5>
           {% for image in site.static_files %}
           {% if image.path contains '/img/cover2/' %}
-            <img src="{{ site.baseurl }}{{ image.path }}" style="width: 80%" alt="image" />
+            <img src="{{ site.baseurl }}{{ image.path }}"  alt="image" />
           {% endif %}
           {% endfor %}
   			</header>
@@ -45,7 +45,7 @@
               {% if post.chapter == chapter %}
               <h3 class="{{ post.content-type }}">
                 <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}
-                {% if post.author %}<span class="author">{{ post.author }}</span> {% endif %}
+                <!-- {% if post.author %}<span class="author">{{ post.author }}</span> {% endif %}-->
                 <span style="padding-left: 2rem; float: right; font-variant-numeric: proportional-nums;" class="sans post-meta agate">{{ post.date | date: "%b %Y" }}</span>
                 </a>
               </h3>
@@ -54,7 +54,7 @@
             {% endfor %}
             {% endfor %}
 
-            <h2>cutting room floor</h2>
+            <h2>Plates</h2>
             {% for image in site.static_files %}
                 {% if image.path contains '/img/cover/' %}
                   <figure><img src="{{ site.baseurl }}{{ image.path }}" alt="image" /></figure>
