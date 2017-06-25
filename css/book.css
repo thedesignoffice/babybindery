@@ -233,5 +233,6 @@ h2 {  }
   font-family: "space mono";
   font-size: .5rem;
   line-height: 0;
-  color: green;
+  margin-left: .6rem;
+  color: red;
 }

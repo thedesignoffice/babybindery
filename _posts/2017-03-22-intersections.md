@@ -5,6 +5,7 @@ date: 2017-03-22
 author: John Caserta
 chapter: demo
 introduction: Proposal for RISD GD journal about the topic of intersections.
+publisher: in-progress
 
 ---
 

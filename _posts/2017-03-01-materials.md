@@ -6,7 +6,7 @@ author: John Caserta
 chapter: demo
 index-caption:
 introduction: Activity and talk given at Brown Design Workshop on Wednesday, March 15, 2017, 5pm – 7pm
-
+publisher: Brown Design Workshop
 ---
 
 ![Ebner](http://1.bp.blogspot.com/-9S5L2nrk-l0/T8zQ1RedFOI/AAAAAAAAGiE/7eOijCeQgU8/s1600/7.jpg)
@@ -21,6 +21,7 @@ I will show <mark>digital</mark> and physical <cite data-parent="Footnote text h
 <div class="images" markdown="1">
 
 {% include images.html url="/img/materials/IMG_0451.jpg" description="Tape is easy to work with and its curling works well with letterforms" %}
+
 {% include images.html url="/img/materials/IMG_0452.jpg" description="Dots as modules (dot matrix) can be varied" %}
 {% include images.html url="/img/materials/IMG_0455.jpg" description="Embroidery is time consuming, but leads to handrivigt" %}
 {% include images.html url="/img/materials/IMG_0461.jpg" description="figcaption using include" %}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include metadata.html %}
+    {% include meyer_reset.html %}
+    {% include universal_css.html %}
+    {% include custom_css.html %}
+<style>
+  @media only screen and (max-width: 900px) {
+    h2, h3 { padding-left: 0;}
+    article h3 { margin-left: 0; padding-right: 0; }
+  }
+  h2 { text-transform: capitalize;}
+</style>
+  </head>
+
+  <body>
+
+    <!-- Nav bar -->
+		<div class="colorbar_fixed"></div>
+		<div class="blackbar"></div>
+
+		<!-- Core -->
+		<main>
+			<aside>
+
+
+      </aside>
+      <div>
+  			<header>
+          <h1>{{ site.title }}</h1>
+          <h5>{{ site.description }}</h5>
+          {% for image in site.static_files %}
+          {% if image.path contains '/img/cover2/' %}
+            <img src="{{ site.baseurl }}{{ image.path }}"  alt="image" />
+          {% endif %}
+          {% endfor %}
+  			</header>
+
+  			<article>
+            {% for chapter in site.chapters %}
+            <h2>{{ chapter }}</h2>
+            {% for post in site.posts %}
+
+              {% if post.chapter == chapter %}
+              <h3 class="{{ post.content-type }}">
+                <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}
+                <!-- {% if post.author %}<span class="author">{{ post.author }}</span> {% endif %}-->
+                <span style="padding-left: 2rem; float: right; font-variant-numeric: proportional-nums;" class="sans post-meta agate">{{ post.date | date: "%b %Y" }}</span>
+                </a>
+              </h3>
+              {% if post.index-caption %}<h5 style="padding-left: 4rem;">{{ post.index-caption }}</h5> {% endif %}
+              {% endif %}
+            {% endfor %}
+            {% endfor %}
+
+            <h2>Plates</h2>
+            {% for image in site.static_files %}
+                {% if image.path contains '/img/cover/' %}
+                  <figure><img src="{{ site.baseurl }}{{ image.path }}" alt="image" /></figure>
+                {% endif %}
+            {% endfor %}
+
+        <h2>Etc</h2>
+
+            <p><a href="book.html" class="button">Make this into a book</a></p>
+
+          {{ content }}
+
+          <p><a class="twitter-share-button"
+        href="https://twitter.com/intent/tweet?text={{ page.title }} by {{ page.author }} at {{ site.url }}{{ page.url }}">
+      &larr;</a>  </p>
+
+      <p>
+        {{ site.description }}
+      </p>
+
+  			</article>
+      </div>
+		</main>
+
+
+		<!-- Footer -->
+		<footer>
+					<a class="social" href="http://google.com">
+							<div>social</div>
+					</a>
+					<a class="about" href="http://google.com">
+							<div>About</div>
+					</a>
+		</footer>
+
+
+
+
+  </body>
+
+</html>

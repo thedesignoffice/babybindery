@@ -5,7 +5,7 @@ date: 2017-01-24
 author: John Caserta
 chapter: demo
 introduction: Submitted Jan 29, 2017 to (and unpublished by) the Wall Street Journal editorial board
-
+publisher: Unpublisher letter
 ---
 
 The purpose of an education is to see through the conjecture and implausible techno-fantasies penned in David Gelernter's recent op-ed piece, [A High-Tech Rebirth From Higher Ed's Ruins](https://www.wsj.com/articles/a-high-tech-rebirth-from-higher-eds-ruins-1485123354?mg=id-wsj), Jan 23, 2017. Would it to be too much for Gelernter to mention an institution, a course, or a faculty member to substantiate his characterization of college as a catastrophic failure with 'slanted readings and random garbage'?

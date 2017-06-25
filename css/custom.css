@@ -1,9 +1,9 @@
 /* This document is for things we hope people modify! */
 
 :root {
-  --trim-width: 5.5in;
-  --trim-height: 8.5in;
-  --outside-margin: .35in;
+  --trim-width: 8.5in;
+  --trim-height: 11in;
+  --outside-margin: .75in;
 }
 
 body {

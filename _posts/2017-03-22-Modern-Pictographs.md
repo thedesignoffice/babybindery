@@ -5,6 +5,7 @@ date: 2017-03-22
 author: John Caserta
 chapter: demo
 introduction: Animated versions of Modern Pictograms.
+publisher: AirBnB
 ---
 
 
