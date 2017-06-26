@@ -26,7 +26,7 @@
   header img { justify-self: center; align-self: center;}
   main { grid-row: 1 / 1; grid-column: 1 / 3; background: blue; }
   .lead { grid-row: 2 / 3; grid-column: 2 / 4; display: grid; z-index: 5; }
-  .lead img { display: grid;  justify-self: center;}
+  .leadimg { display: grid; grid-row: 1 / 3; grid-column: 2 / 4;  justify-self: center; z-index: -1; margin-top: 4vh; margin-bottoM: -4vh; }
   .caption { grid-row: 2 / 3; grid-column: 3 / 4; display: grid; }
   .caption div { transform: rotate(90deg); width: 60vh; transform-origin: 0% 0%; text-align: center;  display: grid; position: relative; right: -1rem; font-family: SpaceMono-Regular; font-size: .8rem; color: green; }
   .output { grid-row: 3 / 4; grid-column: 1 / 4; }
@@ -41,6 +41,7 @@
   .recentadditions span { font-family: SpaceMono-Regular; color: red; }
   footer { display: grid; grid-row: 8 / 9; grid-column: 1 / 4; justify-self: center; align-self: center; }
 
+  .recentadditions h2, .fullindex h2 { font-size: 2.5rem; margin-bottom: 3rem; font-style: italic;  }
   @media only screen and (max-width: 900px) {
     h2, h3 { padding-left: 0;}
     article h3 { margin-left: 0; padding-right: 0; }
@@ -93,13 +94,16 @@ $(document).ready(function($){
     <!-- 3 -->
     <section class="lead">
       <h2>{{ site.description }}</h2>
-      {% for image in site.static_files %}
-        {% if image.path contains '/img/cover2/' %}
-          <img src="{{ site.baseurl }}{{ image.path }}"  alt="image" />
-        {% endif %}
-      {% endfor %}
     </section>
     <div class="caption"><div>Ⓒ 2017 J.C.</div></div>
+
+    <div class="leadimg">
+      {% for image in site.static_files %}
+      {% if image.path contains '/img/cover2/' %}
+        <img src="{{ site.baseurl }}{{ image.path }}"  alt="image" />
+      {% endif %}
+    {% endfor %}
+  </div>
 
     <!-- 4 -->
     <section class="stripe output">
