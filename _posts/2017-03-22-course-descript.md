@@ -6,6 +6,7 @@ author: John Caserta
 chapter: demo
 introduction: Fall 2017 elective at Rhode Island School of Design, Graphic Design Department.
 publisher: RISD Research Elective
+
 ---
 
 Is the Internet making the world a better place or is it simply remaking the world – peacefully transferring capital from 20th century corporations to 21st century ones? If the digital space is becoming primary, then who is tending to the systems of self-government, defined so articulately in the age of Enlightenment?
