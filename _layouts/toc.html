@@ -6,14 +6,16 @@
     {% include custom_css.html %}
 <style>
   body {
+    font-family: "Burgess-Regular", Times, Serif,;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
     margin: 0; padding: 0;
     display: grid;
     grid-template-columns: 3rem 1fr 2rem;
-    grid-template-rows: 4rem minmax(auto, 60vh) 4rem 1fr 4rem auto 4rem 4rem;
+    grid-template-rows: 4rem minmax(auto, 45vh)  4rem 1fr 4rem auto 2rem auto 4rem ;
     grid-gap: 4rem;
   }
+
   a { text-decoration: none; color: #231; }
   .lead h2 { font-size: 4rem; line-height: 100%; position: absolute; width: 50%; max-width: 800px; }
   .lead h2 span { font-style: italic; }
@@ -22,26 +24,35 @@
   z-index: 5; border-bottom: 1px solid #4a4a4a; font-family: DomaineSansText-Regular; }
   nav ul li { display: inline-block; margin-left: 2rem; color: #3a3a3a;  font-size: 1rem; }
   nav ul { margin-left: 5rem;  }
-  header { display: grid; justify-content: center; grid-row: 1 / 9; grid-column: 1 / 2; background: linear-gradient(#0EFAC0, #ECBA0E); padding-top: 1.5rem; }
+  header { display: grid; justify-content: center; grid-row: 1 / 10; grid-column: 1 / 2; background: linear-gradient(#0EFAC0, #ECBA0E); padding-top: 1.5rem; }
   header img { justify-self: center; align-self: center;}
   main { grid-row: 1 / 1; grid-column: 1 / 3; background: blue; }
   .lead { grid-row: 2 / 3; grid-column: 2 / 4; display: grid; z-index: 5; }
-  .leadimg { display: grid; grid-row: 1 / 3; grid-column: 2 / 4;  justify-self: center; z-index: -1; margin-top: 4vh; margin-bottoM: -4vh; }
+  .leadimg { display: grid; grid-row: 1 / 3; grid-column: 2 / 4;  justify-self: center; z-index: -1; margin-top: 4vh; margin-bottom: -4vh; }
   .caption { grid-row: 2 / 3; grid-column: 3 / 4; display: grid; }
   .caption div { transform: rotate(90deg); width: 60vh; transform-origin: 0% 0%; text-align: center;  display: grid; position: relative; right: -1rem; font-family: SpaceMono-Regular; font-size: .8rem; color: green; }
   .output { grid-row: 3 / 4; grid-column: 1 / 4; }
+  .indexdump { margin-left: 3vw; max-width: 1100px;  }
   .recentadditions { grid-row: 4 / 5; grid-column: 2 / 3; }
   .sociallinks { grid-row: 5 / 6; grid-column: 1 / 4; }
   .fullindex { grid-row: 6 / 7; grid-column: 2 / 3; }
-  .colophon { grid-row: 7 / 8; grid-column: 2 / 4; }
-  .stripe { border-top: 1px solid #a7a2a2;  mix-blend-mode: multiply; border-bottom: 1px solid #a7a2a2; display: grid; justify-content: center; align-content: center; color: #797777; font-family: DomaineSansText-Italic; }
+  .colophon { grid-row: 8 / 9; grid-column: 2 / 3; }
+  hr { grid-row: 7 / 8; grid-column: 1 / 4; width: 100%; background: #3a3a3a; border: none;
+    height: 1px;
+ }
+
+  .stripe { border-top: 1px solid #3a3a3a;  mix-blend-mode: multiply; border-bottom: 1px solid #3a3a3a; display: grid; justify-content: center; align-content: center; color: #797777; font-family: DomaineSansText-Italic; }
   svg { width: 30%; display: grid; justify-self: center; fill: #555; }
   .recentadditions ol { font-size: 3rem; line-height: 100%; text-align: center; list-style-type: none; }
   .recentadditions ol li {  text-align: center; padding-left: 1rem; display: inline-block; }
-  .recentadditions span { font-family: SpaceMono-Regular; color: #c12; }
-  footer { display: grid; grid-row: 8 / 9; grid-column: 1 / 4; justify-self: center; align-self: center; }
-
-  .recentadditions h2, .fullindex h2 { font-size: 2.5rem; margin-bottom: 3rem; font-style: italic;  }
+  .recentadditions span { font-family: SpaceMono-Regular; color: #c12; font-size: 94%; }
+  footer { display: grid; grid-row: 9 / 10; grid-column: 1 / 4; justify-self: center; align-self: center; }
+  h3 { font-family: DomaineSansText-Regular; border-bottom: 1px solid #a7a2a2; color: #797777; font-size: 1rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  text-transform: uppercase;}
+  h4 { font-size: 1.8rem; line-height: 2rem; }
+  .indexdump tr { border-bottom: 1px dotted #dedede; }
+  .indexdump td { padding-top: 4px; }
+  .recentadditions h2, .fullindex h2, .colophon h2 { font-size: 2.5rem; margin-bottom: 3rem; font-style: italic;  }
+  h1, h2, h3, h4, h5, p, a {     font-variant-numeric: oldstyle-nums; }
   @media only screen and (max-width: 900px) {
     h2, h3 { padding-left: 0;}
     article h3 { margin-left: 0; padding-right: 0; }
@@ -107,7 +118,42 @@ $(document).ready(function($){
 
     <!-- 4 -->
     <section class="stripe output">
-      Output on {{ site.time }} from Chrome 34.
+      <a href="book.html" class=""><p>This edition was compiled {{site.time | date: "%B %-d, %Y" }} is being rendered by
+
+<script>
+function get_browser(){
+    var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+    if(/trident/i.test(M[1])){
+        tem=/\brv[ :]+(\d+)/g.exec(ua) || [];
+        return 'IE '+(tem[1]||'');
+        }
+    if(M[1]==='Chrome'){
+        tem=ua.match(/\bOPR\/(\d+)/)
+        if(tem!=null)   {return 'Opera '+tem[1];}
+        }
+    M=M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+    if((tem=ua.match(/version\/(\d+)/i))!=null) {M.splice(1,1,tem[1]);}
+    return M[0];
+    }
+function get_browser_version(){
+    var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+    if(/trident/i.test(M[1])){
+        tem=/\brv[ :]+(\d+)/g.exec(ua) || [];
+        return 'IE '+(tem[1]||'');
+        }
+    if(M[1]==='Chrome'){
+        tem=ua.match(/\bOPR\/(\d+)/)
+        if(tem!=null)   {return 'Opera '+tem[1];}
+        }
+    M=M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+    if((tem=ua.match(/version\/(\d+)/i))!=null) {M.splice(1,1,tem[1]);}
+    return M[1];
+    }
+    var browser=get_browser();
+	var browser_version=get_browser_version();
+	document.write(browser);
+	document.write(' ' + browser_version);
+</script>. Print it.</a>
     </section>
 
     <!-- 5 -->
@@ -135,39 +181,48 @@ $(document).ready(function($){
 
     <!-- 7 -->
     <section class="fullindex">
-    <h2>Index of all work</h2>
+    <h2>Index of all posts</h2>
+    <div class="indexdump">
     {% for chapter in site.chapters %}
     <h3>{{ chapter }}</h3>
+    <table width=100%>
     {% for post in site.posts %}
 
       {% if post.chapter == chapter %}
-      <h4 class="{{ post.content-type }}">
-        <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}
+        <tr width=100%>
+        <td width="75%">
+          <a class="post-link" href="{{ post.url | prepend: site.github.url }}">
+          <h4 class="{{ post.content-type }}">
+         {{ post.title }}  <span style="padding-left:0.5rem;  font-size: 1rem; color: #797777; font-family: DomaineSansText-Italic;">{{ post.publisher }}</span>
+       </a>
+        </h4>
+        </td>
+        <td style="padding-left: 2rem; text-align: right; font-variant-numeric: proportional-nums;"  width="25%">
         <!-- {% if post.author %}<span class="author">{{ post.author }}</span> {% endif %}-->
-        <span style="padding-left: 2rem; float: right; font-variant-numeric: proportional-nums;" class="sans post-meta agate">{{ post.date | date: "%b %Y" }}</span>
-        </a>
-      </h4>
+        <a class="post-link" href="{{ post.url | prepend: site.github.url }}"><h4 class="sans post-meta agate"  style=" font-variant-numeric: proportional-nums;">{{ post.date | date: "%b %Y" }}</h4></a>
+        </td>
+        </tr>
       {% if post.index-caption %}<h5 style="padding-left: 4rem;">{{ post.index-caption }}</h5> {% endif %}
       {% endif %}
     {% endfor %}
+  </table>
     {% endfor %}
-
+  </div>
     </section>
 
+    <hr>
+
     <!-- 8 -->
-    <section class="colophon">
-      Colophon type stuff
-      <p><a href="book.html" class="button">Make this into a book</a></p>
+    <section class=" colophon">
+      <h2>About the site</h2>
+      <div class="indexdump">
 
       {{ content }}
 
-      <p><a class="twitter-share-button"
-        href="https://twitter.com/intent/tweet?text={{ page.title }} by {{ page.author }} at {{ site.url }}{{ page.url }}">
-      &larr;</a>  </p>
 
-      <p>
-        {{ site.description }}
-      </p>
+      <p><a href="book.html" class="button">Make this into a book</a></p>
+
+    </div>
     </section>
 
 
