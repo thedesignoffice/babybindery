@@ -9,6 +9,7 @@
     font-family: "Burgess-Regular", Times, Serif,;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
+    font-size: 1.2rem;
     margin: 0; padding: 0;
     display: grid;
     grid-template-columns: 3rem 1fr 2rem;
@@ -20,6 +21,7 @@
   .lead h2 { font-size: 4rem; line-height: 100%; position: absolute; width: 50%; max-width: 800px; }
   .lead h2 span { font-style: italic; }
   .title { position: fixed; display: grid; top: 0; left: 3rem; height: 3rem; width: 100vh; transform: rotate(90deg); transform-origin: 0% 0%; text-align: center; align-content: center; z-index: 3; font-family: DomaineSansText-Medium; color: #444;}
+  .mobiletitle { display: none;  color: purple; }
   nav { grid-row: 1 / 1; grid-column: 1 / 4; display: grid; justify-content: left; align-items: center;
   z-index: 5; border-bottom: 1px solid #4a4a4a; font-family: DomaineSansText-Regular; }
   nav ul li { display: inline-block; margin-left: 2rem; color: #3a3a3a;  font-size: 1rem; }
@@ -29,6 +31,7 @@
   main { grid-row: 1 / 1; grid-column: 1 / 3; background: blue; }
   .lead { grid-row: 2 / 3; grid-column: 2 / 4; display: grid; z-index: 5; }
   .leadimg { display: grid; grid-row: 1 / 3; grid-column: 2 / 4;  justify-self: center; z-index: -1; margin-top: 4vh; margin-bottom: -4vh; }
+  .leadimg img { width: 100%; max-width: 666px; }
   .caption { grid-row: 2 / 3; grid-column: 3 / 4; display: grid; }
   .caption div { transform: rotate(90deg); width: 60vh; transform-origin: 0% 0%; text-align: center;  display: grid; position: relative; right: -1rem; font-family: SpaceMono-Regular; font-size: .8rem; color: green; }
   .output { grid-row: 3 / 4; grid-column: 1 / 4; }
@@ -40,12 +43,13 @@
   hr { grid-row: 7 / 8; grid-column: 1 / 4; width: 100%; background: #3a3a3a; border: none;
     height: 1px;
  }
+ span.publisher { padding-left:0.5rem;  font-size: 1rem; color: #797777; font-family: DomaineSansText-Italic; }
 
-  .stripe { border-top: 1px solid #3a3a3a;  mix-blend-mode: multiply; border-bottom: 1px solid #3a3a3a; display: grid; justify-content: center; align-content: center; color: #797777; font-family: DomaineSansText-Italic; }
+  .stripe { border-top: 1px solid #3a3a3a; text-align: center; padding: 0 4rem; mix-blend-mode: multiply; border-bottom: 1px solid #3a3a3a; display: grid; justify-content: center; align-content: center; color: #797777; font-family: DomaineSansText-Italic; }
   svg { width: 30%; display: grid; justify-self: center; fill: #555; }
   .recentadditions ol { font-size: 3rem; line-height: 100%; text-align: center; list-style-type: none; }
   .recentadditions ol li {  text-align: center; padding-left: 1rem; display: inline-block; }
-  .recentadditions span { font-family: SpaceMono-Regular; color: #c12; font-size: 94%; }
+  .recentadditions .num { font-family: SpaceMono-Regular; color: #c12; font-size: 94%; }
   footer { display: grid; grid-row: 9 / 10; grid-column: 1 / 4; justify-self: center; align-self: center; }
   h3 { font-family: DomaineSansText-Regular; border-bottom: 1px solid #a7a2a2; color: #797777; font-size: 1rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  text-transform: uppercase;}
   h4 { font-size: 1.8rem; line-height: 2rem; }
@@ -56,6 +60,19 @@
   @media only screen and (max-width: 900px) {
     h2, h3 { padding-left: 0;}
     article h3 { margin-left: 0; padding-right: 0; }
+  }
+  @media only screen and (max-width: 970px) {
+    .mobiletitle { display: inline-block; }
+    .recentadditions li { display: block; }
+    .recentadditions ol { font-size: 2.5rem; }
+    nav ul { margin-left: 3rem;  }
+    .title { display: none; }
+    body {     grid-template-columns: 1rem 1fr 0;
+        grid-template-rows: 4rem minmax(auto, 45vh)  4rem 1fr 4rem auto 2rem auto 4rem ;
+ }
+ .publisher { display: block; padding-left: 0rem; }
+  .indexdump { margin-left: 0; }
+    html {font-size: 14px;  }
   }
   @media only screen and (min-width: 1480px) {
     html {font-size: 20px;  }
@@ -85,6 +102,7 @@ $(document).ready(function($){
     <!-- 1 -->
     <nav>
       <ul>
+        <li class="mobiletitle">{{ site.title }}</li>
         <li>Index</li>
         <li>About</li>
       <ul>
@@ -92,13 +110,6 @@ $(document).ready(function($){
 
     <!-- 2 -->
 		<header>
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="29.7 26.6 40.6 50.2" enable-background="new 29.7 26.6 40.6 50.2" xml:space="preserve">
-<g>
-	<path d="M70.3,33.8v43H38.2c-4.7,0-8.5-3.3-8.5-8.2V31.4c0-2.6,2.2-4.8,4.8-4.8h29.8v36.9H38.2c-3.3,0-5.6,1.8-5.6,5v0.2
-		c0,3.2,2.3,5.3,5.6,5.3h29.9V33.8H70.3z M64.2,67.5H38.5c-0.7,0-1.4,0.4-1.4,1c0,0.8,0.6,1.2,1.4,1.2h25.8V67.5z"/>
-</g>
-</svg>
     </header>
 
 
@@ -118,7 +129,7 @@ $(document).ready(function($){
 
     <!-- 4 -->
     <section class="stripe output">
-      <a href="book.html" class=""><p>This edition was compiled {{site.time | date: "%B %-d, %Y" }} is being rendered by
+      <a href="book.html" class=""><p>This edition compiled on {{site.time | date: "%B %-d, %Y" }} and rendered by
 
 <script>
 function get_browser(){
@@ -164,9 +175,9 @@ function get_browser_version(){
       {% for post in site.posts limit:10 %}
 
       <li class="{{ post.content-type }}">
-        <span>{{ numRecent }}→</span><a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}
+        <span class="num">{{ numRecent }}→</span><a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}
         <!-- {% if post.author %}<span class="author">{{ post.author }}</span> {% endif %}-->
-        <span style="padding-left: 0rem; color: grey; font-size: 1rem; font-family: DomaineSansText-Italic; " class="sans post-meta agate">{{ post.publisher }}</span>
+        <span class="publisher">{{ post.publisher }}</span>
         </a>
       </li>
       {% assign numRecent = numRecent | plus: 1 %}
@@ -193,7 +204,7 @@ function get_browser_version(){
         <td width="75%">
           <a class="post-link" href="{{ post.url | prepend: site.github.url }}">
           <h4 class="{{ post.content-type }}">
-         {{ post.title }}  <span style="padding-left:0.5rem;  font-size: 1rem; color: #797777; font-family: DomaineSansText-Italic;">{{ post.publisher }}</span>
+         {{ post.title }}  <span class="publisher">{{ post.publisher }}</span>
        </a>
         </h4>
         </td>
