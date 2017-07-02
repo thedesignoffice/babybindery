@@ -21,7 +21,7 @@
          font-variant-numeric: normal;
       }
       article img {  mix-blend-mode: multiply;}
-      cite { border-bottom: 3px double #797777; }
+      cite { border-bottom: 3px double green; }
       cite:after { content: attr(data-parent); text-align: right; float: right; font-style: italic; font-size: 1rem; line-height: 110%; width: 15%; color: green; margin-left: 2rem; margin-right: -2rem; }
       @media only screen and (max-width: 700px) {
         header p { width: 100%; }
@@ -30,10 +30,25 @@
   </head>
   <body>
 
-
+    <!-- Nav bar -->
+		<nav>
+					<a class="index" href="/">
+							<div>Index</div>
+					</a>
+					<a class="book" href="/book.html">
+							<div>Book</div>
+					</a>
+		</nav>
+		<div class="title"><a href="/">{{ site.title }}</a></div>
+		<div class="colorbar"></div>
+		<div class="colorbar_fixed"></div>
+		<div class="blackbar"></div>
 
 		<!-- Core -->
 		<main>
+			<aside>
+        &larr;
+      </aside>
       <div>
   			<header>
           <p>{% if page.author %}Posted by {{ page.author }} on {% endif %}
@@ -48,8 +63,21 @@
           <h6><a class="twitter-share-button"
         href="https://twitter.com/intent/tweet?text={{ page.title }} by {{ page.author }} at {{ site.url }}{{ page.url }}">
       Tweet this</a>  </h6>
+        {% for chapter in page.chapter %}
+        <h2>More in {{ chapter }}</h2>
+        {% for post in site.posts %}
 
-
+          {% if post.chapter == chapter %}
+          <h3 class="{{ post.content-type }}">
+            <a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}
+            {% if post.author %}<span class="author">{{ post.author }}</span> {% endif %}
+            <span style="padding-left: 2rem; float: right; font-variant-numeric: tabular-nums;" class="sans post-meta agate">{{ post.date | date: "%m/%y" }}</span>
+            </a>
+          </h3>
+          {% if post.index-caption %}<h5 style="padding-left: 4rem;">{{ post.index-caption }}</h5> {% endif %}
+          {% endif %}
+        {% endfor %}
+        {% endfor %}
       </article>
 
 
@@ -57,6 +85,15 @@
 		</main>
 
 
+		<!-- Footer -->
+		<footer>
+					<a class="social" href="http://google.com">
+							<div>social</div>
+					</a>
+					<a class="about" href="http://google.com">
+							<div>About</div>
+					</a>
+		</footer>
 
 
 
