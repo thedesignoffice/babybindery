@@ -13,8 +13,8 @@
       aside { grid-row: 1/8; }
       hr.line1 { width: 100%; border: none; background: #3a3a3a; height: 1px; display: grid; grid-row: 3/4; grid-column: 1/4; }
       hr.line2 { width: 100%; border: none; background: #3a3a3a; height: 1px; display: grid; grid-row: 5/6;  grid-column: 1/4; }
-      .index { display: grid; grid-row: 4/5; grid-column: 2/3; }
-      .about { display: grid; grid-row: 6/7; grid-column: 2/3; }
+      #index { display: grid; grid-row: 4/5; grid-column: 2/3; }
+      #about { display: grid; grid-row: 6/7; grid-column: 2/3; }
       header {  }
       header img { margin: 1rem 0; }
       header h1 { margin-right: 3rem; }
@@ -80,8 +80,8 @@ img, figure img { width: 100%; }
     <nav id="nav">
       <ul>
         <li class="mobiletitle"><a href="/">{{ site.title }}</a></li>
-        <li><a href="#">Index</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="#index">Index</a></li>
+        <li><a href="#about">About</a></li>
       <ul>
     </nav>
     <!-- 2 -->
@@ -118,13 +118,13 @@ img, figure img { width: 100%; }
 
     <hr class="line1">
 
-    <div class="index">
+    <div id="index">
       Index of works
     </div>
 
     <hr class="line2">
 
-    <div class="about">
+    <div id="about">
     About
     </div>
 

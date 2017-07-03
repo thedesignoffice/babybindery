@@ -61,8 +61,8 @@ $(document).ready(function($){
     <nav>
       <ul>
         <li class="mobiletitle">{{ site.title }}</li>
-        <li><a href="#">Index</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="#index">Index</a></li>
+        <li><a href="#about">About</a></li>
       <ul>
     </nav>
 
@@ -149,7 +149,7 @@ function get_browser_version(){
     </section>
 
     <!-- 7 -->
-    <section class="fullindex">
+    <section id="index" class="fullindex">
     <h2>Index of all posts</h2>
     <div class="indexdump">
     {% for chapter in site.chapters %}
@@ -181,7 +181,7 @@ function get_browser_version(){
     <hr>
 
     <!-- 8 -->
-    <section class=" colophon">
+    <section id="about" class=" colophon">
       <h2>About the site</h2>
       <div class="indexdump">
 
