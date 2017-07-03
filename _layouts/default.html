@@ -6,59 +6,131 @@
     {% include universal_css.html %}
     {% include custom_css.html %}
     <style>
-    body {  counter-reset: section;  }
+    main { grid-row: 2 / 3; grid-column: 2 / 3; margin-top: -1rem; }
+    footer { display: grid; grid-row: 7 / 8;  }
 
-      header {padding-right: 4rem; margin-top: 2rem; margin-bottom: 1rem; }
-      header h5 { margin-bottom: 2rem; }
-      header p, time { font-size: 1.18rem; line-height: 140%; font-style: italic; width: 66%; }
+    body {  counter-reset: section;  }
+      aside { grid-row: 1/8; }
+      hr.line1 { width: 100%; border: none; background: #3a3a3a; height: 1px; display: grid; grid-row: 3/4; grid-column: 1/4; }
+      hr.line2 { width: 100%; border: none; background: #3a3a3a; height: 1px; display: grid; grid-row: 5/6;  grid-column: 1/4; }
+      .index { display: grid; grid-row: 4/5; grid-column: 2/3; }
+      .about { display: grid; grid-row: 6/7; grid-column: 2/3; }
+      header {  }
+      header img { margin: 1rem 0; }
+      header h1 { margin-right: 3rem; }
+      header h5, header p, time { font-size: 1.4rem; line-height: 140%; font-style: italic; width: 66%; margin: 0;  }
+      time { font-style: normal; }
       article p:before {
          counter-increment: section;
          content:  counter(section) "  "; /* Looking to make use of webby conventions to sit alongside bookish ones */
          font-family: "space mono";
          font-size: .6rem;
          line-height: 0;
-         color: red; margin: 0 .5rem;
+         color: #cc114a; margin: 0 .5rem;
          font-variant-numeric: normal;
       }
+      article p:nth-child(even) { margin-left: 20%; text-indent: 5rem; }
+      article p:nth-child(odd) { margin-left: 10%; }
+      article p:first-child { margin-left: 10%; text-indent: 0; }
+      article>* { margin-left: 10%; }
+      blockquote, blockquote p { color: #797777; margin-bottom: 2rem; font-style: italic; }
+      h1 { margin-left: 20%;  }
       article img {  mix-blend-mode: multiply;}
-      cite { border-bottom: 3px double #797777; }
-      cite:after { content: attr(data-parent); text-align: right; float: right; font-style: italic; font-size: 1rem; line-height: 110%; width: 15%; color: green; margin-left: 2rem; margin-right: -2rem; }
+      cite { font-family: DomaineSansText-Regular; font-size: 72%; color: #cc114a; }
+      cite:after { content: attr(data-parent);  float: right; font-style: italic;
+        font-size: 1rem; line-height: 110%; width: 15%; color: #cc114a; margin-left: 2rem;
+        margin-right: -2rem; }
       @media only screen and (max-width: 700px) {
         header p { width: 100%; }
 }
+
+article div.images {			display: grid;
+			padding: 0;
+			min-height: 200px;
+      margin: 1rem 0;
+      padding: 3rem 0;
+      border-top: 1px solid #797777;
+      border-bottom: 1px solid #797777;
+			grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+			grid-column-gap: 10px;
+			align-content: space-around;
+			justify-content: space-between;
+       counter-reset: figurecounter;
+}
+figure {
+justify-self: center; align-self: start; text-align: center;
+margin: 1rem .5rem;
+}
+figcaption:before {
+    color: #cc114a;
+        counter-increment: figurecounter;
+         content:   counter(figurecounter) " - ";
+}
+img, figure img { width: 100%; }
+
+
      </style>
   </head>
   <body>
 
 
+    <div class="title"><a href="/">{{ site.title }}</a></div>
+
+    <!-- 1 -->
+    <nav id="nav">
+      <ul>
+        <li class="mobiletitle"><a href="/">{{ site.title }}</a></li>
+        <li><a href="#">Index</a></li>
+        <li><a href="#">About</a></li>
+      <ul>
+    </nav>
+    <!-- 2 -->
+		<aside>
+    </aside>
 
 		<!-- Core -->
-		<main>
+		<main id="top">
       <div>
   			<header>
-          <p>{% if page.author %}Posted by {{ page.author }} on {% endif %}
-          <time datetime="page.date">{{ page.date | date: "%B %-d, %Y" }}</time></p>
-          <h1>{{ page.title }}</h1>
           <h5>{{ page.introduction }}   This has {{ page.content | number_of_words }} words and is filed under: {{ page.chapter }}.</h5>
+          {% if page.heroimage %}
+            <img src="{{ page.heroimage }}" alt="image" />
+          {% endif %}
+          <h1>{{ page.title }}</h1>
+          <p class="label">{% if page.author %}Posted by {{ page.author }} on {% endif %}
+            <time datetime="page.date">{{ page.date | date: "%B %-d, %Y" }}</time></p>
   			</header>
 
   			<article>
           {{ content }}
+        </article>
+      {% if page.herocaption %}
+          <h6>Image at <a href="#top">top</a>: {{ page.herocaption }}</h6>
+      {% endif %}
 
-          <h6><a class="twitter-share-button"
-        href="https://twitter.com/intent/tweet?text={{ page.title }} by {{ page.author }} at {{ site.url }}{{ page.url }}">
-      Tweet this</a>  </h6>
-
-
-      </article>
+      <h4><a class="twitter-share-button"
+    href="https://twitter.com/intent/tweet?text={{ page.title }} by {{ page.author }} at {{ site.url }}{{ page.url }}">
+  Post this to twitter</a>  </h4>
 
 
       </div>
 		</main>
 
+    <hr class="line1">
 
+    <div class="index">
+      Index of works
+    </div>
 
+    <hr class="line2">
 
+    <div class="about">
+    About
+    </div>
+
+    <footer>
+        standard
+    </footer>
 
   </body>
 </html>

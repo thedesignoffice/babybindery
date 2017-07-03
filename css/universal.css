@@ -1,4 +1,81 @@
-html {  font-size: 14pt; height: 100%; }
+/* universal core */
+
+  body {
+    font-family: "Burgess-Regular", Times, Serif,;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    font-size: 1.2rem;
+    color: black;
+    line-height: 140%;
+    margin: 0; padding: 0;
+    display: grid;
+    grid-template-columns: 3rem 1fr 2rem;
+    grid-template-rows: 4rem minmax(auto, 45vh) /* 4rem 1fr 4rem auto 2rem auto 4rem  */ auto;
+    grid-gap: 4rem;
+  }
+
+  footer { grid-column: 1 / 4; justify-self: center; align-self: center; }
+
+  footer { margin-bottom: 2rem; }
+  a, a:visited { text-decoration: none; color: #231; }
+  a:hover { color: #cc114a; /* background: linear-gradient(to right, #eee, #fff); */ }
+
+
+  /* universal nav branding*/
+  .title { position: fixed; display: grid; top: 0; left: 3rem; height: 3rem; width: 100vh; transform: rotate(90deg); transform-origin: 0% 0%; text-align: center; align-content: center; z-index: 3; font-family: DomaineSansText-Medium; color: #444;}
+  .mobiletitle,   .mobiletitle a  { display: none;  color: rgba(70, 200, 142, 1); }
+  nav { grid-row: 1 / 1; grid-column: 1 / 4; display: grid; justify-content: left; align-items: center;  z-index: 5; border-bottom: 1px solid #4a4a4a; font-family: DomaineSansText-Regular; }
+  nav ul li { display: inline-block; margin-left: 2rem; color: #3a3a3a;  font-size: 1rem; }
+  nav ul { margin-left: 5rem;  }
+  aside { display: grid; justify-content: center; grid-row: 1 / 10; grid-column: 1 / 2; background: linear-gradient(#0EFAC0, #ECBA0E); padding-top: 1.5rem; }
+  @media only screen and (max-width: 970px) {
+    .mobiletitle, .mobiletitle a { display: inline-block; }
+    .mobiletitle a:hover { color:#cc114a }
+    nav ul { margin-left: 3rem;  }
+    .title { display: none; }
+    body {     grid-template-columns: 1rem 1fr 1rem; grid-gap: 3rem;}
+    nav ul { margin-left: 2rem;  }
+  }
+
+    /* universal elements */
+    .indexdump { margin-left: 3vw; max-width: 1100px;  }
+    .indexdump tr { border-bottom: 1px dotted #dedede; }
+    .indexdump td { padding-top: .3rem; }
+
+
+
+    /* universal text */
+    h1 { font-size: 6.225vw; margin: 4rem 0; line-height: 100%;  font-variant-numeric: proportional-nums; }
+    h2 { font-size: 2.5rem; margin-bottom: 2rem; font-style: italic;  }
+    h3 { font-family: DomaineSansText-Regular;  color: #cc114a; font-size: 1.8rem; margin: 2rem 0 1rem 20%;  }
+    article h3 { margin-left: 20%;}
+    h4 { font-size: 1.8rem; line-height: 2rem; }
+    h5, h6 { font-size: 1.18rem; line-height: 140%; margin: 1rem 0; width: 66%; }
+    h6 { font-family: DomaineSansText-Regular; margin-left: 20%; color: #797777; width: 66%;  }
+    h2, h3, h4, h5, p, a {     font-variant-numeric: oldstyle-nums; }
+    .label { font-family: DomaineSansText-Regular; font-style: normal; color: #797777; font-size: 1.4rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  }
+    span.publisher { padding-left:0.5rem;  font-size: 1rem; color: #797777; font-family: DomaineSansText-Italic; }
+
+    article p { line-height: 140%; letter-spacing: .1px; font-size: 1.8rem; color: #3a3a3a;  }
+
+    @media only screen and (max-width: 970px) {
+      .indexdump { margin-left: 0; }
+      .indexdump td { padding-bottom: .4rem; }
+      .recentadditions li { display: block; }
+      .recentadditions ol { font-size: 2.5rem; }
+      h1 { font-size: 4rem; }
+      .publisher { display: block; padding-left: 0rem; }
+    }
+
+
+    /* core queries */
+    @media only screen and (max-width: 970px) {  html {font-size: 15px;  }}
+    @media only screen and (max-width: 500px) {  html {font-size: 14px;  }}
+    @media only screen and (min-width: 1480px) {  html {font-size: 20px;  }}
+
+
+
+/* html {  font-size: 14pt; height: 100%; }
 body{
   width: 100%;
   margin: 0;
@@ -76,10 +153,6 @@ h1 { font-size: 6.225vw; margin-top: 4rem; line-height: 100%; margin-bottom: 4re
 
 h2 { font-size: 2.5rem; margin-bottom: 3rem; font-style: italic;  }
 
-/* h2 { padding-left: 2rem; border-top: 3px double black;
-  font-size: 2rem; color: black; padding-top: 1rem; line-height: 100%;
-  margin: 2rem 0 .7rem 0;  }
-  */
 
   h3 { font-family: DomaineSansText-Regular; border-bottom: 1px solid #a7a2a2; color: #797777; font-size: 1rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  text-transform: uppercase;}
   h4 { font-size: 1.8rem; line-height: 2rem; }
@@ -119,7 +192,7 @@ margin: 1rem .5rem;
 figcaption:before {
     color: red;
         counter-increment: figurecounter;
-         content:   counter(figurecounter) " - "; /* Looking to make use of webby conventions to sit alongside bookish ones */
+         content:   counter(figurecounter) " - ";
 }
 figure img { width: 100%; }
 
@@ -144,3 +217,4 @@ p {  margin: 0; margin-bottom: 1em;
   h5 { width: 100%; }
   h2 { margin: 2rem 0 1rem 0; }
 }
+*/

@@ -3,51 +3,16 @@
   <head>
     {% include metadata.html %}
     {% include meyer_reset.html %}
+    {% include universal_css.html %}
     {% include custom_css.html %}
 <style>
-/* universal core */
-
-  body {
-    font-family: "Burgess-Regular", Times, Serif,;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-    font-size: 1.2rem;
-    color: black;
-    line-height: 140%;
-    margin: 0; padding: 0;
-    display: grid;
-    grid-template-columns: 3rem 1fr 2rem;
-    grid-template-rows: 4rem minmax(auto, 45vh) /* 4rem 1fr 4rem auto 2rem auto 4rem  */ auto;
-    grid-gap: 4rem;
-  }
-
-  footer { margin-bottom: 2rem; }
-  a, a:visited { text-decoration: none; color: #231; }
-  a:hover { color: #cc114a; /* background: linear-gradient(to right, #eee, #fff); */ }
-
-
-  /* universal nav branding*/
-  .title { position: fixed; display: grid; top: 0; left: 3rem; height: 3rem; width: 100vh; transform: rotate(90deg); transform-origin: 0% 0%; text-align: center; align-content: center; z-index: 3; font-family: DomaineSansText-Medium; color: #444;}
-  .mobiletitle { display: none;  color: rgba(70, 200, 142, 1); }
-  nav { grid-row: 1 / 1; grid-column: 1 / 4; display: grid; justify-content: left; align-items: center;  z-index: 5; border-bottom: 1px solid #4a4a4a; font-family: DomaineSansText-Regular; }
-  nav ul li { display: inline-block; margin-left: 2rem; color: #3a3a3a;  font-size: 1rem; }
-  nav ul { margin-left: 5rem;  }
-  header { display: grid; justify-content: center; grid-row: 1 / 10; grid-column: 1 / 2; background: linear-gradient(#0EFAC0, #ECBA0E); padding-top: 1.5rem; }
-  @media only screen and (max-width: 970px) {
-    .mobiletitle { display: inline-block; }
-    nav ul { margin-left: 3rem;  }
-    .title { display: none; }
-    body {     grid-template-columns: 1rem 1fr 1rem; grid-gap: 3rem;}
-    nav ul { margin-left: 2rem;  }
-  }
-
 
   /* toc top area */
   .lead h1 { font-size: 4rem; line-height: 100%; position: absolute; width: 50%; max-width: 800px; margin: 0;}
   .lead h1 span { font-style: italic; }
   .lead { grid-row: 2 / 3; grid-column: 2 / 4; display: grid; z-index: 5; }
   .leadimg { display: grid; grid-row: 1 / 3; grid-column: 2 / 4;  justify-self: center; z-index: -1; margin-top: 4vh; margin-bottom: -4vh; }
-  .leadimg img { width: 100%; max-width: 666px; }
+  .leadimg img { width: 100%; max-width: 666px; height: auto;  }
   .caption { grid-row: 2 / 3; grid-column: 3 / 4; display: grid; }
   .caption div { transform: rotate(90deg); width: 60vh; transform-origin: 0% 0%; text-align: center; display: grid; position: relative; right: -1rem; font-family: SpaceMono-Regular; font-size: .8rem; color: green; }
   @media only screen and (max-width: 700px) {  .lead h1, .caption, .output span {display: none; }}
@@ -61,47 +26,14 @@
   hr { grid-row: 7 / 8; grid-column: 1 / 4; width: 100%; background: #3a3a3a; border: none;
     height: 1px; }
   .stripe { border-top: 1px solid #3a3a3a; text-align: center; padding: 0 4rem; height: 4rem; mix-blend-mode: multiply; border-bottom: 1px solid #3a3a3a; display: grid; justify-content: center; align-content: center; color: #797777; font-family: DomaineSansText-Italic; }
+  h3 { font-family: DomaineSansText-Regular; border-bottom: 1px solid #a7a2a2; color: #797777; font-size: 1rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  text-transform: uppercase;}
 
   .recentadditions { grid-row: 4 / 5; grid-column: 2 / 3; }
   .recentadditions ol { font-size: 3rem; line-height: 100%; text-align: center; list-style-type: none; }
   .recentadditions ol li {  text-align: center; padding-left: 1rem; display: inline-block; }
   .recentadditions .num { font-family: SpaceMono-Regular; color: #cc114a; font-size: 94%; }
 
-  footer { display: grid; grid-row: 9 / 10; grid-column: 1 / 4; justify-self: center; align-self: center; }
-
-  @media only screen and (max-width: 970px) {
-    .recentadditions li { display: block; }
-    .recentadditions ol { font-size: 2.5rem; }
-    .publisher { display: block; padding-left: 0rem; }
-  }
-
-
-
-  /* universal elements */
-  .indexdump { margin-left: 3vw; max-width: 1100px;  }
-  .indexdump tr { border-bottom: 1px dotted #dedede; }
-  .indexdump td { padding-top: 4px; }
-
-  @media only screen and (max-width: 970px) {
-    .indexdump { margin-left: 0; }
-  }
-
-
-  /* universal text */
-  h1 { font-size: 6.225vw; margin: 4rem 0; line-height: 100%;  font-variant-numeric: proportional-nums; }
-  h2 { font-size: 2.5rem; margin-bottom: 3rem; font-style: italic;  }
-  h3 { font-family: DomaineSansText-Regular; border-bottom: 1px solid #a7a2a2; color: #797777; font-size: 1rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  text-transform: uppercase;}
-  h4 { font-size: 1.8rem; line-height: 2rem; }
-  h5, h6 { font-size: 1.18rem; line-height: 140%; margin: 1rem 0; width: 66%; }
-  h6 { margin-left: 2rem; color: #636363; width: 66%;  }
-  h2, h3, h4, h5, p, a {     font-variant-numeric: oldstyle-nums; }
-  span.publisher { padding-left:0.5rem;  font-size: 1rem; color: #797777; font-family: DomaineSansText-Italic; }
-
-
-  /* core queries */
-  @media only screen and (max-width: 970px) {  html {font-size: 15px;  }}
-  @media only screen and (max-width: 500px) {  html {font-size: 14px;  }}
-  @media only screen and (min-width: 1480px) {  html {font-size: 20px;  }}
+  footer { display: grid; grid-row: 9 / 10;  }
 
 </style>
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -129,14 +61,14 @@ $(document).ready(function($){
     <nav>
       <ul>
         <li class="mobiletitle">{{ site.title }}</li>
-        <li>Index</li>
-        <li>About</li>
+        <li><a href="#">Index</a></li>
+        <li><a href="#">About</a></li>
       <ul>
     </nav>
 
     <!-- 2 -->
-		<header>
-    </header>
+		<aside>
+    </aside>
 
 
     <!-- 3 -->

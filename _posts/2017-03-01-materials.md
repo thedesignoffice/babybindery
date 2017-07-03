@@ -4,18 +4,20 @@ title: Typography and Material Workshop
 date: 2017-03-01
 author: John Caserta
 chapter: demo
-index-caption:
+heroimage: https://scontent.fbos1-1.fna.fbcdn.net/v/t31.0-8/17239901_10212726003529852_6300614403378196507_o.jpg?oh=c4c64870bb09f6e52fb25a5428cf9305&oe=596317EF
+herocaption: Type made from bricks atop a mill building in Providence
 introduction: Activity and talk given at Brown Design Workshop on Wednesday, March 15, 2017, 5pm – 7pm
 publisher: Brown Design Workshop
 ---
+
+
+The shape of letters is dependent on tools and materials. Materials are involved in two ways: the material used to inscribe letterforms, and the material into which the letters are inscribed. Letters are made by something and exist on something (or in it). The history of typography shadows the history of printing presses and papermaking. But given the boon in digital fabrication options, letterforms themselves are finding new shapes. Whether on plastic, styrofoam, wood, vinyl, metal or made by hand, letters can look like almost anything if you let them.
 
 ![Ebner](http://1.bp.blogspot.com/-9S5L2nrk-l0/T8zQ1RedFOI/AAAAAAAAGiE/7eOijCeQgU8/s1600/7.jpg)
 
 ###### Artist Shannon Ebner works with cement blocks. [See more of her work](http://url)
 
-The shape of letters is dependent on tools and materials. Materials are involved in two ways: the material used to inscribe letterforms, and the material into which the letters are inscribed. Letters are made by something and exist on something (or in it). The history of typography shadows the history of printing presses and papermaking. But given the boon in digital fabrication options, letterforms themselves are finding new shapes. Whether on plastic, styrofoam, wood, vinyl, metal or made by hand, letters can look like almost anything if you let them.
-
-I will show <mark>digital</mark> and physical <cite data-parent="Footnote text here. Such and such and such. Footnote text here. Such and such and such">examples</cite> of typography made with various tools and materials. Attendees should bring their laptops in order to fabricate their own letterforms in the Brown Design Workshop. Some materials will be on hand, but attendees are encouraged to bring their own.
+I will show <mark>digital</mark> and physical examples <cite data-parent="Note outcomes from previous workshop">( figures 1-4 )</cite> of typography made with various tools and materials. Attendees should bring their laptops in order to fabricate their own letterforms in the Brown Design Workshop. Some materials will be on hand, but attendees are encouraged to bring their own.
 
 
 <div class="images" markdown="1">
