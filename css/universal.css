@@ -54,7 +54,7 @@ main a:hover {  border-bottom: 1px solid #cc114a; /* background: linear-gradient
     h3 { font-family: DomaineSansText-Regular;  color: #cc114a; font-size: 1.8rem; margin: 3rem 0 1rem 20%;  }
     #index h3 { font-family: DomaineSansText-Regular; border-bottom: 1px solid #a7a2a2; color: #797777; font-size: 1rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  text-transform: uppercase;}
     article h3 { margin-left: 20%;}
-    h4 { font-size: 1.8rem; line-height: 2rem;  }
+    h4 { font-size: 1.8rem; line-height: 2rem; line-height: 130%; }
     article h4 { margin-bottom: .5rem; font-style: italic; }
     h5, h6 { font-size: 1.18rem; line-height: 140%; margin: 1rem 0; width: 66%; }
     h6 { font-family: DomaineSansText-Regular; margin-left: 20%; color: #797777; width: 66%;  }
