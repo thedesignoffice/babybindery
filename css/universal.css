@@ -17,8 +17,11 @@
   footer { grid-column: 1 / 4; justify-self: center; align-self: center; }
 
   footer { margin-bottom: 2rem; }
-  a, a:visited { text-decoration: none; color: #231; }
-  a:hover { color: #cc114a; /* background: linear-gradient(to right, #eee, #fff); */ }
+  a, a:visited { text-decoration: none; color: #231;  }
+  a:hover { color: #cc114a;/* background: linear-gradient(to right, #eee, #fff); */ }
+
+  main a,   main a:visited {  border-bottom: 1px solid #797777; }
+main a:hover {  border-bottom: 1px solid #cc114a; /* background: linear-gradient(to right, #eee, #fff); */ }
 
 
   /* universal nav branding*/
@@ -47,9 +50,12 @@
     /* universal text */
     h1 { font-size: 6.225vw; margin: 4rem 0; line-height: 100%;  font-variant-numeric: proportional-nums; }
     h2 { font-size: 2.5rem; margin-bottom: 2rem; font-style: italic;  }
-    h3 { font-family: DomaineSansText-Regular;  color: #cc114a; font-size: 1.8rem; margin: 2rem 0 1rem 20%;  }
+    article h2 { font-size: 2.5rem; padding: 4rem 0 1rem 0%; margin-left: 0; font-style: italic;  }
+    h3 { font-family: DomaineSansText-Regular;  color: #cc114a; font-size: 1.8rem; margin: 3rem 0 1rem 20%;  }
+    #index h3 { font-family: DomaineSansText-Regular; border-bottom: 1px solid #a7a2a2; color: #797777; font-size: 1rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  text-transform: uppercase;}
     article h3 { margin-left: 20%;}
-    h4 { font-size: 1.8rem; line-height: 2rem; }
+    h4 { font-size: 1.8rem; line-height: 2rem;  }
+    article h4 { margin-bottom: .5rem; font-style: italic; }
     h5, h6 { font-size: 1.18rem; line-height: 140%; margin: 1rem 0; width: 66%; }
     h6 { font-family: DomaineSansText-Regular; margin-left: 20%; color: #797777; width: 66%;  }
     h2, h3, h4, h5, p, a {     font-variant-numeric: oldstyle-nums; }

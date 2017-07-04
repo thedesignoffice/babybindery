@@ -4,10 +4,10 @@ title: On Mary Beth Meehan
 date: 2017-05-15
 author: John Caserta
 chapter: demo
+heroimage: http://thedesignoffice.org/wp-content/uploads/2017/04/overview.jpg
 publisher: The Design Office
 
 ---
-![MBM](http://thedesignoffice.org/wp-content/uploads/2017/04/overview.jpg)
 
 Hello, I'm John Caserta, founder and director of The Design Office. I want to welcome all of you here... particularly newcomers. Bathroom and fire exits? The Office is coming up upon 10 years, and has for the past five has hosted events that foster meaningful conversation and mingling amongst designers and related fields. One topic of interest here has been the city of Providence, itself. I was pleased to see Mary Beth's work become part of the city -- at city scale -- uncommon -- quite a different experience than seeing photography in snapchat or instagram. The series captures the best of our fellow citizens and places them high up for all to see.
 

@@ -26,7 +26,6 @@
   hr { grid-row: 7 / 8; grid-column: 1 / 4; width: 100%; background: #3a3a3a; border: none;
     height: 1px; }
   .stripe { border-top: 1px solid #3a3a3a; text-align: center; padding: 0 4rem; height: 4rem; mix-blend-mode: multiply; border-bottom: 1px solid #3a3a3a; display: grid; justify-content: center; align-content: center; color: #797777; font-family: DomaineSansText-Italic; }
-  h3 { font-family: DomaineSansText-Regular; border-bottom: 1px solid #a7a2a2; color: #797777; font-size: 1rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  text-transform: uppercase;}
 
   .recentadditions { grid-row: 4 / 5; grid-column: 2 / 3; }
   .recentadditions ol { font-size: 3rem; line-height: 100%; text-align: center; list-style-type: none; }
@@ -159,14 +158,14 @@ function get_browser_version(){
 
       {% if post.chapter == chapter %}
         <tr width=100%>
-        <td width="75%">
+        <td width="85%">
           <a class="post-link" href="{{ post.url | prepend: site.github.url }}">
           <h4 class="{{ post.content-type }}">
          {{ post.title }}  <span class="publisher">{{ post.publisher }}</span>
        </a>
         </h4>
         </td>
-        <td style="padding-left: 2rem; text-align: right; font-variant-numeric: proportional-nums;"  width="25%">
+        <td style="padding-left: 2rem; text-align: right; font-variant-numeric: proportional-nums;"  width="15%">
         <!-- {% if post.author %}<span class="author">{{ post.author }}</span> {% endif %}-->
         <a class="post-link" href="{{ post.url | prepend: site.github.url }}"><h4 class=""  style=" font-variant-numeric: proportional-nums;">{{ post.date | date: "%Y" }}</h4></a>
         </td>
