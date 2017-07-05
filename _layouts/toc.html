@@ -21,6 +21,7 @@
   /* toc elements */
   .output { grid-row: 3 / 4; grid-column: 1 / 4; }
   .sociallinks { grid-row: 5 / 6; grid-column: 1 / 4; }
+  .sociallinks li { display: inline-block; margin-right: 2rem; }
   .fullindex { grid-row: 6 / 7; grid-column: 2 / 3; }
   .colophon { grid-row: 8 / 9; grid-column: 2 / 3; }
   hr { grid-row: 7 / 8; grid-column: 1 / 4; width: 100%; background: #3a3a3a; border: none;
@@ -145,7 +146,11 @@ function get_browser_version(){
 
     <!-- 6 -->
     <section class="stripe sociallinks">
-      instagram _ twitter _ are.na _ vimeo _ github
+      <ul>
+      {% if site.instagram_username %}<li><a href="http://instagram.com/{{ site.instagram_username }}">instagram</a></li>{% endif %}
+      {% if site.twitter_username %}<li><a href="http://twitter.com/{{ site.twitter_username }}">twitter</a></li>{% endif %}
+      {% if site.github_username %}<li><a href="http://github.com/{{ site.github_username }}">github</a></li>{% endif %}
+      </ul>
     </section>
 
     <!-- 7 -->

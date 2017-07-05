@@ -19,5 +19,5 @@ chapters: ["chapter one", demo] # note that if you have a multi-word content typ
 book_width: 8.5in
 book_height: 11in
 margin: .75in
-num_pages: 100
+num_pages: 500
 markdown: kramdown
