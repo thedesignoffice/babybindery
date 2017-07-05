@@ -79,11 +79,12 @@
     }
     @media only screen and (max-width: 500px) {
     .indexdump td { padding-top: 0; padding-bottom: 0; }
+    span.publisher { display: none; }
   }
 
     /* core queries */
     @media only screen and (max-width: 970px) {  html {font-size: 15px;  }}
-    @media only screen and (max-width: 500px) {  html {font-size: 14px;  }}
+    @media only screen and (max-width: 500px) {  html {font-size: 12px;  }}
     @media only screen and (min-width: 1480px) {  html {font-size: 18px;  }}
 
 
