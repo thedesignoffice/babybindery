@@ -29,7 +29,7 @@
   /* universal nav branding*/
   .title { position: fixed; display: grid; top: 0; left: 3rem; height: 3rem; width: 100vh; transform: rotate(90deg); transform-origin: 0% 0%; text-align: center; align-content: center; z-index: 3; font-family: DomaineSansText-Medium; color: #444;}
   .mobiletitle,   .mobiletitle a  { display: none;  color: rgba(70, 200, 142, 1); }
-  nav { grid-row: 1 / 1; grid-column: 1 / 4; display: grid; justify-content: left; align-items: center;  z-index: 5; border-bottom: 1px solid #4a4a4a; font-family: DomaineSansText-Regular; }
+  nav { grid-row: 1 / 1; grid-column: 1 / 4; display: grid; justify-content: left; align-items: center;  z-index: 5; border-bottom: 1px solid #4a4a4a; font-family: DomaineSansText-Regular, "Lucida Grande", verdana, sans-serif; ; }
   nav ul li { display: inline-block; margin-left: 2rem; color: #3a3a3a;  font-size: 1rem; }
   nav ul { margin-left: 5rem;  }
   aside { display: grid; justify-content: center; grid-row: 1 / 10; grid-column: 1 / 2; background: linear-gradient(#0EFAC0, #ECBA0E); padding-top: 1.5rem; }
@@ -49,26 +49,27 @@
     .indexdump { margin-left: 3vw;  }
     .indexdump tr { border-bottom: 1px dotted #dedede; }
     .indexdump td { padding-top: .3rem; }
-
+    .twitter-share-button { margin-top: 2rem; font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif; font-size: 1.4rem; }
 
 
     /* universal text */
     h1 { font-size: 6.225vw; margin: 4rem 0; line-height: 100%;  font-variant-numeric: proportional-nums; }
-    h2 { font-size: 2.5rem; margin-bottom: 2rem; font-style: italic;  }
+    h2 { font-size: 2.5rem; margin-bottom: 3rem; font-style: italic;  }
     article h2 { font-size: 2.5rem; padding: 4rem 0 1rem 0%; margin-left: 0; font-style: italic;  }
-    h3 { font-family: DomaineSansText-Regular;  color: #cc114a; font-size: 1.8rem; margin: 3rem 0 1rem 20%;  }
-    #index h3 { font-family: DomaineSansText-Regular; border-bottom: 1px solid #a7a2a2; color: #797777; font-size: 1rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  text-transform: uppercase;}
+    h3 { font-family: DomaineSansText-Regular, "Lucida Grande", verdana, sans-serif;   color: #cc114a; font-size: 1.6rem; margin: 3rem 0 .7rem 20%;  }
+    #index h3 { font-family: DomaineSansText-Regular, "Lucida Grande", verdana, sans-serif; border-bottom: 1px solid #a7a2a2; color: #797777; font-size: 1rem; padding: .5rem 0; margin: 2rem 0 .3rem 0;  text-transform: uppercase;}
     article h3 { margin-left: 20%;}
     h4 { font-size: 1.8rem; line-height: 2rem; line-height: 130%; }
     article h4 { margin-bottom: .5rem; font-style: italic; }
     h5, h6 { font-size: 1.18rem; line-height: 140%; margin: 1rem 0; width: 66%; }
-    h6 { font-family: DomaineSansText-Regular; margin-left: 20%; color: #797777; width: 66%;  }
+    h6 { font-family: DomaineSansText-Regular, "Lucida Grande", verdana, sans-serif;  margin-left: 20%; color: #797777; width: 66%;  }
     h2, h3, h4, h5, p, a {     font-variant-numeric: oldstyle-nums; }
-    .label { font-family: DomaineSansText-Regular; font-style: normal; color: #797777; font-size: 1.4rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  }
+    .label { font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif;  font-style: normal; color: #797777; font-size: 1.4rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  }
     span.publisher { padding-left:0.5rem;  font-size: 1rem; color: #797777; font-family: DomaineSansText-Italic; }
 
     article p { line-height: 140%; letter-spacing: .1px; font-size: 1.8rem; color: #3a3a3a;  }
 
+    main { max-width: 1400px; }
     @media only screen and (max-width: 970px) {
       .indexdump { margin-left: 0; }
       .indexdump td { padding-bottom: .4rem; }
@@ -85,7 +86,7 @@
     /* core queries */
     @media only screen and (max-width: 970px) {  html {font-size: 15px;  }}
     @media only screen and (max-width: 500px) {  html {font-size: 12px;  }}
-    @media only screen and (min-width: 1480px) {  html {font-size: 18px;  }}
+    @media only screen and (min-width: 1480px) {  html {font-size: 18px;} h1 { font-size: 5.5rem; }}
 
 
 

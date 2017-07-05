@@ -62,8 +62,8 @@ $(document).ready(function($){
     <nav>
       <ul>
         <li class="mobiletitle">{{ site.title }}</li>
-        <li><a href="#index">Index</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#indexjump">Index</a></li>
+        <li><a href="#aboutjump">About</a></li>
       <ul>
     </nav>
 
@@ -145,7 +145,7 @@ function get_browser_version(){
     </section>
 
     <!-- 6 -->
-    <section class="stripe sociallinks">
+    <section class="stripe sociallinks" id="indexjump">
       <ul>
       {% if site.instagram_username %}<li><a href="http://instagram.com/{{ site.instagram_username }}">instagram</a></li>{% endif %}
       {% if site.twitter_username %}<li><a href="http://twitter.com/{{ site.twitter_username }}">twitter</a></li>{% endif %}
@@ -183,7 +183,7 @@ function get_browser_version(){
   </div>
     </section>
 
-    <hr>
+    <hr id="aboutjump">
 
     <!-- 8 -->
     <section id="about" class=" colophon">
