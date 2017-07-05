@@ -1,4 +1,6 @@
 <div class="menu noprint">
+  <p>Select content to paginate </p>
+  <div id="select_button" class="button">Select All</div><div id="deselect_button" class="button">Deselect All</div>
   <ul id="content_selection_menu">
     {% for chapter in site.chapters %}
       {% for post in site.posts %}
@@ -15,5 +17,4 @@
     {% endfor %}
   </ul>
   <div id="trim_pages_button" class="button">Trim Pages</div> <div style="display: none" id="assign_pagenums_button" class="button">Get Page Numbers</div> <div style="display: none" id="print_button" class="button">Print!</div> &nbsp; &nbsp; <div style="display: none" id="refresh_button" class="button">↺ Refresh</div> <br />
-  <div id="select_button" class="button">Select All</div> <div id="deselect_button" class="button">Deselect All</div>
 </div>

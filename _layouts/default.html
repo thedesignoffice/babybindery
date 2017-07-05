@@ -37,10 +37,9 @@
       blockquote, blockquote p { color: #797777; margin-bottom: 2rem; font-style: italic; }
       h1 { margin-left: 20%;  }
       article img {  mix-blend-mode: multiply;}
-      cite { font-family: DomaineSansText-Regular;  border-bottom: 1px solid  #cc114a; }
+      cite { font-family: DomaineSansText-Regular; font-size: 92%;  border-bottom: 1px solid  #cc114a; }
       cite:after { content: attr(data-parent);  float: right; font-style: italic;
-        font-size: 1rem; line-height: 110%; width: 15%; color: #cc114a; margin-left: 2rem;
-        margin-right: -2rem; }
+        font-size: 1rem; line-height: 110%; width: 15%; color: #cc114a;  }
       @media only screen and (max-width: 700px) {
         header p { width: 100%; }
         article p:nth-child(even) { margin-left: 0%;  text-indent: 10%; }
@@ -78,7 +77,7 @@ img, figure img { width: 100%; padding: .5rem 0; }
      </style>
   </head>
   <body>
-
+    <div class="gridwrap">
 
     <div class="title"><a href="/">{{ site.title }}</a></div>
 
@@ -162,6 +161,8 @@ img, figure img { width: 100%; padding: .5rem 0; }
     <footer>
         standard
     </footer>
+
+  </div>
 
   </body>
 </html>

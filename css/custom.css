@@ -1,10 +1,5 @@
 /* This document is for things we hope people modify! */
 
-:root {
-  --trim-width: 8.5in;
-  --trim-height: 11in;
-  --outside-margin: .75in;
-}
 
 body {
   font-family: "Burgess-Regular", Times, Serif, 'Space Mono', monospace;

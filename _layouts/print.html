@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <style>
+  :root {
+    --trim-width: {{ site.book_width }};
+    --trim-height: {{ site.book_height }};
+    --outside-margin: {{ site.margin }};
+  }
+  .mobiletitle, .mobiletitle a { display: inline-block; }
+  .mobiletitle a:hover { color:#cc114a }
+  nav { height: 4rem; }
+  </style>
     {% include metadata.html %}
     {% include meyer_reset.html %}
     {% include jquery.html %}
@@ -11,6 +21,13 @@
   </head>
 
   <body>
+    <nav class="noprint">
+      <ul>
+        <li class="mobiletitle">{{ site.title }}</li>
+        <li>Book size: {{ site.book_width }} 	&#215;  {{ site.book_height }}</li>
+      <ul>
+    </nav>
+
 
     {% include print_menu.html %}
 

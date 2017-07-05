@@ -5,11 +5,16 @@
 :root { /* Should variables be defined in here again...? */
  }
 
+ /* Overriding responsive universal queries */
+ @media only screen and (max-width: 970px) {  html {font-size: 16px;  }}
+ @media only screen and (max-width: 500px) {  html {font-size: 16px;  }}
+ @media only screen and (min-width: 1480px) {  html {font-size: 16px;  }}
+
 body{
   width: calc((var(--trim-width)*2 + 50px)); /* What about on mobile? Maybe we just imipose this as a max width. -Lukas */
   counter-reset: section links citations;
   margin: 0;
-  background: #e4edfd;
+  background: #eaeaea;
 }
 
 a{
@@ -54,13 +59,25 @@ img{
 }
 
 .menu{
-  margin: 20px;
+  position: absolute;
+  top: 6rem;
+  left: 7rem;
+  width: 60%;
   font-family: 'space mono', monospace; /* Fonts should be defined in universal or custom.css -Lukas */
   font-size: .8rem;
 }
-.menu li {
-  margin-left: 1rem;
+.menu ul {     -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
 }
+.menu li {
+}
+.button { display: inline-block;  margin: 1rem 1rem 0 0;  }
+.chapter-checkbox { margin-left: 2rem; }
+
+.menu div.button {   color: rgba(70, 200, 142, 1); }
+
+.menu div.button:hover { cursor: pointer; color: #cc114a;  }
 
 .sheet-wrapper {
   width: calc((var(--trim-width)*2 + 25px));  /* can we make this in a relative amount instead of pixels? -Lukas */
@@ -204,23 +221,33 @@ margin-left: 3rem;
 }
 
 .chapter_head {
+  page-break-before: always;
+  page-break-after: always;
   break-before: always;
   break-after: always;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
-  color: red;
-  font-size: 2rem;
+  color: black;
+  font-size: 4rem;
   padding-bottom: 2rem;
   text-transform: capitalize;
 }
 
+.chapter-title {
+  page-break-before: always;
+  break-before: always;
+}
 .chapter-title .article {   counter-reset: section; }
 .newchapter { /* could be used to break between chapters, etc  */
 
 }
 
-h2 {  }
+h1 { color: blue; }
+h2 { color: green; }
+h3 { color: pink; }
+h4 { color: gold; }
+
 
 .page p {
   margin: 0;
