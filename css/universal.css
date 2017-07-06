@@ -1,7 +1,7 @@
 /* universal core */
 
   body {
-    font-family: "Burgess-Regular", Times, Serif,;
+    font-family: "Burgess-Regular", Times, Serif, 'Space Mono', monospace;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
     font-size: 1.2rem;
@@ -117,7 +117,7 @@
 article div.images {			display: grid;
 			padding: 0;
 			min-height: 200px;
-      margin: 1rem 0;
+      margin: 2rem 0;
       padding: 3rem 0;
       border-top: 1px solid #797777;
       border-bottom: 1px solid #797777;
