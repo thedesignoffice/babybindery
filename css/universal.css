@@ -99,9 +99,10 @@
       h1 { margin-left: 20%;  }
       article img { max-width: 640px; transition: 1s all; }
       article img:hover {   max-width: 90%; }
-      cite, article strong, article b { font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif;  font-size: 92%;  border-bottom: 1px solid  #cc114a; padding: 0 .2rem; }
+      cite, article strong, article b { font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif; font-weight: normal; font-size: 92%;  border-bottom: 1px solid  #cc114a; padding: 0 .2rem; }
       cite:after { content: attr(data-parent);  font-style: italic;
         font-size: .9rem; line-height: 110%; color: #cc114a; padding: .5rem;  }
+      article strong, article b { border-bottom: none;}
 
       @media only screen and (max-width: 900px) {
         header p { width: 100%; }
@@ -129,7 +130,7 @@ figure {
 justify-self: center; align-self: start; text-align: center;
 margin: 1rem .5rem;
 }
-figcaption { font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif;  font-size: 92%; }
+figcaption { font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif;  font-size: 1.2rem; line-height: 140%; }
 figcaption:before {
     color: #cc114a;
         counter-increment: figurecounter;
