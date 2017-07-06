@@ -66,6 +66,7 @@ cite::after{
 img{
   max-height: 100%;
 }
+article img { max-width: 100%; }
 
 .menu{
   position: absolute;

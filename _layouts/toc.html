@@ -5,6 +5,7 @@
     {% include meyer_reset.html %}
     {% include universal_css.html %}
     {% include custom_css.html %}
+    {% include jquery.html %}
 <style>
 
   /* toc top area */
@@ -26,7 +27,8 @@
   .colophon { grid-row: 8 / 9; grid-column: 2 / 3; }
   hr { grid-row: 7 / 8; grid-column: 1 / 4; width: 100%; background: #3a3a3a; border: none;
     height: 1px; }
-  .stripe { border-top: 1px solid #3a3a3a; text-align: center; padding: 0 4rem; height: 4rem; mix-blend-mode: multiply; border-bottom: 1px solid #3a3a3a; display: grid; justify-content: center; align-content: center; color: #797777; font-family: DomaineSansText-Italic; }
+  .stripe { border-top: 1px solid #3a3a3a; text-align: center; padding: 0 4rem; height: 4rem; mix-blend-mode: multiply; border-bottom: 1px solid #3a3a3a;
+    display: grid; justify-content: center; align-content: center; color: #797777; font-family: "DomaineSansText-Italic", "Lucida Grande", verdana, sans-serif;  }
 
   .recentadditions { grid-row: 4 / 5; grid-column: 2 / 3; }
   .recentadditions ol { font-size: 3rem; line-height: 100%; text-align: center; list-style-type: none;  }
@@ -36,7 +38,6 @@
   footer { display: grid; grid-row: 9 / 10;  }
 
 </style>
-<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <!-- grabs first two words of description to italicize -->
 <script>
 $(document).ready(function($){

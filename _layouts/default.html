@@ -9,72 +9,12 @@
     main { grid-row: 2 / 3; grid-column: 2 / 3; margin-top: -1rem; }
     footer { display: grid; grid-row: 7 / 8;  }
 
-    body {  counter-reset: section;  }
+    body {  counter-reset: section figurecounter;  }
       aside { grid-row: 1/8; }
       hr.line1 { width: 100%; border: none; background: #3a3a3a; height: 1px; display: grid; grid-row: 3/4; grid-column: 1/4; }
       hr.line2 { width: 100%; border: none; background: #3a3a3a; height: 1px; display: grid; grid-row: 5/6;  grid-column: 1/4; }
       #index { display: grid; grid-row: 4/5; grid-column: 2/3; }
       #about { display: grid; grid-row: 6/7; grid-column: 2/3; }
-      header {  }
-      header img { margin: 1rem 0 0; }
-      header h1 { margin-right: 3rem; }
-      header h5, header p, time { font-size: 1.4rem; line-height: 140%; font-style: italic; width: 66%; margin: 0;  }
-      time { font-style: normal; }
-      article p:before {
-         counter-increment: section;
-         content:  counter(section) "  "; /* Looking to make use of webby conventions to sit alongside bookish ones */
-         font-family: "space mono";
-         font-size: .6rem;
-         line-height: 0;
-         color: #cc114a; margin: 0 .5rem;
-         font-variant-numeric: normal;
-      }
-      article p:nth-child(even) { margin-left: 20%;  }
-      article p:nth-child(odd) { margin-left: 10%; text-indent: 10%;}
-      article p:first-child { margin-left: 10%; text-indent: 0; }
-      article h3 + p:nth-child(even), article h3 + p:nth-child(odd) { margin-left: 20%; text-indent: -1.7rem; }
-      article>* { margin-left: 10%; }
-      blockquote, blockquote p { color: #797777; margin-bottom: 2rem; font-style: italic; }
-      h1 { margin-left: 20%;  }
-      article img {  mix-blend-mode: multiply;}
-      cite, article strong, article b { font-family: DomaineSansText-Regular; font-size: 92%;  border-bottom: 1px solid  #cc114a; }
-      cite:after { content: attr(data-parent);  float: right; font-style: italic;
-        font-size: 1rem; line-height: 110%; width: 15%; color: #cc114a; padding: 1rem;  }
-      @media only screen and (max-width: 900px) {
-        header p { width: 100%; }
-        h1 { margin-left: 0; }
-        header h5 { width: 100%; }
-        article p:nth-child(even) { margin-left: 0%;  text-indent: 10%; }
-        article p:nth-child(odd) { margin-left: 0%; text-indent: 10%;}
-        article p:first-child { margin-left: 0%; text-indent: 0; }
-        article p { font-size: 1.5rem; }
-      }
-
-article div.images {			display: grid;
-			padding: 0;
-			min-height: 200px;
-      margin: 1rem 0;
-      padding: 3rem 0;
-      border-top: 1px solid #797777;
-      border-bottom: 1px solid #797777;
-			grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-			grid-column-gap: 10px;
-			align-content: space-around;
-			justify-content: space-between;
-       counter-reset: figurecounter;
-}
-figure {
-justify-self: center; align-self: start; text-align: center;
-margin: 1rem .5rem;
-}
-figcaption { font-family: DomaineSansText-Regular; }
-figcaption:before {
-    color: #cc114a;
-        counter-increment: figurecounter;
-         content:   counter(figurecounter) " - ";
-}
-img, figure img { width: 100%; padding: .5rem 0; }
-
 
      </style>
   </head>
@@ -134,14 +74,14 @@ img, figure img { width: 100%; padding: .5rem 0; }
 
         {% if post.chapter == chapter %}
           <tr width=100%>
-          <td width="75%">
+          <td width="85%">
             <a class="post-link" href="{{ post.url | prepend: site.github.url }}">
             <h4 class="{{ post.content-type }}">
            {{ post.title }}  <span class="publisher">{{ post.publisher }}</span>
          </a>
           </h4>
           </td>
-          <td style="padding-left: 2rem; text-align: right; font-variant-numeric: proportional-nums;"  width="25%">
+          <td style="padding-left: 2rem; text-align: right; font-variant-numeric: proportional-nums;"  width="15%">
           <!-- {% if post.author %}<span class="author">{{ post.author }}</span> {% endif %}-->
           <a class="post-link" href="{{ post.url | prepend: site.github.url }}"><h4 class=""  style=" font-variant-numeric: proportional-nums;">{{ post.date | date: "%Y" }}</h4></a>
           </td>
