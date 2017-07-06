@@ -9,6 +9,7 @@
     line-height: 140%;
     margin: 0; padding: 0;
   }
+  .printonly { display: none; }
   .gridwrap {
     display: grid;
     grid-template-columns: 3rem 1fr 2rem;
@@ -110,8 +111,8 @@
         header h5 { width: 100%; }
         article p:nth-child(even) { margin-left: 0%;  text-indent: 10%; }
         article p:nth-child(odd) { margin-left: 0%; text-indent: 10%;}
-        article p:first-child { margin-left: 0%; text-indent: 0; }
-        article p { font-size: 1.5rem; }
+        article p:first-child, article h3 + p:nth-child(even), article h3 + p:nth-child(odd) { margin-left: 0%; text-indent: 0; }
+        article p { font-size: 1.5rem; line-height: 140%; }
       }
 
 article div.images {			display: grid;

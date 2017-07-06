@@ -44,6 +44,9 @@ a::after{
   font-size: 70%;
   font-style: italic;
 }*/
+
+.printonly { display: block; }
+
 cite{
   font-size: 0pt; /* This is dumb but it works. */
 }
@@ -245,8 +248,6 @@ margin-left: 3rem;
 }
 
 .chapter-title {
-  page-break-before: always;
-  break-before: always;
 }
 .chapter-title .article {   counter-reset: section; }
 .newchapter { /* could be used to break between chapters, etc  */
