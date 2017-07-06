@@ -42,6 +42,7 @@
     nav ul { margin-left: 2rem;  }
   }
   @media only screen and (max-width: 500px) {
+    nav ul { margin-left: 1rem; }
     .gridwrap {     grid-template-columns: 1rem 1fr .5rem; grid-gap: 2rem;}
   }
 
