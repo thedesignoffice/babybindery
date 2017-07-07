@@ -55,7 +55,7 @@
 
 
     /* universal text */
-    h1 { font-size: 6.225vw; margin: 4rem 0; line-height: 100%; max-width: 1200px;  font-variant-numeric: proportional-nums; }
+    h1 { font-size: 6.225vw; margin: 4rem 0; line-height: 100%; max-width: 1350px;  font-variant-numeric: proportional-nums; margin-left: 20%; }
     h2 { font-size: 2.5rem; margin-bottom: 3rem; font-style: italic;  }
     article h2 { font-size: 2.5rem; padding: 4rem 0 1rem 0%; margin-left: 0; font-style: italic;  }
     h3 { font-family: DomaineSansText-Regular, "Lucida Grande", verdana, sans-serif;
@@ -79,11 +79,11 @@
 
       header {  }
       header img { margin: 1rem 0 0; }
-      header h1 { margin-right: 3rem; }
+      header h1 { margin-right: 1rem; }
       header h5, header p, time { font-size: 1.4rem; line-height: 140%; font-style: italic; width: 66%; margin: 0;  }
       time { font-style: normal; }
-      article { max-width: 1350px; display: grid; justify-self: center; }
-      main>div { display: grid; align-content: center; justify-items: center;}
+      article { max-width: 1350px; display: grid; align-content: center; justify-self: center; }
+      main>div { display: grid; }
       article p:before {
          counter-increment: section;
          content:  counter(section) "  "; /* Looking to make use of webby conventions to sit alongside bookish ones */
@@ -99,7 +99,6 @@
       article h3 + p:nth-child(even), article h3 + p:nth-child(odd) { margin-left: 20%; text-indent: -1.7rem; }
       article>* { margin-left: 10%; }
       blockquote, blockquote p { color: #797777; margin-bottom: 2rem; font-style: italic; }
-      h1 { margin-left: 20%;  }
       article img { max-width: 640px; transition: 1s all; }
       article img:hover {   max-width: 96%; cursor:zoom-in; }
       article .gallery img:hover { max-width: none; cursor: default; }
@@ -122,7 +121,7 @@ article div.gallery {			display: grid;
 			padding: 0;
 			min-height: 200px;
       margin: 2rem 0;
-      padding: 1rem 0;
+      padding: 2rem 0;
       border-top: 1px solid #797777;
       border-bottom: 1px solid #797777;
 			grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -131,9 +130,10 @@ article div.gallery {			display: grid;
 			justify-content: space-between;
 }
 figure {
-justify-self: center; align-self: start; text-align: center;
-margin: 2rem .5rem;
+  justify-self: center; align-self: start; text-align: center;
+  margin: 2rem .5rem;
 }
+.gallery figure { margin: 1rem .5rem; }
 figcaption { font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif;  font-size: 1.2rem; line-height: 140%; color: #797777; }
 figcaption:before {
     color: #cc114a;
