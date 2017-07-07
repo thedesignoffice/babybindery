@@ -122,7 +122,7 @@ article div.gallery {			display: grid;
 			padding: 0;
 			min-height: 200px;
       margin: 2rem 0;
-      padding: 3rem 0;
+      padding: 1rem 0;
       border-top: 1px solid #797777;
       border-bottom: 1px solid #797777;
 			grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -132,9 +132,9 @@ article div.gallery {			display: grid;
 }
 figure {
 justify-self: center; align-self: start; text-align: center;
-margin: 1rem .5rem;
+margin: 2rem .5rem;
 }
-figcaption { font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif;  font-size: 1.2rem; line-height: 140%; }
+figcaption { font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif;  font-size: 1.2rem; line-height: 140%; color: #797777; }
 figcaption:before {
     color: #cc114a;
         counter-increment: figurecounter;
