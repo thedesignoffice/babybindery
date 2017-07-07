@@ -6,10 +6,9 @@ author: John Caserta
 chapter: demo
 introduction: Proposal for RISD GD journal about the topic of intersections.
 publisher: in-progress
+heroimage: /img/men_desks.jpg
 
 ---
-
-![co-working](/img/men_desks.jpg)
 
 What does collaboration look like? Having run The Design Office — a collaborative of designers — for 10 years, I have been keeping a list of ways that designers can work together — since the term gets thrown around as something that is either easy to achieve or necessary.  
 

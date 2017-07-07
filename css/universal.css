@@ -55,7 +55,7 @@
 
 
     /* universal text */
-    h1 { font-size: 6.225vw; margin: 4rem 0; line-height: 100%; max-width: 1350px;  font-variant-numeric: proportional-nums; margin-left: 20%; }
+    h1 { font-size: 6.225vw; line-height: 105%; max-width: 1350px; font-variant-numeric: proportional-nums; margin: 4rem 0; margin-left: 10%; }
     h2 { font-size: 2.5rem; margin-bottom: 3rem; font-style: italic;  }
     article h2 { font-size: 2.5rem; padding: 4rem 0 1rem 0%; margin-left: 0; font-style: italic;  }
     h3 { font-family: DomaineSansText-Regular, "Lucida Grande", verdana, sans-serif;
@@ -72,7 +72,7 @@
     .label { font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif;  font-style: normal; color: #797777; font-size: 1.4rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  }
     span.publisher { padding-left:0.5rem;  font-size: 1rem; color: #797777; font-family: DomaineSansText-Italic; }
 
-    article { line-height: 140%; letter-spacing: .1px; font-size: 1.8rem; color: #3a3a3a; display: grid; align-self: center;}
+    article { line-height: 140%; letter-spacing: .1px; font-size: 1.8rem; color: #3a3a3a;  max-width: 1350px; }
     article ol, article ul { margin-left: 20%; line-height: 140%; letter-spacing: .1px;
       font-size: 1.4rem;  }
 
@@ -80,10 +80,9 @@
       header {  }
       header img { margin: 1rem 0 0; }
       header h1 { margin-right: 1rem; }
-      header h5, header p, time { font-size: 1.4rem; line-height: 140%; font-style: italic; width: 66%; margin: 0;  }
+      header h5, header p, time { font-size: 1.4rem; line-height: 140%; font-style: italic; width: 66%; max-width: 950px; margin: 0;  }
       time { font-style: normal; }
-      article { max-width: 1350px; display: grid; align-content: center; justify-self: center; }
-      main>div { display: grid; }
+      main>div { display: grid; justify-items: center;  }
       article p:before {
          counter-increment: section;
          content:  counter(section) "  "; /* Looking to make use of webby conventions to sit alongside bookish ones */
