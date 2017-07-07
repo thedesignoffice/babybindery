@@ -15,6 +15,9 @@ url: "https://thedesignoffice.github.io/babybindery" # the base hostname & proto
 twitter_username: designofficepvd
 github_username: thedesignoffice
 instagram_username: designofficepvd
+arena_username: john-caserta
+vimeo_username: user1072259
+medium_username: 
 chapters: ["chapter one", demo] # note that if you have a multi-word content type to wrap it in quotes. This is not necessary in your post files, however.
 book_width: 8.5in
 book_height: 11in
