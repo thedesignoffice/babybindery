@@ -20,6 +20,8 @@
 
 
   /* toc elements */
+  .stripe { border-top: 1px solid #3a3a3a; text-align: center; padding: 0 4rem; height: 5rem; mix-blend-mode: multiply; border-bottom: 1px solid #3a3a3a;
+    display: grid; justify-content: center; align-content: center; color: #797777; font-family: "DomaineSansText-Italic", "Lucida Grande", verdana, sans-serif;  }
   .output { grid-row: 3 / 4; grid-column: 1 / 4; }
   .sociallinks { grid-row: 5 / 6; grid-column: 1 / 4; }
   .sociallinks li { display: inline-block; margin-right: 1.2rem; }
@@ -27,12 +29,10 @@
   .colophon { grid-row: 8 / 9; grid-column: 2 / 3; }
   hr { grid-row: 7 / 8; grid-column: 1 / 4; width: 100%; background: #3a3a3a; border: none;
     height: 1px; }
-  .stripe { border-top: 1px solid #3a3a3a; text-align: center; padding: 0 4rem; height: 4rem; mix-blend-mode: multiply; border-bottom: 1px solid #3a3a3a;
-    display: grid; justify-content: center; align-content: center; color: #797777; font-family: "DomaineSansText-Italic", "Lucida Grande", verdana, sans-serif;  }
 
 
-  .sociallinks img { height: 3rem; padding-top: .8rem; width: 2rem; opacity: .7; transition: .5s all; }
-  .sociallinks img:hover { opacity: 1; }
+  .sociallinks img { height: 6rem; padding-top: .8rem; width: 2.3rem; opacity: 1; transition: .5s all; }
+  .sociallinks img:hover { opacity: .5; }
 
   .recentadditions { grid-row: 4 / 5; grid-column: 2 / 3; }
   .recentadditions ol { font-size: 3rem; line-height: 100%; text-align: center; list-style-type: none;  }
@@ -154,7 +154,7 @@ function get_browser_version(){
       <ul>
       {% if site.instagram_username %}<li><a href="http://instagram.com/{{ site.instagram_username }}"><img src="/img/social/instagram.svg"></a></li>{% endif %}
       {% if site.twitter_username %}<li><a href="http://twitter.com/{{ site.twitter_username }}"><img src="/img/social/twitter.svg"></a></li>{% endif %}
-      {% if site.vimeo %}<li><a href="http://vimeo.com/{{ site.vimeo }}"><img src="/img/social/vimeo.svg"></a></a></li>{% endif %}
+      {% if site.vimeo_username %}<li><a href="http://vimeo.com/{{ site.vimeo }}"><img src="/img/social/vimeo.svg"></a></a></li>{% endif %}
       {% if site.arena_username %}<li><a href="https://www.are.na./{{ site.arena_username }}"><img src="/img/social/arena.svg"></a></a></li>{% endif %}
       {% if site.medium_username %}<li><a href="http://medium.com/@{{ site.medium_username }}"><img src="/img/social/medium.svg"></a></a></li>{% endif %}
       {% if site.github_username %}<li><a href="http://github.com/{{ site.github_username }}"><img src="/img/social/github.svg"></a></a></li>{% endif %}
