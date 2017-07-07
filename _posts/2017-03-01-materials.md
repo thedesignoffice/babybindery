@@ -19,7 +19,7 @@ The shape of letters is dependent on tools and materials. Materials are involved
 I will show digital and physical examples **(figures 1-4)** of typography made with various tools and materials. Attendees should bring their laptops in order to fabricate their own letterforms in the Brown Design Workshop. Some materials will be on hand, but attendees are encouraged to bring their own.
 
 
-<div class="images" markdown="1">
+<div class="gallery" markdown="1">
 
 {% include images.html url="/img/materials/IMG_0451.jpg" description="Tape is easy to work with and its curling works well with letterforms" %}
 
