@@ -1,7 +1,17 @@
-/* universal core */
+---
+---
+/* universal variables */
+$serif: "Burgess-Regular", Times, Serif, 'Space Mono', monospace;
+$sans: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif;
+$mono: "Space Mono", monospace;
+$grey: #797777;
+$darkgrey: #3a3a3a;
+$linkdefault: #231;
+$linkhover: #cc114a;
 
+//
   body {
-    font-family: "Burgess-Regular", Times, Serif, 'Space Mono', monospace;
+    font-family: $serif;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
     font-size: 1.2rem;
@@ -20,18 +30,18 @@
   footer { grid-column: 1 / 4; justify-self: center; align-self: center; }
 
   footer { margin-bottom: 2rem; }
-  a, a:visited { text-decoration: none; color: #231;  }
-  a:hover { color: #cc114a;/* background: linear-gradient(to right, #eee, #fff); */ }
+  a, a:visited { text-decoration: none; color: $linkdefault;  }
+  a:hover { color: $linkhover;/* background: linear-gradient(to right, #eee, #fff); */ }
 
-  article a,   article a:visited {  border-bottom: 1px solid #797777; }
-  article a:hover {  border-bottom: 1px solid #cc114a; /* background: linear-gradient(to right, #eee, #fff); */ }
+  article a,   article a:visited {  border-bottom: 1px solid $grey; }
+  article a:hover {  border-bottom: 1px solid $linkhover; /* background: linear-gradient(to right, #eee, #fff); */ }
 
 
   /* universal nav branding*/
   .title { position: fixed; display: grid; top: 0; left: 3rem; height: 3rem; width: 100vh; transform: rotate(90deg); transform-origin: 0% 0%; text-align: center; align-content: center; z-index: 3; font-family: DomaineSansText-Medium; color: #444;}
   .mobiletitle,   .mobiletitle a  { display: none;  color: rgba(70, 200, 142, 1); }
-  nav { grid-row: 1 / 1; grid-column: 1 / 4; display: grid; justify-content: left; align-items: center;  z-index: 5; border-bottom: 1px solid #4a4a4a; font-family: DomaineSansText-Regular, "Lucida Grande", verdana, sans-serif; ; }
-  nav ul li { display: inline-block; margin-left: 2rem; color: #3a3a3a;  font-size: 1rem; }
+  nav { grid-row: 1 / 1; grid-column: 1 / 4; display: grid; justify-content: left; align-items: center;  z-index: 5; border-bottom: 1px solid #4a4a4a; font-family: $sans; }
+  nav ul li { display: inline-block; margin-left: 2rem; color: $darkgrey;  font-size: 1rem; }
   nav ul { margin-left: 5rem;  }
   aside { display: grid; justify-content: center; grid-row: 1 / 10; grid-column: 1 / 2; background: linear-gradient(#0EFAC0, #ECBA0E); padding-top: 1.5rem; }
   @media only screen and (max-width: 970px) {
@@ -51,28 +61,28 @@
     .indexdump { margin-left: 3vw;  }
     .indexdump tr { border-bottom: 1px dotted #dedede; }
     .indexdump td { padding-top: .3rem; }
-    .twitter-share-button { justify-self: left; margin-top: 2rem; font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif; font-size: 1.4rem; }
+    .twitter-share-button { justify-self: left; margin-top: 2rem; font-family: $sans; font-size: 1.4rem; }
 
 
     /* universal text */
     h1 { font-size: 6.225vw; line-height: 105%; max-width: 1350px; font-variant-numeric: proportional-nums; margin: 4rem 0; margin-left: 10%; }
     h2 { font-size: 2.5rem; margin-bottom: 3rem; font-style: italic;  }
     article h2 { font-size: 2.5rem; padding: 4rem 0 1rem 0%; margin-left: 0; font-style: italic;  }
-    h3 { font-family: DomaineSansText-Regular, "Lucida Grande", verdana, sans-serif;
-     color: #cc114a; font-size: 1.6rem; margin: 3rem 0 .2rem 20%;  }
-    #index h3 { font-family: DomaineSansText-Regular, "Lucida Grande", verdana, sans-serif;
-    border-bottom: 1px solid #a7a2a2; color: #797777; font-size: 1rem; padding: .5rem 0;
+    h3 { font-family: $sans;
+     color: $linkhover; font-size: 1.6rem; margin: 3rem 0 .2rem 20%;  }
+    #index h3 { font-family: $sans;
+    border-bottom: 1px solid #a7a2a2; color: $grey; font-size: 1rem; padding: .5rem 0;
     margin: 2rem 0 .3rem 0;  text-transform: uppercase;}
     article h3 { margin-left: 20%;}
     h4 { font-size: 1.8rem; line-height: 2rem; line-height: 130%; }
     article h4 { margin-bottom: .5rem; font-style: italic; }
     h5, h6 { font-size: 1.18rem; line-height: 140%; margin: 1rem 0; width: 66%; }
-    h6 { font-family: DomaineSansText-Regular, "Lucida Grande", verdana, sans-serif;  margin-left: 20%; color: #797777; width: 66%;  }
+    h6 { font-family: $sans;  margin-left: 20%; color: #797777; width: 66%;  }
     h2, h3, h4, h5, p, a {     font-variant-numeric: oldstyle-nums; }
-    .label { font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif;  font-style: normal; color: #797777; font-size: 1.4rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  }
-    span.publisher { padding-left:0.5rem;  font-size: 1rem; color: #797777; font-family: DomaineSansText-Italic; }
+    .label { font-family: $sans;  font-style: normal; color: $grey; font-size: 1.4rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  }
+    span.publisher { padding-left:0.5rem;  font-size: 1rem; color: $grey; font-family: $sans; font-style: italic;}
 
-    article { line-height: 140%; letter-spacing: .1px; font-size: 1.8rem; color: #3a3a3a;  max-width: 1350px; }
+    article { line-height: 140%; letter-spacing: .1px; font-size: 1.8rem; color: $darkgrey;  max-width: 1350px; }
     article ol, article ul { margin-left: 20%; line-height: 140%; letter-spacing: .1px;
       font-size: 1.4rem;  }
 
@@ -97,17 +107,17 @@
       article p:first-child { margin-left: 10%; text-indent: 0; }
       article h3 + p:nth-child(even), article h3 + p:nth-child(odd) { margin-left: 20%; text-indent: -1.7rem; }
       article>* { margin-left: 10%; }
-      blockquote, blockquote p { color: #797777; margin-bottom: 2rem; font-style: italic; }
+      blockquote, blockquote p { color: $grey; margin-bottom: 2rem; font-style: italic; }
       article img { max-width: 640px; transition: 1s all; }
       article img:hover {   max-width: 96%; cursor:zoom-in; }
       article .gallery img:hover { max-width: none; cursor: default; }
-      cite, article strong, article b { font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif; font-weight: normal; font-size: 92%;  border-bottom: 1px solid  #cc114a; padding: 0 .2rem; }
+      cite, article strong, article b { font-family: $sans; font-weight: normal; font-size: 92%;  border-bottom: 1px solid  #cc114a; padding: 0 .2rem; }
       cite:after { content: attr(data-parent);  font-style: italic;
-        font-size: .9rem; line-height: 110%; color: #cc114a; padding: .5rem;  }
+        font-size: .9rem; line-height: 110%; color: $linkhover; padding: .5rem;  }
       article strong, article b { border-bottom: none;}
 
       #about p {  font-size: 1.4rem; text-indent: 10%;  line-height: 140%; color: #3a3a3a; }
-      #about p:first-child { text-indent: 0; font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif; font-weight: normal; font-size: 1.8rem; line-height: 140%; color: #3a3a3a; }
+      #about p:first-child { text-indent: 0; font-family: $sans; font-weight: normal; font-size: 1.8rem; line-height: 140%; color: #3a3a3a; }
       @media only screen and (max-width: 900px) {
         header p { width: 100%; }
         h1 { margin-left: 0; }
@@ -135,9 +145,9 @@ figure {
   margin: 2rem .5rem;
 }
 .gallery figure { margin: 1rem .5rem; }
-figcaption { font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif;  font-size: 1.2rem; line-height: 140%; color: #797777; }
+figcaption { font-family: $sans;  font-size: 1.2rem; line-height: 140%; color: $grey; }
 figcaption:before {
-    color: #cc114a;
+    color: $linkhover;
         counter-increment: figurecounter;
          content:   " [ " counter(figurecounter) " ] ";
 }
