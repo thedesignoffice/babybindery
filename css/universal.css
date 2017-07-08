@@ -51,7 +51,7 @@
     .indexdump { margin-left: 3vw;  }
     .indexdump tr { border-bottom: 1px dotted #dedede; }
     .indexdump td { padding-top: .3rem; }
-    .twitter-share-button { margin-top: 2rem; font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif; font-size: 1.4rem; }
+    .twitter-share-button { justify-self: left; margin-top: 2rem; font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif; font-size: 1.4rem; }
 
 
     /* universal text */
@@ -106,6 +106,8 @@
         font-size: .9rem; line-height: 110%; color: #cc114a; padding: .5rem;  }
       article strong, article b { border-bottom: none;}
 
+      #about p {  font-size: 1.4rem; text-indent: 10%;  line-height: 140%; color: #3a3a3a; }
+      #about p:first-child { text-indent: 0; font-family: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif; font-weight: normal; font-size: 1.8rem; line-height: 140%; color: #3a3a3a; }
       @media only screen and (max-width: 900px) {
         header p { width: 100%; }
         h1 { margin-left: 0; }
