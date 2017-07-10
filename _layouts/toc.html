@@ -136,7 +136,8 @@ function get_browser_version(){
       <h2>Recent additions</h2>
       <ol>
         {% assign numRecent = 1 %}
-      {% for post in site.posts limit:10 %}
+
+      {% for post in site.posts  limit:10 %}
 
       <li class="{{ post.content-type }}">
         <span class="num">{{ numRecent }}→</span><a class="post-link" href="{{ post.url | prepend: site.github.url }}"> {{ post.title }}

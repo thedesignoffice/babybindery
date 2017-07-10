@@ -1,7 +1,7 @@
 ---
 ---
 /* universal variables */
-$serif: "Burgess-Regular", Times, Serif, 'Space Mono', monospace;
+$serif: "Burgess-Regular", "Times New Roman", Times, serif;
 $sans: "DomaineSansText-Regular", "Lucida Grande", verdana, sans-serif;
 $mono: "Space Mono", monospace;
 $grey: #797777;
@@ -78,7 +78,7 @@ $linkhover: #cc114a;
     article h4 { margin-bottom: .5rem; font-style: italic; }
     h5, h6 { font-size: 1.18rem; line-height: 140%; margin: 1rem 0; width: 66%; }
     h6 { font-family: $sans;  margin-left: 20%; color: #797777; width: 66%;  }
-    h2, h3, h4, h5, p, a {     font-variant-numeric: oldstyle-nums; }
+    h2, h3, h4, h5, p, a, table {     font-variant-numeric: oldstyle-nums; }
     .label { font-family: $sans;  font-style: normal; color: $grey; font-size: 1.4rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  }
     span.publisher { padding-left:0.5rem;  font-size: 1rem; color: $grey; font-family: $sans; font-style: italic;}
 
@@ -96,10 +96,10 @@ $linkhover: #cc114a;
       article p:before {
          counter-increment: section;
          content:  counter(section) "  "; /* Looking to make use of webby conventions to sit alongside bookish ones */
-         font-family: "space mono";
+         font-family: $mono;
          font-size: .6rem;
          line-height: 0;
-         color: #cc114a; margin: 0 .5rem;
+         color: $linkhover; margin: 0 .5rem;
          font-variant-numeric: normal;
       }
       article p:nth-child(even) { margin-left: 20%;  }
@@ -117,15 +117,17 @@ $linkhover: #cc114a;
       article strong, article b { border-bottom: none;}
 
       #about p {  font-size: 1.4rem; text-indent: 10%;  line-height: 140%; color: #3a3a3a; }
-      #about p:first-child { text-indent: 0; font-family: $sans; font-weight: normal; font-size: 1.8rem; line-height: 140%; color: #3a3a3a; }
+      #about p:first-child { text-indent: 0; font-family: $sans; font-weight: normal; font-size: 1.8rem; line-height: 140%; color: $darkgrey; }
       @media only screen and (max-width: 900px) {
+        article>* { margin-left: 0%; }
+        article img:hover {   max-width: none; cursor:default; }
         header p { width: 100%; }
         h1 { margin-left: 0; }
         header h5 { width: 100%; }
         article p:nth-child(even) { margin-left: 0%;  text-indent: 10%; }
         article p:nth-child(odd) { margin-left: 0%; text-indent: 10%;}
         article p:first-child, article h3 + p:nth-child(even), article h3 + p:nth-child(odd) { margin-left: 0%; text-indent: 0; }
-        article p { font-size: 1.5rem; line-height: 140%; }
+        article p, article td { font-size: 1.5rem; line-height: 140%; }
       }
 
 article div.gallery {			display: grid;
@@ -133,8 +135,8 @@ article div.gallery {			display: grid;
 			min-height: 200px;
       margin: 2rem 0;
       padding: 2rem 0;
-      border-top: 1px solid #797777;
-      border-bottom: 1px solid #797777;
+      border-top: 1px solid $grey;
+      border-bottom: 1px solid $grey;
 			grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
 			grid-column-gap: 10px;
 			align-content: space-around;

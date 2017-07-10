@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Typography and Material Workshop
+title: Type and Material Workshop
 date: 2017-03-01
 author: John Caserta
 chapter: demo
