@@ -1,0 +1,21 @@
+---
+---
+
+// start content
+@media only print {
+  $darkgrey: #000;
+  article { color: black; }
+  h2 { margin-bottom: 1rem; }
+  h1 { font-size: 42pt; }
+  .gridwrap {
+    display: grid;
+    grid-template-columns: .1rem 1fr .1rem;
+    grid-template-rows: 4rem minmax(auto, 45vh) /* 4rem 1fr 4rem auto 2rem auto 4rem  */ auto;
+    grid-gap: 4rem;
+  }
+  html {font-size: 8pt;}
+  article>* { font-size: 80%; line-height: 130%; }
+  .title, aside, .noprint, nav { display: none; }
+}
+
+//

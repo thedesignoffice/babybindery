@@ -4,7 +4,7 @@
     {% include metadata.html %}
     {% include meyer_reset.html %}
     {% include universal_css.html %}
-    {% include custom_css.html %}
+    <link rel="stylesheet" type="text/css" href="{{ site.github.url }}/css/custom.css" />
     {% include jquery.html %}
 <style>
 
@@ -38,6 +38,7 @@
   .recentadditions ol { font-size: 3rem; line-height: 100%; text-align: center; list-style-type: none;  }
   .recentadditions ol li {  text-align: center; padding-left: 1rem; display: inline-block; }
   .recentadditions .num { font-family: SpaceMono-Regular; color: #cc114a; font-size: 94%; }
+  .recentadditions .publisher { white-space:nowrap; }
 
   footer { display: grid; grid-row: 9 / 10;  }
 

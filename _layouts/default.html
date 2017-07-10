@@ -4,7 +4,9 @@
     {% include metadata.html %}
     {% include meyer_reset.html %}
     {% include universal_css.html %}
-    {% include custom_css.html %}
+    <link rel="stylesheet" type="text/css" href="{{ site.github.url }}/css/print_solo.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.github.url }}/css/custom.css" />
+
     <style>
     main { grid-row: 2 / 3; grid-column: 2 / 3; margin-top: -1rem; }
     footer { display: grid; grid-row: 7 / 8;  }
@@ -62,9 +64,9 @@
       </div>
 		</main>
 
-    <hr class="line1" id="indexjump">
+    <hr class="line1 noprint" id="indexjump">
 
-    <div id="index">
+    <div id="index" class="noprint">
       <h2>Index of all posts</h2>
       <div class="indexdump">
       {% for chapter in site.chapters %}
@@ -93,13 +95,13 @@
     </div>
     </div>
 
-    <hr class="line2" id="aboutjump">
+    <hr class="line2 noprint" id="aboutjump">
 
-    <div id="about">
+    <div id="about" class="noprint">
     <h2>About</h2>
     </div>
 
-    <footer>
+    <footer class="noprint">
         standard
     </footer>
 
