@@ -15,7 +15,10 @@
   }
   html {font-size: 8pt;}
   article>* { font-size: 80%; line-height: 130%; }
-  .title, aside, .noprint, nav { display: none; }
+  .title, aside, .noprint, nav ul li { display: none; }
+  li.mobiletitle, li.mobiletitle a { display: inline-block; color: black;  }
+  nav ul { margin-left: 2rem;}
+  nav { border-bottom: 0; }
 }
 
 //

@@ -84,7 +84,7 @@ $linkhover: #cc114a;
     .label { font-family: $sans;  font-style: normal; color: $grey; font-size: 1.4rem; padding: .5rem 0; margin: 2rem 0 1rem 0;  }
     span.publisher { padding-left:0.5rem;  font-size: 1rem; color: $grey; font-family: $sans; font-style: italic;}
 
-    article { line-height: 140%; letter-spacing: .1px; font-size: 1.8rem; color: $darkgrey;  max-width: 1350px; }
+    article { line-height: 140%; letter-spacing: .1px; font-size: 1.8rem; color: $darkgrey;  max-width: 1350px; text-rendering: optimizeLegibility; font-variant-numeric: oldstyle-nums;  }
     article ol, article ul { margin-left: 20%; line-height: 140%; letter-spacing: .1px;
       font-size: 1.4rem;  }
     article ul li { list-style-type: circle; }
@@ -132,6 +132,12 @@ $linkhover: #cc114a;
         article p, article td { font-size: 1.5rem; line-height: 140%; }
       }
 
+
+article>table { width: 100%; margin-left: 0; }
+article>table td { font-variant-numeric: proportional-nums;  }
+article>table td:first-child { width: 20%; text-align:right; padding: 0 1rem; }
+
+// Images
 article div.gallery {			display: grid;
 			padding: 0;
 			min-height: 200px;
