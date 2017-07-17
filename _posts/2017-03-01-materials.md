@@ -4,8 +4,8 @@ title: Type and Material Workshop
 date: 2017-03-01
 author: John Caserta
 chapter: demo
-heroimage: https://scontent.fbos1-1.fna.fbcdn.net/v/t31.0-8/17239901_10212726003529852_6300614403378196507_o.jpg?oh=c4c64870bb09f6e52fb25a5428cf9305&oe=596317EF
-herocaption: Type made from bricks atop a mill building in Providence
+heroimage: http://anotherimg.dazedgroup.netdna-cdn.com/1050/azure/another-prod/360/0/360507.jpeg
+herocaption: Not For You, 2007© Monica Bonvicini
 introduction: Activity and talk given at Brown Design Workshop on Wednesday, March 15, 2017, 5pm – 7pm
 publisher: Brown Design Workshop
 ---

@@ -39,7 +39,7 @@ $linkhover: #cc114a;
 
 
   /* universal nav branding*/
-  .title { position: fixed; display: grid; top: 0; left: 3rem; height: 3rem; width: 100vh; transform: rotate(90deg); transform-origin: 0% 0%; text-align: center; align-content: center; z-index: 3; font-family: DomaineSansText-Medium; color: #444;}
+  .title { position: fixed; display: grid; top: 0; left: 3rem; height: 3rem; width: 100vh; transform: rotate(90deg); transform-origin: 0% 0%; text-align: center; align-content: center; z-index: 3; font-family: $sans; color: $darkgrey; -webkit-font-smoothing: subpixel-antialiased;}
   .mobiletitle,   .mobiletitle a  { display: none;  color: rgba(70, 200, 142, 1); }
   nav { grid-row: 1 / 1; grid-column: 1 / 4; display: grid; justify-content: left; align-items: center;  z-index: 5; border-bottom: 1px solid #4a4a4a; font-family: $sans; }
   nav ul li { display: inline-block; margin-left: 2rem; color: $darkgrey;  font-size: 1rem; }
@@ -66,7 +66,7 @@ $linkhover: #cc114a;
 
 
     /* universal text */
-    h1 { font-size: 6.225vw; line-height: 105%; max-width: 1350px; font-variant-numeric: proportional-nums; margin: 4rem 0; margin-left: 10%; }
+    h1 { font-size: 6.75vw; line-height: 105%; max-width: 1350px; font-variant-numeric: proportional-nums; margin: 4rem 0; margin-left: 10%; }
     h2 { font-size: 2.5rem; margin-bottom: 3rem; font-style: italic;  }
     article h2 { font-size: 2.5rem; padding: 2rem 0 1rem 0%; margin-top: 2rem; border-top: 1px solid #797777; margin-left: 0;  }
     h3 { font-family: $sans;

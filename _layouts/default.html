@@ -52,10 +52,11 @@
 
   			<article>
           {{ content }}
+
+          {% if page.herocaption %}
+              <h5>Image at <a href="#top">top</a>: {{ page.herocaption }}</h5>
+          {% endif %}
         </article>
-      {% if page.herocaption %}
-          <h6>Image at <a href="#top">top</a>: {{ page.herocaption }}</h6>
-      {% endif %}
 
       <h4 class="twitter-share-button"><a href="https://twitter.com/intent/tweet?text={{ page.title }} by {{ page.author }} at {{ site.url }}{{ page.url }}">
   Post this to twitter</a>  </h4>
