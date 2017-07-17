@@ -39,7 +39,8 @@ $linkhover: #cc114a;
 
 
   /* universal nav branding*/
-  .title { position: fixed; display: grid; top: 0; left: 3rem; height: 3rem; width: 100vh; transform: rotate(90deg); transform-origin: 0% 0%; text-align: center; align-content: center; z-index: 3; font-family: $sans; color: $darkgrey; -webkit-font-smoothing: subpixel-antialiased;}
+  .title { position: fixed; display: grid; top: 0; left: 3rem; height: 3rem; width: 100vh; transform: rotate(90deg); transform-origin: 0% 0%; text-align: center; align-content: center; z-index: 3; font-family: $sans; color: $darkgrey;  -webkit-font-smoothing: subpixel-antialiased; }
+  .title a:hover { color: white; }
   .mobiletitle,   .mobiletitle a  { display: none;  color: rgba(70, 200, 142, 1); }
   nav { grid-row: 1 / 1; grid-column: 1 / 4; display: grid; justify-content: left; align-items: center;  z-index: 5; border-bottom: 1px solid #4a4a4a; font-family: $sans; }
   nav ul li { display: inline-block; margin-left: 2rem; color: $darkgrey;  font-size: 1rem; }
@@ -90,10 +91,11 @@ $linkhover: #cc114a;
     article ul li { list-style-type: circle; }
 
       header {  }
-      header img { margin: 1rem 0 0; }
+      header img { margin: 1rem 0 0; max-width: 1300px; }
       header h1 { margin-right: 2rem; }
       header h5, header p, time { font-size: 1.4rem; line-height: 140%; font-style: italic; width: 66%; max-width: 950px; margin: 0;  }
       time { font-style: normal; }
+      main { max-width: 1800px; }
       main>div { display: grid; justify-items: center;  }
       article p:before {
          counter-increment: section;
@@ -110,8 +112,8 @@ $linkhover: #cc114a;
       article h3 + p:nth-child(even), article h3 + p:nth-child(odd) { margin-left: 20%; text-indent: -1.7rem; }
       article>* { margin-left: 10%; }
       blockquote, blockquote p { color: $grey; margin-bottom: 2rem; font-style: italic; }
-      article img { max-width: 640px; transition: 1s all; }
-      article img:hover {   max-width: 96%; cursor:zoom-in; }
+      article img { max-width: 540px; transition: 1s all; }
+      article img:hover {   max-width: 940px;  cursor:zoom-in; }
       article .gallery img:hover { max-width: none; cursor: default; }
       cite, article strong, article b { font-family: $sans; font-weight: normal; font-size: 92%;  border-bottom: 1px solid  #cc114a; padding: 0 .2rem; }
       cite:after { content: attr(data-parent);  font-style: italic;
