@@ -91,7 +91,7 @@ $linkhover: #cc114a;
 
       header {  }
       header img { margin: 1rem 0 0; }
-      header h1 { margin-right: 1rem; }
+      header h1 { margin-right: 2rem; }
       header h5, header p, time { font-size: 1.4rem; line-height: 140%; font-style: italic; width: 66%; max-width: 950px; margin: 0;  }
       time { font-style: normal; }
       main>div { display: grid; justify-items: center;  }
@@ -135,8 +135,8 @@ $linkhover: #cc114a;
 
 article>table { width: 100%; margin-left: 0; }
 article>table td { font-variant-numeric: proportional-nums;  }
-article>table td:first-child { width: 20%; text-align:right; padding: 0 1rem; }
-
+article>table td:first-child, article>table th:first-child { width: 20%; text-align:right; padding: 0 1rem; }
+article>table th { font-style: italic;}
 // Images
 article div.gallery {			display: grid;
 			padding: 0;
